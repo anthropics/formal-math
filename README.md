@@ -53,6 +53,15 @@ Also included, beyond Theorems A–E (each group has its own trusted statement f
   state directly that at least 67.25% are represented by distinct, respectively simple, on-line zeros for all
   sufficiently large heights. In particular this is strictly greater than 67.2%, with no RH or other hypothesis.
 
+* **Conditional simple-critical-line collision/energy seam** (`Zeta23/ThmD/LineConditional.lean`; `#print axioms` audit only): the exact combinatorial inequality
+  `N ≤ N₀ˢ + Σγ M(γ)(M(γ)-1)` yields `liminf N₀ˢ/N ≥ 1-κ` from an explicitly assumed factorial
+  ordinary-ordinate collision cap `Σγ M(γ)(M(γ)-1) ≤ (κ+o(1))N`. More generally, for a kernel
+  `K ≥ 0` with `K(0)=1`, an explicitly assumed ordinary-ordinate pair-energy cap `E_K ≤ (R+o(1))N`
+  yields `liminf N₀ˢ/N ≥ 2-R`. Both conclusions are proved in dyadic and cumulative form. Fixed 70%
+  wrappers require the strict hypotheses `κ < 3/10` or `R < 13/10`; equality gives only the limiting
+  threshold. These collision and energy caps are new conditional inputs and are not consequences of the
+  repository's unconditional analytic assumptions.
+
 * **The simple-or-on-line endpoint** (`Zeta23/ThmD/Union.lean`, `UnionDecimal.lean`; comparator topic `Union`, four statements): unconditionally, in dyadic windows (T, 2T] and cumulative windows (0, T],
   `liminf (N₀ + Nˢ − N₀ˢ)/N ≥ 1 − ((c₁*)⁻¹ − 1)/(3/2 + √2)`
   (`Zeta23.ThmD.thmD₀_union`, `_cumulative`). Here N and N₀ count with multiplicity, Nˢ and N₀ˢ count simple points, and the
@@ -91,7 +100,7 @@ The same A–C statements in the Cauchy–Schwarz form, with the same names insi
 comparator/          trusted statements (ChallengeDeps, Challenge), untrusted Solution, comparator config — START HERE
 Zeta23/Statement.lean  nontrivial zeros, multiplicity, the counting functions, against Mathlib's riemannZeta
 Zeta23/Unconditional.lean, Zeta23/Final.lean, Zeta23/FinalMult.lean      Theorems A, B, C (ζ)
-Zeta23/ThmD/           Theorem D (the optimal Montgomery–Taylor window; variational problem in ThmD/Functional.lean; multiplicity in ThmD/Mult.lean; beyond-paper simple-or-on-line endpoint in ThmD/Union*.lean)
+Zeta23/ThmD/           Theorem D (the optimal Montgomery–Taylor window; variational problem in ThmD/Functional.lean; multiplicity in ThmD/Mult.lean; beyond-paper union endpoint in ThmD/Union*.lean; conditional simple-line seams in ThmD/LineConditional.lean)
 Zeta23/ThmE/           Theorem E (primitive Dirichlet L-functions); Zeta23/ThmDE/: Theorem D for L(s,χ)
 Zeta23/LinAlg/         §3 of the paper: Sylvester inertia, rank–trace inequality (via von Neumann), Cauchy–Schwarz count, Weyl
 Zeta23/WeilEF/, Zeta23/ExplicitFormula*   Weil's explicit formula (contour integration, Landau's lemma, zero-sum limits)
@@ -121,11 +130,12 @@ lake build                # builds library Zeta23 (the default target imports ex
 lake build Solution Solution.Multiplicity Solution.XiPrime Solution.Union Solution.LineDecimal
 lake env lean comparator/PrintAxioms.lean; lake env lean comparator/PrintAxioms/Multiplicity.lean; lake env lean comparator/PrintAxioms/XiPrime.lean; lake env lean comparator/PrintAxioms/Union.lean; lake env lean comparator/PrintAxioms/LineDecimal.lean   # axiom audit of the 15 + 12 + 6 + 4 + 4 unconditional theorems
 lake env lean comparator/PrintAxioms/UnionConditional.lean
+lake env lean comparator/PrintAxioms/LineConditional.lean
 lake env lean comparator/PrintAxioms/PairCeiling.lean   # axiom audit of the ceiling theorems (no trusted statement file; see AUDIT.md)
 ```
 
 Expected: no errors, no `sorry` warnings from `Zeta23/` or `Solution` (the only `sorry`s in the repository
-are the deliberate ones in the trusted challenge files under `comparator/`), and the 41 trusted unconditional declarations, four conditional declarations, and
+are the deliberate ones in the trusted challenge files under `comparator/`), and the 41 trusted unconditional declarations, eleven `LineConditional` audit declarations, four conditional union endpoints, and the
 conditional numerical enclosure report only `[propext, Classical.choice, Quot.sound]`.
 For the strongest independent check — statement equality against the trusted challenge plus kernel replay —
 run comparator as described in [`comparator/README.md`](comparator/README.md).

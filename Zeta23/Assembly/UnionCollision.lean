@@ -7,10 +7,11 @@ import Zeta23.Defs.UnionCounting
 import Mathlib.Order.Filter.AtTopBot.Basic
 
 /-!
-# Union-count certificates from ordinary-ordinate collisions
+# Union-count and simple-line certificates from ordinary-ordinate collisions
 
 These endgames are independent of the explicit formula.  Their only analytic input is an
 eventual upper bound for the factorial collision count, or for a nonnegative pair energy.
+They give either a simple-or-on-line union bound or the sharper simple-on-line bound.
 -/
 
 open Filter
@@ -64,6 +65,50 @@ theorem ordinate_energy_count_certificate (Z : ZeroConfig) (K : ℝ → ℝ → 
         ≤ (Z.ordinateCollision T (2 * T) : ℝ) := by
       exact_mod_cast Z.three_Nbad_le_collision T (2 * T)
     have henergy := Z.N_add_collision_le_energy T (2 * T) (K T) (hK T) (hK0 T)
+    nlinarith
+  obtain ⟨T₀, hT₀⟩ := eventually_atTop.mp hev
+  exact ⟨T₀, fun T hT => hT₀ T hT⟩
+
+/-- A factorial ordinary-ordinate collision cap gives the same coefficient for
+simple on-line zeros, without the factor-of-three loss in the union certificate. -/
+theorem simple_line_collision_count_certificate (Z : ZeroConfig) (κ : ℝ)
+    (hC : ∀ δ > (0 : ℝ), ∀ᶠ T in atTop,
+      (Z.ordinateCollision T (2 * T) : ℝ) ≤
+        (κ + δ) * (Z.N T (2 * T) : ℝ)) :
+    ∀ ε > 0, ∃ T₀ : ℝ, ∀ T ≥ T₀,
+      (1 - κ - ε) * (Z.N T (2 * T) : ℝ) ≤ Z.N0s T (2 * T) := by
+  intro ε hε
+  have hev : ∀ᶠ T in atTop,
+      (1 - κ - ε) * (Z.N T (2 * T) : ℝ) ≤ Z.N0s T (2 * T) := by
+    filter_upwards [hC ε hε] with T hcap
+    have hcomb : (Z.N T (2 * T) : ℝ) ≤
+        (Z.N0s T (2 * T) : ℝ) +
+          (Z.ordinateCollision T (2 * T) : ℝ) := by
+      exact_mod_cast Z.N_le_N0s_add_collision T (2 * T)
+    nlinarith
+  obtain ⟨T₀, hT₀⟩ := eventually_atTop.mp hev
+  exact ⟨T₀, fun T hT => hT₀ T hT⟩
+
+/-- A nonnegative ordinary-ordinate energy cap with coefficient `R` gives
+simple-on-line proportion `2 - R`. -/
+theorem simple_line_ordinate_energy_count_certificate (Z : ZeroConfig)
+    (K : ℝ → ℝ → ℝ) (R : ℝ)
+    (hK : ∀ T x, 0 ≤ K T x) (hK0 : ∀ T, K T 0 = 1)
+    (hE : ∀ δ > (0 : ℝ), ∀ᶠ T in atTop,
+      Z.ordinateEnergy T (2 * T) (K T) ≤
+        (R + δ) * (Z.N T (2 * T) : ℝ)) :
+    ∀ ε > 0, ∃ T₀ : ℝ, ∀ T ≥ T₀,
+      (2 - R - ε) * (Z.N T (2 * T) : ℝ) ≤ Z.N0s T (2 * T) := by
+  intro ε hε
+  have hev : ∀ᶠ T in atTop,
+      (2 - R - ε) * (Z.N T (2 * T) : ℝ) ≤ Z.N0s T (2 * T) := by
+    filter_upwards [hE ε hε] with T hcap
+    have hcomb : (Z.N T (2 * T) : ℝ) ≤
+        (Z.N0s T (2 * T) : ℝ) +
+          (Z.ordinateCollision T (2 * T) : ℝ) := by
+      exact_mod_cast Z.N_le_N0s_add_collision T (2 * T)
+    have hdiag := Z.N_add_collision_le_energy T (2 * T)
+      (K T) (hK T) (hK0 T)
     nlinarith
   obtain ⟨T₀, hT₀⟩ := eventually_atTop.mp hev
   exact ⟨T₀, fun T hT => hT₀ T hT⟩

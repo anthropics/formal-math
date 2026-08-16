@@ -225,6 +225,52 @@ lemma mult_le_ordinateMass {ρ : ℂ} (hwin : ρ ∈ Z.window T₁ T₂) :
     _ ≤ ∑ z ∈ hfin.toFinset, if z.im = ρ.im then Z.mult z else 0 :=
       Finset.sum_le_sum_of_subset hsub
 
+/-- Every multiplicity unit not represented by a simple on-line zero contributes at
+least one factorial ordinary-ordinate collision.  Equality holds when an ordinate
+fiber consists of one simple on-line zero, one on-line double zero, or one simple
+reflected off-line pair. -/
+theorem N_le_N0s_add_collision :
+    Z.N T₁ T₂ ≤ Z.N0s T₁ T₂ + Z.ordinateCollision T₁ T₂ := by
+  classical
+  have hfin := Z.window_finite T₁ T₂
+  let s : Finset ℂ := hfin.toFinset
+  have hs (ρ : ℂ) : ρ ∈ s ↔ ρ ∈ Z.window T₁ T₂ := by
+    simp [s]
+  have hN0s : Z.N0s T₁ T₂ = ∑ ρ ∈ s,
+      if ρ.re = (2 : ℝ)⁻¹ ∧ Z.mult ρ = 1 then 1 else 0 := by
+    unfold N0s
+    have hgood : (Z.window T₁ T₂ ∩ onLine ∩ Z.simple).Finite :=
+      (hfin.subset inter_subset_left).subset inter_subset_left
+    rw [Set.ncard_eq_toFinset_card _ hgood, Finset.sum_boole]
+    congr 1
+    ext ρ
+    simp only [Finset.mem_filter, Set.Finite.mem_toFinset, mem_inter_iff,
+      onLine, simple, mem_ofPred_eq, hs]
+    norm_num
+    tauto
+  unfold N ordinateCollision
+  rw [finsum_mem_eq_finite_toFinset_sum _ hfin,
+    finsum_mem_eq_finite_toFinset_sum _ hfin, hN0s,
+    ← Finset.sum_add_distrib]
+  refine Finset.sum_le_sum fun ρ hρ => ?_
+  have hwin : ρ ∈ Z.window T₁ T₂ := hs ρ |>.mp hρ
+  have hm1 : 1 ≤ Z.mult ρ := Z.one_le_mult ρ hwin.1
+  by_cases hgood : ρ.re = (2 : ℝ)⁻¹ ∧ Z.mult ρ = 1
+  · rw [if_pos hgood]
+    omega
+  · rw [if_neg hgood]
+    have hM2 : 2 ≤ Z.ordinateMass T₁ T₂ ρ.im := by
+      by_cases hline : ρ.re = (2 : ℝ)⁻¹
+      · have hm2 : 2 ≤ Z.mult ρ := by
+          by_contra hm
+          have : Z.mult ρ = 1 := by omega
+          exact hgood ⟨hline, this⟩
+        exact hm2.trans (Z.mult_le_ordinateMass T₁ T₂ hwin)
+      · have htwo := Z.two_mul_mult_le_ordinateMass T₁ T₂ hwin hline
+        omega
+    have hone : 1 ≤ Z.ordinateMass T₁ T₂ ρ.im - 1 := by omega
+    simpa using Nat.mul_le_mul_left (Z.mult ρ) hone
+
 /-- The full ordinate-square mass is `N +` the factorial collision count. -/
 theorem N_add_collision_eq :
     Z.N T₁ T₂ + Z.ordinateCollision T₁ T₂ =

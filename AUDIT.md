@@ -15,6 +15,7 @@ lake build Solution.XiPrime && lake env lean comparator/PrintAxioms/XiPrime.lean
 lake build Challenge.Union Solution.Union && lake env lean comparator/PrintAxioms/Union.lean
 lake build Challenge.LineDecimal Solution.LineDecimal && lake env lean comparator/PrintAxioms/LineDecimal.lean
 lake env lean comparator/PrintAxioms/UnionConditional.lean
+lake env lean comparator/PrintAxioms/LineConditional.lean
 lake env lean comparator/PrintAxioms/PairCeiling.lean
 lake build Challenge Challenge.Multiplicity Challenge.XiPrime Challenge.Union Challenge.LineDecimal
                                 # all trusted statement files; expect only deliberate sorry placeholders
@@ -190,3 +191,28 @@ points.
   and official `fake-landrun.sh` setup recorded above completed with `Your solution is okay!`: statement equality
   succeeded and both nanoda and Lean's default kernel accepted. As above, this is a complete non-sandboxed integration
   replay, not a sandbox-trust result.
+
+## Amendment: conditional simple-critical-line collision and energy endpoints
+
+`Zeta23.ThmD.LineConditional` isolates the exact new arithmetic input required to improve the unconditional
+simple-critical-line result. The combinatorial theorem `ZeroConfig.N_le_N0s_add_collision` proves, with multiplicity
+and on half-open windows,
+
+```
+N(T₁,T₂) ≤ N0simple(T₁,T₂) + Σγ M(γ)(M(γ)-1).
+```
+
+Consequently an explicitly assumed collision cap with coefficient `κ` gives dyadic and cumulative coefficient
+`1-κ`; an explicitly assumed nonnegative ordinary-ordinate pair-energy cap with `K(0)=1` and coefficient `R` gives
+coefficient `2-R`. Fixed 70% wrappers require the strict hypotheses `κ < 3/10` or `R < 13/10`. No collision or
+energy cap is asserted by `PaperInputs`, so these theorems are conditional and intentionally have no trusted
+Comparator challenge topic.
+
+* `lake build` completed successfully (9,021 jobs); the changed and new Lean modules introduced no warning.
+* The combined `Challenge`/`Solution` topic build completed successfully (9,018 jobs); its only `sorry` warnings are
+  the 41 deliberate placeholders in the five trusted challenge files.
+* A source scan with comments and strings stripped found no `axiom` declaration, no `sorryAx`, and exactly **41**
+  `sorry` tokens, all in those five challenge files; there is no `sorry` under `Zeta23/` or `Solution`.
+* `comparator/PrintAxioms/LineConditional.lean` audits the pointwise counting theorem, both abstract certificates,
+  the four generic dyadic/cumulative endpoints, and the four fixed-70% endpoints. All eleven report only
+  `[propext, Classical.choice, Quot.sound]`.

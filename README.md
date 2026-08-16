@@ -53,9 +53,14 @@ Also included, beyond Theorems A–E (each group has its own trusted statement f
   critical line, counted with multiplicity. The exact coefficient is instantiated directly at bandwidth λ = 1.
   A kernel-checked Taylor-remainder certificate proves it lies strictly between 0.887620008173 and 0.887620008174;
   the corresponding exact-rational ε-form count bounds are `thmD₀_union_decimal` and `_cumulative_decimal`.
-  `Zeta23/ThmD/UnionConditional.lean` isolates the missing input: a factorial ordinary-ordinate collision cap
-  `Σ M(γ)(M(γ)-1) ≤ (((c₁*)⁻¹-1)+o(1))N`, or the corresponding nonnegative pair-energy cap, would raise both
-  endpoints to `1-((c₁*)⁻¹-1)/3 = 0.890833567893…`; neither cap is asserted unconditionally.
+  The denominator `Q = 3/2 + √2` is emitted by the sharp zero-side block bookkeeping, not by an accumulated analytic
+  error: at `C = 2 + √2`, a simple off-line pair and a reflected pair of double zeros simultaneously saturate
+  `C² = 2(2C-1)`, `C² = 4Q`, and `2C-1 = 2Q`. Thus `Q(3-Q)=1/4`; improving `Q` requires arithmetic information beyond
+  the present block/moment interface. `Zeta23/ThmD/UnionConditional.lean` isolates such a missing input: a factorial
+  ordinary-ordinate collision cap `Σ M(γ)(M(γ)-1) ≤ (((c₁*)⁻¹-1)+o(1))N`, or the corresponding nonnegative pair-energy
+  cap, would raise both endpoints to `1-((c₁*)⁻¹-1)/3 = 0.890833567893…`; neither cap is asserted unconditionally.
+  The proved inequality `3 Nbad ≤ Σ M(γ)(M(γ)-1)` is sharp at one reflected double pair; any additional zeros sharing
+  that ordinate only add slack, so collisions obstruct proving the cap rather than applying it.
 
 * **The zeros of ξ′** (`Zeta23/XiPrime/`, comparator topic `XiPrime`, six statements): unconditionally, at least 0.85838 of the zeros of ξ′ (the derivative of the completed zeta function) with ordinates in (T, 2T] are simple and on the critical line and at least 0.92919 are distinct (flat window; 0.86864 / 0.93432 with the quartic window), all zeros of ξ′ lie in the open critical strip, and Re ξ′/ξ > 0 on Re s ≥ 1 — `Zeta23.XiPrime.xiDeriv_simple_on_line`(`_cumulative`, `_quartic_std`) in `Zeta23/XiPrime/Final.lean`. The argument is the one of Theorem B with ξ′ in place of ζ (the rank–trace device applied to the Farmer–Gonek(–Lee)/Montgomery argument for ξ′; Farmer–Gonek, arXiv:0803.0425 = Farmer–Gonek–Lee, J. London Math. Soc. (2) 90 (2014)). In the docstrings under `Zeta23/XiPrime/`, labels of the form `[XF′ Lemma 6.1]`, `[XF′ Thm 8.2]`, `[XF′ (Z3)]` refer to the authors' technical supplement on the explicit formula for ξ′/ξ and the two-trace transfer, which is not included in this repository; these labels record provenance only — what is relied upon is in each case the Lean statement that the docstring introduces. (The counting functions in `comparator/ChallengeDeps/XiPrime.lean` are finite sums / cardinalities over the set of zeros of ξ′ in a height window; that set is finite because every zero of ξ′ lies in the open critical strip — the first of the six statements — and the zeros of an entire function are isolated.)
 

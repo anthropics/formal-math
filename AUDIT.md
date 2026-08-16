@@ -155,7 +155,7 @@ This revision adds direct-bandwidth-one dyadic and cumulative endpoints (`Zeta23
  Quot.sound]
 ```
 
-* `comparator/config-union.json` is supplied for statement equality and independent-kernel replay; no full comparator run for this new topic is recorded in this amendment.
+* A local Comparator integration run of `comparator/config-union.json` completed with `Your solution is okay!`: statement comparison succeeded and both nanoda 0.4.13 and Lean's default kernel accepted the solution. The run used Comparator commit `75c730e` and lean4export commit `9fb131bb100eb32ccf6836f14e4f8328d13b6792`, matching Lean `v4.33.0-rc2`, with Comparator's official `scripts/fake-landrun.sh` because the host is macOS. It therefore exercises the previously missing statement-equality and independent-kernel pipeline, but is explicitly **not** a sandbox-trust result.
 * `Zeta23.ThmD.UnionConditional` separately proves dyadic and cumulative coefficient
   `1 - ((cStar 1)⁻¹ - 1)/3 = 0.890833567893…` conclusions from either the explicit factorial
   ordinary-ordinate collision cap or a nonnegative pair-energy cap. A second Taylor certificate proves this

@@ -52,10 +52,13 @@ systemd-run --property=RestrictAddressFamilies=~AF_UNIX --user --pty -E PATH="$P
   bash -c 'lake env /path/to/comparator/.lake/build/bin/comparator comparator/config.json'
 ```
 
-Runner conveniences (from the comparator release's own scripts): the binary reads `COMPARATOR_LANDRUN` and
-`COMPARATOR_LEAN4EXPORT` if the tools are not on `PATH`; for a non-sandboxed trial run the comparator tarball ships
-`scripts/fake-landrun.sh` (point `COMPARATOR_LANDRUN` at it) — a real run should use landrun. Per-topic configs
-(`comparator/config-<topic>.json`, below) run the same way as `config.json`; each is independent of the others.
+Runner conveniences (from the comparator release's own scripts): the binary reads `COMPARATOR_LANDRUN`,
+`COMPARATOR_LEAN4EXPORT`, and `COMPARATOR_NANODA` if the tools are not on `PATH`; for a non-sandboxed trial run the
+comparator checkout ships `scripts/fake-landrun.sh` (point `COMPARATOR_LANDRUN` at it) — a trusted run should use
+landrun. Per-topic configs (`comparator/config-<topic>.json`, below) run the same way as `config.json`; each is
+independent of the others. The Union topic has completed this non-sandboxed pipeline, including statement equality
+and acceptance by both nanoda and Lean's default kernel; exact versions and the trust qualification are recorded in
+[`AUDIT.md`](../AUDIT.md).
 
 Do not pre-build `Challenge`/`Solution` before a comparator run you want to rely on (comparator README,
 assumption 2); let comparator build them in its sandbox. Success ends with `Your solution is okay!`.

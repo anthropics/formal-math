@@ -353,7 +353,7 @@ theorem collisionEndpoint_decimal :
     (890833567893 / 10 ^ 12 : ℝ) <
         1 - ((cStar 1)⁻¹ - 1) / 3 ∧
       1 - ((cStar 1)⁻¹ - 1) / 3 <
-        (890833567894 / 10 ^ 12 : ℝ) := by
+        (8908335678932 / 10 ^ 13 : ℝ) := by
   let x : ℝ := (Real.sqrt 2)⁻¹
   let xlo : ℝ := 707106781186547 / 10 ^ 15
   let xhi : ℝ := 707106781186548 / 10 ^ 15
@@ -362,7 +362,7 @@ theorem collisionEndpoint_decimal :
   let clo : ℝ := 76024459707562 / 10 ^ 14
   let chi : ℝ := 76024459707582 / 10 ^ 14
   let L : ℝ := 890833567893 / 10 ^ 12
-  let U : ℝ := 890833567894 / 10 ^ 12
+  let U : ℝ := 8908335678932 / 10 ^ 13
   have hxpos : 0 < x := by
     dsimp [x]
     positivity

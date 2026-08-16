@@ -32,7 +32,7 @@ is the Montgomery–Taylor constant of Theorem D; c₁* = 0.75329….
 | **A** | liminf N₀*(T,2T)/N(T,2T) ≥ 2/3, and liminf N₀*(T)/N(T) ≥ 2/3 | `two_thirds_on_critical_line`(`_cumulative`) | `Zeta23.thmA₀`(`_cumulative`) (`Zeta23/Final.lean`) |
 | **B** | liminf N₀ˢ/N ≥ 2/3: at least two thirds of the zeros are simple and on the critical line (dyadic and cumulative) | `two_thirds_simple_on_critical_line`(`_cumulative`) | `Zeta23.thmB₀_mult`(`_cumulative`) (`Zeta23/FinalMult.lean`) |
 | **C** | liminf N_d/N ≥ 5/6 (dyadic and cumulative) | `five_sixths_distinct`(`_cumulative`) | `Zeta23.thmC₀_mult`(`_cumulative`) |
-| **D** | with the optimal (Montgomery–Taylor) window: liminf N₀*(T,2T)/N(T,2T) ≥ 2 − 1/c₁* (= 0.67250…), the same for N₀ˢ, and N_d: ≥ (3 − 1/c₁*)/2 (= 0.83625…) | `montgomery_taylor_on_critical_line`, `montgomery_taylor_simple_on_critical_line_mult`, `montgomery_taylor_distinct_mult` | `Zeta23.ThmD.thmD₀` (`Zeta23/ThmD/Final.lean`), `Zeta23.ThmD.thmD₀_simple_mult`, `thmD₀_dist_mult` (`Zeta23/ThmD/Mult.lean`) |
+| **D** | with the optimal (Montgomery–Taylor) window: liminf N₀*(T,2T)/N(T,2T) ≥ 2 − 1/c₁* (= 0.672500703679…), the same for N₀ˢ, and N_d: ≥ (3 − 1/c₁*)/2 (= 0.83625…) | `montgomery_taylor_on_critical_line`, `montgomery_taylor_simple_on_critical_line_mult`, `montgomery_taylor_distinct_mult` | `Zeta23.ThmD.thmD₀` (`Zeta23/ThmD/Final.lean`), `Zeta23.ThmD.thmD₀_simple_mult`, `thmD₀_dist_mult` (`Zeta23/ThmD/Mult.lean`) |
 | **E** | for every primitive Dirichlet character χ mod q > 1, the analogues of A, B, C and D for the zeros of L(s,χ) (Mathlib's `DirichletCharacter.LFunction χ`) | `dirichlet_two_thirds_on_critical_line`, `dirichlet_two_thirds_simple_on_critical_line`, `dirichlet_five_sixths_distinct`, `dirichlet_montgomery_taylor_on_critical_line`, `dirichlet_montgomery_taylor_*_mult` | `Zeta23.ThmE.thmE_A₀`, `thmE_B₀_mult`, `thmE_C₀_mult`; `Zeta23.ThmDE.thmE_D₀`, `thmE_D₀_simple_mult`, `thmE_D₀_dist_mult` |
 
 Note on Theorem C: in this repository the constant 5/6 is obtained from the rank–trace inequality of §3 applied with
@@ -45,6 +45,13 @@ atoms with integer multiplicities m_j ≤ c on orthonormal vectors together with
 (`Zeta23.ZeroSide.TightMult.lemmaR_tight`, `Zeta23/ZeroSide/TightMult.lean`; cited in the paper's appendix).
 
 Also included, beyond Theorems A–E (each group has its own trusted statement file under [`comparator/`](comparator/) or, where noted, is checked with `#print axioms` only):
+
+* **Certified critical-line decimal endpoint** (`Zeta23/ThmD/LineDecimal.lean`; comparator topic `LineDecimal`, four statements): a kernel-checked rational enclosure proves
+  `0.672500703679 < HD(1) < 0.6725007036796`. Consequently, in both dyadic and cumulative windows,
+  `liminf N₀*/N ≥ 0.672500703679` and, more strongly, the same lower bound holds for the simple-and-on-line count
+  `N₀ˢ/N`. The fixed-coefficient theorems `thmD₀_6725` and `thmD₀_simple_mult_6725` (and their cumulative forms)
+  state directly that at least 67.25% are represented by distinct, respectively simple, on-line zeros for all
+  sufficiently large heights. In particular this is strictly greater than 67.2%, with no RH or other hypothesis.
 
 * **The simple-or-on-line endpoint** (`Zeta23/ThmD/Union.lean`, `UnionDecimal.lean`; comparator topic `Union`, four statements): unconditionally, in dyadic windows (T, 2T] and cumulative windows (0, T],
   `liminf (N₀ + Nˢ − N₀ˢ)/N ≥ 1 − ((c₁*)⁻¹ − 1)/(3/2 + √2)`
@@ -111,14 +118,14 @@ lake exe cache get        # fetch prebuilt Mathlib for the pinned commit (a few 
                           # for your platform / offline), just proceed: the next step builds Mathlib from
                           # source, which takes several hours of CPU time but needs nothing else.
 lake build                # builds library Zeta23 (the default target imports exactly the headline modules)
-lake build Solution Solution.Multiplicity Solution.XiPrime Solution.Union
-lake env lean comparator/PrintAxioms.lean; lake env lean comparator/PrintAxioms/Multiplicity.lean; lake env lean comparator/PrintAxioms/XiPrime.lean; lake env lean comparator/PrintAxioms/Union.lean   # axiom audit of the 15 + 12 + 6 + 4 unconditional theorems
+lake build Solution Solution.Multiplicity Solution.XiPrime Solution.Union Solution.LineDecimal
+lake env lean comparator/PrintAxioms.lean; lake env lean comparator/PrintAxioms/Multiplicity.lean; lake env lean comparator/PrintAxioms/XiPrime.lean; lake env lean comparator/PrintAxioms/Union.lean; lake env lean comparator/PrintAxioms/LineDecimal.lean   # axiom audit of the 15 + 12 + 6 + 4 + 4 unconditional theorems
 lake env lean comparator/PrintAxioms/UnionConditional.lean
 lake env lean comparator/PrintAxioms/PairCeiling.lean   # axiom audit of the ceiling theorems (no trusted statement file; see AUDIT.md)
 ```
 
 Expected: no errors, no `sorry` warnings from `Zeta23/` or `Solution` (the only `sorry`s in the repository
-are the deliberate ones in the trusted challenge files under `comparator/`), and the 37 trusted unconditional declarations, four conditional declarations, and
+are the deliberate ones in the trusted challenge files under `comparator/`), and the 41 trusted unconditional declarations, four conditional declarations, and
 conditional numerical enclosure report only `[propext, Classical.choice, Quot.sound]`.
 For the strongest independent check — statement equality against the trusted challenge plus kernel replay —
 run comparator as described in [`comparator/README.md`](comparator/README.md).

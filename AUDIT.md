@@ -13,9 +13,10 @@ lake build Solution && lake env lean comparator/PrintAxioms.lean
 lake build Solution.Multiplicity && lake env lean comparator/PrintAxioms/Multiplicity.lean
 lake build Solution.XiPrime && lake env lean comparator/PrintAxioms/XiPrime.lean
 lake build Challenge.Union Solution.Union && lake env lean comparator/PrintAxioms/Union.lean
+lake build Challenge.LineDecimal Solution.LineDecimal && lake env lean comparator/PrintAxioms/LineDecimal.lean
 lake env lean comparator/PrintAxioms/UnionConditional.lean
 lake env lean comparator/PrintAxioms/PairCeiling.lean
-lake build Challenge Challenge.Multiplicity Challenge.XiPrime Challenge.Union
+lake build Challenge Challenge.Multiplicity Challenge.XiPrime Challenge.Union Challenge.LineDecimal
                                 # all trusted statement files; expect only deliberate sorry placeholders
 ```
 
@@ -97,7 +98,7 @@ Each `Solution` theorem is a short delegation to the corresponding `Zeta23` theo
 
 ## Comparator
 
-The trusted statement files and configurations for the comparator tool are in `comparator/`: `config-multiplicity.json` (12 statements), `config.json` (15 statements), `config-xiprime.json` (6 statements), and `config-union.json` (4 statements). `comparator/README.md` explains what is trusted (`ChallengeDeps*.lean`, `Challenge*.lean`: Mathlib-only definitions and the statements) and what is not (`Solution*.lean` and the whole library), and how to run the tool, which independently re-checks that every `Solution` theorem has exactly the statement of its `Challenge` namesake and re-verifies the proofs in an external kernel.
+The trusted statement files and configurations for the comparator tool are in `comparator/`: `config-multiplicity.json` (12 statements), `config.json` (15 statements), `config-xiprime.json` (6 statements), `config-union.json` (4 statements), and `config-line-decimal.json` (4 statements). `comparator/README.md` explains what is trusted (`ChallengeDeps*.lean`, `Challenge*.lean`: Mathlib-only definitions and the statements) and what is not (`Solution*.lean` and the whole library), and how to run the tool, which independently re-checks that every `Solution` theorem has exactly the statement of its `Challenge` namesake and re-verifies the proofs in an external kernel.
 
 ## Amendment: the zeros of ξ′ and the bandwidth-one ceiling
 
@@ -159,7 +160,33 @@ This revision adds direct-bandwidth-one dyadic and cumulative endpoints (`Zeta23
 * `Zeta23.ThmD.UnionConditional` separately proves dyadic and cumulative coefficient
   `1 - ((cStar 1)⁻¹ - 1)/3 = 0.890833567893…` conclusions from either the explicit factorial
   ordinary-ordinate collision cap or a nonnegative pair-energy cap. A second Taylor certificate proves this
-  coefficient lies strictly between 0.890833567893 and 0.890833567894. The arithmetic caps are hypotheses,
+  coefficient lies strictly between 0.890833567893 and 0.8908335678932. The arithmetic caps are hypotheses,
   not consequences of `PaperInputs`; `comparator/PrintAxioms/UnionConditional.lean` reports only
   `[propext, Classical.choice, Quot.sound]` for the certified numerical enclosure and all four
   conditional declarations.
+
+## Amendment: certified critical-line decimal endpoint
+
+`Zeta23.ThmD.LineDecimal` reuses the exact Taylor-remainder certificate to prove
+
+```
+0.672500703679 < HD(1) < 0.6725007036796.
+```
+
+It exports canonical epsilon-form dyadic and cumulative bounds with the certified lower coefficient for both
+`N0star` and the stronger `N0simple` count. It also exports fixed-coefficient theorems at `0.6725`, giving a direct
+formal witness that the asymptotic critical-line proportion is strictly greater than `0.672`. All denominators are
+`Ncount`, counted with multiplicity; `N0star` counts distinct on-line points and `N0simple` counts simple on-line
+points.
+
+* `lake build` completed successfully (9,020 jobs); the new `Zeta23.ThmD.LineDecimal` module introduces no warning.
+* `lake build Zeta23.ThmD.LineDecimal Challenge.LineDecimal Solution.LineDecimal`: completed successfully; the only
+  new warnings are the four deliberate challenge `sorry`s.
+* Occurrences of the `sorry` token outside comments are now **41**, all in the five trusted challenge files; none under
+  `Zeta23/` and none in any `Solution` file. No `axiom` declaration was added.
+* `comparator/PrintAxioms/LineDecimal.lean` reports only `[propext, Classical.choice, Quot.sound]` for the numerical
+  enclosure, both strict constant lemmas, all four fixed-coefficient theorems, and all four comparator statements.
+* A local run of `comparator/config-line-decimal.json` with the same version-matched Comparator, lean4export, nanoda,
+  and official `fake-landrun.sh` setup recorded above completed with `Your solution is okay!`: statement equality
+  succeeded and both nanoda and Lean's default kernel accepted. As above, this is a complete non-sandboxed integration
+  replay, not a sandbox-trust result.

@@ -13,10 +13,11 @@ axioms `propext`, `Classical.choice`, `Quot.sound`, and replays the solution thr
 | `Challenge.lean` | fifteen theorem statements (Theorems A–E in the Cauchy–Schwarz forms: 2/3 on-line, 1/2 simple, 3/4 distinct, and the corresponding D/E constants), proofs `sorry` | yes — read it |
 | `Challenge/Multiplicity.lean` | twelve statements: Theorems B–E with the constants stated in the paper (2/3 simple, 5/6 distinct, 2 − 1/c₁*, (3 − 1/c₁*)/2, and the Dirichlet analogues), proofs `sorry` | yes — read it |
 | `Challenge/Union.lean` | four beyond-paper statements: exact and certified-decimal simple-or-on-line endpoints in dyadic and cumulative windows, with multiplicity-aware denominators and inclusion-exclusion union counts; proofs `sorry` | yes — read it |
+| `Challenge/LineDecimal.lean` | four certified-decimal Montgomery--Taylor critical-line statements: distinct and simple on-line zeros, in dyadic and cumulative windows; proofs `sorry` | yes — read it |
 | `ChallengeDeps/XiPrime.lean`, `Challenge/XiPrime.lean` | the counting functions for the zeros of ξ′ (defined from Mathlib alone) and six statements about them (all zeros in the open strip; Re ξ′/ξ > 0 on Re s ≥ 1; ≥ 0.85838 simple and on the line, ≥ 0.92919 distinct, and the quartic-window constants), proofs `sorry` | yes — read it |
-| `Solution.lean`, `Solution/Multiplicity.lean`, `Solution/Union.lean`, `Solution/XiPrime.lean` | the corresponding statements, proved by delegating to the `Zeta23` library | no (checked by comparator) |
-| `config.json`, `config-multiplicity.json`, `config-union.json`, `config-xiprime.json` | per-topic comparator configurations (theorem names, permitted axioms) | yes |
-| `PrintAxioms.lean`, `PrintAxioms/Multiplicity.lean`, `PrintAxioms/Union.lean`, `PrintAxioms/UnionConditional.lean`, `PrintAxioms/XiPrime.lean`, `PrintAxioms/PairCeiling.lean` | `#print axioms` for the statements — the quick check without comparator (`UnionConditional` and `PairCeiling` are intentionally outside the trusted comparator topics; their displayed extra hypotheses are audited here only with `#print axioms`; see the top-level README) | — |
+| `Solution.lean`, `Solution/Multiplicity.lean`, `Solution/Union.lean`, `Solution/LineDecimal.lean`, `Solution/XiPrime.lean` | the corresponding statements, proved by delegating to the `Zeta23` library | no (checked by comparator) |
+| `config.json`, `config-multiplicity.json`, `config-union.json`, `config-line-decimal.json`, `config-xiprime.json` | per-topic comparator configurations (theorem names, permitted axioms) | yes |
+| `PrintAxioms.lean`, `PrintAxioms/Multiplicity.lean`, `PrintAxioms/Union.lean`, `PrintAxioms/LineDecimal.lean`, `PrintAxioms/UnionConditional.lean`, `PrintAxioms/XiPrime.lean`, `PrintAxioms/PairCeiling.lean` | `#print axioms` for the statements — the quick check without comparator (`UnionConditional` and `PairCeiling` are intentionally outside the trusted comparator topics; their displayed extra hypotheses are audited here only with `#print axioms`; see the top-level README) | — |
 
 What a skeptical reader has to trust: Mathlib's definitions of `riemannZeta`, `DirichletCharacter.LFunction`,
 `analyticOrderAt`, `Set.ncard`, `finsum`; the applicable trusted dependency and challenge files above; the Lean kernel; and comparator's own
@@ -56,9 +57,9 @@ Runner conveniences (from the comparator release's own scripts): the binary read
 `COMPARATOR_LEAN4EXPORT`, and `COMPARATOR_NANODA` if the tools are not on `PATH`; for a non-sandboxed trial run the
 comparator checkout ships `scripts/fake-landrun.sh` (point `COMPARATOR_LANDRUN` at it) — a trusted run should use
 landrun. Per-topic configs (`comparator/config-<topic>.json`, below) run the same way as `config.json`; each is
-independent of the others. The Union topic has completed this non-sandboxed pipeline, including statement equality
-and acceptance by both nanoda and Lean's default kernel; exact versions and the trust qualification are recorded in
-[`AUDIT.md`](../AUDIT.md).
+independent of the others. The Union and LineDecimal topics have completed this non-sandboxed pipeline, including
+statement equality and acceptance by both nanoda and Lean's default kernel; exact versions and the trust qualification
+are recorded in [`AUDIT.md`](../AUDIT.md).
 
 Do not pre-build `Challenge`/`Solution` before a comparator run you want to rely on (comparator README,
 assumption 2); let comparator build them in its sandbox. Success ends with `Your solution is okay!`.
@@ -108,5 +109,6 @@ Topics currently in the tree (each `config-<topic>.json` runs independently; the
 |---|---|---|
 | Multiplicity | ζ and L(s,χ): ≥ 2/3 simple-and-on-line, ≥ 5/6 distinct, Montgomery–Taylor-window versions (12) | — |
 | Union | ζ: exact and certified-decimal simple-or-on-line inclusion-exclusion proportions, dyadic and cumulative (4) | — |
+| LineDecimal | ζ: certified `0.672500703679` distinct-on-line and simple-on-line proportions, dyadic and cumulative (4) | — |
 | XiPrime | zeros of ξ′: all in the open critical strip; Re ξ′/ξ > 0 on Re s ≥ 1; ≥ 0.85838 simple and on the line, ≥ 0.92919 distinct (flat window), 0.86864 / 0.93432 (quartic window) (6) | ChallengeDeps/XiPrime.lean |
 

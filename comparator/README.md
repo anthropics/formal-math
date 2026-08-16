@@ -9,23 +9,26 @@ axioms `propext`, `Classical.choice`, `Quot.sound`, and replays the solution thr
 
 | file | role | trusted? |
 |---|---|---|
-| `ChallengeDeps.lean` | the counting functions (nontrivial zeros of Mathlib's `riemannZeta` / `DirichletCharacter.LFunction`, multiplicity via `analyticOrderAt`, N, N₀*, N₀ˢ, N_d) and the Theorem-D constant c₁*, **defined from Mathlib alone** | yes — read it (≈60 lines of mathematics) |
+| `ChallengeDeps.lean` | the counting functions (nontrivial zeros of Mathlib's `riemannZeta` / `DirichletCharacter.LFunction`, multiplicity via `analyticOrderAt`, N, N₀, N₀*, Nˢ, N₀ˢ, N_d) and the Theorem-D constant c₁*, **defined from Mathlib alone** | yes — read it (≈60 lines of mathematics) |
 | `Challenge.lean` | fifteen theorem statements (Theorems A–E in the Cauchy–Schwarz forms: 2/3 on-line, 1/2 simple, 3/4 distinct, and the corresponding D/E constants), proofs `sorry` | yes — read it |
 | `Challenge/Multiplicity.lean` | twelve statements: Theorems B–E with the constants stated in the paper (2/3 simple, 5/6 distinct, 2 − 1/c₁*, (3 − 1/c₁*)/2, and the Dirichlet analogues), proofs `sorry` | yes — read it |
+| `Challenge/Union.lean` | four beyond-paper statements: exact and certified-decimal simple-or-on-line endpoints in dyadic and cumulative windows, with multiplicity-aware denominators and inclusion-exclusion union counts; proofs `sorry` | yes — read it |
 | `ChallengeDeps/XiPrime.lean`, `Challenge/XiPrime.lean` | the counting functions for the zeros of ξ′ (defined from Mathlib alone) and six statements about them (all zeros in the open strip; Re ξ′/ξ > 0 on Re s ≥ 1; ≥ 0.85838 simple and on the line, ≥ 0.92919 distinct, and the quartic-window constants), proofs `sorry` | yes — read it |
-| `Solution.lean` | the same fifteen statements, proved by delegating to the `Zeta23` library | no (checked by comparator) |
-| `config.json` | comparator configuration (theorem names, permitted axioms) | yes |
-| `PrintAxioms.lean`, `PrintAxioms/Multiplicity.lean`, `PrintAxioms/XiPrime.lean`, `PrintAxioms/PairCeiling.lean` | `#print axioms` for the statements — the quick check without comparator (`PairCeiling` has no trusted statement file: its theorems carry the displayed hypothesis `EnclOK`, see the top-level README) | — |
+| `Solution.lean`, `Solution/Multiplicity.lean`, `Solution/Union.lean`, `Solution/XiPrime.lean` | the corresponding statements, proved by delegating to the `Zeta23` library | no (checked by comparator) |
+| `config.json`, `config-multiplicity.json`, `config-union.json`, `config-xiprime.json` | per-topic comparator configurations (theorem names, permitted axioms) | yes |
+| `PrintAxioms.lean`, `PrintAxioms/Multiplicity.lean`, `PrintAxioms/Union.lean`, `PrintAxioms/UnionConditional.lean`, `PrintAxioms/XiPrime.lean`, `PrintAxioms/PairCeiling.lean` | `#print axioms` for the statements — the quick check without comparator (`UnionConditional` and `PairCeiling` are intentionally outside the trusted comparator topics; their displayed extra hypotheses are audited here only with `#print axioms`; see the top-level README) | — |
 
 What a skeptical reader has to trust: Mathlib's definitions of `riemannZeta`, `DirichletCharacter.LFunction`,
-`analyticOrderAt`, `Set.ncard`, `finsum`; the two trusted files above; the Lean kernel; and comparator's own
+`analyticOrderAt`, `Set.ncard`, `finsum`; the applicable trusted dependency and challenge files above; the Lean kernel; and comparator's own
 assumptions (its README). Nothing under `Zeta23/` needs to be read to know *what* is proved.
 
-Reading notes for the statements: N(T₁,T₂) on the LEFT of every inequality counts zeros **with
-multiplicity**, while N₀*, N₀ˢ, N_d on the right count **distinct** points — the strong direction. "Nontrivial
-zero" is rendered as "zero with 0 < Re ρ < 1"; that every zero other than the trivial ones lies in the open
-strip is classical and not needed to state anything. Finiteness of the zeros in a window is proved on the
-solution side, not assumed. Windows are T₁ < Im ρ ≤ T₂ (positive ordinates), as in the paper.
+Reading notes for the statements: N(T₁,T₂) on the left counts zeros **with multiplicity**. In the
+Theorem A–E topics, N₀*, N₀ˢ, N_d on the right count **distinct** points — the strong direction. In the `Union`
+topic, N₀ also counts with multiplicity and `N₀ + Nˢ − N₀ˢ` is natural-number inclusion-exclusion for the
+simple-or-on-line union. "Nontrivial zero" is rendered as "zero with 0 < Re ρ < 1"; that every zero other than
+the trivial ones lies in the open strip is classical and not needed to state anything. Finiteness of the zeros
+in a window is proved on the solution side, not assumed. Windows are T₁ < Im ρ ≤ T₂ (positive ordinates), as
+in the paper.
 
 ## Quick check (no extra tooling)
 
@@ -101,5 +104,6 @@ Topics currently in the tree (each `config-<topic>.json` runs independently; the
 | topic | what | trusted deps beyond ChallengeDeps.lean |
 |---|---|---|
 | Multiplicity | ζ and L(s,χ): ≥ 2/3 simple-and-on-line, ≥ 5/6 distinct, Montgomery–Taylor-window versions (12) | — |
+| Union | ζ: exact and certified-decimal simple-or-on-line inclusion-exclusion proportions, dyadic and cumulative (4) | — |
 | XiPrime | zeros of ξ′: all in the open critical strip; Re ξ′/ξ > 0 on Re s ≥ 1; ≥ 0.85838 simple and on the line, ≥ 0.92919 distinct (flat window), 0.86864 / 0.93432 (quartic window) (6) | ChallengeDeps/XiPrime.lean |
 

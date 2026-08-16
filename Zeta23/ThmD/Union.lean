@@ -35,15 +35,14 @@ section Abstract
 
 /-- Montgomery--Taylor union theorem with all paper inputs explicit. -/
 theorem thmD_union_abstract (Z : ZeroConfig) (H : PaperInputs Z)
-    (P : Params) (hP : P.Valid) (hlam : P.lam < 1)
+    (P : Params) (hP : P.Valid)
     (aT bT JT trG trG2 : ℝ → ℝ)
     (hTr : TracesBoundsD P aT bT JT trG trG2
       (fun T => (Z.N T (2 * T) : ℝ)))
     {c : ℝ} (hc0 : 0 < c)
     (hc : Tendsto (fun T => cRatio (P.lam1 T) (aT T) (bT T) (JT T))
       atTop (𝓝 c))
-    (ha : ∀ᶠ T in atTop, 1 / 2 ≤ aT T ∧ aT T ≤ 1)
-    (hBlock : ∀ᶠ T in atTop, BlockInputs Z (P.atD T) T)
+    (ha : ∀ᶠ T in atTop, 1 / 2 ≤ aT T)
     (θ₀ : ℝ → ℝ)
     (hTail : ∀ᶠ T in atTop, TailInputs Z (P.atD T) T (θ₀ T))
     (hθ₀ : ∃ C : ℝ, ∀ᶠ T in atTop,
@@ -59,9 +58,9 @@ theorem thmD_union_abstract (Z : ZeroConfig) (H : PaperInputs Z)
     ∀ ε > 0, ∃ T₀ : ℝ, ∀ T ≥ T₀,
       (unionProp c - ε) * (Z.N T (2 * T) : ℝ) ≤ Z.Nu T (2 * T) := by
   have hlam0 := hP.lam_pos
-  have hlam1 : P.lam ≤ 1 := hlam.le
+  have hlam1 := hP.lam_le_one
   obtain ⟨C₁, hC₁, T₁, htr1⟩ := hTr.tr1
-  obtain ⟨C₂, hC₂, T₂, hfr2⟩ := hTr.frhat
+  obtain ⟨C₂, _, T₂, hfr2⟩ := hTr.frhat
   obtain ⟨Cθ, hθ⟩ := hθ₀
   obtain ⟨CII, hII⟩ := hNII
   set N : ℝ → ℝ := fun T => (Z.N T (2 * T) : ℝ) with hNdef
@@ -76,19 +75,16 @@ theorem thmD_union_abstract (Z : ZeroConfig) (H : PaperInputs Z)
       B T * (2 * ZeroSide.unionC +
         2 * Real.sqrt (cinv T * N T + R₂ T) + B T)) +
       |cinv T - c⁻¹| * N T with herr
-  have hLtop := tendsto_L_atTop P hlam0
   have hcinv_to : Tendsto cinv atTop (𝓝 c⁻¹) := hc.inv₀ hc0.ne'
   have hmain : ∀ᶠ T in atTop,
       ZeroSide.unionQ * unionProp c * N T - err T
         ≤ ZeroSide.unionQ * (Z.Nu T (2 * T) : ℝ) := by
-    filter_upwards [hBlock, hTail, hGzGp, hId, ha,
+    filter_upwards [hTail, hGzGp, hId, ha,
       eventually_ge_atTop T₁, eventually_ge_atTop T₂,
-      eventually_ge_atTop (0 : ℝ), eventually_l_pos,
-      eventually_calE_nonneg P hlam0 (zero_le_one.trans hP.one_le_w),
-      eventually_w8 hP]
-      with T hBl hTl hGG hid ha2 hT₁ hT₂ hT0 hl hE0 h8
+      eventually_ge_atTop (0 : ℝ), eventually_l_pos, eventually_w8 hP]
+      with T hTl hGG hid ha0 hT₁ hT₂ hT0 hl h8
     obtain ⟨hidtr, hidfr, hida⟩ := hid
-    have hapos' : 0 < aT T := by linarith [ha2.1]
+    have hapos' : 0 < aT T := by linarith [ha0]
     have haposD : 0 < (P.atD T).a T := by rw [hida]; exact hapos'
     have hLpos : 0 < P.L T := by simp only [Params.L]; positivity
     have hA := seamA_union hT0
@@ -144,10 +140,10 @@ theorem thmD_union_abstract (Z : ZeroConfig) (H : PaperInputs Z)
   have o1 : R₁ =o[atTop] N := by
     have hbd : (fun T => C₁ / aT T) =O[atTop] (fun _ => (1 : ℝ)) := by
       refine isBigO_one_of_abs_le (C := 2 * C₁) ?_
-      filter_upwards [ha] with T ha2
-      rw [abs_of_nonneg (div_nonneg hC₁.le (by linarith [ha2.1]))]
-      rw [div_le_iff₀ (by linarith [ha2.1])]
-      nlinarith [ha2.1]
+      filter_upwards [ha] with T ha0
+      rw [abs_of_nonneg (div_nonneg hC₁.le (by linarith [ha0]))]
+      rw [div_le_iff₀ (by linarith [ha0])]
+      nlinarith [ha0]
     have hx := isLittleO_of_bdd_mul hbd
       (isLittleO_N_of_isLittleO_Tl Z H.RvM
         (isLittleO_sqrtX_Tl P hlam0 hlam1))
@@ -190,14 +186,14 @@ theorem thmD_union_abstract (Z : ZeroConfig) (H : PaperInputs Z)
       simpa using (tendsto_theta_over_L P hlam0 hlam1).const_mul (2 * |Cθ|)
     refine tendsto_of_tendsto_of_tendsto_of_le_of_le'
       tendsto_const_nhds hup ?_ ?_
-    · filter_upwards [hTail, ha, eventually_l_pos] with T hTl ha2 hl
+    · filter_upwards [hTail, ha, eventually_l_pos] with T hTl ha0 hl
       have hLpos : 0 < P.L T := by simp only [Params.L]; positivity
-      exact div_nonneg hTl.theta_nonneg (by nlinarith [ha2.1])
+      exact div_nonneg hTl.theta_nonneg (by nlinarith)
     · filter_upwards [hTail, ha, eventually_l_pos, hθ,
         eventually_gt_atTop (0 : ℝ)]
-        with T hTl ha2 hl hθT hT0
+        with T hTl ha0 hl hθT hT0
       have hLpos : 0 < P.L T := by simp only [Params.L]; positivity
-      have hapos' : 0 < aT T := by linarith [ha2.1]
+      have hapos' : 0 < aT T := by linarith
       have hq : 0 ≤ l T * T ^ (P.lam / 2 - 1) / P.L T := by positivity
       simp only [hBdef]
       rw [div_le_iff₀ (mul_pos hapos' hLpos)]
@@ -218,7 +214,6 @@ theorem thmD_union_abstract (Z : ZeroConfig) (H : PaperInputs Z)
                 (1 / 2 * P.L T) := by ring
           rw [he]
           gcongr
-          exact ha2.1
   have o5 := err_isLittleO (R₁ := R₁) (R₂ := R₂)
     (NII := fun T => (NII Z T : ℝ)) (B := B) (cl := cinv)
     hNtop o1 o2 o3 o4 hcinv_bd
@@ -270,17 +265,22 @@ lemma unionProp_cStar_eq (lam : ℝ) :
   unfold unionProp HD
   ring
 
-lemma unionQ_mul_unionProp_cStar (lam : ℝ) :
-    ZeroSide.unionQ * unionProp (cStar lam) =
-      HD lam + ZeroSide.unionQ - 1 := by
-  rw [unionProp_cStar_eq]
-  have hq : ZeroSide.unionQ ≠ 0 := ZeroSide.unionQ_pos.ne'
-  field_simp
-  ring
+/-- The reciprocal Montgomery--Taylor endpoint constant in trigonometric form. -/
+theorem cStar_one_inv_eq_montgomeryTaylor :
+    (cStar 1)⁻¹ = 1 / 2 + (Real.sqrt 2)⁻¹ *
+      (Real.cos (Real.sqrt 2)⁻¹ / Real.sin (Real.sqrt 2)⁻¹) := by
+  calc
+    (cStar 1)⁻¹ = 2 - HD 1 := by
+      unfold HD
+      ring
+    _ = 1 / 2 + (Real.sqrt 2)⁻¹ *
+        (Real.cos (Real.sqrt 2)⁻¹ / Real.sin (Real.sqrt 2)⁻¹) := by
+      rw [HD_one]
+      ring
 
-/-- Fixed bandwidth `λ`, abstract zero configuration. -/
+/-- Fixed bandwidth `0 < λ ≤ 1`, for an abstract zero configuration. -/
 theorem thmD_union_lam_abstract (Z : ZeroConfig) (H : PaperInputs Z)
-    (P : Params) (hP : P.Valid) (hlam : P.lam < 1) :
+    (P : Params) (hP : P.Valid) :
     ∀ ε > 0, ∃ T₀ : ℝ, ∀ T ≥ T₀,
       (unionProp (cStar P.lam) - ε) * (Z.N T (2 * T) : ℝ)
         ≤ Z.Nu T (2 * T) := by
@@ -288,12 +288,8 @@ theorem thmD_union_lam_abstract (Z : ZeroConfig) (H : PaperInputs Z)
   have hTr := tracesBoundsD_concrete (Z := Z) hP H hLoc
   have hc := tendsto_cRatio_concrete hP Z
   have hc0 := cStar_pos hP.lam_pos hP.lam_le_one
-  have ha : ∀ᶠ T in atTop,
-      1 / 2 ≤ (concreteDataD P Z).aT T ∧
-        (concreteDataD P Z).aT T ≤ 1 :=
-    (concreteFactsD hP H hLoc).ab_range.mono fun T h =>
-      ⟨h.1.trans h.2.1, h.2.2.1⟩
-  have hBlock := eventually_blockInputsD Z hP
+  have ha : ∀ᶠ T in atTop, 1 / 2 ≤ (concreteDataD P Z).aT T :=
+    (concreteFactsD hP H hLoc).ab_range.mono fun _ h => h.1.trans h.2.1
   obtain ⟨θ₀, hTail, hθ₀⟩ := eventually_tailPackageD Z H hP
   obtain ⟨A₀, hA₀, hloc⟩ := H.RvM.local_count
   have hNII := Tail.eventually_NII_le Z hA₀ hloc
@@ -307,95 +303,54 @@ theorem thmD_union_lam_abstract (Z : ZeroConfig) (H : PaperInputs Z)
         Params.atD_a T hP⟩
   have hcalE := calE_tendsto_zero P hP.lam_pos hP.lam_le_one
     (zero_le_one.trans hP.one_le_w)
-  exact thmD_union_abstract Z H P hP hlam _ _ _ _ _ hTr hc0 hc ha hBlock
+  exact thmD_union_abstract Z H P hP _ _ _ _ _ hTr hc0 hc ha
     θ₀ hTail hθ₀ hNII hGzGp hId hcalE
 
-/-- Pass the fixed-bandwidth union rates to the endpoint `λ = 1`. -/
-theorem eps_form_unionProp {N lower : ℝ → ℝ}
-    (hN : ∀ T, 0 ≤ N T)
-    (h : ∀ lam : ℝ, 1 / 2 ≤ lam → lam < 1 →
-      ∀ ε > 0, ∃ T₀, ∀ T ≥ T₀,
-        (unionProp (cStar lam) - ε) * N T ≤ lower T) :
-    ∀ ε > 0, ∃ T₀, ∀ T ≥ T₀,
-      (unionProp (cStar 1) - ε) * N T ≤ lower T := by
-  have hHD : ∀ lam : ℝ, 1 / 2 ≤ lam → lam < 1 →
-      ∀ η > 0, ∃ T₀, ∀ T ≥ T₀,
-        (HD lam - η) * N T ≤
-          ZeroSide.unionQ * lower T - (ZeroSide.unionQ - 1) * N T := by
-    intro lam hlam0 hlam1 η hη
-    have hηq : 0 < η / ZeroSide.unionQ :=
-      div_pos hη ZeroSide.unionQ_pos
-    obtain ⟨T₀, hT₀⟩ := h lam hlam0 hlam1
-      (η / ZeroSide.unionQ) hηq
-    refine ⟨T₀, fun T hT => ?_⟩
-    have hfix := hT₀ T hT
-    have hmul := mul_le_mul_of_nonneg_left hfix ZeroSide.unionQ_pos.le
-    calc
-      (HD lam - η) * N T =
-          ZeroSide.unionQ *
-              ((unionProp (cStar lam) - η / ZeroSide.unionQ) * N T) -
-            (ZeroSide.unionQ - 1) * N T := by
-        rw [unionProp_cStar_eq]
-        field_simp [ZeroSide.unionQ_pos.ne']
-        ring
-      _ ≤ ZeroSide.unionQ * lower T -
-          (ZeroSide.unionQ - 1) * N T := sub_le_sub_right hmul _
-  intro ε hε
-  have hqε : 0 < ZeroSide.unionQ * ε :=
-    mul_pos ZeroSide.unionQ_pos hε
-  obtain ⟨T₀, hT₀⟩ := eps_form_HD hN hHD
-    (ZeroSide.unionQ * ε) hqε
-  refine ⟨T₀, fun T hT => ?_⟩
-  have hlim := hT₀ T hT
-  have hscaled : ZeroSide.unionQ *
-      ((unionProp (cStar 1) - ε) * N T) ≤
-      ZeroSide.unionQ * lower T := by
-    calc
-      ZeroSide.unionQ * ((unionProp (cStar 1) - ε) * N T) =
-          (HD 1 - ZeroSide.unionQ * ε) * N T +
-            (ZeroSide.unionQ - 1) * N T := by
-        rw [unionProp_cStar_eq]
-        field_simp [ZeroSide.unionQ_pos.ne']
-        ring
-      _ ≤ ZeroSide.unionQ * lower T := by linarith
-  exact le_of_mul_le_mul_left hscaled ZeroSide.unionQ_pos
-
-/-- Zeta at fixed bandwidth `λ`, unconditionally. -/
-theorem thmD_union_lam {lam : ℝ} (h0 : 0 < lam) (h1 : lam < 1) :
+/-- Zeta at fixed bandwidth `0 < λ ≤ 1`, unconditionally. -/
+theorem thmD_union_lam {lam : ℝ} (h0 : 0 < lam) (h1 : lam ≤ 1) :
     ∀ ε > 0, ∃ T₀ : ℝ, ∀ T ≥ T₀,
       (unionProp (cStar lam) - ε) * (Ncount T (2 * T) : ℝ) ≤
         ((N0 T (2 * T) + Nsimple T (2 * T) - N0simple T (2 * T) : ℕ) : ℝ) := by
-  have hP := paramsOf_valid taperProfile_stdProfile h0 h1.le
+  have hP := paramsOf_valid taperProfile_stdProfile h0 h1
   simpa only [paramsOf, zetaZeroConfig_N, zetaZeroConfig_Nu_eq] using
     thmD_union_lam_abstract zetaZeroConfig paperInputs_zeta
-      (paramsOf stdProfile lam) hP h1
+      (paramsOf stdProfile lam) hP
 
-/-- **At least `unionProp (cStar 1) = 0.8876200081...` of zeta zeros are
-simple or on the critical line, unconditionally.**  The decimal is commentary;
-the theorem uses the exact symbolic constant. -/
+/-- **In `T < Im ρ ≤ 2T`, at least
+`unionProp (cStar 1) = 0.8876200081...` of zeta-zero multiplicity units are
+simple or on the critical line, unconditionally.**  This theorem uses the exact
+symbolic constant; `UnionDecimal.lean` supplies a certified decimal enclosure. -/
 theorem thmD₀_union :
     ∀ ε > 0, ∃ T₀ : ℝ, ∀ T ≥ T₀,
       (unionProp (cStar 1) - ε) * (Ncount T (2 * T) : ℝ) ≤
         ((N0 T (2 * T) + Nsimple T (2 * T) - N0simple T (2 * T) : ℕ) : ℝ) :=
-  eps_form_unionProp (N := fun T => (Ncount T (2 * T) : ℝ))
-    (lower := fun T =>
-      ((N0 T (2 * T) + Nsimple T (2 * T) - N0simple T (2 * T) : ℕ) : ℝ))
-    (fun _ => Nat.cast_nonneg _)
-    (fun lam hlam0 hlam1 => thmD_union_lam (by linarith) hlam1)
+  thmD_union_lam (lam := 1) zero_lt_one le_rfl
 
 /-- The same theorem with the exact Montgomery--Taylor constant written out. -/
 theorem thmD₀_union' :
     ∀ ε > 0, ∃ T₀ : ℝ, ∀ T ≥ T₀,
       (1 + (1 / 2 - (Real.sqrt 2)⁻¹ *
           (Real.cos (Real.sqrt 2)⁻¹ / Real.sin (Real.sqrt 2)⁻¹)) /
-          ZeroSide.unionQ - ε) * (Ncount T (2 * T) : ℝ) ≤
+          (3 / 2 + Real.sqrt 2) - ε) * (Ncount T (2 * T) : ℝ) ≤
         ((N0 T (2 * T) + Nsimple T (2 * T) - N0simple T (2 * T) : ℕ) : ℝ) := by
   have hconst : 1 + (1 / 2 - (Real.sqrt 2)⁻¹ *
       (Real.cos (Real.sqrt 2)⁻¹ / Real.sin (Real.sqrt 2)⁻¹)) /
-      ZeroSide.unionQ = unionProp (cStar 1) := by
+      (3 / 2 + Real.sqrt 2) = unionProp (cStar 1) := by
     rw [unionProp_cStar_eq, HD_one]
+    unfold ZeroSide.unionQ
     ring
   rw [hconst]
   exact thmD₀_union
+
+/-- Cumulative form: the same simple-or-on-line multiplicity proportion in `0 < Im ρ ≤ T`. -/
+theorem thmD₀_union_cumulative :
+    ∀ ε > 0, ∃ T₀ : ℝ, ∀ T ≥ T₀,
+      (unionProp (cStar 1) - ε) * (Ncount 0 T : ℝ) ≤
+        ((N0 0 T + Nsimple 0 T - N0simple 0 T : ℕ) : ℝ) := by
+  apply cumulative_of_dyadic zetaSeam paperInputs_zeta.RvM
+      (f := fun a b => N0 a b + Nsimple a b - N0simple a b)
+      (fun a b d hab hbd => ?_) thmD₀_union
+  simpa only [zetaZeroConfig_Nu_eq] using
+    Assembly.Nu_add zetaZeroConfig hab hbd
 
 end Zeta23.ThmD

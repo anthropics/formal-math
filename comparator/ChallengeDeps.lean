@@ -7,14 +7,14 @@ SPDX-License-Identifier: Apache-2.0
 ChallengeDeps.lean — the TRUSTED definition layer for the comparator challenge
 (see comparator/README.md).
 
-Everything the challenge statements in Challenge.lean mention is defined HERE, from Mathlib alone:
+Everything the zeta and Dirichlet challenge statements mention is defined HERE, from Mathlib alone:
 the nontrivial zeros of Mathlib's `riemannZeta` (resp. of Mathlib's `DirichletCharacter.LFunction χ`),
 their multiplicity via Mathlib's `analyticOrderAt`, the standard counting functions of the
 critical-line literature, and the Montgomery–Taylor constant c₁* of Theorem D, written out in
 closed form. This module imports NOTHING from Zeta23/. A reader auditing WHAT is claimed needs to
-read only this file and Challenge.lean (trusting Mathlib and the Lean kernel); the proofs live in the
-Zeta23 library and are checked against these statements by github.com/leanprover/comparator
-(statement equality + axiom audit + kernel replay), via Solution.lean.
+read only this file and the applicable challenge file (trusting Mathlib and the Lean kernel); the proofs
+live in the Zeta23 library and are checked against these statements by github.com/leanprover/comparator
+(statement equality + axiom audit + kernel replay), via the corresponding Solution module.
 
 Every `def` line of §1 is character-for-character the one in Zeta23/Statement.lean §1, and every `def`
 of §2 the one in Zeta23/ThmE/Statement.lean §1 (docstrings are reworded for a reader without the rest
@@ -56,7 +56,7 @@ once. -/
 def Ndist (T₁ T₂ : ℝ) : ℕ := (zerosIn T₁ T₂).ncard
 
 /-- N₀(T₁,T₂): the zeros ON the critical line Re ρ = 1/2 with T₁ < Im ρ ≤ T₂, with multiplicity.
-(Not used by the challenge statements; kept so that the block matches Zeta23/Statement.lean.) -/
+(Used by the simple-or-on-line statements in `Challenge/Union.lean`.) -/
 def N0 (T₁ T₂ : ℝ) : ℕ := ∑ᶠ ρ ∈ zerosIn T₁ T₂ ∩ {ρ | ρ.re = 1 / 2}, zeroMult ρ
 
 /-- N₀*(T₁,T₂): the number of DISTINCT zeros ON the critical line Re ρ = 1/2 with
@@ -68,7 +68,7 @@ T₁ < Im ρ ≤ T₂. -/
 def N0simple (T₁ T₂ : ℝ) : ℕ := (zerosIn T₁ T₂ ∩ {ρ | ρ.re = 1 / 2} ∩ {ρ | zeroMult ρ = 1}).ncard
 
 /-- Nˢ(T₁,T₂): the number of simple zeros with T₁ < Im ρ ≤ T₂ (anywhere in the strip).
-(Not used by the challenge statements; kept so that the block matches Zeta23/Statement.lean.) -/
+(Used by the simple-or-on-line statements in `Challenge/Union.lean`.) -/
 def Nsimple (T₁ T₂ : ℝ) : ℕ := (zerosIn T₁ T₂ ∩ {ρ | zeroMult ρ = 1}).ncard
 
 /-! ## 2. The same for a Dirichlet L-function L(s,χ) (Theorem E)

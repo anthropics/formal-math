@@ -27,4 +27,15 @@ theorem zetaZeros_Nu_eq (hs : ZetaSeam) (T₁ T₂ : ℝ) :
       N0 T₁ T₂ + Nsimple T₁ T₂ - N0simple T₁ T₂ := by
   simpa only [zetaZeroConfig] using zetaZeros_Nu_eq zetaSeam T₁ T₂
 
+/-- Real-cast inclusion-exclusion with ordinary subtraction.  The corresponding
+natural subtraction is nontruncated. -/
+theorem zetaZeroConfig_Nu_cast_eq (T₁ T₂ : ℝ) :
+    (zetaZeroConfig.Nu T₁ T₂ : ℝ) =
+      (N0 T₁ T₂ : ℝ) + (Nsimple T₁ T₂ : ℝ) - (N0simple T₁ T₂ : ℝ) := by
+  rw [zetaZeroConfig_Nu_eq, Nat.cast_sub]
+  · push_cast
+    rfl
+  · have h := trivial_chain₀ T₁ T₂
+    omega
+
 end Zeta23

@@ -18,13 +18,14 @@ Toolchain: Lean `v4.33.0-rc2`, Mathlib commit `51e6992efd06126df61a496bebf8f4948
 ## What is proved
 
 Write N(T₁,T₂) for the number of zeros ρ of ζ with 0 < Re ρ < 1 and T₁ < Im ρ ≤ T₂, counted with
-multiplicity; N₀*(T₁,T₂) for the number of *distinct* such zeros on the critical line Re ρ = 1/2;
-N₀ˢ for those that are on the line and *simple*; N_d for the number of distinct zeros; N(T) := N(0,T) etc.
+multiplicity; N₀(T₁,T₂) for the on-line zeros counted with multiplicity; N₀*(T₁,T₂) for the number of
+*distinct* on-line zeros; Nˢ for the simple zeros anywhere in the strip; N₀ˢ for those that are on the
+line and *simple*; N_d for the number of distinct zeros; N(T) := N(0,T) etc.
 All of these are defined directly from Mathlib's `riemannZeta` and `analyticOrderAt`
 ([`comparator/ChallengeDeps.lean`](comparator/ChallengeDeps.lean), ≈60 lines, is the complete list of
 definitions the statements depend on). "liminf_{T→∞} X(T)/N(T) ≥ c" is formalized in the ε-form
-`∀ ε > 0, ∃ T₀, ∀ T ≥ T₀, (c − ε)·N(T) ≤ X(T)`. Here c₁* = √2·tan ϑ/(1+ϑ·tan ϑ), ϑ = 1/√2 (= 0.75329…) is the
-Montgomery–Taylor constant of Theorem D.
+`∀ ε > 0, ∃ T₀, ∀ T ≥ T₀, (c − ε)·N(T) ≤ X(T)`. Here c₁* = √2·tan ϑ/(1+ϑ·tan ϑ), with ϑ = 1/√2,
+is the Montgomery–Taylor constant of Theorem D; c₁* = 0.75329….
 
 | | statement (as in the paper) | Lean name (modules `Solution` / `Solution.Multiplicity` under [`comparator/`](comparator/)) | underlying Zeta23 theorem |
 |---|---|---|---|
@@ -45,11 +46,22 @@ atoms with integer multiplicities m_j ≤ c on orthonormal vectors together with
 
 Also included, beyond Theorems A–E (each group has its own trusted statement file under [`comparator/`](comparator/) or, where noted, is checked with `#print axioms` only):
 
+* **The simple-or-on-line endpoint** (`Zeta23/ThmD/Union.lean`, `UnionDecimal.lean`; comparator topic `Union`, four statements): unconditionally, in dyadic windows (T, 2T] and cumulative windows (0, T],
+  `liminf (N₀ + Nˢ − N₀ˢ)/N ≥ 1 − ((c₁*)⁻¹ − 1)/(3/2 + √2)`
+  (`Zeta23.ThmD.thmD₀_union`, `_cumulative`). Here N and N₀ count with multiplicity, Nˢ and N₀ˢ count simple points, and the
+  natural-number expression `N₀ + Nˢ − N₀ˢ` is the inclusion-exclusion count of zeros that are simple or on the
+  critical line, counted with multiplicity. The exact coefficient is instantiated directly at bandwidth λ = 1.
+  A kernel-checked Taylor-remainder certificate proves it lies strictly between 0.887620008173 and 0.887620008174;
+  the corresponding exact-rational ε-form count bounds are `thmD₀_union_decimal` and `_cumulative_decimal`.
+  `Zeta23/ThmD/UnionConditional.lean` isolates the missing input: a factorial ordinary-ordinate collision cap
+  `Σ M(γ)(M(γ)-1) ≤ (((c₁*)⁻¹-1)+o(1))N`, or the corresponding nonnegative pair-energy cap, would raise both
+  endpoints to `1-((c₁*)⁻¹-1)/3 = 0.890833567893…`; neither cap is asserted unconditionally.
+
 * **The zeros of ξ′** (`Zeta23/XiPrime/`, comparator topic `XiPrime`, six statements): unconditionally, at least 0.85838 of the zeros of ξ′ (the derivative of the completed zeta function) with ordinates in (T, 2T] are simple and on the critical line and at least 0.92919 are distinct (flat window; 0.86864 / 0.93432 with the quartic window), all zeros of ξ′ lie in the open critical strip, and Re ξ′/ξ > 0 on Re s ≥ 1 — `Zeta23.XiPrime.xiDeriv_simple_on_line`(`_cumulative`, `_quartic_std`) in `Zeta23/XiPrime/Final.lean`. The argument is the one of Theorem B with ξ′ in place of ζ (the rank–trace device applied to the Farmer–Gonek(–Lee)/Montgomery argument for ξ′; Farmer–Gonek, arXiv:0803.0425 = Farmer–Gonek–Lee, J. London Math. Soc. (2) 90 (2014)). In the docstrings under `Zeta23/XiPrime/`, labels of the form `[XF′ Lemma 6.1]`, `[XF′ Thm 8.2]`, `[XF′ (Z3)]` refer to the authors' technical supplement on the explicit formula for ξ′/ξ and the two-trace transfer, which is not included in this repository; these labels record provenance only — what is relied upon is in each case the Lean statement that the docstring introduces. (The counting functions in `comparator/ChallengeDeps/XiPrime.lean` are finite sums / cardinalities over the set of zeros of ξ′ in a height window; that set is finite because every zero of ξ′ lies in the open critical strip — the first of the six statements — and the zeros of an entire function are isolated.)
 
 * **The bandwidth-one ceiling** (`Zeta23/PairCeiling/`, no comparator topic; `#print axioms` audit below): the stability inequality behind the paper's remark on the optimality of the method — for every certificate (c₀, r) of the type used in Theorem B (r ∈ C¹[0,1], r′ differentiable off a countable set with integrable derivative) that is valid against a configuration whose form-factor measure has grid masses s_j and simple-point fraction p, one has c₀ + ∫₀¹ r(x)·x dx ≤ p + |r(1)|·|D(1)| + |r′(1)|·|E(1)| + (sup|E|)·∫₀¹|r″| (`Zeta23.PairCeiling.ceiling_stability`, `Zeta23/PairCeiling/Stability.lean`, two integrations by parts) — and its instance at an explicit 256-periodic law (`Zeta23.PairCeiling.ceiling_law256`, `ceiling_law256_decimal`, `ceiling_nearCUE_signed`, `ceiling_law256_signed`; files `NearCUE.lean`, `RowCert.lean`, `LawN256.lean`, `CeilingLaw256.lean`, `Signed.lean`): every bandwidth-one certificate certifies a proportion of simple zeros at most 0.6818287 + 2.55·10⁻⁶·(|r′(1)| + ∫|r″|). The ONE displayed hypothesis of these theorems is `EnclOK`: that the law's form factor S(j), j = 1…256, lies in the 256 integer enclosures recorded in `LawN256.lean` (obtained outside Lean by interval arithmetic from an exact-rational certificate, sha256 `cc3de9917db4d14d844630a4e97dda8387fd6e257e52b6967f430b8914584eb8`, available from the authors); everything downstream of the enclosures — the 255 near-CUE row inequalities |256·S(j) − j| ≤ 3·10⁻⁴⁰ (0 < j < 256), the edge bound |D(1)| ≤ 0.82395317, the sign of the edge term — is checked in the kernel by `decide` (`LawN256_check`, `LawN256_edge`), and the analytic inequality is proved in Lean.
 
-How the two comparator configurations cover this: [`comparator/config.json`](comparator/config.json) (fifteen statements,
+How the two Theorem A–E comparator configurations cover the paper: [`comparator/config.json`](comparator/config.json) (fifteen statements,
 [`comparator/Challenge.lean`](comparator/Challenge.lean)) contains Theorem A together with the *Cauchy–Schwarz forms* of
 B–E — N₀ˢ/N ≥ 1/2, N_d/N ≥ 3/4, and with the optimal window 2c₁* − 1 (= 0.50659…) and c₁*, for ζ and for L(s,χ)
 (`Zeta23.thmB₀`, `Zeta23.thmC₀`, `Zeta23.ThmD.thmD₀_simple`, … in `Zeta23/Final.lean`, `Zeta23/ThmD/Final.lean`,
@@ -67,7 +79,7 @@ The same A–C statements in the Cauchy–Schwarz form, with the same names insi
 comparator/          trusted statements (ChallengeDeps, Challenge), untrusted Solution, comparator config — START HERE
 Zeta23/Statement.lean  nontrivial zeros, multiplicity, the counting functions, against Mathlib's riemannZeta
 Zeta23/Unconditional.lean, Zeta23/Final.lean, Zeta23/FinalMult.lean      Theorems A, B, C (ζ)
-Zeta23/ThmD/           Theorem D (the optimal Montgomery–Taylor window; variational problem in ThmD/Functional.lean; ThmD/Mult.lean)
+Zeta23/ThmD/           Theorem D (the optimal Montgomery–Taylor window; variational problem in ThmD/Functional.lean; multiplicity in ThmD/Mult.lean; beyond-paper simple-or-on-line endpoint in ThmD/Union*.lean)
 Zeta23/ThmE/           Theorem E (primitive Dirichlet L-functions); Zeta23/ThmDE/: Theorem D for L(s,χ)
 Zeta23/LinAlg/         §3 of the paper: Sylvester inertia, rank–trace inequality (via von Neumann), Cauchy–Schwarz count, Weyl
 Zeta23/WeilEF/, Zeta23/ExplicitFormula*   Weil's explicit formula (contour integration, Landau's lemma, zero-sum limits)
@@ -94,14 +106,15 @@ lake exe cache get        # fetch prebuilt Mathlib for the pinned commit (a few 
                           # for your platform / offline), just proceed: the next step builds Mathlib from
                           # source, which takes several hours of CPU time but needs nothing else.
 lake build                # builds library Zeta23 (the default target imports exactly the headline modules)
-lake build Solution Solution.Multiplicity Solution.XiPrime
-lake env lean comparator/PrintAxioms.lean; lake env lean comparator/PrintAxioms/Multiplicity.lean; lake env lean comparator/PrintAxioms/XiPrime.lean   # axiom audit of the 15 + 12 + 6 theorems
+lake build Solution Solution.Multiplicity Solution.XiPrime Solution.Union
+lake env lean comparator/PrintAxioms.lean; lake env lean comparator/PrintAxioms/Multiplicity.lean; lake env lean comparator/PrintAxioms/XiPrime.lean; lake env lean comparator/PrintAxioms/Union.lean   # axiom audit of the 15 + 12 + 6 + 4 unconditional theorems
+lake env lean comparator/PrintAxioms/UnionConditional.lean
 lake env lean comparator/PrintAxioms/PairCeiling.lean   # axiom audit of the ceiling theorems (no trusted statement file; see AUDIT.md)
 ```
 
 Expected: no errors, no `sorry` warnings from `Zeta23/` or `Solution` (the only `sorry`s in the repository
-are the deliberate ones in the trusted challenge files under `comparator/`), and 33 lines of the
-form `'two_thirds_on_critical_line' depends on axioms: [propext, Classical.choice, Quot.sound]`.
+are the deliberate ones in the trusted challenge files under `comparator/`), and the 37 trusted unconditional declarations, four conditional declarations, and
+conditional numerical enclosure report only `[propext, Classical.choice, Quot.sound]`.
 For the strongest independent check — statement equality against the trusted challenge plus kernel replay —
 run comparator as described in [`comparator/README.md`](comparator/README.md).
 

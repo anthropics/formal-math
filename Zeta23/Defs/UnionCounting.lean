@@ -26,6 +26,27 @@ def Nu : ℕ :=
   ∑ᶠ ρ ∈ Z.window T₁ T₂,
     if ρ.re = (2 : ℝ)⁻¹ ∨ Z.mult ρ = 1 then Z.mult ρ else 0
 
+/-- Semantic form of `Nu`: multiplicity restricted to the union of the on-line
+and simple supports. -/
+theorem Nu_eq_finsum_union :
+    Z.Nu T₁ T₂ =
+      ∑ᶠ ρ ∈ (Z.window T₁ T₂ ∩ (onLine ∪ Z.simple)), Z.mult ρ := by
+  classical
+  have hw := Z.window_finite T₁ T₂
+  have hu : (Z.window T₁ T₂ ∩ (onLine ∪ Z.simple)).Finite :=
+    hw.subset inter_subset_left
+  unfold Nu
+  rw [finsum_mem_eq_finite_toFinset_sum _ hw,
+    finsum_mem_eq_finite_toFinset_sum _ hu, ← Finset.sum_filter]
+  apply Finset.sum_congr
+  · ext ρ
+    simp only [Finset.mem_filter, Set.Finite.mem_toFinset, mem_inter_iff,
+      mem_union, onLine, simple, mem_ofPred_eq]
+    norm_num
+  · intro ρ hρ
+    simp only [Set.Finite.mem_toFinset] at hρ
+    simp
+
 /-- Off-line multiple zeros in the window, counted with multiplicity. -/
 def Nbad : ℕ :=
   ∑ᶠ ρ ∈ Z.window T₁ T₂,
@@ -134,7 +155,8 @@ theorem Nu_add_N0s_eq_N0_add_Ns :
   by_cases h0 : ρ.re = (2 : ℝ)⁻¹ <;>
     by_cases h1 : Z.mult ρ = 1 <;> simp [h0, h1]
 
-/-- Subtractive spelling of inclusion-exclusion. -/
+/-- Subtractive spelling of inclusion-exclusion.  The natural subtraction is exact,
+since it is obtained from the preceding additive identity. -/
 theorem Nu_eq_N0_add_Ns_sub_N0s :
     Z.Nu T₁ T₂ = Z.N0 T₁ T₂ + Z.Ns T₁ T₂ - Z.N0s T₁ T₂ :=
   Nat.eq_sub_of_add_eq (Z.Nu_add_N0s_eq_N0_add_Ns T₁ T₂)

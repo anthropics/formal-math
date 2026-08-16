@@ -12,8 +12,11 @@ lake build                    # the Zeta23 library (default target: the headline
 lake build Solution && lake env lean comparator/PrintAxioms.lean
 lake build Solution.Multiplicity && lake env lean comparator/PrintAxioms/Multiplicity.lean
 lake build Solution.XiPrime && lake env lean comparator/PrintAxioms/XiPrime.lean
+lake build Challenge.Union Solution.Union && lake env lean comparator/PrintAxioms/Union.lean
+lake env lean comparator/PrintAxioms/UnionConditional.lean
 lake env lean comparator/PrintAxioms/PairCeiling.lean
-lake build Challenge          # the trusted statement files; expect only the deliberate sorry placeholders
+lake build Challenge Challenge.Multiplicity Challenge.XiPrime Challenge.Union
+                                # all trusted statement files; expect only deliberate sorry placeholders
 ```
 
 ## Recorded results at this commit
@@ -94,7 +97,7 @@ Each `Solution` theorem is a short delegation to the corresponding `Zeta23` theo
 
 ## Comparator
 
-The trusted statement files and configurations for the comparator tool are in `comparator/`: `config-multiplicity.json` (12 statements), `config.json` (15 statements), `config-xiprime.json` (6 statements). `comparator/README.md` explains what is trusted (`ChallengeDeps*.lean`, `Challenge*.lean`: Mathlib-only definitions and the statements) and what is not (`Solution*.lean` and the whole library), and how to run the tool, which independently re-checks that every `Solution` theorem has exactly the statement of its `Challenge` namesake and re-verifies the proofs in an external kernel.
+The trusted statement files and configurations for the comparator tool are in `comparator/`: `config-multiplicity.json` (12 statements), `config.json` (15 statements), `config-xiprime.json` (6 statements), and `config-union.json` (4 statements). `comparator/README.md` explains what is trusted (`ChallengeDeps*.lean`, `Challenge*.lean`: Mathlib-only definitions and the statements) and what is not (`Solution*.lean` and the whole library), and how to run the tool, which independently re-checks that every `Solution` theorem has exactly the statement of its `Challenge` namesake and re-verifies the proofs in an external kernel.
 
 ## Amendment: the zeros of ξ′ and the bandwidth-one ceiling
 
@@ -131,3 +134,32 @@ This revision adds `Zeta23/XiPrime/` (comparator topic `XiPrime`, six statements
 ```
 
 * Comparator (statement equality against the trusted files + kernel replay, with the independent `nanoda` kernel enabled): `config.json` — "Your solution is okay!" (343 s); `config-multiplicity.json` — okay (335 s); `config-xiprime.json` — okay (345 s).
+
+## Amendment: the simple-or-on-line endpoint
+
+This revision adds direct-bandwidth-one dyadic and cumulative endpoints (`Zeta23.ThmD.thmD₀_union`, `_cumulative`) and certified decimal corollaries (`thmD₀_union_decimal`, `_cumulative_decimal`). Comparator topic `Union` contains all four statements. The trusted statements spell the union count as the natural-number inclusion-exclusion expression `N0 + Nsimple - N0simple`: `Ncount` and `N0` count with multiplicity, while the simple counts count points. The exact constant is `1 - (cMT⁻¹ - 1)/(3/2 + Real.sqrt 2)`. A kernel-checked Taylor-remainder argument proves that it lies strictly between 0.887620008173 and 0.887620008174. The definitions in `ChallengeDeps.lean` remain unchanged; only the `N0` and `Nsimple` docstrings were updated to record their use by the Union topic.
+
+* `lake build` (default target): completed successfully (9,019 jobs); no errors and no `sorry` warnings from `Zeta23/`.
+* `lake build Challenge.Union Solution.Union`: completed successfully; the only new warnings are the four deliberate `sorry`s in `comparator/Challenge/Union.lean`.
+* Occurrences of the `sorry` token outside comments are now **37**, all in the four trusted challenge files; none under `Zeta23/` and none in any `Solution` file. No `axiom` declaration was added.
+* `lake env lean comparator/PrintAxioms/Union.lean` prints the same permitted basis for all four statements:
+
+```
+'montgomery_taylor_simple_or_on_critical_line_union' depends on axioms: [propext, Classical.choice, Quot.sound]
+'montgomery_taylor_simple_or_on_critical_line_union_cumulative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'montgomery_taylor_simple_or_on_critical_line_union_decimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'montgomery_taylor_simple_or_on_critical_line_union_cumulative_decimal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+```
+
+* `comparator/config-union.json` is supplied for statement equality and independent-kernel replay; no full comparator run for this new topic is recorded in this amendment.
+* `Zeta23.ThmD.UnionConditional` separately proves dyadic and cumulative coefficient
+  `1 - ((cStar 1)⁻¹ - 1)/3 = 0.890833567893…` conclusions from either the explicit factorial
+  ordinary-ordinate collision cap or a nonnegative pair-energy cap. A second Taylor certificate proves this
+  coefficient lies strictly between 0.890833567893 and 0.890833567894. The arithmetic caps are hypotheses,
+  not consequences of `PaperInputs`; `comparator/PrintAxioms/UnionConditional.lean` reports only
+  `[propext, Classical.choice, Quot.sound]` for the certified numerical enclosure and all four
+  conditional declarations.

@@ -19,6 +19,7 @@ import Zeta23.ThmD.UnionConditional
 import Zeta23.ThmE.Mult
 import Zeta23.ThmDE.Mult
 import Zeta23.ZeroSide.TightMult
+import Zeta23.ZeroSide.ZeroConfig
 import Zeta23.XiPrime.Final
 import Zeta23.PairCeiling.CeilingLaw256
 import Zeta23.PairCeiling.Signed

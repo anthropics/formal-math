@@ -192,6 +192,50 @@ points.
   succeeded and both nanoda and Lean's default kernel accepted. As above, this is a complete non-sandboxed integration
   replay, not a sandbox-trust result.
 
+## Amendment: unconditional sextuple simple-critical-line improvement
+
+`Zeta23.ThmD.Sextuple` (modules `Base`, `Interior`, `SpanAsymptotic`, `BlockPenalty`, `Transfer`, `Packing`, `Ledger`,
+`AffineTree`, `Macro/*`, `Certificate`, `Unconditional`, `LineDecimal`) proves, with the six-translate Montgomery--Taylor
+spectral penalty retained with positive sign and the exact rational constants `A₆ = 1/80`, `B₆ = 1094977/5000000000`,
+
+```
+liminf N₀ˢ(T,2T)/N(T,2T) ≥ (6·B_MT − 10π·B₆)/(6 − A₆) = 0.67275562065609…
+```
+
+(`Zeta23.ThmD.Sextuple.thmD₀_sextuple`, cumulative form `thmD₀_sextuple_cumulative`), together with the certified
+strict enclosure `672755620655/10^12 < sextupleLowerConstant` and fixed-coefficient theorems at `0.6727556` and
+`0.672755620655` in dyadic and cumulative windows. The only numerical ingredient is the five-dimensional affine
+inequality `Certificate.sextuple_affine : ∀ g ≥ 0, A₆ ≤ E₆(g) + B₆·Σg`, proved by kernel replay (`decide +kernel`) of
+an exact rational certificate: an audited 56-piece one-dimensional kernel envelope (`Macro/EnvelopeData.lean`, analytic
+soundness in `Macro/Analytic.lean`), 871 exact scalar seam certificates (`Macro/ScalarData.lean`), and a dyadic-16384
+branch-and-bound tree with 99,507 nodes / 49,754 leaves (packed data `Macro/TreeWords.lean`, 2,969 subtree modules
+`Macro/Chunks/`, assembled by the once-proved generic lemma `replayAffineTree_split_step`). The soundness layer
+`AffineTree.lean` is stated for arbitrary cursor streams, so no decoder is load-bearing; out-of-range codes make the
+replay fail. No floating point, `native_decide`, `ofReduceBool`, or external result enters the proof.
+
+* Clean from-scratch `lake build Zeta23.ThmD.Sextuple.LineDecimal` (Lake throttled to ten concurrent builders via
+  `LEAN_NUM_THREADS=10`; Lake 5.0 has no `-j`): completed with exit 0 in 4,397 s wall, 27,935 s CPU, 16.5 GB peak
+  RSS of the Lake process tree; every chunk module type-checks in 4–30 s with 1–3 GB of kernel working memory.
+  The scalar-data module alone takes 108 s and 12.9 GB.
+* `lake build` (default target, which now imports `Zeta23.ThmD.Sextuple.LineDecimal`): 12,057 jobs, success.
+* `lake build Challenge.Sextuple Solution.Sextuple`: success; the only warnings are the four deliberate challenge
+  `sorry`s. `comparator/PrintAxioms/Sextuple.lean` reports only `[propext, Classical.choice, Quot.sound]` for
+  `Certificate.sextuple_affine`, the ledger instantiation, both strict constant lemmas, all six unconditional
+  sextuple theorems, and all four comparator statements.
+* Occurrences of the `sorry` token outside comments are now **45**, all in the six trusted challenge files; none under `Zeta23/` and none
+  in any `Solution` file. No `axiom` declaration was added; a forbidden-construct scan
+  (`sorry|admit|axiom|unsafe|native_decide|ofReduceBool|implemented_by|partial|opaque|extern`) over the 3,013
+  new files is empty.
+* Independent audits (read-only, separate agents): the generic affine-tree layer
+  (`post-anthropic-rh-artifacts/audits/lean24c-affine-tree-audit.md`), the one-dimensional envelope
+  (`lean24c-macro-analytic-audit.md`), the concrete tree/certificate modules
+  (`lean25-concrete-certificate-static-audit.md`, PASS-WITH-NOTES, all notes discharged), and the scalar adapter with an
+  exact-rational re-verification of all 871 certificates (`lean25-scalar-adapter-audit.md`, PASS-WITH-NOTES). The
+  Lean data modules regenerate byte-for-byte from their JSON sources, and the packed tree literals decode back to the
+  serialized streams with matching SHA-256 digests.
+* No Comparator run has been performed for this topic yet; as for the other topics, a run with the version-matched
+  tools is the next independent check.
+
 ## Amendment: conditional simple-critical-line collision and energy endpoints
 
 `Zeta23.ThmD.LineConditional` isolates the exact new arithmetic input required to improve the unconditional

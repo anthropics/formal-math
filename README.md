@@ -53,6 +53,17 @@ Also included, beyond Theorems A–E (each group has its own trusted statement f
   state directly that at least 67.25% are represented by distinct, respectively simple, on-line zeros for all
   sufficiently large heights. In particular this is strictly greater than 67.2%, with no RH or other hypothesis.
 
+* **Sextuple (six-translate) simple-critical-line improvement** (`Zeta23/ThmD/Sextuple/`; comparator topic `Sextuple`, four statements): an unconditional improvement of the Montgomery–Taylor simple-on-line proportion,
+  `liminf N₀ˢ(T,2T)/N(T,2T) ≥ (6·B_MT − 10π·B₆)/(6 − A₆) = 0.67275562065609…` with the exact rational constants `A₆ = 1/80`,
+  `B₆ = 1094977/5000000000`, in dyadic and cumulative windows (`Zeta23.ThmD.Sextuple.thmD₀_sextuple`, `_cumulative`), with fixed-coefficient
+  corollaries at `0.6727556` and `0.672755620655` (`thmD₀_sextuple_6727556`, `thmD₀_sextuple_672755620655`, cumulative forms). The analytic input
+  is a positive spectral penalty for six translates of the Montgomery–Taylor kernel; its only numerical ingredient is the five-dimensional
+  affine inequality `A₆ ≤ E₆(g) + B₆·(g₀+…+g₄)` for all nonnegative gaps (`Zeta23.ThmD.Sextuple.Certificate.sextuple_affine`), proved by
+  kernel replay (`decide +kernel`) of an exact rational branch-and-bound certificate: an audited 56-piece one-dimensional kernel envelope
+  (`Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean`), 871 exact scalar seam certificates, and a 99,507-node dyadic tree with 49,754 leaves split
+  over 2,969 subtree modules (`Macro/Chunks/`) and assembled through one generic split lemma. No floating point, `native_decide`, or external
+  oracle enters the proof; the checker soundness layer (`Zeta23/ThmD/Sextuple/AffineTree.lean`) is stated for arbitrary streams.
+
 * **Conditional simple-critical-line collision/energy seam** (`Zeta23/ThmD/LineConditional.lean`; `#print axioms` audit only): the exact combinatorial inequality
   `N ≤ N₀ˢ + Σγ M(γ)(M(γ)-1)` yields `liminf N₀ˢ/N ≥ 1-κ` from an explicitly assumed factorial
   ordinary-ordinate collision cap `Σγ M(γ)(M(γ)-1) ≤ (κ+o(1))N`. More generally, for a kernel
@@ -127,15 +138,15 @@ lake exe cache get        # fetch prebuilt Mathlib for the pinned commit (a few 
                           # for your platform / offline), just proceed: the next step builds Mathlib from
                           # source, which takes several hours of CPU time but needs nothing else.
 lake build                # builds library Zeta23 (the default target imports exactly the headline modules)
-lake build Solution Solution.Multiplicity Solution.XiPrime Solution.Union Solution.LineDecimal
-lake env lean comparator/PrintAxioms.lean; lake env lean comparator/PrintAxioms/Multiplicity.lean; lake env lean comparator/PrintAxioms/XiPrime.lean; lake env lean comparator/PrintAxioms/Union.lean; lake env lean comparator/PrintAxioms/LineDecimal.lean   # axiom audit of the 15 + 12 + 6 + 4 + 4 unconditional theorems
+lake build Solution Solution.Multiplicity Solution.XiPrime Solution.Union Solution.LineDecimal Solution.Sextuple
+lake env lean comparator/PrintAxioms.lean; lake env lean comparator/PrintAxioms/Multiplicity.lean; lake env lean comparator/PrintAxioms/XiPrime.lean; lake env lean comparator/PrintAxioms/Union.lean; lake env lean comparator/PrintAxioms/LineDecimal.lean; lake env lean comparator/PrintAxioms/Sextuple.lean   # axiom audit of the 15 + 12 + 6 + 4 + 4 + 4 unconditional theorems
 lake env lean comparator/PrintAxioms/UnionConditional.lean
 lake env lean comparator/PrintAxioms/LineConditional.lean
 lake env lean comparator/PrintAxioms/PairCeiling.lean   # axiom audit of the ceiling theorems (no trusted statement file; see AUDIT.md)
 ```
 
 Expected: no errors, no `sorry` warnings from `Zeta23/` or `Solution` (the only `sorry`s in the repository
-are the deliberate ones in the trusted challenge files under `comparator/`), and the 41 trusted unconditional declarations, eleven `LineConditional` audit declarations, four conditional union endpoints, and the
+are the deliberate ones in the trusted challenge files under `comparator/`), and the 45 trusted unconditional declarations, eleven `LineConditional` audit declarations, four conditional union endpoints, and the
 conditional numerical enclosure report only `[propext, Classical.choice, Quot.sound]`.
 For the strongest independent check — statement equality against the trusted challenge plus kernel replay —
 run comparator as described in [`comparator/README.md`](comparator/README.md).

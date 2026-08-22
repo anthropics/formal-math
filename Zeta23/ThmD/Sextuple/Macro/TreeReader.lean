@@ -16,8 +16,8 @@ Physical layout (all values are natural-number literals):
   - tail words are exactly `0`.
   Leaf words are packed `leafBlockSize` per block word, least significant first.
 
-Soundness of the replay never depends on how the streams are read; the layout
-checks below only enforce physical canonicality (exact sizes, ranges, zero padding).
+Soundness of the replay never depends on how the streams are read; physical canonicality
+(exact sizes, ranges, zero padding) is checked separately in `Macro/Layout.lean`.
 -/
 
 noncomputable section
@@ -74,15 +74,6 @@ def packedLeafStream (leafCount : ℕ) (blocks : Array ℕ) :
     match leafWordRead blocks p with
     | none => none
     | some w => decodeLeafWord w
-
-/-- Canonical physical layout of the leaf blocks: exact block count, every block below
-its width, and zero padding in the final partial block. -/
-def packedLeafLayoutCheck (leafCount : ℕ) (blocks : Array ℕ) : Bool :=
-  decide (blocks.size = (leafCount + leafBlockSize - 1) / leafBlockSize ∧
-    (∀ i : Fin blocks.size, blocks[i] < 2 ^ (leafWordBits * leafBlockSize)) ∧
-    (leafCount % leafBlockSize = 0 ∨
-      ∃ blk, blocks[leafCount / leafBlockSize]? = some blk ∧
-        blk < 2 ^ (leafWordBits * (leafCount % leafBlockSize))))
 
 /-- The concrete terminal checker: exact affine tail or the kernel-reducible quadratic leaf. -/
 def concreteLeafCheck : GapBox → AffineLeafPayload (MacroScalarLeaf 56 871) → Bool :=

@@ -59,7 +59,7 @@ theorem thmD₀_sextuple_672755620655 :
     (sub_pos.mpr sextupleLowerConstant_gt_672755620655)
   refine ⟨T₀, fun T hT => ?_⟩
   change q * (Ncount T (2 * T) : ℝ) ≤ N0simple T (2 * T)
-  convert hT₀ T hT using 1 <;> dsimp [q] <;> ring
+  convert hT₀ T hT using 1; dsimp [q]; ring
 
 /-- Optional tighter fixed cumulative statement. -/
 theorem thmD₀_sextuple_cumulative_672755620655 :
@@ -72,7 +72,7 @@ theorem thmD₀_sextuple_cumulative_672755620655 :
     (sub_pos.mpr sextupleLowerConstant_gt_672755620655)
   refine ⟨T₀, fun T hT => ?_⟩
   change q * (Ncount 0 T : ℝ) ≤ N0simple 0 T
-  convert hT₀ T hT using 1 <;> dsimp [q] <;> ring
+  convert hT₀ T hT using 1; dsimp [q]; ring
 
 end Sextuple
 end ThmD

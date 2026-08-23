@@ -1,0 +1,55 @@
+# audit 2026-08-22T23:40:01Z
+## git
+45ff289ad56928d8252fc702a541352705c6d10b
+## feat/rh89-all-formalized-changes
+ M README.md
+ M Zeta23/ThmD/Sextuple/LineDecimal.lean
+ M Zeta23/ThmD/Sextuple/Macro/TreeReader.lean
+ M comparator/README.md
+?? comparator/Challenge/Sextuple.lean
+?? comparator/PrintAxioms/Sextuple.lean
+?? comparator/Solution/Sextuple.lean
+?? comparator/config-sextuple.json
+## axioms (lake env lean AxiomAudit.lean)
+'Zeta23.ThmD.Sextuple.Certificate.sextuple_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.treeCheck' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.rootReplay' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.topologyLayout' depends on axioms: [propext]
+'Zeta23.ThmD.Sextuple.MacroPrototype.leafLayout' depends on axioms: [propext]
+'Zeta23.ThmD.Sextuple.MacroPrototype.concreteLeafCheck_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.fastLeafCheck_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.scalarCertTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.stableMacroTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.zetaSextupleLedgerInterface' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.zetaSextupleLedgerInterface_exactConstants' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.thmD₀_sextuple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.thmD₀_sextuple_cumulative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.sextupleLowerConstant_gt_672755620655' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.thmD₀_sextuple_6727556' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.thmD₀_sextuple_cumulative_6727556' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.thmD₀_sextuple_672755620655' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.thmD₀_sextuple_cumulative_672755620655' depends on axioms: [propext, Classical.choice, Quot.sound]
+axiom-audit exit=0
+## forbidden scan
+forbidden scan clean over 3013 files
+scan exit=0
+## hashes
+61c2adce61a763582895d124eac67f37eb204a5844a19cca62b08a12994cb217  Zeta23/ThmD/Sextuple/Macro/AffineAdapter.lean
+c0757a933f4c2ea2987da6e3d3dbe0d4f804c5c4a88174758e2e7c5ed8370ddf  Zeta23/ThmD/Sextuple/Macro/Analytic.lean
+b714f09932210bb1374e550f3ce747316e477afc19a7fcc476580cefe239aa35  Zeta23/ThmD/Sextuple/Macro/AssemblyStep.lean
+44a3295dbf1eb76b5ae99263d282ac2397bc6b0953c8456632768476f25ee052  Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean
+a81a80f869716c2ef47580d97eb352b1ed7bb386692a772b00d4ee90d58893b9  Zeta23/ThmD/Sextuple/Macro/Layout.lean
+4923c164a493b6a1f89fec68889fbd85bb7d402a5adfef3159c40897080ad4ad  Zeta23/ThmD/Sextuple/Macro/LeafCheck.lean
+1908a966957c61555f16a0ce0c400a9712f199b0a453d9c9ef230c50696f1301  Zeta23/ThmD/Sextuple/Macro/ScalarAdapter.lean
+0b8d55345d942a11af83ca6ff6698c3c562eea360307f6091bd7433bced8bb7f  Zeta23/ThmD/Sextuple/Macro/ScalarData.lean
+70c20df3fdb2da92a0f034ae51b77d09287003c4f318de6ff9e7d5c151aefb08  Zeta23/ThmD/Sextuple/Macro/TreeAssembly.lean
+c97d8d9c5614dbd3f19fe34cd23b25dc813e04ca43885f9b20b5b173c388178e  Zeta23/ThmD/Sextuple/Macro/TreeReader.lean
+8af2f1794f39dfbf36ec676da19c949979a3c93f24a038d0c8aa3c10fb508bd2  Zeta23/ThmD/Sextuple/Macro/TreeWords.lean
+740cae7354fd36d52921ea40136dd15e41992db96c9f947f3e729b3cc90089ed  Zeta23/ThmD/Sextuple/Certificate.lean
+258eb3d4b49ad41e5e9864d44a0b852ec6e55445ca73b150a3a7793cbda8bc7a  Zeta23/ThmD/Sextuple/Unconditional.lean
+da8a8eed4fab41eafb80f6dad6095e5b6fa9060edab11b9d7d79e8d841e2bf8d  Zeta23/ThmD/Sextuple/LineDecimal.lean
+b9846b022742ccf1ed0b8add1a48c0d3d9a9aa288e32b378aeef15d10f03a8aa  Zeta23/ThmD/Sextuple/AxiomAudit.lean
+chunks: 2969 files, concatenated sha256 20bd57f81e81f5edc8b5ab715456da7390097b2fba0be318a6f60e89ebcc1a32
+oleans: 2969

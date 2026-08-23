@@ -227,12 +227,13 @@ replay fail. No floating point, `native_decide`, `ofReduceBool`, or external res
   (`sorry|admit|axiom|unsafe|native_decide|ofReduceBool|implemented_by|partial|opaque|extern`) over the 3,013
   new files is empty.
 * Independent audits (read-only, separate agents): the generic affine-tree layer
-  (`post-anthropic-rh-artifacts/audits/lean24c-affine-tree-audit.md`), the one-dimensional envelope
+  (`certificates/sextuple/audits/lean24c-affine-tree-audit.md`), the one-dimensional envelope
   (`lean24c-macro-analytic-audit.md`), the concrete tree/certificate modules
   (`lean25-concrete-certificate-static-audit.md`, PASS-WITH-NOTES, all notes discharged), and the scalar adapter with an
-  exact-rational re-verification of all 871 certificates (`lean25-scalar-adapter-audit.md`, PASS-WITH-NOTES). The
-  Lean data modules regenerate byte-for-byte from their JSON sources, and the packed tree literals decode back to the
-  serialized streams with matching SHA-256 digests.
+  exact-rational re-verification of all 871 certificates (`lean25-scalar-adapter-audit.md`, PASS-WITH-NOTES), all under
+  `certificates/sextuple/audits/`. The Lean data modules regenerate byte-for-byte from their JSON sources, and the packed
+  tree literals decode back to the serialized streams with matching SHA-256 digests (generators, canonical streams, and
+  logs under `certificates/sextuple/`).
 * No Comparator run has been performed for this topic yet; as for the other topics, a run with the version-matched
   tools is the next independent check.
 

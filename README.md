@@ -63,6 +63,7 @@ Also included, beyond Theorems A–E (each group has its own trusted statement f
   (`Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean`), 871 exact scalar seam certificates, and a 99,507-node dyadic tree with 49,754 leaves split
   over 2,969 subtree modules (`Macro/Chunks/`) and assembled through one generic split lemma. No floating point, `native_decide`, or external
   oracle enters the proof; the checker soundness layer (`Zeta23/ThmD/Sextuple/AffineTree.lean`) is stated for arbitrary streams.
+  Generators, canonical certificate data, independent audits, and build logs are under [`certificates/sextuple/`](certificates/sextuple/).
 
 * **Conditional simple-critical-line collision/energy seam** (`Zeta23/ThmD/LineConditional.lean`; `#print axioms` audit only): the exact combinatorial inequality
   `N ≤ N₀ˢ + Σγ M(γ)(M(γ)-1)` yields `liminf N₀ˢ/N ≥ 1-κ` from an explicitly assumed factorial

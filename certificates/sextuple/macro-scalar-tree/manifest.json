@@ -1,0 +1,37 @@
+{
+  "data_sha256": "961a0281a134382f9c2678cc49487839d2b9c2cbd9df382871f2c7b706552a5b",
+  "elapsed_seconds": 21.20012499950826,
+  "format": {
+    "anchors": "5*u16le denominator16384",
+    "kinds": "u8 0 tail/1 quadratic",
+    "terms": "15*u16le: 0..55 piece; 32768+scalar cert; 65535 zero",
+    "topology": "20 3-bit tokens/u64le, zero padding"
+  },
+  "fuel": 61,
+  "leaves": 49754,
+  "maximum_depth": 60,
+  "quadratic_leaves": 48260,
+  "scalar_certificate_count": 871,
+  "scalar_certificates_sha256": "2d322e4a35f7c61ac093684f39503c76e4ac5ada8dbb9a95892aea1718e302e0",
+  "scalar_term_count": 241702,
+  "smallest_margin": "183119768982144686089776740666084933541/34359738368000000000000000000000000000000000000",
+  "smallest_margin_float": 5.329486709732582e-09,
+  "stream_bytes": {
+    "anchors": 482600,
+    "kinds": 49754,
+    "terms": 1447800,
+    "topology": 39808
+  },
+  "stream_sha256": {
+    "anchors": "d0d27b238a605b21f8a5ca71c9ea9e207aa4a6879b88c69c6bb80ed7c7d25430",
+    "kinds": "e38dbeb9fae10e9c294c93e0cf514d590c2e0914bbbbe605880f06d97e28ffd2",
+    "terms": "f0562b5d478a6fe0ba81e5dead512402a5dd48d1c575fb9b7d5972021fb4373e",
+    "topology": "1b734a3ab6d68bd2d062c183e2888f4e7b1f9bad267ea7d7877f8ca7b7edb643"
+  },
+  "tail_leaves": 1494,
+  "token_count": 99507,
+  "topology_word_count": 4976,
+  "trust_note": "All terminals use exact Fraction checks at stored dyadic-14 anchors.",
+  "visited_nodes": 99507,
+  "zero_term_count": 314461
+}

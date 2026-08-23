@@ -10,6 +10,7 @@ form; the bridge below rewrites `unionProp (cStar 1)` as the challenge's closed
 Mathlib expression. The decimal statements use the kernel-certified enclosure.
 -/
 import ChallengeDeps
+import ChallengeDeps.Union
 import Solution
 import Zeta23.ThmD.UnionDecimal
 

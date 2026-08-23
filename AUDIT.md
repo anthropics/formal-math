@@ -10,7 +10,6 @@ Toolchain: Lean `leanprover/lean4:v4.33.0-rc2`; Mathlib commit `51e6992efd06126d
 lake exe cache get            # optional: prebuilt Mathlib for the pinned commit; otherwise Mathlib builds from source
 lake build                    # the Zeta23 library (default target: the headline modules imported by Zeta23.lean)
 lake build Solution && lake env lean comparator/PrintAxioms.lean
-lake build Solution.Multiplicity && lake env lean comparator/PrintAxioms/Multiplicity.lean
 lake build Solution.XiPrime && lake env lean comparator/PrintAxioms/XiPrime.lean
 lake build Challenge.Union Solution.Union && lake env lean comparator/PrintAxioms/Union.lean
 lake build Challenge.LineDecimal Solution.LineDecimal && lake env lean comparator/PrintAxioms/LineDecimal.lean
@@ -137,6 +136,121 @@ This revision adds `Zeta23/XiPrime/` (comparator topic `XiPrime`, six statements
 
 * Comparator (statement equality against the trusted files + kernel replay, with the independent `nanoda` kernel enabled): `config.json` — "Your solution is okay!" (343 s); `config-multiplicity.json` — okay (335 s); `config-xiprime.json` — okay (345 s).
 
+## Revision note: ChallengeDeps minimized to the statements' dependency closure
+
+This revision removes from `comparator/ChallengeDeps.lean` the four counting functions that no
+challenge statement depends on (`N0`, `Nsimple`, `N0L`, `NsimpleL` — previously kept for
+block-parity with the Zeta23 statement layer) and updates the README notes accordingly.
+`Challenge.lean`, `Challenge/Multiplicity.lean` and `Challenge/XiPrime.lean` are unchanged byte
+for byte, nothing under `Zeta23/` changes, and the removed names were outside every statement's
+dependency closure, so the three comparator configurations are unaffected. The checks above were
+re-run on exactly these sources:
+
+* `lake build` (default target): completed successfully (9016 jobs, counting the Mathlib
+  dependency closure); no errors and no `sorry` warnings.
+* `lake build Solution Solution.Multiplicity Solution.XiPrime Challenge Challenge.Multiplicity
+  Challenge.XiPrime ChallengeDeps ChallengeDeps.XiPrime`: complete, with `declaration uses 'sorry'`
+  warnings **only** in the trusted statement files (`comparator/Challenge.lean`: 15,
+  `comparator/Challenge/Multiplicity.lean`: 12, `comparator/Challenge/XiPrime.lean`: 6). One
+  informational lint surfaced during the Solution build in an untouched library file
+  (`Zeta23/XiPrime/ExplicitFormula/EntryError.lean:121`: "Variable name `hb` is not explicitly
+  referenced"), unrelated to this revision; no other warnings and no errors.
+* Occurrences of the `sorry` token outside comments: **33**, all in the three trusted challenge
+  files (15 + 12 + 6); none under `Zeta23/` and none in any `Solution` file. Declarations of new
+  axioms (`axiom ...`), counted the same way: **0**.
+* `#print axioms`: all 15 + 12 + 6 comparator statements print exactly
+  `[propext, Classical.choice, Quot.sound]`; the PairCeiling list matches the previous revision
+  verbatim, including its two deliberate exceptions (`LawN256_check`: `[propext]`;
+  `LawN256_edge`: no axioms).
+* Comparator (statement equality against the trusted files + axiom audit + kernel replay of the
+  solution): `config.json` — "Your solution is okay!" (220 s); `config-multiplicity.json` — okay
+  (209 s); `config-xiprime.json` — okay (214 s). Run-mode caveats for this revision's runs: executed
+  without the landrun sandbox (a pass-through stub) and with `enable_nanoda` set to false; the
+  comparator binary and a matching `lean4export` were rebuilt under this repository's toolchain
+  (v4.33.0-rc2), which required a one-line update to comparator's `Lean4Checker` dependency for a
+  kernel-API signature change (`Kernel.Environment.addDeclCore` gained a `maxRecDepth` parameter;
+  set to Lean's default, 512). The comparator test suite (11 projects, including every negative
+  case — statement mismatches, illegal axioms, kind mismatches, olean tampering — all correctly
+  rejected) passes under this rebuild. A fully sandboxed run with nanoda enabled, on an era-matched
+  comparator build, remains the authoritative check.
+
+## Revision note: Mathlib-only challenge modules; one statement set at the paper's constants
+
+This revision makes two changes to `comparator/`, neither touching anything under `Zeta23/`.
+
+**The challenge modules import only Mathlib.** Each trusted statement module (`Challenge.lean`,
+`Challenge/XiPrime.lean`) now has `import Mathlib` as its single import, with the definition layer
+(`comparator/ChallengeDeps.lean`, resp. `ChallengeDeps/XiPrime.lean`) inlined character-for-character
+inside an anonymous section reproducing the layer's exact open context, so each trusted file can be
+read completely on its own. The inlined block is the COMPLETE definition layer, not just the
+constants the statements mention: elaborating the layer as a whole keeps the auxiliary lemmas it
+generates (e.g. `N0star._proof_1`, which later definitions reuse) named identically on the challenge
+and solution sides, which the comparator requires. `ChallengeDeps*.lean` continue to exist unchanged
+for the Solution build, and the comparator re-checks that every definition elaborates identically to
+its Solution-side namesake.
+
+**One statement set, at the constants stated in the paper.** `Challenge.lean` now carries seventeen
+statements — Theorems A–E with the multiplicity-aware constants (the previous `Challenge.lean`'s
+Theorem A and optimal-window N₀* statements together with all twelve statements of the previous
+`Challenge/Multiplicity.lean`) — and `config.json` lists exactly these seventeen names. Every kept
+theorem (doc comment and statement) is byte-identical to its counterpart in the previous revision;
+no statement was reworded and no theorem was renamed. The ten Cauchy–Schwarz-form statements of the
+previous `Challenge.lean` (`half_simple_on_critical_line`(`_cumulative`),
+`three_quarters_distinct`(`_cumulative`), `montgomery_taylor_simple_on_critical_line`,
+`montgomery_taylor_distinct`, and the four Dirichlet analogues) are removed as statements: each is
+implied by a kept statement with the same counting function and a strictly larger constant
+(1/2 < 2/3, 3/4 < 5/6, 2c₁* − 1 < 2 − 1/c₁*, c₁* < (3 − 1/c₁*)/2), so nothing claimed by the previous
+revision is lost. The underlying Cauchy–Schwarz theorems remain proved in the library
+(`Zeta23/Final.lean`, `Zeta23/ThmD/Final.lean`, `Zeta23/ThmE/Final.lean`, `Zeta23/ThmDE/Final.lean`).
+The files `Challenge/Multiplicity.lean`, `Solution/Multiplicity.lean`, `config-multiplicity.json` and
+`PrintAxioms/Multiplicity.lean` are removed; `Solution.lean` proves all seventeen statements (its
+Zeta23 imports are the union of the two previous solution modules'); the XiPrime topic is unchanged.
+
+The checks above were re-run on exactly these sources:
+
+* `lake build` (default target): completed successfully (9016 jobs, counting the Mathlib
+  dependency closure); no errors and no `sorry` warnings.
+* `lake build ChallengeDeps ChallengeDeps.XiPrime Challenge Challenge.XiPrime` and `lake build
+  Solution Solution.XiPrime`: complete, with `declaration uses 'sorry'` warnings **only** in the two
+  trusted statement files (`comparator/Challenge.lean`: 17, `comparator/Challenge/XiPrime.lean`: 6); informational deprecation warnings surfaced in untouched library files (same pinned Mathlib, unrelated to this revision), and no errors.
+* Occurrences of the `sorry` token outside comments: **23**, all in the two trusted challenge files
+  (17 + 6); none under `Zeta23/` and none in any `Solution` file. Declarations of new axioms
+  (`axiom ...`), counted the same way: **0**.
+* Statement identity across the consolidation, checked mechanically: each of the seventeen theorem
+  blocks (doc comment + statement) in the merged `Challenge.lean` is byte-identical to its
+  counterpart in the previous revision; the inlined definition section is byte-identical; the ten
+  removed names appear nowhere.
+* `#print axioms`: all 17 + 6 comparator statements print exactly
+  `[propext, Classical.choice, Quot.sound]`; the PairCeiling list matches the previous revision
+  verbatim, including its two deliberate exceptions (`LawN256_check`: `[propext]`;
+  `LawN256_edge`: no axioms).
+* Comparator (statement equality against the trusted file + axiom audit + kernel replay of the
+  solution; comparator built from its v4.33.0-rc2 tag with a matching `lean4export`, both native to
+  this repository's toolchain; real `landrun` sandbox; `nanoda` second kernel enabled; the repo's
+  configs unmodified; Challenge/Solution artifacts scrubbed first so comparator builds both in its
+  own sandbox): `config.json` (17 statements) — "Your solution is okay!" (299 s);
+  `config-xiprime.json` — okay (301 s).
+* Independent re-run by a second party on a separate machine (warm Mathlib; the actual comparator
+  binary from the mixed-era trial kit with fake landrun and nanoda off, Lean default-kernel replay
+  on): both configurations "Your solution is okay!", exit 0; all 23 `#print axioms` lines
+  standard-three; per-name theorem-type comparison against the previous revision identical for all
+  seventeen statements.
+
+## Revision note: comment simplification; arXiv citation
+
+Comment- and README-only; no statement, definition, or import bytes change (checked mechanically:
+the Lean sources with all comments stripped are byte-identical before and after this revision).
+`comparator/Challenge.lean`'s module header and two Theorem-D doc comments drop the
+Cauchy–Schwarz-constant mentions (those forms are no longer stated in this file), the header is
+tightened, and the quoted paper title — with the README's title and citation — is updated to the
+arXiv version, "More than two thirds of the zeros of the Riemann zeta function are simple and on
+the critical line" (arXiv:2608.13637). The cMT docstring edit is applied identically in
+`comparator/ChallengeDeps.lean`, keeping the inlined definition layer a character-for-character
+copy. Because the comment-stripped sources are byte-identical to the previous revision, that
+revision's recorded results — the build, `#print axioms` (23/23 standard-three) and the comparator
+runs on both configurations — carry over to these sources unchanged; the pull request that carried
+this revision additionally records an independent warm-cache build of them.
+
 ## Amendment: the simple-or-on-line endpoint
 
 This revision adds direct-bandwidth-one dyadic and cumulative endpoints (`Zeta23.ThmD.thmD₀_union`, `_cumulative`) and certified decimal corollaries (`thmD₀_union_decimal`, `_cumulative_decimal`). Comparator topic `Union` contains all four statements. The trusted statements spell the union count as the natural-number inclusion-exclusion expression `N0 + Nsimple - N0simple`: `Ncount` and `N0` count with multiplicity, while the simple counts count points. The exact constant is `1 - (cMT⁻¹ - 1)/(3/2 + Real.sqrt 2)`. A kernel-checked Taylor-remainder argument proves that it lies strictly between 0.887620008173 and 0.887620008174. The definitions in `ChallengeDeps.lean` remain unchanged; only the `N0` and `Nsimple` docstrings were updated to record their use by the Union topic.
@@ -261,3 +375,31 @@ Comparator challenge topic.
 * `comparator/PrintAxioms/LineConditional.lean` audits the pointwise counting theorem, both abstract certificates,
   the four generic dyadic/cumulative endpoints, and the four fixed-70% endpoints. All eleven report only
   `[propext, Classical.choice, Quot.sound]`.
+
+## Revision note: fork branch merged with upstream `main` (comparator restructuring)
+
+This revision merges upstream's "Mathlib-only challenge modules; one statement set at the paper's constants"
+and "ChallengeDeps minimized" revisions into the fork branch carrying the `Union`, `LineDecimal`, and `Sextuple`
+topics. Nothing under `Zeta23/` changed in the merge. The three fork topics were brought to the upstream
+convention: each of `Challenge/Union.lean`, `Challenge/LineDecimal.lean`, `Challenge/Sextuple.lean` now has
+`import Mathlib` as its only import, with the complete definition layer of `ChallengeDeps.lean` inlined
+character-for-character (the same block, in the same anonymous section, as in `Challenge.lean`). The two counting
+functions the Union statements need and upstream removed from `ChallengeDeps.lean` (`N0`, `Nsimple`) now live in
+`comparator/ChallengeDeps/Union.lean` (verbatim from `Zeta23/Statement.lean` §1), imported by `Solution/Union.lean`
+and inlined as a second block in `Challenge/Union.lean`. No statement was reworded or renamed.
+`formalization.yaml` lists the twelve fork statements under `main_results`.
+
+* `lake build Zeta23 ChallengeDeps ChallengeDeps.XiPrime ChallengeDeps.Union Challenge Solution Challenge.XiPrime
+  Solution.XiPrime Challenge.Union Solution.Union Challenge.LineDecimal Solution.LineDecimal Challenge.Sextuple
+  Solution.Sextuple`: completed successfully (12,073 jobs); `declaration uses 'sorry'` warnings **only** in the five
+  trusted challenge files (`Challenge.lean`: 17, `Challenge/XiPrime.lean`: 6, `Challenge/Union.lean`: 4,
+  `Challenge/LineDecimal.lean`: 4, `Challenge/Sextuple.lean`: 4) — 35 in total.
+* Occurrences of the `sorry` token outside comments: **35**, all in those five files; none under `Zeta23/` and none in
+  any `Solution` file. No `axiom` declaration was added by the fork; the only `axiom` lines in the tree are the two
+  pre-existing ones in the ported tactic test section of `Zeta23/FromPNTPlus/Tactic/AdditiveCombination.lean`
+  (identical to upstream), which no theorem depends on.
+* `#print axioms` over all eight audit files (`PrintAxioms.lean`, `XiPrime`, `Union`, `LineDecimal`, `Sextuple`,
+  `UnionConditional`, `LineConditional`, `PairCeiling`): 79 declarations, 77 exactly `[propext, Classical.choice,
+  Quot.sound]`, and the two deliberate PairCeiling exceptions recorded above (`LawN256_check`: `[propext]`;
+  `LawN256_edge`: no axioms).
+* Comparator runs for the fork topics under the new Mathlib-only challenge modules have not been performed yet.

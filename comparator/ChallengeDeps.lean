@@ -7,18 +7,21 @@ SPDX-License-Identifier: Apache-2.0
 ChallengeDeps.lean — the TRUSTED definition layer for the comparator challenge
 (see comparator/README.md).
 
-Everything the zeta and Dirichlet challenge statements mention is defined HERE, from Mathlib alone:
+Everything the challenge statements in Challenge.lean mention is defined HERE, from Mathlib alone:
 the nontrivial zeros of Mathlib's `riemannZeta` (resp. of Mathlib's `DirichletCharacter.LFunction χ`),
 their multiplicity via Mathlib's `analyticOrderAt`, the standard counting functions of the
 critical-line literature, and the Montgomery–Taylor constant c₁* of Theorem D, written out in
 closed form. This module imports NOTHING from Zeta23/. A reader auditing WHAT is claimed needs to
-read only this file and the applicable challenge file (trusting Mathlib and the Lean kernel); the proofs
-live in the Zeta23 library and are checked against these statements by github.com/leanprover/comparator
-(statement equality + axiom audit + kernel replay), via the corresponding Solution module.
+read only this file and Challenge.lean (trusting Mathlib and the Lean kernel); the proofs live in the
+Zeta23 library and are checked against these statements by github.com/leanprover/comparator
+(statement equality + axiom audit + kernel replay), via Solution.lean.
 
-Every `def` line of §1 is character-for-character the one in Zeta23/Statement.lean §1, and every `def`
-of §2 the one in Zeta23/ThmE/Statement.lean §1 (docstrings are reworded for a reader without the rest
-of the repository). The copies live
+This file contains exactly the definitions the challenge statements depend on (the statements'
+constants and what their definitions unfold to) — if a definition is not needed by a statement, it is
+not here. Each `def` line of §1 is character-for-character the corresponding one in
+Zeta23/Statement.lean §1, and each of §2 the one in Zeta23/ThmE/Statement.lean §1 (docstrings are
+reworded for a reader without the rest of the repository; §3's cMT is the paper's displayed closed
+form, proved equal to the library's `Zeta23.ThmD.cStar 1` on the solution side). The copies live
 in the root namespace (Zeta23's live in `Zeta23` / `Zeta23.ThmE`) so that Solution.lean can import both this
 module and the Zeta23 development without name clashes.
 -/
@@ -55,10 +58,6 @@ def Ncount (T₁ T₂ : ℝ) : ℕ := ∑ᶠ ρ ∈ zerosIn T₁ T₂, zeroMult 
 once. -/
 def Ndist (T₁ T₂ : ℝ) : ℕ := (zerosIn T₁ T₂).ncard
 
-/-- N₀(T₁,T₂): the zeros ON the critical line Re ρ = 1/2 with T₁ < Im ρ ≤ T₂, with multiplicity.
-(Used by the simple-or-on-line statements in `Challenge/Union.lean`.) -/
-def N0 (T₁ T₂ : ℝ) : ℕ := ∑ᶠ ρ ∈ zerosIn T₁ T₂ ∩ {ρ | ρ.re = 1 / 2}, zeroMult ρ
-
 /-- N₀*(T₁,T₂): the number of DISTINCT zeros ON the critical line Re ρ = 1/2 with
 T₁ < Im ρ ≤ T₂. This is what Theorems A and D bound from below. -/
 def N0star (T₁ T₂ : ℝ) : ℕ := (zerosIn T₁ T₂ ∩ {ρ | ρ.re = 1 / 2}).ncard
@@ -66,10 +65,6 @@ def N0star (T₁ T₂ : ℝ) : ℕ := (zerosIn T₁ T₂ ∩ {ρ | ρ.re = 1 / 2
 /-- N₀ˢ(T₁,T₂): the number of SIMPLE zeros (multiplicity exactly 1) ON the critical line with
 T₁ < Im ρ ≤ T₂. -/
 def N0simple (T₁ T₂ : ℝ) : ℕ := (zerosIn T₁ T₂ ∩ {ρ | ρ.re = 1 / 2} ∩ {ρ | zeroMult ρ = 1}).ncard
-
-/-- Nˢ(T₁,T₂): the number of simple zeros with T₁ < Im ρ ≤ T₂ (anywhere in the strip).
-(Used by the simple-or-on-line statements in `Challenge/Union.lean`.) -/
-def Nsimple (T₁ T₂ : ℝ) : ℕ := (zerosIn T₁ T₂ ∩ {ρ | zeroMult ρ = 1}).ncard
 
 /-! ## 2. The same for a Dirichlet L-function L(s,χ) (Theorem E)
 
@@ -93,15 +88,11 @@ def zerosInL (T₁ T₂ : ℝ) : Set ℂ := {ρ | IsNontrivialZeroL χ ρ ∧ T�
 def NcountL (T₁ T₂ : ℝ) : ℕ := ∑ᶠ ρ ∈ zerosInL χ T₁ T₂, zeroMultL χ ρ
 /-- N_{d,χ}(T₁,T₂): distinct zeros. -/
 def NdistL (T₁ T₂ : ℝ) : ℕ := (zerosInL χ T₁ T₂).ncard
-/-- N_{0,χ}(T₁,T₂): on the line, with multiplicity. (Not used by the statements; kept for parity.) -/
-def N0L (T₁ T₂ : ℝ) : ℕ := ∑ᶠ ρ ∈ zerosInL χ T₁ T₂ ∩ {ρ | ρ.re = 1 / 2}, zeroMultL χ ρ
 /-- N*_{0,χ}(T₁,T₂): on the line, distinct. -/
 def N0starL (T₁ T₂ : ℝ) : ℕ := (zerosInL χ T₁ T₂ ∩ {ρ | ρ.re = 1 / 2}).ncard
 /-- N^s_{0,χ}(T₁,T₂): on the line and simple. -/
 def N0simpleL (T₁ T₂ : ℝ) : ℕ :=
   (zerosInL χ T₁ T₂ ∩ {ρ | ρ.re = 1 / 2} ∩ {ρ | zeroMultL χ ρ = 1}).ncard
-/-- N^s_χ(T₁,T₂): simple zeros. (Not used by the statements; kept for parity.) -/
-def NsimpleL (T₁ T₂ : ℝ) : ℕ := (zerosInL χ T₁ T₂ ∩ {ρ | zeroMultL χ ρ = 1}).ncard
 
 end Dirichlet
 
@@ -110,8 +101,8 @@ end Dirichlet
 /-- c₁* := √2·tan ϑ / (1 + ϑ·tan ϑ) at ϑ = 1/√2 — the paper's closed form for the optimal-window
 constant c*_λ = √2·tan ϑ/(1 + ϑ·tan ϑ), ϑ = λ/√2, at λ = 1. Numerically c₁* = 0.7532960…
 (= 2·tan(1/√2)/(√2 + tan(1/√2)); 1/c₁* = 1/2 + 2^{-1/2}·cot(2^{-1/2}) is the Montgomery–Taylor
-constant). Theorem D's three proportions are 2 − 1/c₁* = 0.67250…, 2c₁* − 1 = 0.50659… and
-c₁* = 0.75329…; the decimals are NOT part of the formal statements. -/
+constant). Theorem D's proportions here are 2 − 1/c₁* = 0.67250… (for N₀* and N₀ˢ) and
+(3 − 1/c₁*)/2 = 0.83625… (for N_d); the decimals are NOT part of the formal statements. -/
 def cMT : ℝ :=
   Real.sqrt 2 * Real.tan (1 / Real.sqrt 2) / (1 + 1 / Real.sqrt 2 * Real.tan (1 / Real.sqrt 2))
 

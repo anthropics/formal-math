@@ -1,0 +1,278 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+project:
+  name: Zeta23 — more than two-thirds of the nontrivial zeros of the Riemann zeta function are simple
+    and on the critical line
+  authors:
+  - Claude
+  responsible_maintainers:
+  - Ralph Furman
+  license: Apache-2.0
+sources:
+- title: More than two thirds of the zeros of the Riemann zeta function are simple and on the critical
+    line
+  authors:
+  - Levent Alpöge
+  - Ralph Furman
+  id: arXiv:2608.13637
+  type: article
+  location: Theorems A and B (zeta and Dirichlet L-function forms) and Remark 7.1 (zeros of xi')
+  relationship: formalizes
+  author_endorsement: participated
+related_formalizations:
+- id: https://github.com/AlexKontorovich/PrimeNumberTheoremAnd
+  relationship: adapts
+  note: Files under Zeta23/FromPNTPlus/ are derived from PrimeNumberTheoremAnd with local modifications;
+    each carries its upstream notice. See NOTICE.
+classification:
+  arxiv:
+  - math.NT
+  msc2020:
+  - 11M06
+  - 11M26
+  - 15A42
+status:
+  scope: 'Complete, sorry-free Lean 4 proofs over Mathlib alone (axioms propext/Classical.choice/Quot.sound)
+    of the paper''s headline theorems: 23 comparator-checked statements in two Mathlib-only challenge
+    modules — Challenge.lean (17 statements: Theorems A and B at the constants stated in the paper, including
+    the Montgomery-Taylor-window forms and the Dirichlet analogues, with their on-the-line companion statements)
+    and Challenge/XiPrime.lean (6 statements on the zeros of xi''); plus three further Mathlib-only challenge modules
+    added in this fork: Challenge/Union.lean (4 simple-or-on-line inclusion-exclusion endpoints), Challenge/LineDecimal.lean
+    (4 certified-decimal 0.672500703679 endpoints) and Challenge/Sextuple.lean (4 statements of the unconditional sextuple
+    improvement 0.6727556 of the simple critical-line proportion, whose five-dimensional numerical certificate is replayed
+    in the kernel).'
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms:
+  - propext
+  - Classical.choice
+  - Quot.sound
+  main_results:
+  - declaration: two_thirds_on_critical_line
+    file: comparator/Challenge.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config.json
+    literature_dependencies: []
+  - declaration: two_thirds_simple_on_critical_line
+    file: comparator/Challenge.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config.json
+    literature_dependencies: []
+  - declaration: five_sixths_distinct
+    file: comparator/Challenge.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config.json
+    literature_dependencies: []
+  - declaration: montgomery_taylor_simple_on_critical_line_mult
+    file: comparator/Challenge.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config.json
+    literature_dependencies: []
+  - declaration: dirichlet_two_thirds_simple_on_critical_line
+    file: comparator/Challenge.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config.json
+    literature_dependencies: []
+  - declaration: xiPrime_simple_zeros_on_critical_line
+    file: comparator/Challenge/XiPrime.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config-xiprime.json
+    literature_dependencies: []
+automation:
+  - declaration: montgomery_taylor_simple_or_on_critical_line_union
+    file: comparator/Challenge/Union.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config-union.json
+    literature_dependencies: []
+  - declaration: montgomery_taylor_simple_or_on_critical_line_union_cumulative
+    file: comparator/Challenge/Union.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config-union.json
+    literature_dependencies: []
+  - declaration: montgomery_taylor_simple_or_on_critical_line_union_decimal
+    file: comparator/Challenge/Union.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config-union.json
+    literature_dependencies: []
+  - declaration: montgomery_taylor_simple_or_on_critical_line_union_cumulative_decimal
+    file: comparator/Challenge/Union.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config-union.json
+    literature_dependencies: []
+  - declaration: montgomery_taylor_on_critical_line_decimal
+    file: comparator/Challenge/LineDecimal.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config-line-decimal.json
+    literature_dependencies: []
+  - declaration: montgomery_taylor_on_critical_line_cumulative_decimal
+    file: comparator/Challenge/LineDecimal.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config-line-decimal.json
+    literature_dependencies: []
+  - declaration: montgomery_taylor_simple_on_critical_line_decimal
+    file: comparator/Challenge/LineDecimal.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config-line-decimal.json
+    literature_dependencies: []
+  - declaration: montgomery_taylor_simple_on_critical_line_cumulative_decimal
+    file: comparator/Challenge/LineDecimal.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config-line-decimal.json
+    literature_dependencies: []
+  - declaration: sextuple_simple_on_critical_line_decimal
+    file: comparator/Challenge/Sextuple.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config-sextuple.json
+    literature_dependencies: []
+  - declaration: sextuple_simple_on_critical_line_cumulative_decimal
+    file: comparator/Challenge/Sextuple.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config-sextuple.json
+    literature_dependencies: []
+  - declaration: sextuple_simple_on_critical_line_6727556
+    file: comparator/Challenge/Sextuple.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config-sextuple.json
+    literature_dependencies: []
+  - declaration: sextuple_simple_on_critical_line_cumulative_6727556
+    file: comparator/Challenge/Sextuple.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator/config-sextuple.json
+    literature_dependencies: []
+  methods:
+  - method: autonomous
+    models:
+    - Claude
+    framework: ''
+    prompting_notes: ''
+  spend_usd: ''
+  notes: 'The formalization was entirely automated: Claude produced all Lean code. Humans directed the
+    project and reviewed its outputs; see the project blog post and AUDIT.md.'
+fidelity:
+  divergences: 'liminf bounds are rendered as: for all eps > 0 there is T0 such that for all T >= T0,
+    (c - eps)*N <= X; the xi-prime proportion statements instead carry fixed decimal constants (no eps).
+    ''Nontrivial zero'' is rendered as a zero with 0 < Re rho < 1. Windows are T1 < Im rho <= T2 (positive
+    ordinates). Left sides count with multiplicity; N0*, N0^s, N_d count distinct points (the strong direction).
+    The repository states the theorems at the paper''s constants; the weaker Cauchy-Schwarz-form variants
+    that earlier revisions also certified are implied by these and are no longer separately stated. See
+    comparator/README.md ''Reading notes''.'
+review:
+  status: author-verified
+  reviewers:
+  - Ralph Furman
+  notes: 'Ralph Furman (paper author) read the main challenge module (comparator/Challenge.lean, the 17
+    statements and their definition layer) and confirmed it matches the paper; the xi-prime challenge
+    module is agent-reviewed. Recorded in AUDIT.md at the pinned commit: #print axioms checks for all
+    23 statements (exactly [propext, Classical.choice, Quot.sound]) and comparator + NanoDa kernel runs
+    for both configurations. The underlying paper was reviewed and endorsed by a human analytic number
+    theorist, who also produced an independent condensed proof of the main result; journal peer review
+    is pending. The Lean statements were additionally cold-read by Claude instances with no prior project
+    context.'
+alignment:
+  namespace: ''
+  statements:
+  - source: 'Theorem A(i) (arXiv:2608.13637): at least 2/3 of the zeros are simple and on the critical
+      line; Montgomery-Taylor window improves the constant to 2 - 1/c_MT = 0.67250...'
+    lean: two_thirds_simple_on_critical_line (+_cumulative); montgomery_taylor_simple_on_critical_line_mult
+      (+_cumulative)
+    module: Challenge
+    status: proved
+  - source: 'Theorem A(ii): at least 5/6 of the zeros are distinct; Montgomery-Taylor window improves
+      to (3 - 1/c_MT)/2 = 0.83625...'
+    lean: five_sixths_distinct (+_cumulative); montgomery_taylor_distinct_mult (+_cumulative)
+    module: Challenge
+    status: proved
+  - source: 'Theorem B: Theorem A holds verbatim for L(s, chi), chi a fixed primitive Dirichlet character
+      (formalized for modulus q > 1)'
+    lean: dirichlet_two_thirds_simple_on_critical_line; dirichlet_five_sixths_distinct; dirichlet_montgomery_taylor_simple_on_critical_line_mult;
+      dirichlet_montgomery_taylor_distinct_mult
+    module: Challenge
+    status: proved
+  - source: 'Companions recorded in the paper''s Appendix A: the on-the-line counts (N_0* >= N_0^s), at
+      2/3 and at the Montgomery-Taylor constant, for zeta and L(s, chi)'
+    lean: two_thirds_on_critical_line (+_cumulative); montgomery_taylor_on_critical_line; dirichlet_two_thirds_on_critical_line;
+      dirichlet_montgomery_taylor_on_critical_line
+    module: Challenge
+    status: proved
+  - source: 'Remark 7.1 (Zeros of xi''): at least 85.838% simple and on the critical line and 92.919%
+      distinct (flat window); 86.864% and 93.432% (quartic window). The row also includes two supporting
+      statements of the formalization not stated in the paper: every zero of xi'' lies in the open critical
+      strip, and Re(xi''/xi) > 0 on Re s >= 1'
+    lean: xiPrime_simple_zeros_on_critical_line (+_cumulative); xiPrime_simple_zeros_on_critical_line_quartic
+      (+_cumulative); xiPrime_zeros_in_open_critical_strip; xiPrime_over_xi_re_pos
+    module: Challenge.XiPrime
+    status: proved
+acknowledgements: The Lean formalisation was orchestrated by Eric Easley (paper Acknowledgments). Files
+  under Zeta23/FromPNTPlus/ derive from the PrimeNumberTheoremAnd project (see NOTICE). Built on Mathlib.

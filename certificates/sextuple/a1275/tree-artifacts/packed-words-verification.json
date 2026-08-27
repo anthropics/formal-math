@@ -1,0 +1,15 @@
+{
+ "leaf_block_words": 754,
+ "leaf_count": 192984,
+ "quadratic_leaves": 191474,
+ "status": "PASS",
+ "stream_sha256": {
+  "anchors": "e6dbe9ca333f8757b5ba39ab62fd902e02662b5e412ad688d0890e7664677394",
+  "kinds": "a2df050738a1bc4052da743ea26a8e8aa56373b7bcd23ac9b6aed3bfa5fd0aab",
+  "terms": "0f8c90f474e75f9dd41d29b4e2a2df77883250c8a1882258e62b6c7f28d6748f",
+  "topology": "cc1dc05c152a218d4a44466d102db703a60e819cd83eccaf4196fed19ba8352b"
+ },
+ "token_count": 385967,
+ "topology_blocks": 138,
+ "topology_words": 19299
+}

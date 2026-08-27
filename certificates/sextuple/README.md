@@ -23,6 +23,7 @@ re-run every external consistency check.
 | `tools/forbidden_scan.sh`, `tools/run_audits.sh` | forbidden-construct scan and `#print axioms` audit runner |
 | `regen/` | byte-for-byte regeneration of the envelope and scalar data modules from the JSON sources (see `regen/README.md`; the in-tree modules differ from the regenerated prototype files only in their `import` lines) |
 | `logs/` | durable logs: clean from-scratch rebuild of the chain, scalar-data rebuild, comparator topic build, `#print axioms` outputs, audit report, scalar re-verification report |
+| `a1275/` | the refined `A = 51/4000` certificate (`Zeta23/ThmD/Sextuple/A1275/`): canonical streams, refinement catalog, generators, two-level word tools, batched chunk build driver, manifests and independent audits — see `a1275/README.md` |
 
 Regeneration / re-verification (Python 3, standard library only; run from this directory):
 

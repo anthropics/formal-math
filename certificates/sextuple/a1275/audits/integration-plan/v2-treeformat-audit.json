@@ -1,0 +1,142 @@
+{
+  "accepted_resolved_layout": {
+    "banned_modules_absent": true,
+    "olean_sha256": "7267932cf8f6b0a163bb5355832719e782c5b3c4c9b6351964c4011d287a405d",
+    "source_sha256": "4146c8be0788f3b5adbade43f322ba34960af93f4775730e1d271cbf7f2efc7c"
+  },
+  "accepted_source_deltas": {
+    "ImprovedCatalog_after_import_only": {
+      "sha256": "f3d6b6b69df120c390628b3cbccc79b343c68961c13138f9b728ae886ff89a7b"
+    },
+    "ImprovedCatalog_before": {
+      "sha256": "04f0f5215abfa69fd00e83e25d7db6ce53aabdfa2c44c5b87019d60fd4d86652"
+    },
+    "ImprovedLayout_unchanged": {
+      "sha256": "c8d6874294bb87cc6309d372f2a3c5f8b08a9dd63df7b849f65045eda340fb2f"
+    },
+    "ImprovedTreeWords_after_import_only": {
+      "body_after_imports_identical": true,
+      "bytes": 411233,
+      "sha256": "ca120e6bcd30931ec47187234942cf2786c08072e11d4b3a9f58585c0ad54e3e"
+    },
+    "ImprovedTreeWords_before": {
+      "bytes": 411239,
+      "sha256": "0cfb2ab70bff047ab462e59353f8ab7527ddd36fadbf0e571e34b9f8a43add39"
+    },
+    "Layout_after": {
+      "bytes": 3798,
+      "only_TreeWords_to_TreeFormat_import": true,
+      "sha256": "4146c8be0788f3b5adbade43f322ba34960af93f4775730e1d271cbf7f2efc7c"
+    },
+    "Layout_before": {
+      "bytes": 3797,
+      "sha256": "a81a80f869716c2ef47580d97eb352b1ed7bb386692a772b00d4ee90d58893b9"
+    },
+    "ScalarData_extracted_explicit_Fin": {
+      "explicit_Fin": 1932,
+      "sha256": "aa43ed4fc1598611b6537076a8e53a7e36fed05c0aeb935d0f6ccbbe1f50153e"
+    },
+    "StableCatalog": {
+      "sha256": "a1a1c09382864916874d5445763793c24b0431e68ee918ad76f8cb8d2cbcc527",
+      "stable_declaration_block_exact": true
+    },
+    "TreeFormat_new": {
+      "bytes": 297,
+      "declarations": [
+        "leafWordBits : Nat := 321",
+        "leafBlockSize : Nat := 256"
+      ],
+      "extra_declarations": false,
+      "imports": [
+        "Zeta23.ThmD.Sextuple.AffineTree"
+      ],
+      "sha256": "6fccdd766b799e520969a71ee8194c3811f714f90f2e52b751f562968ff526cc"
+    },
+    "TreeReader_after": {
+      "bytes": 3897,
+      "only_prepend_TreeFormat_import_and_delete_moved_block": true,
+      "sha256": "83a2d50fc8dce74c30dd74b22e5a7ec07805d7bc6f8aa774928113ccab6269e6"
+    },
+    "TreeReader_before": {
+      "bytes": 3995,
+      "sha256": "c97d8d9c5614dbd3f19fe34cd23b25dc813e04ca43885f9b20b5b173c388178e"
+    }
+  },
+  "final_gates_pending": [
+    "freeze final qualified source/olean hashes",
+    "calibration and adversarial chunks",
+    "all 8953 chunks and 8952 assembly nodes",
+    "rootReplay",
+    "recursive source plus Lean --deps/--src-deps whole-certificate closure",
+    "independent final tree PASS"
+  ],
+  "generated_axis_admission": {
+    "assembly_node_Fin5": 8952,
+    "chunk_path_Fin5": 397456,
+    "one_past_5_must_fail": true,
+    "total": 406408
+  },
+  "immutable_v1": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/audits/lean25-a1275-tree-audit/ARCHITECTURE-ACCEPTANCE.md",
+    "sha256": "18e023b1ceafd677cfa2e9dc849f68181572bf24eb947b17c5ae8cc14a3d858f"
+  },
+  "independent_audit": {
+    "axiom_report_sha256": "543326e5d6f1c099735c929ded25e5128aaba43701604735e37e89ee0c004258",
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-baseline-fin-hardening/AUDIT-REPORT.md",
+    "resolved_closure_report_sha256": "81706d5ef703ce0d304f6d19759730049fcfa2b00e26a55c84d4a93971de67d9",
+    "sha256": "819f1466155510f3ce54c0e2c224bd56b94e379efe3b1fad43cbcb1a78e40e03",
+    "source_closure_report_sha256": "d7f8ef49d522d1b8a3de03277e21b5a4f25ee88a5cc21ad030afae9e037230d2",
+    "verdict": "PASS / CONDITIONAL on absent full owner chunks"
+  },
+  "moved_declarations": {
+    "TreeFormat_block_sha256": "5a3cff17f78a7690f2e25262525de1a6329dbf4af288f2d6fc0ea19c125b1b53",
+    "baseline_block_sha256": "5a3cff17f78a7690f2e25262525de1a6329dbf4af288f2d6fc0ea19c125b1b53",
+    "byte_equal": true
+  },
+  "planned_qualified_candidates": {
+    "Catalog_sha256": "aebd5f60f8f2f137e6b8181d567cf371e375ce01a51ec3aeb7d58499f24920ee",
+    "ChunkCalibration_sha256": "cb6fbc57c3e7b3e29cc938b40db6140055bfff83a8c070f6ec95de43aef71442",
+    "Layout_sha256": "77e3152d78fc4871bb790e9775f7f02e256265975cd84b1cfdb857c6fa3ca911",
+    "ScalarData_sha256": "26c7d828f4347e5827efc822d49f61d24403a65590078d6d873fa03a9fa37b01",
+    "TreeReader_sha256": "6ea9b96db3ca92c96e43bf1c5eee9311c391cfea40cd7383e9ccf4aae9187752",
+    "TreeWords_sha256": "1407a17502b086957d5af7d2c1f24fde0897b93c18adb0903dbbbac85c33da27",
+    "qualification_only_body_invariance_required": true,
+    "target_prefix": "Zeta23.ThmD.Sextuple.A1275"
+  },
+  "schema": 2,
+  "selected_gate": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/audits/lean25-a1275-tree-audit/ARCHITECTURE-ACCEPTANCE-v2.md",
+    "sha256": "29df7d74599ed437b685a3bc476f3dd53eb6648ddfc3b0273827b70198334a93"
+  },
+  "status": "PASS_PRE_OWNER_V2_FULL_CHUNKS_PENDING",
+  "supplemental_local_probes": {
+    "DirectImprovedTreeWords": {
+      "exit_code": 0
+    },
+    "Layout_exact_source": {
+      "exit_code": 0
+    },
+    "TreeFormatImprovedLayout": {
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "exit_code": 0
+    },
+    "TreeFormat_API": {
+      "exit_code": 0,
+      "reduced_values": [
+        321,
+        256
+      ]
+    },
+    "TreeFormat_scaffold": {
+      "exit_code": 0,
+      "note": "extra comments only; independent exact source is authoritative",
+      "source_sha256": "fc15fa4d8a423efecd01523f9b7c239cfe040e694f06b8bd9c8ac201e4bc6377"
+    },
+    "TreeReader_exact_shape": {
+      "exit_code": 0
+    }
+  }
+}

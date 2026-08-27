@@ -1,0 +1,16 @@
+{
+  "aggregate_theorem": "refinementCatalog_all",
+  "build_report": "post-anthropic-rh-artifacts/checkers/sextuple-improvement/refinement-catalog-lean-build-report.json",
+  "build_report_sha256": "e83cd151db2a28233583862f5e3046ab4953a9e4bf87e9840bb50ef596fb44bf",
+  "forbidden_token_hits": {},
+  "print_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "source": "post-anthropic-rh-artifacts/checkers/sextuple-improvement/RefinementEnvelopeData.lean",
+  "source_sha256": "e18afeb05ac3e56c94617ba136a61b9d79226899c5c4e192caa109aa2f9dde11",
+  "stable_envelope_sha256_after": "632d72144a0a62258b68e94a9da93b889a6b67c8f242e6fce1eaaa8ce26690b5",
+  "stable_macro_data_sha256_after": "961a0281a134382f9c2678cc49487839d2b9c2cbd9df382871f2c7b706552a5b",
+  "status": "PASS"
+}

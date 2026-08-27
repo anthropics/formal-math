@@ -1,0 +1,137 @@
+{
+  "candidates": [
+    {
+      "A": "1/80",
+      "B": "1094977/5000000000",
+      "actual_formula_diagnostic": "0.67275562065609524715566338623665714423401403654993659508717592574969",
+      "certified_rational_lower": "201406213933795020896911983481/299375000000000000000000000000",
+      "certified_rational_lower_decimal": "0.6727556206556827420356141410638830897703549060542797494780793319415449",
+      "delta_A_from_baseline": "0",
+      "delta_B_from_baseline": "0",
+      "name": "baseline",
+      "public_comparator": "134551124131/200000000000",
+      "public_comparator_margin": "204395896911983481/299375000000000000000000000000",
+      "public_comparator_margin_decimal": "6.827420356141410638830897703549060542797e-13",
+      "strict_improvement_over_actual_baseline_lower_bound": "0",
+      "strict_improvement_over_actual_baseline_lower_bound_decimal": "0.0"
+    },
+    {
+      "A": "2500001/200000000",
+      "B": "1094977/5000000000",
+      "actual_formula_diagnostic": "0.672755621217895348381463259624100367302156305695787372286163293003271",
+      "certified_rational_lower": "201406213933795020896911983481/299374999750000000000000000000",
+      "certified_rational_lower_decimal": "0.672755621217482843261069542534504837189565626045566284797967669977426",
+      "delta_A_from_baseline": "1/200000000",
+      "delta_B_from_baseline": "0",
+      "name": "slack_plus_5e-9",
+      "public_comparator": "672755621/1000000000",
+      "public_comparator_margin": "65108926146911983481/299374999750000000000000000000",
+      "public_comparator_margin_decimal": "0.0000000002174828432610695425345048371895656260456",
+      "strict_improvement_over_actual_baseline_lower_bound": "201406213933795020896911983481/358501562200625000000000000000000000000",
+      "strict_improvement_over_actual_baseline_lower_bound_decimal": "0.0000000005618001012254554014706217474192107199913"
+    },
+    {
+      "A": "63/5000",
+      "B": "1094977/5000000000",
+      "actual_formula_diagnostic": "0.672766856845771168177261336321606148094525009827762528490574515720725",
+      "certified_rational_lower": "201406213933795020896911983481/299370000000000000000000000000",
+      "certified_rational_lower_decimal": "0.6727668568453586561676586948625446771553595884691184821458395964859538",
+      "delta_A_from_baseline": "1/10000",
+      "delta_B_from_baseline": "0",
+      "name": "refined_0p0126",
+      "public_comparator": "840958571/1250000000",
+      "public_comparator_margin": "13579020896911983481/299370000000000000000000000000",
+      "public_comparator_margin_decimal": "0.00000000004535865616765869486254467715535958846912",
+      "strict_improvement_over_actual_baseline_lower_bound": "201406213933795020896911983481/17924778750000000000000000000000000",
+      "strict_improvement_over_actual_baseline_lower_bound_decimal": "0.00001123618967591413204455379866158738500468"
+    },
+    {
+      "A": "62937/5000000",
+      "B": "1093882023/5000000000000",
+      "actual_formula_diagnostic": "0.672766590133068229159052153731932961757407248495061155831311662535179",
+      "certified_rational_lower": "67135519310321641958671690499173/99790210000000000000000000000000",
+      "certified_rational_lower_decimal": "0.6727665901326557180175459145658977969883017582586508235627522980460709",
+      "delta_A_from_baseline": "437/5000000",
+      "delta_B_from_baseline": "-1094977/5000000000000",
+      "name": "scaled_both_strict_999_over_1000",
+      "public_comparator": "6727665901/10000000000",
+      "public_comparator_margin": "3258720958671690499173/99790210000000000000000000000000",
+      "public_comparator_margin_decimal": "0.00000000003265571801754591456589779698830175825865",
+      "strict_improvement_over_actual_baseline_lower_bound": "97848777670318424131950536781197/8962408235625000000000000000000000000",
+      "strict_improvement_over_actual_baseline_lower_bound_decimal": "0.00001091768809206612413079945015464332323547"
+    },
+    {
+      "A": "127/10000",
+      "B": "1094977/5000000000",
+      "actual_formula_diagnostic": "0.6727780934107812022688915746817404591554054488405032924831670127480281",
+      "certified_rational_lower": "201406213933795020896911983481/299365000000000000000000000000",
+      "certified_rational_lower_decimal": "0.6727780934103686833695053980291617256526314031366392196816595126350776",
+      "delta_A_from_baseline": "1/5000",
+      "delta_B_from_baseline": "0",
+      "name": "frontier_probe_0p0127",
+      "public_comparator": "6727780933/10000000000",
+      "public_comparator_margin": "33040520896911983481/299365000000000000000000000000",
+      "public_comparator_margin_decimal": "0.0000000001103686833695053980291617256526314031366",
+      "strict_improvement_over_actual_baseline_lower_bound": "201406213933795020896911983481/8962239687500000000000000000000000",
+      "strict_improvement_over_actual_baseline_lower_bound_decimal": "0.0000224727546859413338912569652786358822765"
+    },
+    {
+      "A": "51/4000",
+      "B": "1094977/5000000000",
+      "actual_formula_diagnostic": "0.6727837118340423888002897031344915697692862405683319325373862550296495",
+      "certified_rational_lower": "201406213933795020896911983481/299362500000000000000000000000",
+      "certified_rational_lower_decimal": "0.6727837118336298664559254531913649839241721992567539354461564157167314",
+      "delta_A_from_baseline": "1/4000",
+      "delta_B_from_baseline": "0",
+      "name": "refined_0p01275",
+      "public_comparator": "3363918559/5000000000",
+      "public_comparator_margin": "10067520896911983481/299362500000000000000000000000",
+      "public_comparator_margin_decimal": "0.00000000003362986645592545319136498392417219925675",
+      "strict_improvement_over_actual_baseline_lower_bound": "201406213933795020896911983481/7169731875000000000000000000000000",
+      "strict_improvement_over_actual_baseline_lower_bound_decimal": "0.00002809117794712442031131212748189415381729"
+    },
+    {
+      "A": "129/10000",
+      "B": "1094977/5000000000",
+      "actual_formula_diagnostic": "0.672800567666878838226275580012357343471991288577565994067990488788607",
+      "certified_rational_lower": "201406213933795020896911983481/299355000000000000000000000000",
+      "certified_rational_lower_decimal": "0.6728005676664663055466318701241001486529371482019675635950627181774148",
+      "delta_A_from_baseline": "1/2500",
+      "delta_B_from_baseline": "0",
+      "name": "refined_0p0129",
+      "public_comparator": "1682001419/2500000000",
+      "public_comparator_margin": "19897020896911983481/299355000000000000000000000000",
+      "public_comparator_margin_decimal": "0.00000000006646630554663187012410014865293714820197",
+      "strict_improvement_over_actual_baseline_lower_bound": "201406213933795020896911983481/4480970156250000000000000000000000",
+      "strict_improvement_over_actual_baseline_lower_bound_decimal": "0.00004494701078356351101772906021705888258224"
+    }
+  ],
+  "certified_numerator_lower": "201406213933795020896911983481/50000000000000000000000000000",
+  "certified_numerator_positive": true,
+  "diagnostic_note": "mpmath decimals are diagnostic only. Every certified bound and margin is a Fraction derived from directed Lean inputs.",
+  "directed_inputs": {
+    "BMT_lower": "672500703679/1000000000000",
+    "pi_lower_for_gain": "3",
+    "pi_upper": "314159265358979323847/100000000000000000000",
+    "source": "Zeta23.ThmD.HD_one_decimal.1, Real.pi_lt_d20, and Real.pi_gt_three"
+  },
+  "feasibility_scaling": {
+    "certified_ray_source": "A=63/5000, B=1094977/5000000000",
+    "statement": "If A <= E+B*S with E,S>=0 and 0<=t<=1, then t*A <= E+(t*B)*S.",
+    "strict_both_candidate_t": "999/1000"
+  },
+  "monotonicity": {
+    "baseline_diagnostics": {
+      "dR_dA": "0.11236002015133114775042394759693647502864535057201",
+      "dR_dB": "-5.2469188368931828617330160889845559652562328173279",
+      "neutral_dB_per_dA": "0.021414476504054713062845236866605961935964610826386"
+    },
+    "dR_dA": "(6*M-10*pi*B)/(6-A)^2 > 0",
+    "dR_dB": "-10*pi/(6-A) < 0",
+    "definition": "R(A,B)=(6*M-10*pi*B)/(6-A)",
+    "finite_difference": "R(A+dA,B+dB)-R(A,B)=((6*M-10*pi*B)*dA-10*pi*(6-A)*dB)/((6-A)*(6-A-dA))",
+    "strict_improvement_condition": "(6*M-10*pi*B)*dA > 10*pi*(6-A)*dB, assuming A,A+dA<6"
+  },
+  "schema": 1,
+  "script_sha256": "b90ee2ea016cd99d0a2e201f5f0fe451aa40a7c278d57929ce8c2b33c5bbfd30"
+}

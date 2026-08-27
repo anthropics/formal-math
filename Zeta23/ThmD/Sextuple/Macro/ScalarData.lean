@@ -1,4 +1,4 @@
-import Zeta23.ThmD.Sextuple.Macro.EnvelopeData
+import Zeta23.ThmD.Sextuple.Macro.StableCatalog
 import Zeta23.ThmD.Sextuple.Macro.ScalarAdapter
 
 namespace Zeta23.ThmD.Sextuple.MacroPrototype
@@ -6,132 +6,12 @@ namespace Zeta23.ThmD.Sextuple.MacroPrototype
 open Zeta23.ThmD.Sextuple
 open RatInterval
 
-/-- The immutable stable 56-piece envelope as a bounded table. -/
-def stableMacroTable (i : Fin 56) : MacroPiece :=
-  match i.val with
-  | 0 => macroPiece0
-  | 1 => macroPiece1
-  | 2 => macroPiece2
-  | 3 => macroPiece3
-  | 4 => macroPiece4
-  | 5 => macroPiece5
-  | 6 => macroPiece6
-  | 7 => macroPiece7
-  | 8 => macroPiece8
-  | 9 => macroPiece9
-  | 10 => macroPiece10
-  | 11 => macroPiece11
-  | 12 => macroPiece12
-  | 13 => macroPiece13
-  | 14 => macroPiece14
-  | 15 => macroPiece15
-  | 16 => macroPiece16
-  | 17 => macroPiece17
-  | 18 => macroPiece18
-  | 19 => macroPiece19
-  | 20 => macroPiece20
-  | 21 => macroPiece21
-  | 22 => macroPiece22
-  | 23 => macroPiece23
-  | 24 => macroPiece24
-  | 25 => macroPiece25
-  | 26 => macroPiece26
-  | 27 => macroPiece27
-  | 28 => macroPiece28
-  | 29 => macroPiece29
-  | 30 => macroPiece30
-  | 31 => macroPiece31
-  | 32 => macroPiece32
-  | 33 => macroPiece33
-  | 34 => macroPiece34
-  | 35 => macroPiece35
-  | 36 => macroPiece36
-  | 37 => macroPiece37
-  | 38 => macroPiece38
-  | 39 => macroPiece39
-  | 40 => macroPiece40
-  | 41 => macroPiece41
-  | 42 => macroPiece42
-  | 43 => macroPiece43
-  | 44 => macroPiece44
-  | 45 => macroPiece45
-  | 46 => macroPiece46
-  | 47 => macroPiece47
-  | 48 => macroPiece48
-  | 49 => macroPiece49
-  | 50 => macroPiece50
-  | 51 => macroPiece51
-  | 52 => macroPiece52
-  | 53 => macroPiece53
-  | 54 => macroPiece54
-  | _ => macroPiece55
-
-set_option maxHeartbeats 0 in
-theorem stableMacroTable_check (i : Fin 56) : (stableMacroTable i).check = true := by
-  fin_cases i
-  · exact macroPiece0_check
-  · exact macroPiece1_check
-  · exact macroPiece2_check
-  · exact macroPiece3_check
-  · exact macroPiece4_check
-  · exact macroPiece5_check
-  · exact macroPiece6_check
-  · exact macroPiece7_check
-  · exact macroPiece8_check
-  · exact macroPiece9_check
-  · exact macroPiece10_check
-  · exact macroPiece11_check
-  · exact macroPiece12_check
-  · exact macroPiece13_check
-  · exact macroPiece14_check
-  · exact macroPiece15_check
-  · exact macroPiece16_check
-  · exact macroPiece17_check
-  · exact macroPiece18_check
-  · exact macroPiece19_check
-  · exact macroPiece20_check
-  · exact macroPiece21_check
-  · exact macroPiece22_check
-  · exact macroPiece23_check
-  · exact macroPiece24_check
-  · exact macroPiece25_check
-  · exact macroPiece26_check
-  · exact macroPiece27_check
-  · exact macroPiece28_check
-  · exact macroPiece29_check
-  · exact macroPiece30_check
-  · exact macroPiece31_check
-  · exact macroPiece32_check
-  · exact macroPiece33_check
-  · exact macroPiece34_check
-  · exact macroPiece35_check
-  · exact macroPiece36_check
-  · exact macroPiece37_check
-  · exact macroPiece38_check
-  · exact macroPiece39_check
-  · exact macroPiece40_check
-  · exact macroPiece41_check
-  · exact macroPiece42_check
-  · exact macroPiece43_check
-  · exact macroPiece44_check
-  · exact macroPiece45_check
-  · exact macroPiece46_check
-  · exact macroPiece47_check
-  · exact macroPiece48_check
-  · exact macroPiece49_check
-  · exact macroPiece50_check
-  · exact macroPiece51_check
-  · exact macroPiece52_check
-  · exact macroPiece53_check
-  · exact macroPiece54_check
-  · exact macroPiece55_check
-
 def scalarCert0 : MacroScalarCert 56 := {
   box := ⟨0, (59/16)⟩
   a := (14630385677/1000000000000)
   segments := [
-    { box := ⟨0, 2⟩, pieceIndex := 0 },
-    { box := ⟨2, (59/16)⟩, pieceIndex := 1 }
+    { box := ⟨0, 2⟩, pieceIndex := ⟨0, by decide⟩ },
+    { box := ⟨2, (59/16)⟩, pieceIndex := ⟨1, by decide⟩ }
   ]
 }
 
@@ -139,9 +19,9 @@ def scalarCert1 : MacroScalarCert 56 := {
   box := ⟨(177/32), (413/64)⟩
   a := (240331540082023567461363898729/200000000000000000000000000000000)
   segments := [
-    { box := ⟨(177/32), (235723/40000)⟩, pieceIndex := 1 },
-    { box := ⟨(235723/40000), (250723/40000)⟩, pieceIndex := 2 },
-    { box := ⟨(250723/40000), (413/64)⟩, pieceIndex := 3 }
+    { box := ⟨(177/32), (235723/40000)⟩, pieceIndex := ⟨1, by decide⟩ },
+    { box := ⟨(235723/40000), (250723/40000)⟩, pieceIndex := ⟨2, by decide⟩ },
+    { box := ⟨(250723/40000), (413/64)⟩, pieceIndex := ⟨3, by decide⟩ }
   ]
 }
 
@@ -149,9 +29,9 @@ def scalarCert2 : MacroScalarCert 56 := {
   box := ⟨(531/32), (2419/128)⟩
   a := (46487548851628354344042770920761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(531/32), (9113373/500000)⟩, pieceIndex := 13 },
-    { box := ⟨(9113373/500000), (9300873/500000)⟩, pieceIndex := 14 },
-    { box := ⟨(9300873/500000), (2419/128)⟩, pieceIndex := 15 }
+    { box := ⟨(531/32), (9113373/500000)⟩, pieceIndex := ⟨13, by decide⟩ },
+    { box := ⟨(9113373/500000), (9300873/500000)⟩, pieceIndex := ⟨14, by decide⟩ },
+    { box := ⟨(9300873/500000), (2419/128)⟩, pieceIndex := ⟨15, by decide⟩ }
   ]
 }
 
@@ -159,9 +39,9 @@ def scalarCert3 : MacroScalarCert 56 := {
   box := ⟨(177/16), (1593/128)⟩
   a := (65397592496506782025616240039841/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(177/16), (1200529/100000)⟩, pieceIndex := 7 },
-    { box := ⟨(1200529/100000), (1238029/100000)⟩, pieceIndex := 8 },
-    { box := ⟨(1238029/100000), (1593/128)⟩, pieceIndex := 9 }
+    { box := ⟨(177/16), (1200529/100000)⟩, pieceIndex := ⟨7, by decide⟩ },
+    { box := ⟨(1200529/100000), (1238029/100000)⟩, pieceIndex := ⟨8, by decide⟩ },
+    { box := ⟨(1238029/100000), (1593/128)⟩, pieceIndex := ⟨9, by decide⟩ }
   ]
 }
 
@@ -169,8 +49,8 @@ def scalarCert4 : MacroScalarCert 56 := {
   box := ⟨(177/32), (767/128)⟩
   a := (14630385677/1000000000000)
   segments := [
-    { box := ⟨(177/32), (235723/40000)⟩, pieceIndex := 1 },
-    { box := ⟨(235723/40000), (767/128)⟩, pieceIndex := 2 }
+    { box := ⟨(177/32), (235723/40000)⟩, pieceIndex := ⟨1, by decide⟩ },
+    { box := ⟨(235723/40000), (767/128)⟩, pieceIndex := ⟨2, by decide⟩ }
   ]
 }
 
@@ -178,8 +58,8 @@ def scalarCert5 : MacroScalarCert 56 := {
   box := ⟨(767/128), (413/64)⟩
   a := (240331540082023567461363898729/200000000000000000000000000000000)
   segments := [
-    { box := ⟨(767/128), (250723/40000)⟩, pieceIndex := 2 },
-    { box := ⟨(250723/40000), (413/64)⟩, pieceIndex := 3 }
+    { box := ⟨(767/128), (250723/40000)⟩, pieceIndex := ⟨2, by decide⟩ },
+    { box := ⟨(250723/40000), (413/64)⟩, pieceIndex := ⟨3, by decide⟩ }
   ]
 }
 
@@ -187,9 +67,9 @@ def scalarCert6 : MacroScalarCert 56 := {
   box := ⟨(2183/128), (2419/128)⟩
   a := (46487548851628354344042770920761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2183/128), (9113373/500000)⟩, pieceIndex := 13 },
-    { box := ⟨(9113373/500000), (9300873/500000)⟩, pieceIndex := 14 },
-    { box := ⟨(9300873/500000), (2419/128)⟩, pieceIndex := 15 }
+    { box := ⟨(2183/128), (9113373/500000)⟩, pieceIndex := ⟨13, by decide⟩ },
+    { box := ⟨(9113373/500000), (9300873/500000)⟩, pieceIndex := ⟨14, by decide⟩ },
+    { box := ⟨(9300873/500000), (2419/128)⟩, pieceIndex := ⟨15, by decide⟩ }
   ]
 }
 
@@ -197,9 +77,9 @@ def scalarCert7 : MacroScalarCert 56 := {
   box := ⟨(1475/128), (1593/128)⟩
   a := (65397592496506782025616240039841/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(1475/128), (1200529/100000)⟩, pieceIndex := 7 },
-    { box := ⟨(1200529/100000), (1238029/100000)⟩, pieceIndex := 8 },
-    { box := ⟨(1238029/100000), (1593/128)⟩, pieceIndex := 9 }
+    { box := ⟨(1475/128), (1200529/100000)⟩, pieceIndex := ⟨7, by decide⟩ },
+    { box := ⟨(1200529/100000), (1238029/100000)⟩, pieceIndex := ⟨8, by decide⟩ },
+    { box := ⟨(1238029/100000), (1593/128)⟩, pieceIndex := ⟨9, by decide⟩ }
   ]
 }
 
@@ -207,9 +87,9 @@ def scalarCert8 : MacroScalarCert 56 := {
   box := ⟨(1121/64), (2419/128)⟩
   a := (46487548851628354344042770920761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(1121/64), (9113373/500000)⟩, pieceIndex := 13 },
-    { box := ⟨(9113373/500000), (9300873/500000)⟩, pieceIndex := 14 },
-    { box := ⟨(9300873/500000), (2419/128)⟩, pieceIndex := 15 }
+    { box := ⟨(1121/64), (9113373/500000)⟩, pieceIndex := ⟨13, by decide⟩ },
+    { box := ⟨(9113373/500000), (9300873/500000)⟩, pieceIndex := ⟨14, by decide⟩ },
+    { box := ⟨(9300873/500000), (2419/128)⟩, pieceIndex := ⟨15, by decide⟩ }
   ]
 }
 
@@ -217,9 +97,9 @@ def scalarCert9 : MacroScalarCert 56 := {
   box := ⟨(767/64), (3245/256)⟩
   a := (17210569648841618553013464187489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(767/64), (1200529/100000)⟩, pieceIndex := 7 },
-    { box := ⟨(1200529/100000), (1238029/100000)⟩, pieceIndex := 8 },
-    { box := ⟨(1238029/100000), (3245/256)⟩, pieceIndex := 9 }
+    { box := ⟨(767/64), (1200529/100000)⟩, pieceIndex := ⟨7, by decide⟩ },
+    { box := ⟨(1200529/100000), (1238029/100000)⟩, pieceIndex := ⟨8, by decide⟩ },
+    { box := ⟨(1238029/100000), (3245/256)⟩, pieceIndex := ⟨9, by decide⟩ }
   ]
 }
 
@@ -227,8 +107,8 @@ def scalarCert10 : MacroScalarCert 56 := {
   box := ⟨(1593/256), (413/64)⟩
   a := (240331540082023567461363898729/200000000000000000000000000000000)
   segments := [
-    { box := ⟨(1593/256), (250723/40000)⟩, pieceIndex := 2 },
-    { box := ⟨(250723/40000), (413/64)⟩, pieceIndex := 3 }
+    { box := ⟨(1593/256), (250723/40000)⟩, pieceIndex := ⟨2, by decide⟩ },
+    { box := ⟨(250723/40000), (413/64)⟩, pieceIndex := ⟨3, by decide⟩ }
   ]
 }
 
@@ -236,8 +116,8 @@ def scalarCert11 : MacroScalarCert 56 := {
   box := ⟨(3127/256), (3245/256)⟩
   a := (17210569648841618553013464187489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3127/256), (1238029/100000)⟩, pieceIndex := 8 },
-    { box := ⟨(1238029/100000), (3245/256)⟩, pieceIndex := 9 }
+    { box := ⟨(3127/256), (1238029/100000)⟩, pieceIndex := ⟨8, by decide⟩ },
+    { box := ⟨(1238029/100000), (3245/256)⟩, pieceIndex := ⟨9, by decide⟩ }
   ]
 }
 
@@ -245,8 +125,8 @@ def scalarCert12 : MacroScalarCert 56 := {
   box := ⟨(1593/256), (3245/512)⟩
   a := (158816615479971569880581165995249/51200000000000000000000000000000000)
   segments := [
-    { box := ⟨(1593/256), (250723/40000)⟩, pieceIndex := 2 },
-    { box := ⟨(250723/40000), (3245/512)⟩, pieceIndex := 3 }
+    { box := ⟨(1593/256), (250723/40000)⟩, pieceIndex := ⟨2, by decide⟩ },
+    { box := ⟨(250723/40000), (3245/512)⟩, pieceIndex := ⟨3, by decide⟩ }
   ]
 }
 
@@ -254,9 +134,9 @@ def scalarCert13 : MacroScalarCert 56 := {
   box := ⟨(12921/512), (6667/256)⟩
   a := (9576976453294042395280846609/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12921/512), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (6667/256)⟩, pieceIndex := 25 }
+    { box := ⟨(12921/512), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (6667/256)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -264,8 +144,8 @@ def scalarCert14 : MacroScalarCert 56 := {
   box := ⟨(9735/512), (5015/256)⟩
   a := (5885158970114111451770320882689/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/512), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (5015/256)⟩, pieceIndex := 18 }
+    { box := ⟨(9735/512), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (5015/256)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -273,8 +153,8 @@ def scalarCert15 : MacroScalarCert 56 := {
   box := ⟨(12921/512), (13275/512)⟩
   a := (9576976453294042395280846609/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12921/512), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (13275/512)⟩, pieceIndex := 24 }
+    { box := ⟨(12921/512), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (13275/512)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -282,9 +162,9 @@ def scalarCert16 : MacroScalarCert 56 := {
   box := ⟨(8083/256), (8319/256)⟩
   a := (167322041776912901830875682929/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8319/256)⟩, pieceIndex := 31 }
+    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8319/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -292,9 +172,9 @@ def scalarCert17 : MacroScalarCert 56 := {
   box := ⟨(3245/128), (6667/256)⟩
   a := (146846847802364886838234197249/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (6667/256)⟩, pieceIndex := 25 }
+    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (6667/256)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -302,9 +182,9 @@ def scalarCert18 : MacroScalarCert 56 := {
   box := ⟨(8083/256), (16579/512)⟩
   a := (167322041776912901830875682929/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16579/512)⟩, pieceIndex := 31 }
+    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16579/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -312,8 +192,8 @@ def scalarCert19 : MacroScalarCert 56 := {
   box := ⟨(3245/128), (13275/512)⟩
   a := (146846847802364886838234197249/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (13275/512)⟩, pieceIndex := 24 }
+    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (13275/512)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -321,8 +201,8 @@ def scalarCert20 : MacroScalarCert 56 := {
   box := ⟨(9735/512), (9971/512)⟩
   a := (5885158970114111451770320882689/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/512), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (9971/512)⟩, pieceIndex := 18 }
+    { box := ⟨(9735/512), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (9971/512)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -330,8 +210,8 @@ def scalarCert21 : MacroScalarCert 56 := {
   box := ⟨(12921/512), (413/16)⟩
   a := (9576976453294042395280846609/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12921/512), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (413/16)⟩, pieceIndex := 24 }
+    { box := ⟨(12921/512), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (413/16)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -339,9 +219,9 @@ def scalarCert22 : MacroScalarCert 56 := {
   box := ⟨(16225/512), (8319/256)⟩
   a := (3895225326904878308147162909841/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8319/256)⟩, pieceIndex := 31 }
+    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8319/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -349,8 +229,8 @@ def scalarCert23 : MacroScalarCert 56 := {
   box := ⟨(9735/512), (1239/64)⟩
   a := (5885158970114111451770320882689/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/512), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (1239/64)⟩, pieceIndex := 18 }
+    { box := ⟨(9735/512), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (1239/64)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -358,9 +238,9 @@ def scalarCert24 : MacroScalarCert 56 := {
   box := ⟨(13039/512), (6667/256)⟩
   a := (8807754158064216214287607996609/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (6667/256)⟩, pieceIndex := 25 }
+    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (6667/256)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -368,8 +248,8 @@ def scalarCert25 : MacroScalarCert 56 := {
   box := ⟨(4897/256), (5015/256)⟩
   a := (24983035225416475609781457263641/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/256), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (5015/256)⟩, pieceIndex := 18 }
+    { box := ⟨(4897/256), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (5015/256)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -377,8 +257,8 @@ def scalarCert26 : MacroScalarCert 56 := {
   box := ⟨(6549/512), (3363/256)⟩
   a := (74120289942676230668914274104729/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/512), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (3363/256)⟩, pieceIndex := 12 }
+    { box := ⟨(6549/512), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (3363/256)⟩, pieceIndex := ⟨12, by decide⟩ }
   ]
 }
 
@@ -386,8 +266,8 @@ def scalarCert27 : MacroScalarCert 56 := {
   box := ⟨(12921/512), (13157/512)⟩
   a := (9576976453294042395280846609/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12921/512), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (13157/512)⟩, pieceIndex := 24 }
+    { box := ⟨(12921/512), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (13157/512)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -395,9 +275,9 @@ def scalarCert28 : MacroScalarCert 56 := {
   box := ⟨(16225/512), (16579/512)⟩
   a := (3895225326904878308147162909841/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16579/512)⟩, pieceIndex := 31 }
+    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16579/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -405,8 +285,8 @@ def scalarCert29 : MacroScalarCert 56 := {
   box := ⟨(3245/128), (413/16)⟩
   a := (146846847802364886838234197249/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (413/16)⟩, pieceIndex := 24 }
+    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (413/16)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -414,9 +294,9 @@ def scalarCert30 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (8319/256)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8319/256)⟩, pieceIndex := 31 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8319/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -424,9 +304,9 @@ def scalarCert31 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (16579/512)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16579/512)⟩, pieceIndex := 31 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16579/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -434,8 +314,8 @@ def scalarCert32 : MacroScalarCert 56 := {
   box := ⟨(13039/512), (13275/512)⟩
   a := (8807754158064216214287607996609/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (13275/512)⟩, pieceIndex := 24 }
+    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (13275/512)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -443,8 +323,8 @@ def scalarCert33 : MacroScalarCert 56 := {
   box := ⟨(4897/256), (9971/512)⟩
   a := (24983035225416475609781457263641/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/256), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (9971/512)⟩, pieceIndex := 18 }
+    { box := ⟨(4897/256), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (9971/512)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -452,8 +332,8 @@ def scalarCert34 : MacroScalarCert 56 := {
   box := ⟨(16343/512), (8319/256)⟩
   a := (19145944597030269950435668435441/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16343/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8319/256)⟩, pieceIndex := 31 }
+    { box := ⟨(16343/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8319/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -461,9 +341,9 @@ def scalarCert35 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (6667/256)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (6667/256)⟩, pieceIndex := 25 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (6667/256)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -471,8 +351,8 @@ def scalarCert36 : MacroScalarCert 56 := {
   box := ⟨(9853/512), (5015/256)⟩
   a := (308609266148826216472188856757689/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9853/512), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (5015/256)⟩, pieceIndex := 18 }
+    { box := ⟨(9853/512), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (5015/256)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -480,8 +360,8 @@ def scalarCert37 : MacroScalarCert 56 := {
   box := ⟨(413/32), (3363/256)⟩
   a := (20678976077282851379745931419361/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (3363/256)⟩, pieceIndex := 12 }
+    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (3363/256)⟩, pieceIndex := ⟨12, by decide⟩ }
   ]
 }
 
@@ -489,9 +369,9 @@ def scalarCert38 : MacroScalarCert 56 := {
   box := ⟨(8083/256), (4189/128)⟩
   a := (167322041776912901830875682929/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (4189/128)⟩, pieceIndex := 31 }
+    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (4189/128)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -499,9 +379,9 @@ def scalarCert39 : MacroScalarCert 56 := {
   box := ⟨(3245/128), (3363/128)⟩
   a := (146846847802364886838234197249/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (3363/128)⟩, pieceIndex := 25 }
+    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (3363/128)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -509,9 +389,9 @@ def scalarCert40 : MacroScalarCert 56 := {
   box := ⟨(4897/256), (2537/128)⟩
   a := (24983035225416475609781457263641/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/256), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (2537/128)⟩, pieceIndex := 19 }
+    { box := ⟨(4897/256), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (2537/128)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -519,8 +399,8 @@ def scalarCert41 : MacroScalarCert 56 := {
   box := ⟨(413/32), (1711/128)⟩
   a := (20678976077282851379745931419361/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (1711/128)⟩, pieceIndex := 12 }
+    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (1711/128)⟩, pieceIndex := ⟨12, by decide⟩ }
   ]
 }
 
@@ -528,9 +408,9 @@ def scalarCert42 : MacroScalarCert 56 := {
   box := ⟨(8083/256), (16697/512)⟩
   a := (167322041776912901830875682929/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16697/512)⟩, pieceIndex := 31 }
+    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16697/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -538,9 +418,9 @@ def scalarCert43 : MacroScalarCert 56 := {
   box := ⟨(3245/128), (13393/512)⟩
   a := (146846847802364886838234197249/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (13393/512)⟩, pieceIndex := 25 }
+    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (13393/512)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -548,8 +428,8 @@ def scalarCert44 : MacroScalarCert 56 := {
   box := ⟨(4897/256), (10089/512)⟩
   a := (24983035225416475609781457263641/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/256), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (10089/512)⟩, pieceIndex := 18 }
+    { box := ⟨(4897/256), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (10089/512)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -557,9 +437,9 @@ def scalarCert45 : MacroScalarCert 56 := {
   box := ⟨(16225/512), (4189/128)⟩
   a := (3895225326904878308147162909841/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (4189/128)⟩, pieceIndex := 31 }
+    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (4189/128)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -567,9 +447,9 @@ def scalarCert46 : MacroScalarCert 56 := {
   box := ⟨(13039/512), (3363/128)⟩
   a := (8807754158064216214287607996609/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (3363/128)⟩, pieceIndex := 25 }
+    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (3363/128)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -577,9 +457,9 @@ def scalarCert47 : MacroScalarCert 56 := {
   box := ⟨(9853/512), (2537/128)⟩
   a := (308609266148826216472188856757689/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9853/512), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (2537/128)⟩, pieceIndex := 19 }
+    { box := ⟨(9853/512), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (2537/128)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -587,9 +467,9 @@ def scalarCert48 : MacroScalarCert 56 := {
   box := ⟨(16225/512), (16697/512)⟩
   a := (3895225326904878308147162909841/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16697/512)⟩, pieceIndex := 31 }
+    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16697/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -597,9 +477,9 @@ def scalarCert49 : MacroScalarCert 56 := {
   box := ⟨(13039/512), (13393/512)⟩
   a := (8807754158064216214287607996609/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (13393/512)⟩, pieceIndex := 25 }
+    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (13393/512)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -607,9 +487,9 @@ def scalarCert50 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (4189/128)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (4189/128)⟩, pieceIndex := 31 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (4189/128)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -617,9 +497,9 @@ def scalarCert51 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (3363/128)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (3363/128)⟩, pieceIndex := 25 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (3363/128)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -627,9 +507,9 @@ def scalarCert52 : MacroScalarCert 56 := {
   box := ⟨(413/32), (885/64)⟩
   a := (20678976077282851379745931419361/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (13505291/1000000)⟩, pieceIndex := 12 },
-    { box := ⟨(13505291/1000000), (885/64)⟩, pieceIndex := 13 }
+    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (13505291/1000000)⟩, pieceIndex := ⟨12, by decide⟩ },
+    { box := ⟨(13505291/1000000), (885/64)⟩, pieceIndex := ⟨13, by decide⟩ }
   ]
 }
 
@@ -637,8 +517,8 @@ def scalarCert53 : MacroScalarCert 56 := {
   box := ⟨(885/128), (59/8)⟩
   a := (228930241058556007916075349120001/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(885/128), (1754519/250000)⟩, pieceIndex := 5 },
-    { box := ⟨(1754519/250000), (59/8)⟩, pieceIndex := 6 }
+    { box := ⟨(885/128), (1754519/250000)⟩, pieceIndex := ⟨5, by decide⟩ },
+    { box := ⟨(1754519/250000), (59/8)⟩, pieceIndex := ⟨6, by decide⟩ }
   ]
 }
 
@@ -646,8 +526,8 @@ def scalarCert54 : MacroScalarCert 56 := {
   box := ⟨(413/32), (6785/512)⟩
   a := (20678976077282851379745931419361/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (6785/512)⟩, pieceIndex := 12 }
+    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (6785/512)⟩, pieceIndex := ⟨12, by decide⟩ }
   ]
 }
 
@@ -655,8 +535,8 @@ def scalarCert55 : MacroScalarCert 56 := {
   box := ⟨(9853/512), (10089/512)⟩
   a := (308609266148826216472188856757689/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9853/512), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (10089/512)⟩, pieceIndex := 18 }
+    { box := ⟨(9853/512), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (10089/512)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -664,8 +544,8 @@ def scalarCert56 : MacroScalarCert 56 := {
   box := ⟨(6667/512), (1711/128)⟩
   a := (4115134404786270922924483404604729/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6667/512), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (1711/128)⟩, pieceIndex := 12 }
+    { box := ⟨(6667/512), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (1711/128)⟩, pieceIndex := ⟨12, by decide⟩ }
   ]
 }
 
@@ -673,8 +553,8 @@ def scalarCert57 : MacroScalarCert 56 := {
   box := ⟨(1239/64), (2537/128)⟩
   a := (676206949938427113180992093521/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (2537/128)⟩, pieceIndex := 19 }
+    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (2537/128)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -682,9 +562,9 @@ def scalarCert58 : MacroScalarCert 56 := {
   box := ⟨(8083/256), (531/16)⟩
   a := (167322041776912901830875682929/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (531/16)⟩, pieceIndex := 31 }
+    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (531/16)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -692,9 +572,9 @@ def scalarCert59 : MacroScalarCert 56 := {
   box := ⟨(8083/256), (8437/256)⟩
   a := (167322041776912901830875682929/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8437/256)⟩, pieceIndex := 31 }
+    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8437/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -702,9 +582,9 @@ def scalarCert60 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (16697/512)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16697/512)⟩, pieceIndex := 31 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16697/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -712,8 +592,8 @@ def scalarCert61 : MacroScalarCert 56 := {
   box := ⟨(16343/512), (4189/128)⟩
   a := (19145944597030269950435668435441/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16343/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (4189/128)⟩, pieceIndex := 31 }
+    { box := ⟨(16343/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (4189/128)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -721,8 +601,8 @@ def scalarCert62 : MacroScalarCert 56 := {
   box := ⟨(16343/512), (16697/512)⟩
   a := (19145944597030269950435668435441/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16343/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16697/512)⟩, pieceIndex := 31 }
+    { box := ⟨(16343/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16697/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -730,8 +610,8 @@ def scalarCert63 : MacroScalarCert 56 := {
   box := ⟨(8201/256), (16697/512)⟩
   a := (7402913802521846133201894614329/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16697/512)⟩, pieceIndex := 31 }
+    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16697/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -739,8 +619,8 @@ def scalarCert64 : MacroScalarCert 56 := {
   box := ⟨(8201/256), (4189/128)⟩
   a := (7402913802521846133201894614329/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (4189/128)⟩, pieceIndex := 31 }
+    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (4189/128)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -748,8 +628,8 @@ def scalarCert65 : MacroScalarCert 56 := {
   box := ⟨(16461/512), (4189/128)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (4189/128)⟩, pieceIndex := 31 }
+    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (4189/128)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -757,8 +637,8 @@ def scalarCert66 : MacroScalarCert 56 := {
   box := ⟨(9853/512), (20001/1024)⟩
   a := (308609266148826216472188856757689/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9853/512), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (20001/1024)⟩, pieceIndex := 18 }
+    { box := ⟨(9853/512), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (20001/1024)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -766,9 +646,9 @@ def scalarCert67 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (26609/1024)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (26609/1024)⟩, pieceIndex := 25 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (26609/1024)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -776,8 +656,8 @@ def scalarCert68 : MacroScalarCert 56 := {
   box := ⟨(16461/512), (33453/1024)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (33453/1024)⟩, pieceIndex := 31 }
+    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (33453/1024)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -785,8 +665,8 @@ def scalarCert69 : MacroScalarCert 56 := {
   box := ⟨(19765/1024), (5015/256)⟩
   a := (1823736530063038278523442761733881/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19765/1024), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (5015/256)⟩, pieceIndex := 18 }
+    { box := ⟨(19765/1024), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (5015/256)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -794,8 +674,8 @@ def scalarCert70 : MacroScalarCert 56 := {
   box := ⟨(26255/1024), (6667/256)⟩
   a := (4444557066199270754582755713921/12800000000000000000000000000000000)
   segments := [
-    { box := ⟨(26255/1024), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (6667/256)⟩, pieceIndex := 25 }
+    { box := ⟨(26255/1024), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (6667/256)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -803,8 +683,8 @@ def scalarCert71 : MacroScalarCert 56 := {
   box := ⟨(32981/1024), (4189/128)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(32981/1024), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (4189/128)⟩, pieceIndex := 31 }
+    { box := ⟨(32981/1024), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (4189/128)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -812,8 +692,8 @@ def scalarCert72 : MacroScalarCert 56 := {
   box := ⟨(19529/1024), (1239/64)⟩
   a := (154319528085755766258938540108881/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19529/1024), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (1239/64)⟩, pieceIndex := 18 }
+    { box := ⟨(19529/1024), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (1239/64)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -821,9 +701,9 @@ def scalarCert73 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (8437/256)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8437/256)⟩, pieceIndex := 31 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8437/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -831,9 +711,9 @@ def scalarCert74 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (16815/512)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16815/512)⟩, pieceIndex := 31 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16815/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -841,8 +721,8 @@ def scalarCert75 : MacroScalarCert 56 := {
   box := ⟨(16343/512), (8437/256)⟩
   a := (19145944597030269950435668435441/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16343/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8437/256)⟩, pieceIndex := 31 }
+    { box := ⟨(16343/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8437/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -850,8 +730,8 @@ def scalarCert76 : MacroScalarCert 56 := {
   box := ⟨(16343/512), (16815/512)⟩
   a := (19145944597030269950435668435441/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16343/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16815/512)⟩, pieceIndex := 31 }
+    { box := ⟨(16343/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16815/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -859,8 +739,8 @@ def scalarCert77 : MacroScalarCert 56 := {
   box := ⟨(8201/256), (8437/256)⟩
   a := (7402913802521846133201894614329/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8437/256)⟩, pieceIndex := 31 }
+    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8437/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -868,8 +748,8 @@ def scalarCert78 : MacroScalarCert 56 := {
   box := ⟨(8201/256), (16815/512)⟩
   a := (7402913802521846133201894614329/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16815/512)⟩, pieceIndex := 31 }
+    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16815/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -877,9 +757,9 @@ def scalarCert79 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (13393/512)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (13393/512)⟩, pieceIndex := 25 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (13393/512)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -887,8 +767,8 @@ def scalarCert80 : MacroScalarCert 56 := {
   box := ⟨(16461/512), (8437/256)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8437/256)⟩, pieceIndex := 31 }
+    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8437/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -896,8 +776,8 @@ def scalarCert81 : MacroScalarCert 56 := {
   box := ⟨(13157/512), (3363/128)⟩
   a := (1405713487152099986076881071449/3200000000000000000000000000000000)
   segments := [
-    { box := ⟨(13157/512), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (3363/128)⟩, pieceIndex := 25 }
+    { box := ⟨(13157/512), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (3363/128)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -905,9 +785,9 @@ def scalarCert82 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (531/16)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (531/16)⟩, pieceIndex := 31 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (531/16)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -915,8 +795,8 @@ def scalarCert83 : MacroScalarCert 56 := {
   box := ⟨(8201/256), (531/16)⟩
   a := (7402913802521846133201894614329/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (531/16)⟩, pieceIndex := 31 }
+    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (531/16)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -924,8 +804,8 @@ def scalarCert84 : MacroScalarCert 56 := {
   box := ⟨(8201/256), (16933/512)⟩
   a := (7402913802521846133201894614329/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16933/512)⟩, pieceIndex := 31 }
+    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16933/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -933,8 +813,8 @@ def scalarCert85 : MacroScalarCert 56 := {
   box := ⟨(16461/512), (531/16)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (531/16)⟩, pieceIndex := 31 }
+    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (531/16)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -942,8 +822,8 @@ def scalarCert86 : MacroScalarCert 56 := {
   box := ⟨(16461/512), (16933/512)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16933/512)⟩, pieceIndex := 31 }
+    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16933/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -951,9 +831,9 @@ def scalarCert87 : MacroScalarCert 56 := {
   box := ⟨(8083/256), (4307/128)⟩
   a := (167322041776912901830875682929/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (4307/128)⟩, pieceIndex := 31 }
+    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (4307/128)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -961,9 +841,9 @@ def scalarCert88 : MacroScalarCert 56 := {
   box := ⟨(4897/256), (649/32)⟩
   a := (24983035225416475609781457263641/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/256), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (649/32)⟩, pieceIndex := 19 }
+    { box := ⟨(4897/256), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (649/32)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -971,9 +851,9 @@ def scalarCert89 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (2183/64)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (2183/64)⟩, pieceIndex := 31 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (2183/64)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -981,9 +861,9 @@ def scalarCert90 : MacroScalarCert 56 := {
   box := ⟨(413/32), (59/4)⟩
   a := (20678976077282851379745931419361/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (13505291/1000000)⟩, pieceIndex := 12 },
-    { box := ⟨(13505291/1000000), (59/4)⟩, pieceIndex := 13 }
+    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (13505291/1000000)⟩, pieceIndex := ⟨12, by decide⟩ },
+    { box := ⟨(13505291/1000000), (59/4)⟩, pieceIndex := ⟨13, by decide⟩ }
   ]
 }
 
@@ -991,9 +871,9 @@ def scalarCert91 : MacroScalarCert 56 := {
   box := ⟨(413/32), (1829/128)⟩
   a := (20678976077282851379745931419361/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (13505291/1000000)⟩, pieceIndex := 12 },
-    { box := ⟨(13505291/1000000), (1829/128)⟩, pieceIndex := 13 }
+    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (13505291/1000000)⟩, pieceIndex := ⟨12, by decide⟩ },
+    { box := ⟨(13505291/1000000), (1829/128)⟩, pieceIndex := ⟨13, by decide⟩ }
   ]
 }
 
@@ -1001,9 +881,9 @@ def scalarCert92 : MacroScalarCert 56 := {
   box := ⟨(3245/128), (1711/64)⟩
   a := (146846847802364886838234197249/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (1711/64)⟩, pieceIndex := 25 }
+    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (1711/64)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1011,9 +891,9 @@ def scalarCert93 : MacroScalarCert 56 := {
   box := ⟨(3245/128), (6785/256)⟩
   a := (146846847802364886838234197249/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (6785/256)⟩, pieceIndex := 25 }
+    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (6785/256)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1021,9 +901,9 @@ def scalarCert94 : MacroScalarCert 56 := {
   box := ⟨(4897/256), (5133/256)⟩
   a := (24983035225416475609781457263641/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/256), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (5133/256)⟩, pieceIndex := 19 }
+    { box := ⟨(4897/256), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (5133/256)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1031,9 +911,9 @@ def scalarCert95 : MacroScalarCert 56 := {
   box := ⟨(413/32), (3481/256)⟩
   a := (20678976077282851379745931419361/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (13505291/1000000)⟩, pieceIndex := 12 },
-    { box := ⟨(13505291/1000000), (3481/256)⟩, pieceIndex := 13 }
+    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (13505291/1000000)⟩, pieceIndex := ⟨12, by decide⟩ },
+    { box := ⟨(13505291/1000000), (3481/256)⟩, pieceIndex := ⟨13, by decide⟩ }
   ]
 }
 
@@ -1041,8 +921,8 @@ def scalarCert96 : MacroScalarCert 56 := {
   box := ⟨(13157/512), (13393/512)⟩
   a := (1405713487152099986076881071449/3200000000000000000000000000000000)
   segments := [
-    { box := ⟨(13157/512), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (13393/512)⟩, pieceIndex := 25 }
+    { box := ⟨(13157/512), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (13393/512)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1050,8 +930,8 @@ def scalarCert97 : MacroScalarCert 56 := {
   box := ⟨(6667/512), (6785/512)⟩
   a := (4115134404786270922924483404604729/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6667/512), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (6785/512)⟩, pieceIndex := 12 }
+    { box := ⟨(6667/512), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (6785/512)⟩, pieceIndex := ⟨12, by decide⟩ }
   ]
 }
 
@@ -1059,9 +939,9 @@ def scalarCert98 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (6785/256)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (6785/256)⟩, pieceIndex := 25 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (6785/256)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1069,8 +949,8 @@ def scalarCert99 : MacroScalarCert 56 := {
   box := ⟨(1239/64), (5133/256)⟩
   a := (676206949938427113180992093521/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (5133/256)⟩, pieceIndex := 19 }
+    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (5133/256)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1078,8 +958,8 @@ def scalarCert100 : MacroScalarCert 56 := {
   box := ⟨(3363/256), (3481/256)⟩
   a := (9644871623714213790537153110875761/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3363/256), (13505291/1000000)⟩, pieceIndex := 12 },
-    { box := ⟨(13505291/1000000), (3481/256)⟩, pieceIndex := 13 }
+    { box := ⟨(3363/256), (13505291/1000000)⟩, pieceIndex := ⟨12, by decide⟩ },
+    { box := ⟨(13505291/1000000), (3481/256)⟩, pieceIndex := ⟨13, by decide⟩ }
   ]
 }
 
@@ -1087,9 +967,9 @@ def scalarCert101 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (1711/64)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (1711/64)⟩, pieceIndex := 25 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (1711/64)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1097,8 +977,8 @@ def scalarCert102 : MacroScalarCert 56 := {
   box := ⟨(1239/64), (649/32)⟩
   a := (676206949938427113180992093521/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (649/32)⟩, pieceIndex := 19 }
+    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (649/32)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1106,8 +986,8 @@ def scalarCert103 : MacroScalarCert 56 := {
   box := ⟨(3363/256), (885/64)⟩
   a := (9644871623714213790537153110875761/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3363/256), (13505291/1000000)⟩, pieceIndex := 12 },
-    { box := ⟨(13505291/1000000), (885/64)⟩, pieceIndex := 13 }
+    { box := ⟨(3363/256), (13505291/1000000)⟩, pieceIndex := ⟨12, by decide⟩ },
+    { box := ⟨(13505291/1000000), (885/64)⟩, pieceIndex := ⟨13, by decide⟩ }
   ]
 }
 
@@ -1115,9 +995,9 @@ def scalarCert104 : MacroScalarCert 56 := {
   box := ⟨(3245/128), (3481/128)⟩
   a := (146846847802364886838234197249/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (3481/128)⟩, pieceIndex := 25 }
+    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (3481/128)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1125,8 +1005,8 @@ def scalarCert105 : MacroScalarCert 56 := {
   box := ⟨(1239/64), (2655/128)⟩
   a := (676206949938427113180992093521/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (2655/128)⟩, pieceIndex := 19 }
+    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (2655/128)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1134,8 +1014,8 @@ def scalarCert106 : MacroScalarCert 56 := {
   box := ⟨(1711/128), (1829/128)⟩
   a := (1610977803/1000000000000)
   segments := [
-    { box := ⟨(1711/128), (13505291/1000000)⟩, pieceIndex := 12 },
-    { box := ⟨(13505291/1000000), (1829/128)⟩, pieceIndex := 13 }
+    { box := ⟨(1711/128), (13505291/1000000)⟩, pieceIndex := ⟨12, by decide⟩ },
+    { box := ⟨(13505291/1000000), (1829/128)⟩, pieceIndex := ⟨13, by decide⟩ }
   ]
 }
 
@@ -1143,9 +1023,9 @@ def scalarCert107 : MacroScalarCert 56 := {
   box := ⟨(3245/128), (885/32)⟩
   a := (146846847802364886838234197249/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (885/32)⟩, pieceIndex := 25 }
+    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (885/32)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1153,8 +1033,8 @@ def scalarCert108 : MacroScalarCert 56 := {
   box := ⟨(1239/64), (1357/64)⟩
   a := (676206949938427113180992093521/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (1357/64)⟩, pieceIndex := 19 }
+    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (1357/64)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1162,8 +1042,8 @@ def scalarCert109 : MacroScalarCert 56 := {
   box := ⟨(1711/128), (59/4)⟩
   a := (1610977803/1000000000000)
   segments := [
-    { box := ⟨(1711/128), (13505291/1000000)⟩, pieceIndex := 12 },
-    { box := ⟨(13505291/1000000), (59/4)⟩, pieceIndex := 13 }
+    { box := ⟨(1711/128), (13505291/1000000)⟩, pieceIndex := ⟨12, by decide⟩ },
+    { box := ⟨(13505291/1000000), (59/4)⟩, pieceIndex := ⟨13, by decide⟩ }
   ]
 }
 
@@ -1171,8 +1051,8 @@ def scalarCert110 : MacroScalarCert 56 := {
   box := ⟨(413/16), (3363/128)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (3363/128)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (3363/128)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1180,9 +1060,9 @@ def scalarCert111 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (13511/512)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (13511/512)⟩, pieceIndex := 25 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (13511/512)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1190,8 +1070,8 @@ def scalarCert112 : MacroScalarCert 56 := {
   box := ⟨(13157/512), (6785/256)⟩
   a := (1405713487152099986076881071449/3200000000000000000000000000000000)
   segments := [
-    { box := ⟨(13157/512), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (6785/256)⟩, pieceIndex := 25 }
+    { box := ⟨(13157/512), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (6785/256)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1199,8 +1079,8 @@ def scalarCert113 : MacroScalarCert 56 := {
   box := ⟨(13157/512), (13511/512)⟩
   a := (1405713487152099986076881071449/3200000000000000000000000000000000)
   segments := [
-    { box := ⟨(13157/512), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (13511/512)⟩, pieceIndex := 25 }
+    { box := ⟨(13157/512), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (13511/512)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1208,8 +1088,8 @@ def scalarCert114 : MacroScalarCert 56 := {
   box := ⟨(413/16), (6785/256)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (6785/256)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (6785/256)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1217,8 +1097,8 @@ def scalarCert115 : MacroScalarCert 56 := {
   box := ⟨(413/16), (1711/64)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (1711/64)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (1711/64)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1226,8 +1106,8 @@ def scalarCert116 : MacroScalarCert 56 := {
   box := ⟨(413/16), (13629/512)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (13629/512)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (13629/512)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1235,8 +1115,8 @@ def scalarCert117 : MacroScalarCert 56 := {
   box := ⟨(13275/512), (1711/64)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(13275/512), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (1711/64)⟩, pieceIndex := 25 }
+    { box := ⟨(13275/512), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (1711/64)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1244,9 +1124,9 @@ def scalarCert118 : MacroScalarCert 56 := {
   box := ⟨(3245/128), (6903/256)⟩
   a := (146846847802364886838234197249/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (6903/256)⟩, pieceIndex := 25 }
+    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (6903/256)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1254,9 +1134,9 @@ def scalarCert119 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (3481/128)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (3481/128)⟩, pieceIndex := 25 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (3481/128)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1264,8 +1144,8 @@ def scalarCert120 : MacroScalarCert 56 := {
   box := ⟨(413/16), (885/32)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (885/32)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (885/32)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1273,9 +1153,9 @@ def scalarCert121 : MacroScalarCert 56 := {
   box := ⟨(8083/256), (8555/256)⟩
   a := (167322041776912901830875682929/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8555/256)⟩, pieceIndex := 31 }
+    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8555/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -1283,9 +1163,9 @@ def scalarCert122 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (4307/128)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (4307/128)⟩, pieceIndex := 31 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (4307/128)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -1293,9 +1173,9 @@ def scalarCert123 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (8555/256)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8555/256)⟩, pieceIndex := 31 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8555/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -1303,8 +1183,8 @@ def scalarCert124 : MacroScalarCert 56 := {
   box := ⟨(16461/512), (16815/512)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16815/512)⟩, pieceIndex := 31 }
+    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16815/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -1312,8 +1192,8 @@ def scalarCert125 : MacroScalarCert 56 := {
   box := ⟨(13157/512), (26727/1024)⟩
   a := (1405713487152099986076881071449/3200000000000000000000000000000000)
   segments := [
-    { box := ⟨(13157/512), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (26727/1024)⟩, pieceIndex := 25 }
+    { box := ⟨(13157/512), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (26727/1024)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1321,8 +1201,8 @@ def scalarCert126 : MacroScalarCert 56 := {
   box := ⟨(4897/256), (19883/1024)⟩
   a := (24983035225416475609781457263641/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/256), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (19883/1024)⟩, pieceIndex := 18 }
+    { box := ⟨(4897/256), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (19883/1024)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -1330,8 +1210,8 @@ def scalarCert127 : MacroScalarCert 56 := {
   box := ⟨(26373/1024), (13393/512)⟩
   a := (6939535078070123213019812388921/12800000000000000000000000000000000)
   segments := [
-    { box := ⟨(26373/1024), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (13393/512)⟩, pieceIndex := 25 }
+    { box := ⟨(26373/1024), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (13393/512)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1339,8 +1219,8 @@ def scalarCert128 : MacroScalarCert 56 := {
   box := ⟨(19647/1024), (9971/512)⟩
   a := (759767742443179976299775611858881/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19647/1024), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (9971/512)⟩, pieceIndex := 18 }
+    { box := ⟨(19647/1024), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (9971/512)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -1348,8 +1228,8 @@ def scalarCert129 : MacroScalarCert 56 := {
   box := ⟨(1239/64), (10207/512)⟩
   a := (676206949938427113180992093521/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (10207/512)⟩, pieceIndex := 19 }
+    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (10207/512)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1357,8 +1237,8 @@ def scalarCert130 : MacroScalarCert 56 := {
   box := ⟨(9971/512), (5133/256)⟩
   a := (1100717327808522518900723987406129/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9971/512), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (5133/256)⟩, pieceIndex := 19 }
+    { box := ⟨(9971/512), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (5133/256)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1366,8 +1246,8 @@ def scalarCert131 : MacroScalarCert 56 := {
   box := ⟨(8201/256), (8555/256)⟩
   a := (7402913802521846133201894614329/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8555/256)⟩, pieceIndex := 31 }
+    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8555/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -1375,8 +1255,8 @@ def scalarCert132 : MacroScalarCert 56 := {
   box := ⟨(413/16), (13511/512)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (13511/512)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (13511/512)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1384,8 +1264,8 @@ def scalarCert133 : MacroScalarCert 56 := {
   box := ⟨(13275/512), (6785/256)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(13275/512), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (6785/256)⟩, pieceIndex := 25 }
+    { box := ⟨(13275/512), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (6785/256)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1393,8 +1273,8 @@ def scalarCert134 : MacroScalarCert 56 := {
   box := ⟨(8201/256), (4307/128)⟩
   a := (7402913802521846133201894614329/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (4307/128)⟩, pieceIndex := 31 }
+    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (4307/128)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -1402,8 +1282,8 @@ def scalarCert135 : MacroScalarCert 56 := {
   box := ⟨(5015/256), (649/32)⟩
   a := (459565243/500000000000)
   segments := [
-    { box := ⟨(5015/256), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (649/32)⟩, pieceIndex := 19 }
+    { box := ⟨(5015/256), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (649/32)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1411,8 +1291,8 @@ def scalarCert136 : MacroScalarCert 56 := {
   box := ⟨(1711/128), (885/64)⟩
   a := (1610977803/1000000000000)
   segments := [
-    { box := ⟨(1711/128), (13505291/1000000)⟩, pieceIndex := 12 },
-    { box := ⟨(13505291/1000000), (885/64)⟩, pieceIndex := 13 }
+    { box := ⟨(1711/128), (13505291/1000000)⟩, pieceIndex := ⟨12, by decide⟩ },
+    { box := ⟨(13505291/1000000), (885/64)⟩, pieceIndex := ⟨13, by decide⟩ }
   ]
 }
 
@@ -1420,9 +1300,9 @@ def scalarCert137 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (4425/128)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (4425/128)⟩, pieceIndex := 31 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (4425/128)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -1430,9 +1310,9 @@ def scalarCert138 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (8673/256)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8673/256)⟩, pieceIndex := 31 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8673/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -1440,8 +1320,8 @@ def scalarCert139 : MacroScalarCert 56 := {
   box := ⟨(8201/256), (2183/64)⟩
   a := (7402913802521846133201894614329/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (2183/64)⟩, pieceIndex := 31 }
+    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (2183/64)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -1449,9 +1329,9 @@ def scalarCert140 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (6903/256)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (6903/256)⟩, pieceIndex := 25 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (6903/256)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1459,8 +1339,8 @@ def scalarCert141 : MacroScalarCert 56 := {
   box := ⟨(8201/256), (8673/256)⟩
   a := (7402913802521846133201894614329/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8673/256)⟩, pieceIndex := 31 }
+    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8673/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -1468,8 +1348,8 @@ def scalarCert142 : MacroScalarCert 56 := {
   box := ⟨(413/16), (3481/128)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (3481/128)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (3481/128)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1477,9 +1357,9 @@ def scalarCert143 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (1121/32)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (1121/32)⟩, pieceIndex := 31 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (1121/32)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -1487,8 +1367,8 @@ def scalarCert144 : MacroScalarCert 56 := {
   box := ⟨(9971/512), (2537/128)⟩
   a := (1100717327808522518900723987406129/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9971/512), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (2537/128)⟩, pieceIndex := 19 }
+    { box := ⟨(9971/512), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (2537/128)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1496,8 +1376,8 @@ def scalarCert145 : MacroScalarCert 56 := {
   box := ⟨(413/16), (6903/256)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (6903/256)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (6903/256)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1505,9 +1385,9 @@ def scalarCert146 : MacroScalarCert 56 := {
   box := ⟨(3245/128), (1829/64)⟩
   a := (146846847802364886838234197249/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (1829/64)⟩, pieceIndex := 25 }
+    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (1829/64)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1515,9 +1395,9 @@ def scalarCert147 : MacroScalarCert 56 := {
   box := ⟨(3245/128), (3599/128)⟩
   a := (146846847802364886838234197249/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (3599/128)⟩, pieceIndex := 25 }
+    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (3599/128)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1525,8 +1405,8 @@ def scalarCert148 : MacroScalarCert 56 := {
   box := ⟨(413/16), (3599/128)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (3599/128)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (3599/128)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1534,8 +1414,8 @@ def scalarCert149 : MacroScalarCert 56 := {
   box := ⟨(413/16), (1829/64)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (1829/64)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (1829/64)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1543,9 +1423,9 @@ def scalarCert150 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (2301/64)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (2301/64)⟩, pieceIndex := 31 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (2301/64)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -1553,9 +1433,9 @@ def scalarCert151 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (4543/128)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (4543/128)⟩, pieceIndex := 31 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (4543/128)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -1563,8 +1443,8 @@ def scalarCert152 : MacroScalarCert 56 := {
   box := ⟨(8201/256), (33335/1024)⟩
   a := (7402913802521846133201894614329/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (33335/1024)⟩, pieceIndex := 31 }
+    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (33335/1024)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -1572,8 +1452,8 @@ def scalarCert153 : MacroScalarCert 56 := {
   box := ⟨(1593/256), (6431/1024)⟩
   a := (897778972081946888029153112244121/204800000000000000000000000000000000)
   segments := [
-    { box := ⟨(1593/256), (250723/40000)⟩, pieceIndex := 2 },
-    { box := ⟨(250723/40000), (6431/1024)⟩, pieceIndex := 3 }
+    { box := ⟨(1593/256), (250723/40000)⟩, pieceIndex := ⟨2, by decide⟩ },
+    { box := ⟨(250723/40000), (6431/1024)⟩, pieceIndex := ⟨3, by decide⟩ }
   ]
 }
 
@@ -1581,8 +1461,8 @@ def scalarCert154 : MacroScalarCert 56 := {
   box := ⟨(32863/1024), (16697/512)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(32863/1024), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16697/512)⟩, pieceIndex := 31 }
+    { box := ⟨(32863/1024), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16697/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -1590,8 +1470,8 @@ def scalarCert155 : MacroScalarCert 56 := {
   box := ⟨(9971/512), (10207/512)⟩
   a := (1100717327808522518900723987406129/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9971/512), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (10207/512)⟩, pieceIndex := 19 }
+    { box := ⟨(9971/512), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (10207/512)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1599,8 +1479,8 @@ def scalarCert156 : MacroScalarCert 56 := {
   box := ⟨(5015/256), (5133/256)⟩
   a := (459565243/500000000000)
   segments := [
-    { box := ⟨(5015/256), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (5133/256)⟩, pieceIndex := 19 }
+    { box := ⟨(5015/256), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (5133/256)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1608,8 +1488,8 @@ def scalarCert157 : MacroScalarCert 56 := {
   box := ⟨(1239/64), (5251/256)⟩
   a := (676206949938427113180992093521/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (5251/256)⟩, pieceIndex := 19 }
+    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (5251/256)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1617,8 +1497,8 @@ def scalarCert158 : MacroScalarCert 56 := {
   box := ⟨(5015/256), (2655/128)⟩
   a := (459565243/500000000000)
   segments := [
-    { box := ⟨(5015/256), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (2655/128)⟩, pieceIndex := 19 }
+    { box := ⟨(5015/256), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (2655/128)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1626,8 +1506,8 @@ def scalarCert159 : MacroScalarCert 56 := {
   box := ⟨(5015/256), (5251/256)⟩
   a := (459565243/500000000000)
   segments := [
-    { box := ⟨(5015/256), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (5251/256)⟩, pieceIndex := 19 }
+    { box := ⟨(5015/256), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (5251/256)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1635,8 +1515,8 @@ def scalarCert160 : MacroScalarCert 56 := {
   box := ⟨(1239/64), (177/8)⟩
   a := (676206949938427113180992093521/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (177/8)⟩, pieceIndex := 19 }
+    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (177/8)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1644,8 +1524,8 @@ def scalarCert161 : MacroScalarCert 56 := {
   box := ⟨(1239/64), (2773/128)⟩
   a := (676206949938427113180992093521/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (2773/128)⟩, pieceIndex := 19 }
+    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (2773/128)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1653,8 +1533,8 @@ def scalarCert162 : MacroScalarCert 56 := {
   box := ⟨(13275/512), (13629/512)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(13275/512), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (13629/512)⟩, pieceIndex := 25 }
+    { box := ⟨(13275/512), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (13629/512)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1662,8 +1542,8 @@ def scalarCert163 : MacroScalarCert 56 := {
   box := ⟨(5015/256), (10325/512)⟩
   a := (459565243/500000000000)
   segments := [
-    { box := ⟨(5015/256), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (10325/512)⟩, pieceIndex := 19 }
+    { box := ⟨(5015/256), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (10325/512)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1671,8 +1551,8 @@ def scalarCert164 : MacroScalarCert 56 := {
   box := ⟨(10089/512), (649/32)⟩
   a := (459565243/500000000000)
   segments := [
-    { box := ⟨(10089/512), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (649/32)⟩, pieceIndex := 19 }
+    { box := ⟨(10089/512), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (649/32)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1680,8 +1560,8 @@ def scalarCert165 : MacroScalarCert 56 := {
   box := ⟨(6785/512), (3481/256)⟩
   a := (1610977803/1000000000000)
   segments := [
-    { box := ⟨(6785/512), (13505291/1000000)⟩, pieceIndex := 12 },
-    { box := ⟨(13505291/1000000), (3481/256)⟩, pieceIndex := 13 }
+    { box := ⟨(6785/512), (13505291/1000000)⟩, pieceIndex := ⟨12, by decide⟩ },
+    { box := ⟨(13505291/1000000), (3481/256)⟩, pieceIndex := ⟨13, by decide⟩ }
   ]
 }
 
@@ -1689,8 +1569,8 @@ def scalarCert166 : MacroScalarCert 56 := {
   box := ⟨(10089/512), (10325/512)⟩
   a := (459565243/500000000000)
   segments := [
-    { box := ⟨(10089/512), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (10325/512)⟩, pieceIndex := 19 }
+    { box := ⟨(10089/512), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (10325/512)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1698,8 +1578,8 @@ def scalarCert167 : MacroScalarCert 56 := {
   box := ⟨(413/16), (59/2)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (59/2)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (59/2)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1707,8 +1587,8 @@ def scalarCert168 : MacroScalarCert 56 := {
   box := ⟨(413/16), (3717/128)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (3717/128)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (3717/128)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1716,8 +1596,8 @@ def scalarCert169 : MacroScalarCert 56 := {
   box := ⟨(413/16), (7021/256)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (7021/256)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (7021/256)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1725,8 +1605,8 @@ def scalarCert170 : MacroScalarCert 56 := {
   box := ⟨(5015/256), (10207/512)⟩
   a := (459565243/500000000000)
   segments := [
-    { box := ⟨(5015/256), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (10207/512)⟩, pieceIndex := 19 }
+    { box := ⟨(5015/256), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (10207/512)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1734,8 +1614,8 @@ def scalarCert171 : MacroScalarCert 56 := {
   box := ⟨(59/8), (177/16)⟩
   a := (3595147923/1000000000000)
   segments := [
-    { box := ⟨(59/8), (1848269/250000)⟩, pieceIndex := 6 },
-    { box := ⟨(1848269/250000), (177/16)⟩, pieceIndex := 7 }
+    { box := ⟨(59/8), (1848269/250000)⟩, pieceIndex := ⟨6, by decide⟩ },
+    { box := ⟨(1848269/250000), (177/16)⟩, pieceIndex := ⟨7, by decide⟩ }
   ]
 }
 
@@ -1743,10 +1623,10 @@ def scalarCert172 : MacroScalarCert 56 := {
   box := ⟨(413/32), (295/16)⟩
   a := (20678976077282851379745931419361/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (13505291/1000000)⟩, pieceIndex := 12 },
-    { box := ⟨(13505291/1000000), (9113373/500000)⟩, pieceIndex := 13 },
-    { box := ⟨(9113373/500000), (295/16)⟩, pieceIndex := 14 }
+    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (13505291/1000000)⟩, pieceIndex := ⟨12, by decide⟩ },
+    { box := ⟨(13505291/1000000), (9113373/500000)⟩, pieceIndex := ⟨13, by decide⟩ },
+    { box := ⟨(9113373/500000), (295/16)⟩, pieceIndex := ⟨14, by decide⟩ }
   ]
 }
 
@@ -1754,9 +1634,9 @@ def scalarCert173 : MacroScalarCert 56 := {
   box := ⟨(413/32), (531/32)⟩
   a := (20678976077282851379745931419361/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (13505291/1000000)⟩, pieceIndex := 12 },
-    { box := ⟨(13505291/1000000), (531/32)⟩, pieceIndex := 13 }
+    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (13505291/1000000)⟩, pieceIndex := ⟨12, by decide⟩ },
+    { box := ⟨(13505291/1000000), (531/32)⟩, pieceIndex := ⟨13, by decide⟩ }
   ]
 }
 
@@ -1764,8 +1644,8 @@ def scalarCert174 : MacroScalarCert 56 := {
   box := ⟨(59/8), (295/32)⟩
   a := (3595147923/1000000000000)
   segments := [
-    { box := ⟨(59/8), (1848269/250000)⟩, pieceIndex := 6 },
-    { box := ⟨(1848269/250000), (295/32)⟩, pieceIndex := 7 }
+    { box := ⟨(59/8), (1848269/250000)⟩, pieceIndex := ⟨6, by decide⟩ },
+    { box := ⟨(1848269/250000), (295/32)⟩, pieceIndex := ⟨7, by decide⟩ }
   ]
 }
 
@@ -1773,9 +1653,9 @@ def scalarCert175 : MacroScalarCert 56 := {
   box := ⟨(413/32), (1003/64)⟩
   a := (20678976077282851379745931419361/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (13505291/1000000)⟩, pieceIndex := 12 },
-    { box := ⟨(13505291/1000000), (1003/64)⟩, pieceIndex := 13 }
+    { box := ⟨(413/32), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (13505291/1000000)⟩, pieceIndex := ⟨12, by decide⟩ },
+    { box := ⟨(13505291/1000000), (1003/64)⟩, pieceIndex := ⟨13, by decide⟩ }
   ]
 }
 
@@ -1783,8 +1663,8 @@ def scalarCert176 : MacroScalarCert 56 := {
   box := ⟨(413/16), (1947/64)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (1947/64)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (1947/64)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -1792,8 +1672,8 @@ def scalarCert177 : MacroScalarCert 56 := {
   box := ⟨(1239/64), (1475/64)⟩
   a := (676206949938427113180992093521/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (1475/64)⟩, pieceIndex := 19 }
+    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (1475/64)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1801,8 +1681,8 @@ def scalarCert178 : MacroScalarCert 56 := {
   box := ⟨(1239/64), (767/32)⟩
   a := (676206949938427113180992093521/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (767/32)⟩, pieceIndex := 19 }
+    { box := ⟨(1239/64), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (767/32)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -1810,10 +1690,10 @@ def scalarCert179 : MacroScalarCert 56 := {
   box := ⟨(413/16), (1003/32)⟩
   a := (37896421104977184428389275321/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := 27 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -1821,9 +1701,9 @@ def scalarCert180 : MacroScalarCert 56 := {
   box := ⟨(1711/64), (1003/32)⟩
   a := (37896421104977184428389275321/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(1711/64), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := 27 }
+    { box := ⟨(1711/64), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -1831,8 +1711,8 @@ def scalarCert181 : MacroScalarCert 56 := {
   box := ⟨(59/4), (295/16)⟩
   a := (361710019498569118941886428649/312500000000000000000000000000000)
   segments := [
-    { box := ⟨(59/4), (9113373/500000)⟩, pieceIndex := 13 },
-    { box := ⟨(9113373/500000), (295/16)⟩, pieceIndex := 14 }
+    { box := ⟨(59/4), (9113373/500000)⟩, pieceIndex := ⟨13, by decide⟩ },
+    { box := ⟨(9113373/500000), (295/16)⟩, pieceIndex := ⟨14, by decide⟩ }
   ]
 }
 
@@ -1840,9 +1720,9 @@ def scalarCert182 : MacroScalarCert 56 := {
   box := ⟨(649/32), (1593/64)⟩
   a := (1859160367141373243742933961/7629394531250000000000000000000)
   segments := [
-    { box := ⟨(649/32), (24478469/1000000)⟩, pieceIndex := 19 },
-    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := 21 }
+    { box := ⟨(649/32), (24478469/1000000)⟩, pieceIndex := ⟨19, by decide⟩ },
+    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -1850,9 +1730,9 @@ def scalarCert183 : MacroScalarCert 56 := {
   box := ⟨(1357/64), (1593/64)⟩
   a := (1859160367141373243742933961/7629394531250000000000000000000)
   segments := [
-    { box := ⟨(1357/64), (24478469/1000000)⟩, pieceIndex := 19 },
-    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := 21 }
+    { box := ⟨(1357/64), (24478469/1000000)⟩, pieceIndex := ⟨19, by decide⟩ },
+    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -1860,8 +1740,8 @@ def scalarCert184 : MacroScalarCert 56 := {
   box := ⟨(1003/64), (295/16)⟩
   a := (361710019498569118941886428649/312500000000000000000000000000000)
   segments := [
-    { box := ⟨(1003/64), (9113373/500000)⟩, pieceIndex := 13 },
-    { box := ⟨(9113373/500000), (295/16)⟩, pieceIndex := 14 }
+    { box := ⟨(1003/64), (9113373/500000)⟩, pieceIndex := ⟨13, by decide⟩ },
+    { box := ⟨(9113373/500000), (295/16)⟩, pieceIndex := ⟨14, by decide⟩ }
   ]
 }
 
@@ -1869,9 +1749,9 @@ def scalarCert185 : MacroScalarCert 56 := {
   box := ⟨(885/32), (1003/32)⟩
   a := (37896421104977184428389275321/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(885/32), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := 27 }
+    { box := ⟨(885/32), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -1879,9 +1759,9 @@ def scalarCert186 : MacroScalarCert 56 := {
   box := ⟨(177/8), (1593/64)⟩
   a := (1859160367141373243742933961/7629394531250000000000000000000)
   segments := [
-    { box := ⟨(177/8), (24478469/1000000)⟩, pieceIndex := 19 },
-    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := 21 }
+    { box := ⟨(177/8), (24478469/1000000)⟩, pieceIndex := ⟨19, by decide⟩ },
+    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -1889,8 +1769,8 @@ def scalarCert187 : MacroScalarCert 56 := {
   box := ⟨(531/32), (295/16)⟩
   a := (361710019498569118941886428649/312500000000000000000000000000000)
   segments := [
-    { box := ⟨(531/32), (9113373/500000)⟩, pieceIndex := 13 },
-    { box := ⟨(9113373/500000), (295/16)⟩, pieceIndex := 14 }
+    { box := ⟨(531/32), (9113373/500000)⟩, pieceIndex := ⟨13, by decide⟩ },
+    { box := ⟨(9113373/500000), (295/16)⟩, pieceIndex := ⟨14, by decide⟩ }
   ]
 }
 
@@ -1898,9 +1778,9 @@ def scalarCert188 : MacroScalarCert 56 := {
   box := ⟨(2301/128), (2419/128)⟩
   a := (46487548851628354344042770920761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2301/128), (9113373/500000)⟩, pieceIndex := 13 },
-    { box := ⟨(9113373/500000), (9300873/500000)⟩, pieceIndex := 14 },
-    { box := ⟨(9300873/500000), (2419/128)⟩, pieceIndex := 15 }
+    { box := ⟨(2301/128), (9113373/500000)⟩, pieceIndex := ⟨13, by decide⟩ },
+    { box := ⟨(9113373/500000), (9300873/500000)⟩, pieceIndex := ⟨14, by decide⟩ },
+    { box := ⟨(9300873/500000), (2419/128)⟩, pieceIndex := ⟨15, by decide⟩ }
   ]
 }
 
@@ -1908,9 +1788,9 @@ def scalarCert189 : MacroScalarCert 56 := {
   box := ⟨(767/64), (1593/128)⟩
   a := (65397592496506782025616240039841/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(767/64), (1200529/100000)⟩, pieceIndex := 7 },
-    { box := ⟨(1200529/100000), (1238029/100000)⟩, pieceIndex := 8 },
-    { box := ⟨(1238029/100000), (1593/128)⟩, pieceIndex := 9 }
+    { box := ⟨(767/64), (1200529/100000)⟩, pieceIndex := ⟨7, by decide⟩ },
+    { box := ⟨(1200529/100000), (1238029/100000)⟩, pieceIndex := ⟨8, by decide⟩ },
+    { box := ⟨(1238029/100000), (1593/128)⟩, pieceIndex := ⟨9, by decide⟩ }
   ]
 }
 
@@ -1918,9 +1798,9 @@ def scalarCert190 : MacroScalarCert 56 := {
   box := ⟨(767/32), (6431/256)⟩
   a := (769227545671561646446829644881/31250000000000000000000000000000000)
   segments := [
-    { box := ⟨(767/32), (24478469/1000000)⟩, pieceIndex := 19 },
-    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (6431/256)⟩, pieceIndex := 21 }
+    { box := ⟨(767/32), (24478469/1000000)⟩, pieceIndex := ⟨19, by decide⟩ },
+    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (6431/256)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -1928,9 +1808,9 @@ def scalarCert191 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (1239/32)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := 37 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -1938,9 +1818,9 @@ def scalarCert192 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (19765/512)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := 37 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -1948,9 +1828,9 @@ def scalarCert193 : MacroScalarCert 56 := {
   box := ⟨(19411/512), (1239/32)⟩
   a := (625761533908596174465411009662769/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := 37 }
+    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -1958,9 +1838,9 @@ def scalarCert194 : MacroScalarCert 56 := {
   box := ⟨(19411/512), (19765/512)⟩
   a := (625761533908596174465411009662769/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := 37 }
+    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -1968,9 +1848,9 @@ def scalarCert195 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (1239/32)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := 37 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -1978,9 +1858,9 @@ def scalarCert196 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (9971/256)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (9971/256)⟩, pieceIndex := 37 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (9971/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -1988,9 +1868,9 @@ def scalarCert197 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (19883/512)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := 37 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -1998,9 +1878,9 @@ def scalarCert198 : MacroScalarCert 56 := {
   box := ⟨(19411/512), (9971/256)⟩
   a := (625761533908596174465411009662769/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (9971/256)⟩, pieceIndex := 37 }
+    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (9971/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2008,9 +1888,9 @@ def scalarCert199 : MacroScalarCert 56 := {
   box := ⟨(19411/512), (19883/512)⟩
   a := (625761533908596174465411009662769/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := 37 }
+    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2018,9 +1898,9 @@ def scalarCert200 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (9971/256)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (9971/256)⟩, pieceIndex := 37 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (9971/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2028,9 +1908,9 @@ def scalarCert201 : MacroScalarCert 56 := {
   box := ⟨(8083/256), (2065/64)⟩
   a := (167322041776912901830875682929/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := 31 }
+    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -2038,9 +1918,9 @@ def scalarCert202 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (19883/512)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := 37 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2048,8 +1928,8 @@ def scalarCert203 : MacroScalarCert 56 := {
   box := ⟨(8083/256), (16461/512)⟩
   a := (167322041776912901830875682929/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (16461/512)⟩, pieceIndex := 30 }
+    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (16461/512)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -2057,8 +1937,8 @@ def scalarCert204 : MacroScalarCert 56 := {
   box := ⟨(19529/512), (9971/256)⟩
   a := (172336030037728650247271147738569/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19529/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (9971/256)⟩, pieceIndex := 37 }
+    { box := ⟨(19529/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (9971/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2066,9 +1946,9 @@ def scalarCert205 : MacroScalarCert 56 := {
   box := ⟨(16225/512), (2065/64)⟩
   a := (3895225326904878308147162909841/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := 31 }
+    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -2076,8 +1956,8 @@ def scalarCert206 : MacroScalarCert 56 := {
   box := ⟨(19529/512), (19883/512)⟩
   a := (172336030037728650247271147738569/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19529/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := 37 }
+    { box := ⟨(19529/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2085,8 +1965,8 @@ def scalarCert207 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (9971/256)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (9971/256)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (9971/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2094,9 +1974,9 @@ def scalarCert208 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (5015/128)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (5015/128)⟩, pieceIndex := 37 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (5015/128)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2104,9 +1984,9 @@ def scalarCert209 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (5015/128)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (5015/128)⟩, pieceIndex := 37 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (5015/128)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2114,9 +1994,9 @@ def scalarCert210 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (20001/512)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (20001/512)⟩, pieceIndex := 37 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (20001/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2124,8 +2004,8 @@ def scalarCert211 : MacroScalarCert 56 := {
   box := ⟨(19529/512), (5015/128)⟩
   a := (172336030037728650247271147738569/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19529/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (5015/128)⟩, pieceIndex := 37 }
+    { box := ⟨(19529/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (5015/128)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2133,8 +2013,8 @@ def scalarCert212 : MacroScalarCert 56 := {
   box := ⟨(295/16), (2419/128)⟩
   a := (46487548851628354344042770920761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(295/16), (9300873/500000)⟩, pieceIndex := 14 },
-    { box := ⟨(9300873/500000), (2419/128)⟩, pieceIndex := 15 }
+    { box := ⟨(295/16), (9300873/500000)⟩, pieceIndex := ⟨14, by decide⟩ },
+    { box := ⟨(9300873/500000), (2419/128)⟩, pieceIndex := ⟨15, by decide⟩ }
   ]
 }
 
@@ -2142,8 +2022,8 @@ def scalarCert213 : MacroScalarCert 56 := {
   box := ⟨(767/64), (3127/256)⟩
   a := (219261670598035323657524238642169/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(767/64), (1200529/100000)⟩, pieceIndex := 7 },
-    { box := ⟨(1200529/100000), (3127/256)⟩, pieceIndex := 8 }
+    { box := ⟨(767/64), (1200529/100000)⟩, pieceIndex := ⟨7, by decide⟩ },
+    { box := ⟨(1200529/100000), (3127/256)⟩, pieceIndex := ⟨8, by decide⟩ }
   ]
 }
 
@@ -2151,8 +2031,8 @@ def scalarCert214 : MacroScalarCert 56 := {
   box := ⟨(3127/256), (1593/128)⟩
   a := (65397592496506782025616240039841/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3127/256), (1238029/100000)⟩, pieceIndex := 8 },
-    { box := ⟨(1238029/100000), (1593/128)⟩, pieceIndex := 9 }
+    { box := ⟨(3127/256), (1238029/100000)⟩, pieceIndex := ⟨8, by decide⟩ },
+    { box := ⟨(1238029/100000), (1593/128)⟩, pieceIndex := ⟨9, by decide⟩ }
   ]
 }
 
@@ -2160,9 +2040,9 @@ def scalarCert215 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (2537/64)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (2537/64)⟩, pieceIndex := 37 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (2537/64)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2170,9 +2050,9 @@ def scalarCert216 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (10089/256)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (10089/256)⟩, pieceIndex := 37 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (10089/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2180,8 +2060,8 @@ def scalarCert217 : MacroScalarCert 56 := {
   box := ⟨(19529/512), (20001/512)⟩
   a := (172336030037728650247271147738569/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19529/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (20001/512)⟩, pieceIndex := 37 }
+    { box := ⟨(19529/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (20001/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2189,8 +2069,8 @@ def scalarCert218 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (5015/128)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (5015/128)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (5015/128)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2198,8 +2078,8 @@ def scalarCert219 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (20001/512)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (20001/512)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (20001/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2207,8 +2087,8 @@ def scalarCert220 : MacroScalarCert 56 := {
   box := ⟨(19647/512), (20001/512)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (20001/512)⟩, pieceIndex := 37 }
+    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (20001/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2216,8 +2096,8 @@ def scalarCert221 : MacroScalarCert 56 := {
   box := ⟨(19647/512), (5015/128)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (5015/128)⟩, pieceIndex := 37 }
+    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (5015/128)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2225,9 +2105,9 @@ def scalarCert222 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (10089/256)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (10089/256)⟩, pieceIndex := 37 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (10089/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2235,8 +2115,8 @@ def scalarCert223 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (10089/256)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (10089/256)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (10089/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2244,8 +2124,8 @@ def scalarCert224 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (20119/512)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (20119/512)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (20119/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2253,8 +2133,8 @@ def scalarCert225 : MacroScalarCert 56 := {
   box := ⟨(19647/512), (10089/256)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (10089/256)⟩, pieceIndex := 37 }
+    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (10089/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2262,8 +2142,8 @@ def scalarCert226 : MacroScalarCert 56 := {
   box := ⟨(19647/512), (20119/512)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (20119/512)⟩, pieceIndex := 37 }
+    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (20119/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2271,8 +2151,8 @@ def scalarCert227 : MacroScalarCert 56 := {
   box := ⟨(9853/256), (10089/256)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (10089/256)⟩, pieceIndex := 37 }
+    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (10089/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2280,9 +2160,9 @@ def scalarCert228 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (2537/64)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (2537/64)⟩, pieceIndex := 37 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (2537/64)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2290,8 +2170,8 @@ def scalarCert229 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (2537/64)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (2537/64)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (2537/64)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2299,8 +2179,8 @@ def scalarCert230 : MacroScalarCert 56 := {
   box := ⟨(9853/256), (2537/64)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (2537/64)⟩, pieceIndex := 37 }
+    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (2537/64)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2308,9 +2188,9 @@ def scalarCert231 : MacroScalarCert 56 := {
   box := ⟨(6195/256), (6431/256)⟩
   a := (769227545671561646446829644881/31250000000000000000000000000000000)
   segments := [
-    { box := ⟨(6195/256), (24478469/1000000)⟩, pieceIndex := 19 },
-    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (6431/256)⟩, pieceIndex := 21 }
+    { box := ⟨(6195/256), (24478469/1000000)⟩, pieceIndex := ⟨19, by decide⟩ },
+    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (6431/256)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -2318,9 +2198,9 @@ def scalarCert232 : MacroScalarCert 56 := {
   box := ⟨(2301/128), (4779/256)⟩
   a := (2891119993742916046127024249511169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2301/128), (9113373/500000)⟩, pieceIndex := 13 },
-    { box := ⟨(9113373/500000), (9300873/500000)⟩, pieceIndex := 14 },
-    { box := ⟨(9300873/500000), (4779/256)⟩, pieceIndex := 15 }
+    { box := ⟨(2301/128), (9113373/500000)⟩, pieceIndex := ⟨13, by decide⟩ },
+    { box := ⟨(9113373/500000), (9300873/500000)⟩, pieceIndex := ⟨14, by decide⟩ },
+    { box := ⟨(9300873/500000), (4779/256)⟩, pieceIndex := ⟨15, by decide⟩ }
   ]
 }
 
@@ -2328,9 +2208,9 @@ def scalarCert233 : MacroScalarCert 56 := {
   box := ⟨(4661/256), (2419/128)⟩
   a := (46487548851628354344042770920761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4661/256), (9113373/500000)⟩, pieceIndex := 13 },
-    { box := ⟨(9113373/500000), (9300873/500000)⟩, pieceIndex := 14 },
-    { box := ⟨(9300873/500000), (2419/128)⟩, pieceIndex := 15 }
+    { box := ⟨(4661/256), (9113373/500000)⟩, pieceIndex := ⟨13, by decide⟩ },
+    { box := ⟨(9113373/500000), (9300873/500000)⟩, pieceIndex := ⟨14, by decide⟩ },
+    { box := ⟨(9300873/500000), (2419/128)⟩, pieceIndex := ⟨15, by decide⟩ }
   ]
 }
 
@@ -2338,9 +2218,9 @@ def scalarCert234 : MacroScalarCert 56 := {
   box := ⟨(3127/128), (6431/256)⟩
   a := (769227545671561646446829644881/31250000000000000000000000000000000)
   segments := [
-    { box := ⟨(3127/128), (24478469/1000000)⟩, pieceIndex := 19 },
-    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (6431/256)⟩, pieceIndex := 21 }
+    { box := ⟨(3127/128), (24478469/1000000)⟩, pieceIndex := ⟨19, by decide⟩ },
+    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (6431/256)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -2348,9 +2228,9 @@ def scalarCert235 : MacroScalarCert 56 := {
   box := ⟨(4661/256), (4779/256)⟩
   a := (2891119993742916046127024249511169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4661/256), (9113373/500000)⟩, pieceIndex := 13 },
-    { box := ⟨(9113373/500000), (9300873/500000)⟩, pieceIndex := 14 },
-    { box := ⟨(9300873/500000), (4779/256)⟩, pieceIndex := 15 }
+    { box := ⟨(4661/256), (9113373/500000)⟩, pieceIndex := ⟨13, by decide⟩ },
+    { box := ⟨(9113373/500000), (9300873/500000)⟩, pieceIndex := ⟨14, by decide⟩ },
+    { box := ⟨(9300873/500000), (4779/256)⟩, pieceIndex := ⟨15, by decide⟩ }
   ]
 }
 
@@ -2358,9 +2238,9 @@ def scalarCert236 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (5133/128)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (5133/128)⟩, pieceIndex := 37 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (5133/128)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2368,9 +2248,9 @@ def scalarCert237 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (10207/256)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (10207/256)⟩, pieceIndex := 37 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (10207/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2378,9 +2258,9 @@ def scalarCert238 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (5133/128)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (5133/128)⟩, pieceIndex := 37 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (5133/128)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2388,9 +2268,9 @@ def scalarCert239 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (10207/256)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (10207/256)⟩, pieceIndex := 37 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (10207/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2398,8 +2278,8 @@ def scalarCert240 : MacroScalarCert 56 := {
   box := ⟨(9853/256), (20119/512)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (20119/512)⟩, pieceIndex := 37 }
+    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (20119/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2407,8 +2287,8 @@ def scalarCert241 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (10207/256)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (10207/256)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (10207/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2416,8 +2296,8 @@ def scalarCert242 : MacroScalarCert 56 := {
   box := ⟨(9853/256), (10207/256)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (10207/256)⟩, pieceIndex := 37 }
+    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (10207/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2425,8 +2305,8 @@ def scalarCert243 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (5133/128)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (5133/128)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (5133/128)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2434,9 +2314,9 @@ def scalarCert244 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (649/16)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (649/16)⟩, pieceIndex := 37 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (649/16)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2444,9 +2324,9 @@ def scalarCert245 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (5251/128)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (5251/128)⟩, pieceIndex := 37 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (5251/128)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2454,9 +2334,9 @@ def scalarCert246 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (2655/64)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (2655/64)⟩, pieceIndex := 37 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (2655/64)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2464,8 +2344,8 @@ def scalarCert247 : MacroScalarCert 56 := {
   box := ⟨(9853/256), (20237/512)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (20237/512)⟩, pieceIndex := 37 }
+    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (20237/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2473,8 +2353,8 @@ def scalarCert248 : MacroScalarCert 56 := {
   box := ⟨(295/16), (9617/512)⟩
   a := (4543500314017536620797999797247801/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(295/16), (9300873/500000)⟩, pieceIndex := 14 },
-    { box := ⟨(9300873/500000), (9617/512)⟩, pieceIndex := 15 }
+    { box := ⟨(295/16), (9300873/500000)⟩, pieceIndex := ⟨14, by decide⟩ },
+    { box := ⟨(9300873/500000), (9617/512)⟩, pieceIndex := ⟨15, by decide⟩ }
   ]
 }
 
@@ -2482,8 +2362,8 @@ def scalarCert249 : MacroScalarCert 56 := {
   box := ⟨(9499/512), (2419/128)⟩
   a := (46487548851628354344042770920761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9499/512), (9300873/500000)⟩, pieceIndex := 14 },
-    { box := ⟨(9300873/500000), (2419/128)⟩, pieceIndex := 15 }
+    { box := ⟨(9499/512), (9300873/500000)⟩, pieceIndex := ⟨14, by decide⟩ },
+    { box := ⟨(9300873/500000), (2419/128)⟩, pieceIndex := ⟨15, by decide⟩ }
   ]
 }
 
@@ -2491,9 +2371,9 @@ def scalarCert250 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (1357/32)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (1357/32)⟩, pieceIndex := 37 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (1357/32)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2501,9 +2381,9 @@ def scalarCert251 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (5369/128)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (5369/128)⟩, pieceIndex := 37 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (5369/128)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2511,8 +2391,8 @@ def scalarCert252 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (649/16)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (649/16)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (649/16)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2520,8 +2400,8 @@ def scalarCert253 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (10325/256)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (10325/256)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (10325/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2529,8 +2409,8 @@ def scalarCert254 : MacroScalarCert 56 := {
   box := ⟨(13275/512), (13511/512)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(13275/512), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (13511/512)⟩, pieceIndex := 25 }
+    { box := ⟨(13275/512), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (13511/512)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -2538,8 +2418,8 @@ def scalarCert255 : MacroScalarCert 56 := {
   box := ⟨(9853/256), (5015/128)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (5015/128)⟩, pieceIndex := 37 }
+    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (5015/128)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2547,8 +2427,8 @@ def scalarCert256 : MacroScalarCert 56 := {
   box := ⟨(9853/256), (5133/128)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (5133/128)⟩, pieceIndex := 37 }
+    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (5133/128)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2556,8 +2436,8 @@ def scalarCert257 : MacroScalarCert 56 := {
   box := ⟨(9853/256), (10325/256)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (10325/256)⟩, pieceIndex := 37 }
+    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (10325/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2565,8 +2445,8 @@ def scalarCert258 : MacroScalarCert 56 := {
   box := ⟨(9853/256), (649/16)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (649/16)⟩, pieceIndex := 37 }
+    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (649/16)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2574,8 +2454,8 @@ def scalarCert259 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (5251/128)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (5251/128)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (5251/128)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2583,8 +2463,8 @@ def scalarCert260 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (2655/64)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (2655/64)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (2655/64)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2592,8 +2472,8 @@ def scalarCert261 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (5369/128)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (5369/128)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (5369/128)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2601,8 +2481,8 @@ def scalarCert262 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (1357/32)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (1357/32)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (1357/32)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2610,10 +2490,10 @@ def scalarCert263 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (2773/64)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (43287167/1000000)⟩, pieceIndex := 37 },
-    { box := ⟨(43287167/1000000), (2773/64)⟩, pieceIndex := 38 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (43287167/1000000)⟩, pieceIndex := ⟨37, by decide⟩ },
+    { box := ⟨(43287167/1000000), (2773/64)⟩, pieceIndex := ⟨38, by decide⟩ }
   ]
 }
 
@@ -2621,8 +2501,8 @@ def scalarCert264 : MacroScalarCert 56 := {
   box := ⟨(1239/32), (2773/64)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(1239/32), (43287167/1000000)⟩, pieceIndex := 37 },
-    { box := ⟨(43287167/1000000), (2773/64)⟩, pieceIndex := 38 }
+    { box := ⟨(1239/32), (43287167/1000000)⟩, pieceIndex := ⟨37, by decide⟩ },
+    { box := ⟨(43287167/1000000), (2773/64)⟩, pieceIndex := ⟨38, by decide⟩ }
   ]
 }
 
@@ -2630,8 +2510,8 @@ def scalarCert265 : MacroScalarCert 56 := {
   box := ⟨(8083/256), (8201/256)⟩
   a := (167322041776912901830875682929/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (8201/256)⟩, pieceIndex := 30 }
+    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (8201/256)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -2639,8 +2519,8 @@ def scalarCert266 : MacroScalarCert 56 := {
   box := ⟨(3245/128), (13157/512)⟩
   a := (146846847802364886838234197249/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (13157/512)⟩, pieceIndex := 24 }
+    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (13157/512)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -2648,8 +2528,8 @@ def scalarCert267 : MacroScalarCert 56 := {
   box := ⟨(16225/512), (16461/512)⟩
   a := (3895225326904878308147162909841/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (16461/512)⟩, pieceIndex := 30 }
+    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (16461/512)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -2657,8 +2537,8 @@ def scalarCert268 : MacroScalarCert 56 := {
   box := ⟨(4897/256), (1239/64)⟩
   a := (24983035225416475609781457263641/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/256), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (1239/64)⟩, pieceIndex := 18 }
+    { box := ⟨(4897/256), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (1239/64)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -2666,8 +2546,8 @@ def scalarCert269 : MacroScalarCert 56 := {
   box := ⟨(13039/512), (413/16)⟩
   a := (8807754158064216214287607996609/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (413/16)⟩, pieceIndex := 24 }
+    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (413/16)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -2675,9 +2555,9 @@ def scalarCert270 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (2065/64)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := 31 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -2685,8 +2565,8 @@ def scalarCert271 : MacroScalarCert 56 := {
   box := ⟨(19529/512), (1239/32)⟩
   a := (172336030037728650247271147738569/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19529/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := 37 }
+    { box := ⟨(19529/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2694,8 +2574,8 @@ def scalarCert272 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (19883/512)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2703,8 +2583,8 @@ def scalarCert273 : MacroScalarCert 56 := {
   box := ⟨(19647/512), (9971/256)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (9971/256)⟩, pieceIndex := 37 }
+    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (9971/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -2712,8 +2592,8 @@ def scalarCert274 : MacroScalarCert 56 := {
   box := ⟨(9853/512), (9971/512)⟩
   a := (308609266148826216472188856757689/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9853/512), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (9971/512)⟩, pieceIndex := 18 }
+    { box := ⟨(9853/512), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (9971/512)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -2721,8 +2601,8 @@ def scalarCert275 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (13275/512)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (13275/512)⟩, pieceIndex := 24 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (13275/512)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -2730,8 +2610,8 @@ def scalarCert276 : MacroScalarCert 56 := {
   box := ⟨(16343/512), (16579/512)⟩
   a := (19145944597030269950435668435441/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16343/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16579/512)⟩, pieceIndex := 31 }
+    { box := ⟨(16343/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16579/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -2739,8 +2619,8 @@ def scalarCert277 : MacroScalarCert 56 := {
   box := ⟨(6313/512), (1593/128)⟩
   a := (65397592496506782025616240039841/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6313/512), (1238029/100000)⟩, pieceIndex := 8 },
-    { box := ⟨(1238029/100000), (1593/128)⟩, pieceIndex := 9 }
+    { box := ⟨(6313/512), (1238029/100000)⟩, pieceIndex := ⟨8, by decide⟩ },
+    { box := ⟨(1238029/100000), (1593/128)⟩, pieceIndex := ⟨9, by decide⟩ }
   ]
 }
 
@@ -2748,8 +2628,8 @@ def scalarCert278 : MacroScalarCert 56 := {
   box := ⟨(8201/256), (8319/256)⟩
   a := (7402913802521846133201894614329/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8319/256)⟩, pieceIndex := 31 }
+    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8319/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -2757,9 +2637,9 @@ def scalarCert279 : MacroScalarCert 56 := {
   box := ⟨(22597/512), (11505/256)⟩
   a := (12404326906898653543170837152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := 43 }
+    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2767,9 +2647,9 @@ def scalarCert280 : MacroScalarCert 56 := {
   box := ⟨(22597/512), (2891/64)⟩
   a := (12404326906898653543170837152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (2891/64)⟩, pieceIndex := 43 }
+    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (2891/64)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2777,9 +2657,9 @@ def scalarCert281 : MacroScalarCert 56 := {
   box := ⟨(22597/512), (23069/512)⟩
   a := (12404326906898653543170837152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := 43 }
+    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2787,9 +2667,9 @@ def scalarCert282 : MacroScalarCert 56 := {
   box := ⟨(177/4), (2891/64)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (2891/64)⟩, pieceIndex := 43 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (2891/64)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2797,9 +2677,9 @@ def scalarCert283 : MacroScalarCert 56 := {
   box := ⟨(177/4), (11623/256)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11623/256)⟩, pieceIndex := 43 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11623/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2807,9 +2687,9 @@ def scalarCert284 : MacroScalarCert 56 := {
   box := ⟨(177/4), (23187/512)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23187/512)⟩, pieceIndex := 43 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23187/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2817,9 +2697,9 @@ def scalarCert285 : MacroScalarCert 56 := {
   box := ⟨(22715/512), (11623/256)⟩
   a := (140156038325279709457315581152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11623/256)⟩, pieceIndex := 43 }
+    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11623/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2827,9 +2707,9 @@ def scalarCert286 : MacroScalarCert 56 := {
   box := ⟨(177/4), (5841/128)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (5841/128)⟩, pieceIndex := 43 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (5841/128)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2837,9 +2717,9 @@ def scalarCert287 : MacroScalarCert 56 := {
   box := ⟨(177/4), (23069/512)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := 43 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2847,9 +2727,9 @@ def scalarCert288 : MacroScalarCert 56 := {
   box := ⟨(22715/512), (2891/64)⟩
   a := (140156038325279709457315581152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (2891/64)⟩, pieceIndex := 43 }
+    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (2891/64)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2857,9 +2737,9 @@ def scalarCert289 : MacroScalarCert 56 := {
   box := ⟨(22715/512), (23187/512)⟩
   a := (140156038325279709457315581152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23187/512)⟩, pieceIndex := 43 }
+    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23187/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2867,8 +2747,8 @@ def scalarCert290 : MacroScalarCert 56 := {
   box := ⟨(11387/256), (11623/256)⟩
   a := (65768103458522511747545895061489/500000000000000000000000000000000000)
   segments := [
-    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11623/256)⟩, pieceIndex := 43 }
+    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11623/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2876,8 +2756,8 @@ def scalarCert291 : MacroScalarCert 56 := {
   box := ⟨(11387/256), (5841/128)⟩
   a := (65768103458522511747545895061489/500000000000000000000000000000000000)
   segments := [
-    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (5841/128)⟩, pieceIndex := 43 }
+    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (5841/128)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2885,8 +2765,8 @@ def scalarCert292 : MacroScalarCert 56 := {
   box := ⟨(11387/256), (23305/512)⟩
   a := (65768103458522511747545895061489/500000000000000000000000000000000000)
   segments := [
-    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23305/512)⟩, pieceIndex := 43 }
+    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23305/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2894,8 +2774,8 @@ def scalarCert293 : MacroScalarCert 56 := {
   box := ⟨(22833/512), (5841/128)⟩
   a := (403384292552130139662239000449081/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (5841/128)⟩, pieceIndex := 43 }
+    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (5841/128)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2903,8 +2783,8 @@ def scalarCert294 : MacroScalarCert 56 := {
   box := ⟨(22833/512), (23305/512)⟩
   a := (403384292552130139662239000449081/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23305/512)⟩, pieceIndex := 43 }
+    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23305/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2912,8 +2792,8 @@ def scalarCert295 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (5841/128)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (5841/128)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (5841/128)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2921,9 +2801,9 @@ def scalarCert296 : MacroScalarCert 56 := {
   box := ⟨(177/4), (11741/256)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11741/256)⟩, pieceIndex := 43 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11741/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2931,8 +2811,8 @@ def scalarCert297 : MacroScalarCert 56 := {
   box := ⟨(11387/256), (11741/256)⟩
   a := (65768103458522511747545895061489/500000000000000000000000000000000000)
   segments := [
-    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11741/256)⟩, pieceIndex := 43 }
+    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11741/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2940,9 +2820,9 @@ def scalarCert298 : MacroScalarCert 56 := {
   box := ⟨(177/4), (1475/32)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (1475/32)⟩, pieceIndex := 43 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (1475/32)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2950,8 +2830,8 @@ def scalarCert299 : MacroScalarCert 56 := {
   box := ⟨(11387/256), (1475/32)⟩
   a := (65768103458522511747545895061489/500000000000000000000000000000000000)
   segments := [
-    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (1475/32)⟩, pieceIndex := 43 }
+    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (1475/32)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2959,8 +2839,8 @@ def scalarCert300 : MacroScalarCert 56 := {
   box := ⟨(11387/256), (23187/512)⟩
   a := (65768103458522511747545895061489/500000000000000000000000000000000000)
   segments := [
-    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23187/512)⟩, pieceIndex := 43 }
+    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23187/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2968,8 +2848,8 @@ def scalarCert301 : MacroScalarCert 56 := {
   box := ⟨(22833/512), (11623/256)⟩
   a := (403384292552130139662239000449081/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11623/256)⟩, pieceIndex := 43 }
+    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11623/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2977,9 +2857,9 @@ def scalarCert302 : MacroScalarCert 56 := {
   box := ⟨(177/4), (5959/128)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (5959/128)⟩, pieceIndex := 43 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (5959/128)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2987,9 +2867,9 @@ def scalarCert303 : MacroScalarCert 56 := {
   box := ⟨(177/4), (11859/256)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11859/256)⟩, pieceIndex := 43 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11859/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -2997,8 +2877,8 @@ def scalarCert304 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (11741/256)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11741/256)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11741/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3006,8 +2886,8 @@ def scalarCert305 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (23423/512)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23423/512)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23423/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3015,8 +2895,8 @@ def scalarCert306 : MacroScalarCert 56 := {
   box := ⟨(11387/256), (11859/256)⟩
   a := (65768103458522511747545895061489/500000000000000000000000000000000000)
   segments := [
-    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11859/256)⟩, pieceIndex := 43 }
+    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11859/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3024,8 +2904,8 @@ def scalarCert307 : MacroScalarCert 56 := {
   box := ⟨(11387/256), (5959/128)⟩
   a := (65768103458522511747545895061489/500000000000000000000000000000000000)
   segments := [
-    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (5959/128)⟩, pieceIndex := 43 }
+    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (5959/128)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3033,9 +2913,9 @@ def scalarCert308 : MacroScalarCert 56 := {
   box := ⟨(177/4), (3009/64)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (3009/64)⟩, pieceIndex := 43 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (3009/64)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3043,8 +2923,8 @@ def scalarCert309 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (1475/32)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (1475/32)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (1475/32)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3052,8 +2932,8 @@ def scalarCert310 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (11859/256)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11859/256)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11859/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3061,8 +2941,8 @@ def scalarCert311 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (5959/128)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (5959/128)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (5959/128)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3070,8 +2950,8 @@ def scalarCert312 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (3009/64)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (3009/64)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (3009/64)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3079,9 +2959,9 @@ def scalarCert313 : MacroScalarCert 56 := {
   box := ⟨(177/4), (6077/128)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (6077/128)⟩, pieceIndex := 43 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (6077/128)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3089,9 +2969,9 @@ def scalarCert314 : MacroScalarCert 56 := {
   box := ⟨(177/4), (767/16)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (767/16)⟩, pieceIndex := 43 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (767/16)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3099,9 +2979,9 @@ def scalarCert315 : MacroScalarCert 56 := {
   box := ⟨(177/4), (3127/64)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (3127/64)⟩, pieceIndex := 43 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (3127/64)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3109,10 +2989,10 @@ def scalarCert316 : MacroScalarCert 56 := {
   box := ⟨(177/4), (1593/32)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (4956351/100000)⟩, pieceIndex := 43 },
-    { box := ⟨(4956351/100000), (1593/32)⟩, pieceIndex := 44 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (4956351/100000)⟩, pieceIndex := ⟨43, by decide⟩ },
+    { box := ⟨(4956351/100000), (1593/32)⟩, pieceIndex := ⟨44, by decide⟩ }
   ]
 }
 
@@ -3120,9 +3000,9 @@ def scalarCert317 : MacroScalarCert 56 := {
   box := ⟨(177/4), (6195/128)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (6195/128)⟩, pieceIndex := 43 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (6195/128)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3130,8 +3010,8 @@ def scalarCert318 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (6077/128)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (6077/128)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (6077/128)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3139,8 +3019,8 @@ def scalarCert319 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (767/16)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (767/16)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (767/16)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3148,8 +3028,8 @@ def scalarCert320 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (6195/128)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (6195/128)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (6195/128)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3157,8 +3037,8 @@ def scalarCert321 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (3127/64)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (3127/64)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (3127/64)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3166,8 +3046,8 @@ def scalarCert322 : MacroScalarCert 56 := {
   box := ⟨(2891/64), (1593/32)⟩
   a := (46836154938348103515241447449/312500000000000000000000000000000)
   segments := [
-    { box := ⟨(2891/64), (4956351/100000)⟩, pieceIndex := 43 },
-    { box := ⟨(4956351/100000), (1593/32)⟩, pieceIndex := 44 }
+    { box := ⟨(2891/64), (4956351/100000)⟩, pieceIndex := ⟨43, by decide⟩ },
+    { box := ⟨(4956351/100000), (1593/32)⟩, pieceIndex := ⟨44, by decide⟩ }
   ]
 }
 
@@ -3175,8 +3055,8 @@ def scalarCert323 : MacroScalarCert 56 := {
   box := ⟨(59/8), (531/64)⟩
   a := (3595147923/1000000000000)
   segments := [
-    { box := ⟨(59/8), (1848269/250000)⟩, pieceIndex := 6 },
-    { box := ⟨(1848269/250000), (531/64)⟩, pieceIndex := 7 }
+    { box := ⟨(59/8), (1848269/250000)⟩, pieceIndex := ⟨6, by decide⟩ },
+    { box := ⟨(1848269/250000), (531/64)⟩, pieceIndex := ⟨7, by decide⟩ }
   ]
 }
 
@@ -3184,9 +3064,9 @@ def scalarCert324 : MacroScalarCert 56 := {
   box := ⟨(59/2), (1003/32)⟩
   a := (37896421104977184428389275321/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(59/2), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := 27 }
+    { box := ⟨(59/2), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -3194,8 +3074,8 @@ def scalarCert325 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (9853/256)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (9853/256)⟩, pieceIndex := 36 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (9853/256)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -3203,8 +3083,8 @@ def scalarCert326 : MacroScalarCert 56 := {
   box := ⟨(19411/512), (9853/256)⟩
   a := (625761533908596174465411009662769/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (9853/256)⟩, pieceIndex := 36 }
+    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (9853/256)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -3212,9 +3092,9 @@ def scalarCert327 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (19765/512)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := 37 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3222,9 +3102,9 @@ def scalarCert328 : MacroScalarCert 56 := {
   box := ⟨(3009/128), (1593/64)⟩
   a := (1859160367141373243742933961/7629394531250000000000000000000)
   segments := [
-    { box := ⟨(3009/128), (24478469/1000000)⟩, pieceIndex := 19 },
-    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := 21 }
+    { box := ⟨(3009/128), (24478469/1000000)⟩, pieceIndex := ⟨19, by decide⟩ },
+    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -3232,8 +3112,8 @@ def scalarCert329 : MacroScalarCert 56 := {
   box := ⟨(1121/64), (295/16)⟩
   a := (361710019498569118941886428649/312500000000000000000000000000000)
   segments := [
-    { box := ⟨(1121/64), (9113373/500000)⟩, pieceIndex := 13 },
-    { box := ⟨(9113373/500000), (295/16)⟩, pieceIndex := 14 }
+    { box := ⟨(1121/64), (9113373/500000)⟩, pieceIndex := ⟨13, by decide⟩ },
+    { box := ⟨(9113373/500000), (295/16)⟩, pieceIndex := ⟨14, by decide⟩ }
   ]
 }
 
@@ -3241,8 +3121,8 @@ def scalarCert330 : MacroScalarCert 56 := {
   box := ⟨(9499/512), (9617/512)⟩
   a := (4543500314017536620797999797247801/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9499/512), (9300873/500000)⟩, pieceIndex := 14 },
-    { box := ⟨(9300873/500000), (9617/512)⟩, pieceIndex := 15 }
+    { box := ⟨(9499/512), (9300873/500000)⟩, pieceIndex := ⟨14, by decide⟩ },
+    { box := ⟨(9300873/500000), (9617/512)⟩, pieceIndex := ⟨15, by decide⟩ }
   ]
 }
 
@@ -3250,8 +3130,8 @@ def scalarCert331 : MacroScalarCert 56 := {
   box := ⟨(8083/256), (32745/1024)⟩
   a := (167322041776912901830875682929/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (32745/1024)⟩, pieceIndex := 30 }
+    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (32745/1024)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -3259,9 +3139,9 @@ def scalarCert332 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (39471/1024)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39471/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39471/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3269,8 +3149,8 @@ def scalarCert333 : MacroScalarCert 56 := {
   box := ⟨(32391/1024), (8201/256)⟩
   a := (7793772368438963417005384017489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32391/1024), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (8201/256)⟩, pieceIndex := 30 }
+    { box := ⟨(32391/1024), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (8201/256)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -3278,9 +3158,9 @@ def scalarCert334 : MacroScalarCert 56 := {
   box := ⟨(38999/1024), (19765/512)⟩
   a := (11677601791109548745136801743604201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := 37 }
+    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3288,8 +3168,8 @@ def scalarCert335 : MacroScalarCert 56 := {
   box := ⟨(32273/1024), (16343/512)⟩
   a := (231042207594442269454532367489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32273/1024), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (16343/512)⟩, pieceIndex := 30 }
+    { box := ⟨(32273/1024), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (16343/512)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -3297,8 +3177,8 @@ def scalarCert336 : MacroScalarCert 56 := {
   box := ⟨(19765/1024), (20001/1024)⟩
   a := (1823736530063038278523442761733881/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19765/1024), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (20001/1024)⟩, pieceIndex := 18 }
+    { box := ⟨(19765/1024), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (20001/1024)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -3306,8 +3186,8 @@ def scalarCert337 : MacroScalarCert 56 := {
   box := ⟨(32391/1024), (32745/1024)⟩
   a := (7793772368438963417005384017489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32391/1024), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (32745/1024)⟩, pieceIndex := 30 }
+    { box := ⟨(32391/1024), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (32745/1024)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -3315,9 +3195,9 @@ def scalarCert338 : MacroScalarCert 56 := {
   box := ⟨(38999/1024), (39471/1024)⟩
   a := (11677601791109548745136801743604201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39471/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39471/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3325,8 +3205,8 @@ def scalarCert339 : MacroScalarCert 56 := {
   box := ⟨(13275/1024), (3363/256)⟩
   a := (10106004869046375733963486802372041/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(13275/1024), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (3363/256)⟩, pieceIndex := 12 }
+    { box := ⟨(13275/1024), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (3363/256)⟩, pieceIndex := ⟨12, by decide⟩ }
   ]
 }
 
@@ -3334,8 +3214,8 @@ def scalarCert340 : MacroScalarCert 56 := {
   box := ⟨(16225/512), (8201/256)⟩
   a := (3895225326904878308147162909841/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (8201/256)⟩, pieceIndex := 30 }
+    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (8201/256)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -3343,8 +3223,8 @@ def scalarCert341 : MacroScalarCert 56 := {
   box := ⟨(19529/512), (19765/512)⟩
   a := (172336030037728650247271147738569/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19529/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := 37 }
+    { box := ⟨(19529/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3352,8 +3232,8 @@ def scalarCert342 : MacroScalarCert 56 := {
   box := ⟨(8083/256), (16343/512)⟩
   a := (167322041776912901830875682929/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (16343/512)⟩, pieceIndex := 30 }
+    { box := ⟨(8083/256), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (16343/512)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -3361,8 +3241,8 @@ def scalarCert343 : MacroScalarCert 56 := {
   box := ⟨(19529/512), (39589/1024)⟩
   a := (172336030037728650247271147738569/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19529/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39589/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(19529/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39589/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3370,8 +3250,8 @@ def scalarCert344 : MacroScalarCert 56 := {
   box := ⟨(39117/1024), (1239/32)⟩
   a := (890431430789413157949114897032401/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(39117/1024), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := 37 }
+    { box := ⟨(39117/1024), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3379,8 +3259,8 @@ def scalarCert345 : MacroScalarCert 56 := {
   box := ⟨(16225/512), (32863/1024)⟩
   a := (3895225326904878308147162909841/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (32863/1024)⟩, pieceIndex := 30 }
+    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (32863/1024)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -3388,8 +3268,8 @@ def scalarCert346 : MacroScalarCert 56 := {
   box := ⟨(3245/128), (26255/1024)⟩
   a := (146846847802364886838234197249/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := 24 }
+    { box := ⟨(3245/128), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -3397,8 +3277,8 @@ def scalarCert347 : MacroScalarCert 56 := {
   box := ⟨(32509/1024), (16461/512)⟩
   a := (26038539485972255876043813792489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32509/1024), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (16461/512)⟩, pieceIndex := 30 }
+    { box := ⟨(32509/1024), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (16461/512)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -3406,8 +3286,8 @@ def scalarCert348 : MacroScalarCert 56 := {
   box := ⟨(26019/1024), (13157/512)⟩
   a := (20255491443383191868469013039561/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26019/1024), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (13157/512)⟩, pieceIndex := 24 }
+    { box := ⟨(26019/1024), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (13157/512)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -3415,8 +3295,8 @@ def scalarCert349 : MacroScalarCert 56 := {
   box := ⟨(19647/1024), (19883/1024)⟩
   a := (759767742443179976299775611858881/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19647/1024), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (19883/1024)⟩, pieceIndex := 18 }
+    { box := ⟨(19647/1024), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (19883/1024)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -3424,8 +3304,8 @@ def scalarCert350 : MacroScalarCert 56 := {
   box := ⟨(39117/1024), (39589/1024)⟩
   a := (890431430789413157949114897032401/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(39117/1024), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39589/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(39117/1024), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39589/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3433,8 +3313,8 @@ def scalarCert351 : MacroScalarCert 56 := {
   box := ⟨(32509/1024), (32863/1024)⟩
   a := (26038539485972255876043813792489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32509/1024), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (32863/1024)⟩, pieceIndex := 30 }
+    { box := ⟨(32509/1024), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (32863/1024)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -3442,8 +3322,8 @@ def scalarCert352 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (1239/32)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3451,8 +3331,8 @@ def scalarCert353 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (16461/512)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (16461/512)⟩, pieceIndex := 30 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (16461/512)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -3460,8 +3340,8 @@ def scalarCert354 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (39707/1024)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39707/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39707/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3469,8 +3349,8 @@ def scalarCert355 : MacroScalarCert 56 := {
   box := ⟨(39235/1024), (19883/512)⟩
   a := (1369707961552329895632137911532401/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(39235/1024), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := 37 }
+    { box := ⟨(39235/1024), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3478,8 +3358,8 @@ def scalarCert356 : MacroScalarCert 56 := {
   box := ⟨(39235/1024), (39707/1024)⟩
   a := (1369707961552329895632137911532401/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(39235/1024), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39707/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(39235/1024), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39707/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3487,8 +3367,8 @@ def scalarCert357 : MacroScalarCert 56 := {
   box := ⟨(19647/512), (19883/512)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := 37 }
+    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3496,8 +3376,8 @@ def scalarCert358 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (32981/1024)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (32981/1024)⟩, pieceIndex := 30 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (32981/1024)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -3505,9 +3385,9 @@ def scalarCert359 : MacroScalarCert 56 := {
   box := ⟨(32627/1024), (2065/64)⟩
   a := (54965343560194319646569821692489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32627/1024), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := 31 }
+    { box := ⟨(32627/1024), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -3515,8 +3395,8 @@ def scalarCert360 : MacroScalarCert 56 := {
   box := ⟨(19647/512), (39825/1024)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39825/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39825/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3524,8 +3404,8 @@ def scalarCert361 : MacroScalarCert 56 := {
   box := ⟨(13039/512), (26373/1024)⟩
   a := (8807754158064216214287607996609/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (26373/1024)⟩, pieceIndex := 24 }
+    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (26373/1024)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -3533,8 +3413,8 @@ def scalarCert362 : MacroScalarCert 56 := {
   box := ⟨(39353/1024), (9971/256)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(39353/1024), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (9971/256)⟩, pieceIndex := 37 }
+    { box := ⟨(39353/1024), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (9971/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3542,8 +3422,8 @@ def scalarCert363 : MacroScalarCert 56 := {
   box := ⟨(26137/1024), (413/16)⟩
   a := (54324773825972371723691245464561/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26137/1024), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (413/16)⟩, pieceIndex := 24 }
+    { box := ⟨(26137/1024), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (413/16)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -3551,8 +3431,8 @@ def scalarCert364 : MacroScalarCert 56 := {
   box := ⟨(9853/256), (20001/512)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (20001/512)⟩, pieceIndex := 37 }
+    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (20001/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3560,8 +3440,8 @@ def scalarCert365 : MacroScalarCert 56 := {
   box := ⟨(16343/512), (33099/1024)⟩
   a := (19145944597030269950435668435441/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16343/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (33099/1024)⟩, pieceIndex := 31 }
+    { box := ⟨(16343/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (33099/1024)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -3569,8 +3449,8 @@ def scalarCert366 : MacroScalarCert 56 := {
   box := ⟨(32745/1024), (16579/512)⟩
   a := (96378734194223377991070077769889/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32745/1024), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16579/512)⟩, pieceIndex := 31 }
+    { box := ⟨(32745/1024), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16579/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -3578,8 +3458,8 @@ def scalarCert367 : MacroScalarCert 56 := {
   box := ⟨(13157/512), (6667/256)⟩
   a := (1405713487152099986076881071449/3200000000000000000000000000000000)
   segments := [
-    { box := ⟨(13157/512), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (6667/256)⟩, pieceIndex := 25 }
+    { box := ⟨(13157/512), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (6667/256)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -3587,8 +3467,8 @@ def scalarCert368 : MacroScalarCert 56 := {
   box := ⟨(32627/1024), (32981/1024)⟩
   a := (54965343560194319646569821692489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32627/1024), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (32981/1024)⟩, pieceIndex := 30 }
+    { box := ⟨(32627/1024), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (32981/1024)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -3596,8 +3476,8 @@ def scalarCert369 : MacroScalarCert 56 := {
   box := ⟨(16343/512), (2065/64)⟩
   a := (19145944597030269950435668435441/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16343/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := 31 }
+    { box := ⟨(16343/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -3605,8 +3485,8 @@ def scalarCert370 : MacroScalarCert 56 := {
   box := ⟨(26019/1024), (26255/1024)⟩
   a := (20255491443383191868469013039561/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26019/1024), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := 24 }
+    { box := ⟨(26019/1024), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -3614,8 +3494,8 @@ def scalarCert371 : MacroScalarCert 56 := {
   box := ⟨(13039/512), (13157/512)⟩
   a := (8807754158064216214287607996609/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (13157/512)⟩, pieceIndex := 24 }
+    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (13157/512)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -3623,8 +3503,8 @@ def scalarCert372 : MacroScalarCert 56 := {
   box := ⟨(39353/1024), (39825/1024)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(39353/1024), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39825/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(39353/1024), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39825/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3632,8 +3512,8 @@ def scalarCert373 : MacroScalarCert 56 := {
   box := ⟨(32745/1024), (33099/1024)⟩
   a := (96378734194223377991070077769889/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32745/1024), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (33099/1024)⟩, pieceIndex := 31 }
+    { box := ⟨(32745/1024), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (33099/1024)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -3641,8 +3521,8 @@ def scalarCert374 : MacroScalarCert 56 := {
   box := ⟨(9853/256), (9971/256)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (9971/256)⟩, pieceIndex := 37 }
+    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (9971/256)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3650,8 +3530,8 @@ def scalarCert375 : MacroScalarCert 56 := {
   box := ⟨(8201/256), (16579/512)⟩
   a := (7402913802521846133201894614329/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16579/512)⟩, pieceIndex := 31 }
+    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16579/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -3659,8 +3539,8 @@ def scalarCert376 : MacroScalarCert 56 := {
   box := ⟨(9853/256), (39943/1024)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39943/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39943/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -3668,8 +3548,8 @@ def scalarCert377 : MacroScalarCert 56 := {
   box := ⟨(8201/256), (33217/1024)⟩
   a := (7402913802521846133201894614329/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (33217/1024)⟩, pieceIndex := 31 }
+    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (33217/1024)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -3677,8 +3557,8 @@ def scalarCert378 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (26491/1024)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (26491/1024)⟩, pieceIndex := 24 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (26491/1024)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -3686,8 +3566,8 @@ def scalarCert379 : MacroScalarCert 56 := {
   box := ⟨(32863/1024), (8319/256)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(32863/1024), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8319/256)⟩, pieceIndex := 31 }
+    { box := ⟨(32863/1024), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8319/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -3695,8 +3575,8 @@ def scalarCert380 : MacroScalarCert 56 := {
   box := ⟨(16461/512), (16697/512)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16697/512)⟩, pieceIndex := 31 }
+    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16697/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -3704,8 +3584,8 @@ def scalarCert381 : MacroScalarCert 56 := {
   box := ⟨(9971/512), (20237/1024)⟩
   a := (1100717327808522518900723987406129/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9971/512), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (20237/1024)⟩, pieceIndex := 19 }
+    { box := ⟨(9971/512), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (20237/1024)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -3713,8 +3593,8 @@ def scalarCert382 : MacroScalarCert 56 := {
   box := ⟨(20001/1024), (2537/128)⟩
   a := (459565243/500000000000)
   segments := [
-    { box := ⟨(20001/1024), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (2537/128)⟩, pieceIndex := 19 }
+    { box := ⟨(20001/1024), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (2537/128)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -3722,8 +3602,8 @@ def scalarCert383 : MacroScalarCert 56 := {
   box := ⟨(6667/512), (3363/256)⟩
   a := (4115134404786270922924483404604729/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6667/512), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (3363/256)⟩, pieceIndex := 12 }
+    { box := ⟨(6667/512), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (3363/256)⟩, pieceIndex := ⟨12, by decide⟩ }
   ]
 }
 
@@ -3731,8 +3611,8 @@ def scalarCert384 : MacroScalarCert 56 := {
   box := ⟨(413/16), (13393/512)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (13393/512)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (13393/512)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -3740,8 +3620,8 @@ def scalarCert385 : MacroScalarCert 56 := {
   box := ⟨(295/16), (4779/256)⟩
   a := (2891119993742916046127024249511169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(295/16), (9300873/500000)⟩, pieceIndex := 14 },
-    { box := ⟨(9300873/500000), (4779/256)⟩, pieceIndex := 15 }
+    { box := ⟨(295/16), (9300873/500000)⟩, pieceIndex := ⟨14, by decide⟩ },
+    { box := ⟨(9300873/500000), (4779/256)⟩, pieceIndex := ⟨15, by decide⟩ }
   ]
 }
 
@@ -3749,8 +3629,8 @@ def scalarCert386 : MacroScalarCert 56 := {
   box := ⟨(767/64), (6195/512)⟩
   a := (3595147923/1000000000000)
   segments := [
-    { box := ⟨(767/64), (1200529/100000)⟩, pieceIndex := 7 },
-    { box := ⟨(1200529/100000), (6195/512)⟩, pieceIndex := 8 }
+    { box := ⟨(767/64), (1200529/100000)⟩, pieceIndex := ⟨7, by decide⟩ },
+    { box := ⟨(1200529/100000), (6195/512)⟩, pieceIndex := ⟨8, by decide⟩ }
   ]
 }
 
@@ -3758,8 +3638,8 @@ def scalarCert387 : MacroScalarCert 56 := {
   box := ⟨(6667/512), (13511/1024)⟩
   a := (4115134404786270922924483404604729/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6667/512), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (13511/1024)⟩, pieceIndex := 12 }
+    { box := ⟨(6667/512), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (13511/1024)⟩, pieceIndex := ⟨12, by decide⟩ }
   ]
 }
 
@@ -3767,8 +3647,8 @@ def scalarCert388 : MacroScalarCert 56 := {
   box := ⟨(20001/1024), (20237/1024)⟩
   a := (459565243/500000000000)
   segments := [
-    { box := ⟨(20001/1024), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (20237/1024)⟩, pieceIndex := 19 }
+    { box := ⟨(20001/1024), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (20237/1024)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -3776,8 +3656,8 @@ def scalarCert389 : MacroScalarCert 56 := {
   box := ⟨(13393/1024), (6785/512)⟩
   a := (24357416126080533826418298891497041/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(13393/1024), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (6785/512)⟩, pieceIndex := 12 }
+    { box := ⟨(13393/1024), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (6785/512)⟩, pieceIndex := ⟨12, by decide⟩ }
   ]
 }
 
@@ -3785,8 +3665,8 @@ def scalarCert390 : MacroScalarCert 56 := {
   box := ⟨(5015/256), (2537/128)⟩
   a := (459565243/500000000000)
   segments := [
-    { box := ⟨(5015/256), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (2537/128)⟩, pieceIndex := 19 }
+    { box := ⟨(5015/256), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (2537/128)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -3794,8 +3674,8 @@ def scalarCert391 : MacroScalarCert 56 := {
   box := ⟨(13393/1024), (13511/1024)⟩
   a := (24357416126080533826418298891497041/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(13393/1024), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (13511/1024)⟩, pieceIndex := 12 }
+    { box := ⟨(13393/1024), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (13511/1024)⟩, pieceIndex := ⟨12, by decide⟩ }
   ]
 }
 
@@ -3803,8 +3683,8 @@ def scalarCert392 : MacroScalarCert 56 := {
   box := ⟨(5015/256), (20355/1024)⟩
   a := (459565243/500000000000)
   segments := [
-    { box := ⟨(5015/256), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (20355/1024)⟩, pieceIndex := 19 }
+    { box := ⟨(5015/256), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (20355/1024)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -3812,8 +3692,8 @@ def scalarCert393 : MacroScalarCert 56 := {
   box := ⟨(20119/1024), (20355/1024)⟩
   a := (459565243/500000000000)
   segments := [
-    { box := ⟨(20119/1024), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (20355/1024)⟩, pieceIndex := 19 }
+    { box := ⟨(20119/1024), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (20355/1024)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -3821,8 +3701,8 @@ def scalarCert394 : MacroScalarCert 56 := {
   box := ⟨(20119/1024), (10207/512)⟩
   a := (459565243/500000000000)
   segments := [
-    { box := ⟨(20119/1024), (19726747/1000000)⟩, pieceIndex := 18 },
-    { box := ⟨(19726747/1000000), (10207/512)⟩, pieceIndex := 19 }
+    { box := ⟨(20119/1024), (19726747/1000000)⟩, pieceIndex := ⟨18, by decide⟩ },
+    { box := ⟨(19726747/1000000), (10207/512)⟩, pieceIndex := ⟨19, by decide⟩ }
   ]
 }
 
@@ -3830,8 +3710,8 @@ def scalarCert395 : MacroScalarCert 56 := {
   box := ⟨(32863/1024), (33217/1024)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(32863/1024), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (33217/1024)⟩, pieceIndex := 31 }
+    { box := ⟨(32863/1024), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (33217/1024)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -3839,8 +3719,8 @@ def scalarCert396 : MacroScalarCert 56 := {
   box := ⟨(26137/1024), (26373/1024)⟩
   a := (54324773825972371723691245464561/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26137/1024), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (26373/1024)⟩, pieceIndex := 24 }
+    { box := ⟨(26137/1024), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (26373/1024)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -3848,8 +3728,8 @@ def scalarCert397 : MacroScalarCert 56 := {
   box := ⟨(16461/512), (33335/1024)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (33335/1024)⟩, pieceIndex := 31 }
+    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (33335/1024)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -3857,8 +3737,8 @@ def scalarCert398 : MacroScalarCert 56 := {
   box := ⟨(13157/512), (26609/1024)⟩
   a := (1405713487152099986076881071449/3200000000000000000000000000000000)
   segments := [
-    { box := ⟨(13157/512), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (26609/1024)⟩, pieceIndex := 25 }
+    { box := ⟨(13157/512), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (26609/1024)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -3866,8 +3746,8 @@ def scalarCert399 : MacroScalarCert 56 := {
   box := ⟨(32981/1024), (16697/512)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(32981/1024), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16697/512)⟩, pieceIndex := 31 }
+    { box := ⟨(32981/1024), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16697/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -3875,8 +3755,8 @@ def scalarCert400 : MacroScalarCert 56 := {
   box := ⟨(19647/1024), (1239/64)⟩
   a := (759767742443179976299775611858881/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19647/1024), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (1239/64)⟩, pieceIndex := 18 }
+    { box := ⟨(19647/1024), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (1239/64)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -3884,8 +3764,8 @@ def scalarCert401 : MacroScalarCert 56 := {
   box := ⟨(26373/1024), (6667/256)⟩
   a := (6939535078070123213019812388921/12800000000000000000000000000000000)
   segments := [
-    { box := ⟨(26373/1024), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (6667/256)⟩, pieceIndex := 25 }
+    { box := ⟨(26373/1024), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (6667/256)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -3893,9 +3773,9 @@ def scalarCert402 : MacroScalarCert 56 := {
   box := ⟨(1829/64), (1003/32)⟩
   a := (37896421104977184428389275321/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(1829/64), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := 27 }
+    { box := ⟨(1829/64), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -3903,9 +3783,9 @@ def scalarCert403 : MacroScalarCert 56 := {
   box := ⟨(1475/64), (1593/64)⟩
   a := (1859160367141373243742933961/7629394531250000000000000000000)
   segments := [
-    { box := ⟨(1475/64), (24478469/1000000)⟩, pieceIndex := 19 },
-    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := 21 }
+    { box := ⟨(1475/64), (24478469/1000000)⟩, pieceIndex := ⟨19, by decide⟩ },
+    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -3913,8 +3793,8 @@ def scalarCert404 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (19647/512)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (19647/512)⟩, pieceIndex := 36 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (19647/512)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -3922,9 +3802,9 @@ def scalarCert405 : MacroScalarCert 56 := {
   box := ⟨(3835/128), (1003/32)⟩
   a := (37896421104977184428389275321/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(3835/128), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := 27 }
+    { box := ⟨(3835/128), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -3932,9 +3812,9 @@ def scalarCert406 : MacroScalarCert 56 := {
   box := ⟨(767/32), (1593/64)⟩
   a := (1859160367141373243742933961/7629394531250000000000000000000)
   segments := [
-    { box := ⟨(767/32), (24478469/1000000)⟩, pieceIndex := 19 },
-    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := 21 }
+    { box := ⟨(767/32), (24478469/1000000)⟩, pieceIndex := ⟨19, by decide⟩ },
+    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -3942,8 +3822,8 @@ def scalarCert407 : MacroScalarCert 56 := {
   box := ⟨(6313/256), (6431/256)⟩
   a := (769227545671561646446829644881/31250000000000000000000000000000000)
   segments := [
-    { box := ⟨(6313/256), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (6431/256)⟩, pieceIndex := 21 }
+    { box := ⟨(6313/256), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (6431/256)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -3951,8 +3831,8 @@ def scalarCert408 : MacroScalarCert 56 := {
   box := ⟨(3953/128), (16107/512)⟩
   a := (1982313064455441554709887444329/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3953/128), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (16107/512)⟩, pieceIndex := 27 }
+    { box := ⟨(3953/128), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (16107/512)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -3960,9 +3840,9 @@ def scalarCert409 : MacroScalarCert 56 := {
   box := ⟨(7847/256), (1003/32)⟩
   a := (37896421104977184428389275321/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(7847/256), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := 27 }
+    { box := ⟨(7847/256), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -3970,9 +3850,9 @@ def scalarCert410 : MacroScalarCert 56 := {
   box := ⟨(3127/128), (1593/64)⟩
   a := (1859160367141373243742933961/7629394531250000000000000000000)
   segments := [
-    { box := ⟨(3127/128), (24478469/1000000)⟩, pieceIndex := 19 },
-    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := 21 }
+    { box := ⟨(3127/128), (24478469/1000000)⟩, pieceIndex := ⟨19, by decide⟩ },
+    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -3980,9 +3860,9 @@ def scalarCert411 : MacroScalarCert 56 := {
   box := ⟨(177/4), (11505/256)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := 43 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -3990,9 +3870,9 @@ def scalarCert412 : MacroScalarCert 56 := {
   box := ⟨(22715/512), (23069/512)⟩
   a := (140156038325279709457315581152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := 43 }
+    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4000,8 +3880,8 @@ def scalarCert413 : MacroScalarCert 56 := {
   box := ⟨(11387/256), (2891/64)⟩
   a := (65768103458522511747545895061489/500000000000000000000000000000000000)
   segments := [
-    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (2891/64)⟩, pieceIndex := 43 }
+    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (2891/64)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4009,8 +3889,8 @@ def scalarCert414 : MacroScalarCert 56 := {
   box := ⟨(6313/256), (12803/512)⟩
   a := (13224910662800597294854280157649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6313/256), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (12803/512)⟩, pieceIndex := 21 }
+    { box := ⟨(6313/256), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (12803/512)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -4018,8 +3898,8 @@ def scalarCert415 : MacroScalarCert 56 := {
   box := ⟨(12685/512), (6431/256)⟩
   a := (769227545671561646446829644881/31250000000000000000000000000000000)
   segments := [
-    { box := ⟨(12685/512), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (6431/256)⟩, pieceIndex := 21 }
+    { box := ⟨(12685/512), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (6431/256)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -4027,9 +3907,9 @@ def scalarCert416 : MacroScalarCert 56 := {
   box := ⟨(22597/512), (22951/512)⟩
   a := (12404326906898653543170837152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := 43 }
+    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4037,9 +3917,9 @@ def scalarCert417 : MacroScalarCert 56 := {
   box := ⟨(1947/64), (1003/32)⟩
   a := (37896421104977184428389275321/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(1947/64), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := 27 }
+    { box := ⟨(1947/64), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -4047,8 +3927,8 @@ def scalarCert418 : MacroScalarCert 56 := {
   box := ⟨(767/32), (6313/256)⟩
   a := (1408273486016716753984882108683841/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(767/32), (24478469/1000000)⟩, pieceIndex := 19 },
-    { box := ⟨(24478469/1000000), (6313/256)⟩, pieceIndex := 20 }
+    { box := ⟨(767/32), (24478469/1000000)⟩, pieceIndex := ⟨19, by decide⟩ },
+    { box := ⟨(24478469/1000000), (6313/256)⟩, pieceIndex := ⟨20, by decide⟩ }
   ]
 }
 
@@ -4056,9 +3936,9 @@ def scalarCert419 : MacroScalarCert 56 := {
   box := ⟨(6195/256), (1593/64)⟩
   a := (1859160367141373243742933961/7629394531250000000000000000000)
   segments := [
-    { box := ⟨(6195/256), (24478469/1000000)⟩, pieceIndex := 19 },
-    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := 21 }
+    { box := ⟨(6195/256), (24478469/1000000)⟩, pieceIndex := ⟨19, by decide⟩ },
+    { box := ⟨(24478469/1000000), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -4066,8 +3946,8 @@ def scalarCert420 : MacroScalarCert 56 := {
   box := ⟨(6195/256), (6313/256)⟩
   a := (1408273486016716753984882108683841/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6195/256), (24478469/1000000)⟩, pieceIndex := 19 },
-    { box := ⟨(24478469/1000000), (6313/256)⟩, pieceIndex := 20 }
+    { box := ⟨(6195/256), (24478469/1000000)⟩, pieceIndex := ⟨19, by decide⟩ },
+    { box := ⟨(24478469/1000000), (6313/256)⟩, pieceIndex := ⟨20, by decide⟩ }
   ]
 }
 
@@ -4075,9 +3955,9 @@ def scalarCert421 : MacroScalarCert 56 := {
   box := ⟨(22715/512), (11505/256)⟩
   a := (140156038325279709457315581152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := 43 }
+    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4085,8 +3965,8 @@ def scalarCert422 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (4897/128)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (4897/128)⟩, pieceIndex := 36 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (4897/128)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4094,8 +3974,8 @@ def scalarCert423 : MacroScalarCert 56 := {
   box := ⟨(11387/256), (23069/512)⟩
   a := (65768103458522511747545895061489/500000000000000000000000000000000000)
   segments := [
-    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := 43 }
+    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4103,8 +3983,8 @@ def scalarCert424 : MacroScalarCert 56 := {
   box := ⟨(19411/512), (19647/512)⟩
   a := (625761533908596174465411009662769/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (19647/512)⟩, pieceIndex := 36 }
+    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (19647/512)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4112,8 +3992,8 @@ def scalarCert425 : MacroScalarCert 56 := {
   box := ⟨(22833/512), (23187/512)⟩
   a := (403384292552130139662239000449081/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23187/512)⟩, pieceIndex := 43 }
+    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23187/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4121,8 +4001,8 @@ def scalarCert426 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (11623/256)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11623/256)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11623/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4130,8 +4010,8 @@ def scalarCert427 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (23305/512)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23305/512)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23305/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4139,8 +4019,8 @@ def scalarCert428 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (11977/256)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11977/256)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11977/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4148,9 +4028,9 @@ def scalarCert429 : MacroScalarCert 56 := {
   box := ⟨(177/4), (22951/512)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := 43 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4158,8 +4038,8 @@ def scalarCert430 : MacroScalarCert 56 := {
   box := ⟨(22597/512), (5723/128)⟩
   a := (12404326906898653543170837152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (5723/128)⟩, pieceIndex := 42 }
+    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (5723/128)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -4167,8 +4047,8 @@ def scalarCert431 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (39117/1024)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4176,9 +4056,9 @@ def scalarCert432 : MacroScalarCert 56 := {
   box := ⟨(22715/512), (45961/1024)⟩
   a := (140156038325279709457315581152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4186,8 +4066,8 @@ def scalarCert433 : MacroScalarCert 56 := {
   box := ⟨(38763/1024), (4897/128)⟩
   a := (941648095787567227326613280229201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38763/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (4897/128)⟩, pieceIndex := 36 }
+    { box := ⟨(38763/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (4897/128)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4195,8 +4075,8 @@ def scalarCert434 : MacroScalarCert 56 := {
   box := ⟨(45489/1024), (11505/256)⟩
   a := (816478761924151067555100775499449/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45489/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := 43 }
+    { box := ⟨(45489/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4204,8 +4084,8 @@ def scalarCert435 : MacroScalarCert 56 := {
   box := ⟨(19411/512), (39235/1024)⟩
   a := (625761533908596174465411009662769/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39235/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39235/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4213,8 +4093,8 @@ def scalarCert436 : MacroScalarCert 56 := {
   box := ⟨(38881/1024), (19647/512)⟩
   a := (4812837764803654107675019035354201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38881/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (19647/512)⟩, pieceIndex := 36 }
+    { box := ⟨(38881/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (19647/512)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4222,8 +4102,8 @@ def scalarCert437 : MacroScalarCert 56 := {
   box := ⟨(11387/256), (46079/1024)⟩
   a := (65768103458522511747545895061489/500000000000000000000000000000000000)
   segments := [
-    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (46079/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (46079/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4231,8 +4111,8 @@ def scalarCert438 : MacroScalarCert 56 := {
   box := ⟨(45607/1024), (23069/512)⟩
   a := (1317975791431150018325352729749449/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45607/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := 43 }
+    { box := ⟨(45607/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4240,8 +4120,8 @@ def scalarCert439 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (9853/256)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (9853/256)⟩, pieceIndex := 36 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (9853/256)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4249,8 +4129,8 @@ def scalarCert440 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (39353/1024)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39353/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39353/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4258,8 +4138,8 @@ def scalarCert441 : MacroScalarCert 56 := {
   box := ⟨(38999/1024), (9853/256)⟩
   a := (11677601791109548745136801743604201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (9853/256)⟩, pieceIndex := 36 }
+    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (9853/256)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4267,8 +4147,8 @@ def scalarCert442 : MacroScalarCert 56 := {
   box := ⟨(22833/512), (2891/64)⟩
   a := (403384292552130139662239000449081/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (2891/64)⟩, pieceIndex := 43 }
+    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (2891/64)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4276,8 +4156,8 @@ def scalarCert443 : MacroScalarCert 56 := {
   box := ⟨(22833/512), (46197/1024)⟩
   a := (403384292552130139662239000449081/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (46197/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (46197/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4285,8 +4165,8 @@ def scalarCert444 : MacroScalarCert 56 := {
   box := ⟨(45725/1024), (2891/64)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (2891/64)⟩, pieceIndex := 43 }
+    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (2891/64)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4294,8 +4174,8 @@ def scalarCert445 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (23187/512)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23187/512)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23187/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4303,8 +4183,8 @@ def scalarCert446 : MacroScalarCert 56 := {
   box := ⟨(177/4), (45843/1024)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45843/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45843/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -4312,9 +4192,9 @@ def scalarCert447 : MacroScalarCert 56 := {
   box := ⟨(45371/1024), (22951/512)⟩
   a := (380995896373736237860712551314169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45371/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := 43 }
+    { box := ⟨(45371/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4322,8 +4202,8 @@ def scalarCert448 : MacroScalarCert 56 := {
   box := ⟨(45135/1024), (22833/512)⟩
   a := (8326505390882798349213653439169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45135/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (22833/512)⟩, pieceIndex := 42 }
+    { box := ⟨(45135/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (22833/512)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -4331,8 +4211,8 @@ def scalarCert449 : MacroScalarCert 56 := {
   box := ⟨(22597/512), (45725/1024)⟩
   a := (12404326906898653543170837152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45725/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45725/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -4340,8 +4220,8 @@ def scalarCert450 : MacroScalarCert 56 := {
   box := ⟨(45253/1024), (5723/128)⟩
   a := (125492473536974126032423063314169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45253/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (5723/128)⟩, pieceIndex := 42 }
+    { box := ⟨(45253/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (5723/128)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -4349,8 +4229,8 @@ def scalarCert451 : MacroScalarCert 56 := {
   box := ⟨(22597/512), (22833/512)⟩
   a := (12404326906898653543170837152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (22833/512)⟩, pieceIndex := 42 }
+    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (22833/512)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -4358,8 +4238,8 @@ def scalarCert452 : MacroScalarCert 56 := {
   box := ⟨(45253/1024), (45725/1024)⟩
   a := (125492473536974126032423063314169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45253/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45725/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(45253/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45725/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -4367,8 +4247,8 @@ def scalarCert453 : MacroScalarCert 56 := {
   box := ⟨(2419/64), (19529/512)⟩
   a := (125628559827345406318287851649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := 36 }
+    { box := ⟨(2419/64), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4376,8 +4256,8 @@ def scalarCert454 : MacroScalarCert 56 := {
   box := ⟨(177/4), (5723/128)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (5723/128)⟩, pieceIndex := 42 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (5723/128)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -4385,8 +4265,8 @@ def scalarCert455 : MacroScalarCert 56 := {
   box := ⟨(177/4), (45725/1024)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45725/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45725/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -4394,8 +4274,8 @@ def scalarCert456 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (32863/1024)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (32863/1024)⟩, pieceIndex := 30 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (32863/1024)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -4403,8 +4283,8 @@ def scalarCert457 : MacroScalarCert 56 := {
   box := ⟨(6313/512), (12685/1024)⟩
   a := (5885991482681207829900684848390449/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6313/512), (1238029/100000)⟩, pieceIndex := 8 },
-    { box := ⟨(1238029/100000), (12685/1024)⟩, pieceIndex := 9 }
+    { box := ⟨(6313/512), (1238029/100000)⟩, pieceIndex := ⟨8, by decide⟩ },
+    { box := ⟨(1238029/100000), (12685/1024)⟩, pieceIndex := ⟨9, by decide⟩ }
   ]
 }
 
@@ -4412,8 +4292,8 @@ def scalarCert458 : MacroScalarCert 56 := {
   box := ⟨(38763/1024), (19529/512)⟩
   a := (941648095787567227326613280229201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38763/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := 36 }
+    { box := ⟨(38763/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4421,8 +4301,8 @@ def scalarCert459 : MacroScalarCert 56 := {
   box := ⟨(45371/1024), (5723/128)⟩
   a := (380995896373736237860712551314169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45371/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (5723/128)⟩, pieceIndex := 42 }
+    { box := ⟨(45371/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (5723/128)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -4430,8 +4310,8 @@ def scalarCert460 : MacroScalarCert 56 := {
   box := ⟨(32627/1024), (16461/512)⟩
   a := (54965343560194319646569821692489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32627/1024), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (16461/512)⟩, pieceIndex := 30 }
+    { box := ⟨(32627/1024), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (16461/512)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -4439,8 +4319,8 @@ def scalarCert461 : MacroScalarCert 56 := {
   box := ⟨(45371/1024), (45843/1024)⟩
   a := (380995896373736237860712551314169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45371/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45843/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(45371/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45843/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -4448,9 +4328,9 @@ def scalarCert462 : MacroScalarCert 56 := {
   box := ⟨(22715/512), (22951/512)⟩
   a := (140156038325279709457315581152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := 43 }
+    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4458,8 +4338,8 @@ def scalarCert463 : MacroScalarCert 56 := {
   box := ⟨(22715/512), (45843/1024)⟩
   a := (140156038325279709457315581152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45843/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45843/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -4467,8 +4347,8 @@ def scalarCert464 : MacroScalarCert 56 := {
   box := ⟨(45489/1024), (22951/512)⟩
   a := (816478761924151067555100775499449/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45489/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := 43 }
+    { box := ⟨(45489/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4476,8 +4356,8 @@ def scalarCert465 : MacroScalarCert 56 := {
   box := ⟨(32745/1024), (2065/64)⟩
   a := (96378734194223377991070077769889/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32745/1024), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := 31 }
+    { box := ⟨(32745/1024), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -4485,8 +4365,8 @@ def scalarCert466 : MacroScalarCert 56 := {
   box := ⟨(38763/1024), (39117/1024)⟩
   a := (941648095787567227326613280229201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38763/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(38763/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4494,8 +4374,8 @@ def scalarCert467 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (413/16)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (413/16)⟩, pieceIndex := 24 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (413/16)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -4503,8 +4383,8 @@ def scalarCert468 : MacroScalarCert 56 := {
   box := ⟨(19411/512), (4897/128)⟩
   a := (625761533908596174465411009662769/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (4897/128)⟩, pieceIndex := 36 }
+    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (4897/128)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4512,8 +4392,8 @@ def scalarCert469 : MacroScalarCert 56 := {
   box := ⟨(45489/1024), (45961/1024)⟩
   a := (816478761924151067555100775499449/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45489/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(45489/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4521,8 +4401,8 @@ def scalarCert470 : MacroScalarCert 56 := {
   box := ⟨(11387/256), (11505/256)⟩
   a := (65768103458522511747545895061489/500000000000000000000000000000000000)
   segments := [
-    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := 43 }
+    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4530,8 +4410,8 @@ def scalarCert471 : MacroScalarCert 56 := {
   box := ⟨(38881/1024), (39235/1024)⟩
   a := (4812837764803654107675019035354201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38881/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39235/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(38881/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39235/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4539,8 +4419,8 @@ def scalarCert472 : MacroScalarCert 56 := {
   box := ⟨(45607/1024), (46079/1024)⟩
   a := (1317975791431150018325352729749449/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45607/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (46079/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(45607/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (46079/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4548,8 +4428,8 @@ def scalarCert473 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (19647/512)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (19647/512)⟩, pieceIndex := 36 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (19647/512)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4557,8 +4437,8 @@ def scalarCert474 : MacroScalarCert 56 := {
   box := ⟨(26373/1024), (26609/1024)⟩
   a := (6939535078070123213019812388921/12800000000000000000000000000000000)
   segments := [
-    { box := ⟨(26373/1024), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (26609/1024)⟩, pieceIndex := 25 }
+    { box := ⟨(26373/1024), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (26609/1024)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -4566,8 +4446,8 @@ def scalarCert475 : MacroScalarCert 56 := {
   box := ⟨(38999/1024), (39353/1024)⟩
   a := (11677601791109548745136801743604201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39353/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39353/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4575,8 +4455,8 @@ def scalarCert476 : MacroScalarCert 56 := {
   box := ⟨(22833/512), (23069/512)⟩
   a := (403384292552130139662239000449081/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := 43 }
+    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4584,8 +4464,8 @@ def scalarCert477 : MacroScalarCert 56 := {
   box := ⟨(45725/1024), (46197/1024)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (46197/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (46197/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4593,8 +4473,8 @@ def scalarCert478 : MacroScalarCert 56 := {
   box := ⟨(19411/512), (39117/1024)⟩
   a := (625761533908596174465411009662769/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4602,8 +4482,8 @@ def scalarCert479 : MacroScalarCert 56 := {
   box := ⟨(13039/512), (26255/1024)⟩
   a := (8807754158064216214287607996609/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := 24 }
+    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -4611,8 +4491,8 @@ def scalarCert480 : MacroScalarCert 56 := {
   box := ⟨(38881/1024), (4897/128)⟩
   a := (4812837764803654107675019035354201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38881/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (4897/128)⟩, pieceIndex := 36 }
+    { box := ⟨(38881/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (4897/128)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4620,8 +4500,8 @@ def scalarCert481 : MacroScalarCert 56 := {
   box := ⟨(26137/1024), (13157/512)⟩
   a := (54324773825972371723691245464561/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26137/1024), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (13157/512)⟩, pieceIndex := 24 }
+    { box := ⟨(26137/1024), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (13157/512)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -4629,8 +4509,8 @@ def scalarCert482 : MacroScalarCert 56 := {
   box := ⟨(38881/1024), (39117/1024)⟩
   a := (4812837764803654107675019035354201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38881/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(38881/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4638,8 +4518,8 @@ def scalarCert483 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (4897/128)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (4897/128)⟩, pieceIndex := 36 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (4897/128)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4647,8 +4527,8 @@ def scalarCert484 : MacroScalarCert 56 := {
   box := ⟨(11387/256), (22951/512)⟩
   a := (65768103458522511747545895061489/500000000000000000000000000000000000)
   segments := [
-    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := 43 }
+    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4656,8 +4536,8 @@ def scalarCert485 : MacroScalarCert 56 := {
   box := ⟨(11387/256), (45961/1024)⟩
   a := (65768103458522511747545895061489/500000000000000000000000000000000000)
   segments := [
-    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(11387/256), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4665,8 +4545,8 @@ def scalarCert486 : MacroScalarCert 56 := {
   box := ⟨(8201/256), (33099/1024)⟩
   a := (7402913802521846133201894614329/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (33099/1024)⟩, pieceIndex := 31 }
+    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (33099/1024)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -4674,8 +4554,8 @@ def scalarCert487 : MacroScalarCert 56 := {
   box := ⟨(19411/512), (19529/512)⟩
   a := (625761533908596174465411009662769/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := 36 }
+    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4683,8 +4563,8 @@ def scalarCert488 : MacroScalarCert 56 := {
   box := ⟨(45607/1024), (45961/1024)⟩
   a := (1317975791431150018325352729749449/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45607/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(45607/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4692,8 +4572,8 @@ def scalarCert489 : MacroScalarCert 56 := {
   box := ⟨(45607/1024), (11505/256)⟩
   a := (1317975791431150018325352729749449/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45607/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := 43 }
+    { box := ⟨(45607/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4701,8 +4581,8 @@ def scalarCert490 : MacroScalarCert 56 := {
   box := ⟨(32863/1024), (16579/512)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(32863/1024), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16579/512)⟩, pieceIndex := 31 }
+    { box := ⟨(32863/1024), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16579/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -4710,8 +4590,8 @@ def scalarCert491 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (39235/1024)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39235/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39235/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4719,8 +4599,8 @@ def scalarCert492 : MacroScalarCert 56 := {
   box := ⟨(38999/1024), (19647/512)⟩
   a := (11677601791109548745136801743604201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (19647/512)⟩, pieceIndex := 36 }
+    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (19647/512)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -4728,8 +4608,8 @@ def scalarCert493 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (46315/1024)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (46315/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (46315/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4737,8 +4617,8 @@ def scalarCert494 : MacroScalarCert 56 := {
   box := ⟨(45843/1024), (23187/512)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(45843/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23187/512)⟩, pieceIndex := 43 }
+    { box := ⟨(45843/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23187/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -4746,8 +4626,8 @@ def scalarCert495 : MacroScalarCert 56 := {
   box := ⟨(19529/512), (39471/1024)⟩
   a := (172336030037728650247271147738569/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19529/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39471/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(19529/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39471/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -4755,8 +4635,8 @@ def scalarCert496 : MacroScalarCert 56 := {
   box := ⟨(39117/1024), (19765/512)⟩
   a := (890431430789413157949114897032401/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(39117/1024), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := 37 }
+    { box := ⟨(39117/1024), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -4764,8 +4644,8 @@ def scalarCert497 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (39589/1024)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39589/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39589/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -4773,8 +4653,8 @@ def scalarCert498 : MacroScalarCert 56 := {
   box := ⟨(39235/1024), (1239/32)⟩
   a := (1369707961552329895632137911532401/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(39235/1024), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := 37 }
+    { box := ⟨(39235/1024), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -4782,9 +4662,9 @@ def scalarCert499 : MacroScalarCert 56 := {
   box := ⟨(25783/512), (13157/256)⟩
   a := (77268664145143861057015595361/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25783/512), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13157/256)⟩, pieceIndex := 49 }
+    { box := ⟨(25783/512), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13157/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -4792,9 +4672,9 @@ def scalarCert500 : MacroScalarCert 56 := {
   box := ⟨(25783/512), (26255/512)⟩
   a := (77268664145143861057015595361/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25783/512), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := 49 }
+    { box := ⟨(25783/512), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -4802,9 +4682,9 @@ def scalarCert501 : MacroScalarCert 56 := {
   box := ⟨(12921/256), (13157/256)⟩
   a := (253733660265444510657503816809/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13157/256)⟩, pieceIndex := 49 }
+    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13157/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -4812,9 +4692,9 @@ def scalarCert502 : MacroScalarCert 56 := {
   box := ⟨(12921/256), (413/8)⟩
   a := (253733660265444510657503816809/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (413/8)⟩, pieceIndex := 49 }
+    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (413/8)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -4822,9 +4702,9 @@ def scalarCert503 : MacroScalarCert 56 := {
   box := ⟨(12921/256), (26373/512)⟩
   a := (253733660265444510657503816809/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26373/512)⟩, pieceIndex := 49 }
+    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26373/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -4832,9 +4712,9 @@ def scalarCert504 : MacroScalarCert 56 := {
   box := ⟨(25901/512), (413/8)⟩
   a := (3016845497858850148660534470361/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (413/8)⟩, pieceIndex := 49 }
+    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (413/8)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -4842,9 +4722,9 @@ def scalarCert505 : MacroScalarCert 56 := {
   box := ⟨(12921/256), (13275/256)⟩
   a := (253733660265444510657503816809/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13275/256)⟩, pieceIndex := 49 }
+    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13275/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -4852,8 +4732,8 @@ def scalarCert506 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (13275/256)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13275/256)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13275/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -4861,8 +4741,8 @@ def scalarCert507 : MacroScalarCert 56 := {
   box := ⟨(25783/512), (13039/256)⟩
   a := (77268664145143861057015595361/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25783/512), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (13039/256)⟩, pieceIndex := 48 }
+    { box := ⟨(25783/512), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (13039/256)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -4870,8 +4750,8 @@ def scalarCert508 : MacroScalarCert 56 := {
   box := ⟨(25783/512), (52097/1024)⟩
   a := (77268664145143861057015595361/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25783/512), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (52097/1024)⟩, pieceIndex := 48 }
+    { box := ⟨(25783/512), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (52097/1024)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -4879,8 +4759,8 @@ def scalarCert509 : MacroScalarCert 56 := {
   box := ⟨(51625/1024), (13039/256)⟩
   a := (1652284170473624845145301959569/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(51625/1024), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (13039/256)⟩, pieceIndex := 48 }
+    { box := ⟨(51625/1024), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (13039/256)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -4888,8 +4768,8 @@ def scalarCert510 : MacroScalarCert 56 := {
   box := ⟨(25783/512), (26137/512)⟩
   a := (77268664145143861057015595361/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25783/512), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (26137/512)⟩, pieceIndex := 48 }
+    { box := ⟨(25783/512), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (26137/512)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -4897,9 +4777,9 @@ def scalarCert511 : MacroScalarCert 56 := {
   box := ⟨(25783/512), (6549/128)⟩
   a := (77268664145143861057015595361/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25783/512), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := 49 }
+    { box := ⟨(25783/512), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -4907,9 +4787,9 @@ def scalarCert512 : MacroScalarCert 56 := {
   box := ⟨(12921/256), (6549/128)⟩
   a := (253733660265444510657503816809/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := 49 }
+    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -4917,9 +4797,9 @@ def scalarCert513 : MacroScalarCert 56 := {
   box := ⟨(12921/256), (26255/512)⟩
   a := (253733660265444510657503816809/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := 49 }
+    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -4927,8 +4807,8 @@ def scalarCert514 : MacroScalarCert 56 := {
   box := ⟨(12921/256), (26137/512)⟩
   a := (253733660265444510657503816809/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (26137/512)⟩, pieceIndex := 48 }
+    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (26137/512)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -4936,8 +4816,8 @@ def scalarCert515 : MacroScalarCert 56 := {
   box := ⟨(12921/256), (52215/1024)⟩
   a := (253733660265444510657503816809/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (52215/1024)⟩, pieceIndex := 48 }
+    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (52215/1024)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -4945,8 +4825,8 @@ def scalarCert516 : MacroScalarCert 56 := {
   box := ⟨(51743/1024), (26137/512)⟩
   a := (7531437837901037420352339709569/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(51743/1024), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (26137/512)⟩, pieceIndex := 48 }
+    { box := ⟨(51743/1024), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (26137/512)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -4954,8 +4834,8 @@ def scalarCert517 : MacroScalarCert 56 := {
   box := ⟨(32391/1024), (16343/512)⟩
   a := (7793772368438963417005384017489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32391/1024), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (16343/512)⟩, pieceIndex := 30 }
+    { box := ⟨(32391/1024), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (16343/512)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -4963,9 +4843,9 @@ def scalarCert518 : MacroScalarCert 56 := {
   box := ⟨(25901/512), (6549/128)⟩
   a := (3016845497858850148660534470361/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := 49 }
+    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -4973,9 +4853,9 @@ def scalarCert519 : MacroScalarCert 56 := {
   box := ⟨(25901/512), (26255/512)⟩
   a := (3016845497858850148660534470361/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := 49 }
+    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -4983,9 +4863,9 @@ def scalarCert520 : MacroScalarCert 56 := {
   box := ⟨(25901/512), (13157/256)⟩
   a := (3016845497858850148660534470361/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13157/256)⟩, pieceIndex := 49 }
+    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13157/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -4993,8 +4873,8 @@ def scalarCert521 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (13157/256)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13157/256)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13157/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5002,9 +4882,9 @@ def scalarCert522 : MacroScalarCert 56 := {
   box := ⟨(25901/512), (26373/512)⟩
   a := (3016845497858850148660534470361/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26373/512)⟩, pieceIndex := 49 }
+    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26373/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5012,8 +4892,8 @@ def scalarCert523 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (26373/512)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26373/512)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26373/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5021,8 +4901,8 @@ def scalarCert524 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (413/8)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (413/8)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (413/8)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5030,8 +4910,8 @@ def scalarCert525 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (26491/512)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26491/512)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26491/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5039,8 +4919,8 @@ def scalarCert526 : MacroScalarCert 56 := {
   box := ⟨(26019/512), (413/8)⟩
   a := (4108970484551816539322694210502201/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (413/8)⟩, pieceIndex := 49 }
+    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (413/8)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5048,8 +4928,8 @@ def scalarCert527 : MacroScalarCert 56 := {
   box := ⟨(26019/512), (26491/512)⟩
   a := (4108970484551816539322694210502201/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26491/512)⟩, pieceIndex := 49 }
+    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26491/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5057,8 +4937,8 @@ def scalarCert528 : MacroScalarCert 56 := {
   box := ⟨(26019/512), (13275/256)⟩
   a := (4108970484551816539322694210502201/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13275/256)⟩, pieceIndex := 49 }
+    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13275/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5066,9 +4946,9 @@ def scalarCert529 : MacroScalarCert 56 := {
   box := ⟨(12921/256), (6667/128)⟩
   a := (253733660265444510657503816809/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (6667/128)⟩, pieceIndex := 49 }
+    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (6667/128)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5076,8 +4956,8 @@ def scalarCert530 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (6667/128)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (6667/128)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (6667/128)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5085,8 +4965,8 @@ def scalarCert531 : MacroScalarCert 56 := {
   box := ⟨(13039/256), (6667/128)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (6667/128)⟩, pieceIndex := 49 }
+    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (6667/128)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5094,9 +4974,9 @@ def scalarCert532 : MacroScalarCert 56 := {
   box := ⟨(12921/256), (13393/256)⟩
   a := (253733660265444510657503816809/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13393/256)⟩, pieceIndex := 49 }
+    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13393/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5104,9 +4984,9 @@ def scalarCert533 : MacroScalarCert 56 := {
   box := ⟨(12921/256), (3363/64)⟩
   a := (253733660265444510657503816809/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (3363/64)⟩, pieceIndex := 49 }
+    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (3363/64)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5114,8 +4994,8 @@ def scalarCert534 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (6785/128)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (6785/128)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (6785/128)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5123,8 +5003,8 @@ def scalarCert535 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (1711/32)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (1711/32)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (1711/32)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5132,8 +5012,8 @@ def scalarCert536 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (13511/256)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13511/256)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13511/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5141,8 +5021,8 @@ def scalarCert537 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (3363/64)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (3363/64)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (3363/64)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5150,8 +5030,8 @@ def scalarCert538 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (13393/256)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13393/256)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13393/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5159,8 +5039,8 @@ def scalarCert539 : MacroScalarCert 56 := {
   box := ⟨(13039/256), (13393/256)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13393/256)⟩, pieceIndex := 49 }
+    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13393/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5168,8 +5048,8 @@ def scalarCert540 : MacroScalarCert 56 := {
   box := ⟨(13039/256), (3363/64)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (3363/64)⟩, pieceIndex := 49 }
+    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (3363/64)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5177,8 +5057,8 @@ def scalarCert541 : MacroScalarCert 56 := {
   box := ⟨(13039/256), (13511/256)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13511/256)⟩, pieceIndex := 49 }
+    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13511/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5186,8 +5066,8 @@ def scalarCert542 : MacroScalarCert 56 := {
   box := ⟨(13039/256), (6785/128)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (6785/128)⟩, pieceIndex := 49 }
+    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (6785/128)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5195,8 +5075,8 @@ def scalarCert543 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (885/16)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (885/16)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (885/16)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5204,10 +5084,10 @@ def scalarCert544 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (3599/64)⟩
   a := (6679430045452291605179741688609/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (55841369/1000000)⟩, pieceIndex := 49 },
-    { box := ⟨(55841369/1000000), (56216369/1000000)⟩, pieceIndex := 50 },
-    { box := ⟨(56216369/1000000), (3599/64)⟩, pieceIndex := 51 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (55841369/1000000)⟩, pieceIndex := ⟨49, by decide⟩ },
+    { box := ⟨(55841369/1000000), (56216369/1000000)⟩, pieceIndex := ⟨50, by decide⟩ },
+    { box := ⟨(56216369/1000000), (3599/64)⟩, pieceIndex := ⟨51, by decide⟩ }
   ]
 }
 
@@ -5215,9 +5095,9 @@ def scalarCert545 : MacroScalarCert 56 := {
   box := ⟨(3717/128), (1003/32)⟩
   a := (37896421104977184428389275321/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(3717/128), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := 27 }
+    { box := ⟨(3717/128), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -5225,8 +5105,8 @@ def scalarCert546 : MacroScalarCert 56 := {
   box := ⟨(32509/1024), (8201/256)⟩
   a := (26038539485972255876043813792489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32509/1024), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (8201/256)⟩, pieceIndex := 30 }
+    { box := ⟨(32509/1024), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (8201/256)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -5234,8 +5114,8 @@ def scalarCert547 : MacroScalarCert 56 := {
   box := ⟨(19647/512), (39707/1024)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39707/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39707/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -5243,8 +5123,8 @@ def scalarCert548 : MacroScalarCert 56 := {
   box := ⟨(39353/1024), (19883/512)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(39353/1024), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := 37 }
+    { box := ⟨(39353/1024), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -5252,8 +5132,8 @@ def scalarCert549 : MacroScalarCert 56 := {
   box := ⟨(9853/256), (39825/1024)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39825/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39825/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -5261,8 +5141,8 @@ def scalarCert550 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (26373/1024)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (26373/1024)⟩, pieceIndex := 24 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (26373/1024)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -5270,8 +5150,8 @@ def scalarCert551 : MacroScalarCert 56 := {
   box := ⟨(13275/512), (3363/128)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(13275/512), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (3363/128)⟩, pieceIndex := 25 }
+    { box := ⟨(13275/512), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (3363/128)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -5279,8 +5159,8 @@ def scalarCert552 : MacroScalarCert 56 := {
   box := ⟨(45253/1024), (22833/512)⟩
   a := (125492473536974126032423063314169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45253/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (22833/512)⟩, pieceIndex := 42 }
+    { box := ⟨(45253/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (22833/512)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -5288,8 +5168,8 @@ def scalarCert553 : MacroScalarCert 56 := {
   box := ⟨(8201/256), (2065/64)⟩
   a := (7402913802521846133201894614329/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := 31 }
+    { box := ⟨(8201/256), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -5297,8 +5177,8 @@ def scalarCert554 : MacroScalarCert 56 := {
   box := ⟨(32863/1024), (33099/1024)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(32863/1024), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (33099/1024)⟩, pieceIndex := 31 }
+    { box := ⟨(32863/1024), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (33099/1024)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -5306,8 +5186,8 @@ def scalarCert555 : MacroScalarCert 56 := {
   box := ⟨(22833/512), (46079/1024)⟩
   a := (403384292552130139662239000449081/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (46079/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (46079/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -5315,8 +5195,8 @@ def scalarCert556 : MacroScalarCert 56 := {
   box := ⟨(45725/1024), (23069/512)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := 43 }
+    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -5324,8 +5204,8 @@ def scalarCert557 : MacroScalarCert 56 := {
   box := ⟨(15871/512), (16107/512)⟩
   a := (1982313064455441554709887444329/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(15871/512), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (16107/512)⟩, pieceIndex := 27 }
+    { box := ⟨(15871/512), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (16107/512)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -5333,8 +5213,8 @@ def scalarCert558 : MacroScalarCert 56 := {
   box := ⟨(12685/512), (12803/512)⟩
   a := (13224910662800597294854280157649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12685/512), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (12803/512)⟩, pieceIndex := 21 }
+    { box := ⟨(12685/512), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (12803/512)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -5342,8 +5222,8 @@ def scalarCert559 : MacroScalarCert 56 := {
   box := ⟨(6313/256), (1593/64)⟩
   a := (1859160367141373243742933961/7629394531250000000000000000000)
   segments := [
-    { box := ⟨(6313/256), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := 21 }
+    { box := ⟨(6313/256), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -5351,8 +5231,8 @@ def scalarCert560 : MacroScalarCert 56 := {
   box := ⟨(7965/256), (16107/512)⟩
   a := (1982313064455441554709887444329/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(7965/256), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (16107/512)⟩, pieceIndex := 27 }
+    { box := ⟨(7965/256), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (16107/512)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -5360,8 +5240,8 @@ def scalarCert561 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (26255/512)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5369,8 +5249,8 @@ def scalarCert562 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (6903/128)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (6903/128)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (6903/128)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -5378,8 +5258,8 @@ def scalarCert563 : MacroScalarCert 56 := {
   box := ⟨(3835/128), (7965/256)⟩
   a := (1624834442189069327106291141707521/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3835/128), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (7965/256)⟩, pieceIndex := 26 }
+    { box := ⟨(3835/128), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (7965/256)⟩, pieceIndex := ⟨26, by decide⟩ }
   ]
 }
 
@@ -5387,9 +5267,9 @@ def scalarCert564 : MacroScalarCert 56 := {
   box := ⟨(7729/256), (1003/32)⟩
   a := (37896421104977184428389275321/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(7729/256), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := 27 }
+    { box := ⟨(7729/256), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -5397,8 +5277,8 @@ def scalarCert565 : MacroScalarCert 56 := {
   box := ⟨(7729/256), (7965/256)⟩
   a := (1624834442189069327106291141707521/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(7729/256), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (7965/256)⟩, pieceIndex := 26 }
+    { box := ⟨(7729/256), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (7965/256)⟩, pieceIndex := ⟨26, by decide⟩ }
   ]
 }
 
@@ -5406,8 +5286,8 @@ def scalarCert566 : MacroScalarCert 56 := {
   box := ⟨(1947/64), (7965/256)⟩
   a := (1624834442189069327106291141707521/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(1947/64), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (7965/256)⟩, pieceIndex := 26 }
+    { box := ⟨(1947/64), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (7965/256)⟩, pieceIndex := ⟨26, by decide⟩ }
   ]
 }
 
@@ -5415,9 +5295,9 @@ def scalarCert567 : MacroScalarCert 56 := {
   box := ⟨(7847/256), (15989/512)⟩
   a := (122123177780190359515549805444329/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(7847/256), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (15989/512)⟩, pieceIndex := 27 }
+    { box := ⟨(7847/256), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (15989/512)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -5425,8 +5305,8 @@ def scalarCert568 : MacroScalarCert 56 := {
   box := ⟨(15753/512), (1003/32)⟩
   a := (37896421104977184428389275321/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(15753/512), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := 27 }
+    { box := ⟨(15753/512), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -5434,8 +5314,8 @@ def scalarCert569 : MacroScalarCert 56 := {
   box := ⟨(7965/256), (32155/1024)⟩
   a := (58329686341077893138301782230441/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(7965/256), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (32155/1024)⟩, pieceIndex := 27 }
+    { box := ⟨(7965/256), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (32155/1024)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -5443,8 +5323,8 @@ def scalarCert570 : MacroScalarCert 56 := {
   box := ⟨(15871/512), (1003/32)⟩
   a := (37896421104977184428389275321/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(15871/512), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := 27 }
+    { box := ⟨(15871/512), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -5452,8 +5332,8 @@ def scalarCert571 : MacroScalarCert 56 := {
   box := ⟨(45607/1024), (22951/512)⟩
   a := (1317975791431150018325352729749449/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45607/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := 43 }
+    { box := ⟨(45607/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -5461,8 +5341,8 @@ def scalarCert572 : MacroScalarCert 56 := {
   box := ⟨(22833/512), (45961/1024)⟩
   a := (403384292552130139662239000449081/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -5470,8 +5350,8 @@ def scalarCert573 : MacroScalarCert 56 := {
   box := ⟨(13039/512), (52451/2048)⟩
   a := (8807754158064216214287607996609/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (52451/2048)⟩, pieceIndex := 24 }
+    { box := ⟨(13039/512), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (52451/2048)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -5479,8 +5359,8 @@ def scalarCert574 : MacroScalarCert 56 := {
   box := ⟨(38881/1024), (78175/2048)⟩
   a := (4812837764803654107675019035354201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38881/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (78175/2048)⟩, pieceIndex := 36 }
+    { box := ⟨(38881/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (78175/2048)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -5488,8 +5368,8 @@ def scalarCert575 : MacroScalarCert 56 := {
   box := ⟨(45607/1024), (91745/2048)⟩
   a := (1317975791431150018325352729749449/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45607/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (91745/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(45607/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (91745/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -5497,8 +5377,8 @@ def scalarCert576 : MacroScalarCert 56 := {
   box := ⟨(52215/2048), (26255/1024)⟩
   a := (177052464914037556222753657636369/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(52215/2048), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := 24 }
+    { box := ⟨(52215/2048), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -5506,8 +5386,8 @@ def scalarCert577 : MacroScalarCert 56 := {
   box := ⟨(77821/2048), (39117/1024)⟩
   a := (24993524701536833159244342492244929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(77821/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(77821/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -5515,8 +5395,8 @@ def scalarCert578 : MacroScalarCert 56 := {
   box := ⟨(91273/2048), (22951/512)⟩
   a := (5848088301938050798969125031450921/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(91273/2048), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := 43 }
+    { box := ⟨(91273/2048), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -5524,8 +5404,8 @@ def scalarCert579 : MacroScalarCert 56 := {
   box := ⟨(22833/512), (11505/256)⟩
   a := (403384292552130139662239000449081/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := 43 }
+    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -5533,8 +5413,8 @@ def scalarCert580 : MacroScalarCert 56 := {
   box := ⟨(45725/1024), (11505/256)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := 43 }
+    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -5542,8 +5422,8 @@ def scalarCert581 : MacroScalarCert 56 := {
   box := ⟨(22715/512), (5723/128)⟩
   a := (140156038325279709457315581152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (5723/128)⟩, pieceIndex := 42 }
+    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (5723/128)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -5551,8 +5431,8 @@ def scalarCert582 : MacroScalarCert 56 := {
   box := ⟨(38999/1024), (39235/1024)⟩
   a := (11677601791109548745136801743604201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39235/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39235/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -5560,8 +5440,8 @@ def scalarCert583 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (78293/2048)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (78293/2048)⟩, pieceIndex := 36 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (78293/2048)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -5569,8 +5449,8 @@ def scalarCert584 : MacroScalarCert 56 := {
   box := ⟨(77939/2048), (4897/128)⟩
   a := (38723052754148622434167907908744929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(77939/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (4897/128)⟩, pieceIndex := 36 }
+    { box := ⟨(77939/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (4897/128)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -5578,8 +5458,8 @@ def scalarCert585 : MacroScalarCert 56 := {
   box := ⟨(45725/1024), (46079/1024)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (46079/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (46079/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -5587,8 +5467,8 @@ def scalarCert586 : MacroScalarCert 56 := {
   box := ⟨(9853/512), (1239/64)⟩
   a := (308609266148826216472188856757689/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9853/512), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (1239/64)⟩, pieceIndex := 18 }
+    { box := ⟨(9853/512), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (1239/64)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -5596,8 +5476,8 @@ def scalarCert587 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (23069/512)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -5605,8 +5485,8 @@ def scalarCert588 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (46197/1024)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (46197/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (46197/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -5614,8 +5494,8 @@ def scalarCert589 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (2891/64)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (2891/64)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (2891/64)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -5623,8 +5503,8 @@ def scalarCert590 : MacroScalarCert 56 := {
   box := ⟨(16225/512), (16343/512)⟩
   a := (3895225326904878308147162909841/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (16343/512)⟩, pieceIndex := 30 }
+    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (16343/512)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -5632,8 +5512,8 @@ def scalarCert591 : MacroScalarCert 56 := {
   box := ⟨(39117/1024), (39471/1024)⟩
   a := (890431430789413157949114897032401/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(39117/1024), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39471/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(39117/1024), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39471/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -5641,8 +5521,8 @@ def scalarCert592 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (19765/512)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -5650,8 +5530,8 @@ def scalarCert593 : MacroScalarCert 56 := {
   box := ⟨(16225/512), (32745/1024)⟩
   a := (3895225326904878308147162909841/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (32745/1024)⟩, pieceIndex := 30 }
+    { box := ⟨(16225/512), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (32745/1024)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -5659,8 +5539,8 @@ def scalarCert594 : MacroScalarCert 56 := {
   box := ⟨(45371/1024), (45725/1024)⟩
   a := (380995896373736237860712551314169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45371/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45725/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(45371/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45725/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -5668,8 +5548,8 @@ def scalarCert595 : MacroScalarCert 56 := {
   box := ⟨(3953/128), (1003/32)⟩
   a := (37896421104977184428389275321/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(3953/128), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := 27 }
+    { box := ⟨(3953/128), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -5677,8 +5557,8 @@ def scalarCert596 : MacroScalarCert 56 := {
   box := ⟨(3953/128), (15989/512)⟩
   a := (122123177780190359515549805444329/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3953/128), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (15989/512)⟩, pieceIndex := 27 }
+    { box := ⟨(3953/128), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (15989/512)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -5686,8 +5566,8 @@ def scalarCert597 : MacroScalarCert 56 := {
   box := ⟨(45135/1024), (45607/1024)⟩
   a := (8326505390882798349213653439169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45135/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45607/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(45135/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45607/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -5695,8 +5575,8 @@ def scalarCert598 : MacroScalarCert 56 := {
   box := ⟨(22597/512), (45607/1024)⟩
   a := (12404326906898653543170837152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45607/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45607/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -5704,8 +5584,8 @@ def scalarCert599 : MacroScalarCert 56 := {
   box := ⟨(45253/1024), (45607/1024)⟩
   a := (125492473536974126032423063314169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45253/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45607/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(45253/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45607/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -5713,8 +5593,8 @@ def scalarCert600 : MacroScalarCert 56 := {
   box := ⟨(177/4), (22833/512)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (22833/512)⟩, pieceIndex := 42 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (22833/512)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -5722,8 +5602,8 @@ def scalarCert601 : MacroScalarCert 56 := {
   box := ⟨(7965/256), (1003/32)⟩
   a := (37896421104977184428389275321/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(7965/256), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := 27 }
+    { box := ⟨(7965/256), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (1003/32)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -5731,8 +5611,8 @@ def scalarCert602 : MacroScalarCert 56 := {
   box := ⟨(45371/1024), (22833/512)⟩
   a := (380995896373736237860712551314169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45371/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (22833/512)⟩, pieceIndex := 42 }
+    { box := ⟨(45371/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (22833/512)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -5740,8 +5620,8 @@ def scalarCert603 : MacroScalarCert 56 := {
   box := ⟨(22715/512), (45725/1024)⟩
   a := (140156038325279709457315581152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45725/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45725/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -5749,8 +5629,8 @@ def scalarCert604 : MacroScalarCert 56 := {
   box := ⟨(45371/1024), (91273/2048)⟩
   a := (380995896373736237860712551314169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45371/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (91273/2048)⟩, pieceIndex := 42 }
+    { box := ⟨(45371/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (91273/2048)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -5758,8 +5638,8 @@ def scalarCert605 : MacroScalarCert 56 := {
   box := ⟨(90801/2048), (22833/512)⟩
   a := (1865947917513376303361814742084801/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(90801/2048), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (22833/512)⟩, pieceIndex := 42 }
+    { box := ⟨(90801/2048), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (22833/512)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -5767,8 +5647,8 @@ def scalarCert606 : MacroScalarCert 56 := {
   box := ⟨(22715/512), (91391/2048)⟩
   a := (140156038325279709457315581152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (91391/2048)⟩, pieceIndex := 42 }
+    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (91391/2048)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -5776,8 +5656,8 @@ def scalarCert607 : MacroScalarCert 56 := {
   box := ⟨(22715/512), (22833/512)⟩
   a := (140156038325279709457315581152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (22833/512)⟩, pieceIndex := 42 }
+    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (22833/512)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -5785,8 +5665,8 @@ def scalarCert608 : MacroScalarCert 56 := {
   box := ⟨(90919/2048), (91391/2048)⟩
   a := (2653629672568242095308553874334801/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(90919/2048), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (91391/2048)⟩, pieceIndex := 42 }
+    { box := ⟨(90919/2048), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (91391/2048)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -5794,8 +5674,8 @@ def scalarCert609 : MacroScalarCert 56 := {
   box := ⟨(90919/2048), (22833/512)⟩
   a := (2653629672568242095308553874334801/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(90919/2048), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (22833/512)⟩, pieceIndex := 42 }
+    { box := ⟨(90919/2048), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (22833/512)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -5803,8 +5683,8 @@ def scalarCert610 : MacroScalarCert 56 := {
   box := ⟨(52215/2048), (52451/2048)⟩
   a := (177052464914037556222753657636369/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(52215/2048), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (52451/2048)⟩, pieceIndex := 24 }
+    { box := ⟨(52215/2048), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (52451/2048)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -5812,8 +5692,8 @@ def scalarCert611 : MacroScalarCert 56 := {
   box := ⟨(90919/2048), (45725/1024)⟩
   a := (2653629672568242095308553874334801/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(90919/2048), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45725/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(90919/2048), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45725/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -5821,8 +5701,8 @@ def scalarCert612 : MacroScalarCert 56 := {
   box := ⟨(177/4), (45607/1024)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45607/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45607/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -5830,8 +5710,8 @@ def scalarCert613 : MacroScalarCert 56 := {
   box := ⟨(26137/1024), (26255/1024)⟩
   a := (54324773825972371723691245464561/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26137/1024), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := 24 }
+    { box := ⟨(26137/1024), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -5839,8 +5719,8 @@ def scalarCert614 : MacroScalarCert 56 := {
   box := ⟨(25311/2048), (12685/1024)⟩
   a := (5885991482681207829900684848390449/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25311/2048), (1238029/100000)⟩, pieceIndex := 8 },
-    { box := ⟨(1238029/100000), (12685/1024)⟩, pieceIndex := 9 }
+    { box := ⟨(25311/2048), (1238029/100000)⟩, pieceIndex := ⟨8, by decide⟩ },
+    { box := ⟨(1238029/100000), (12685/1024)⟩, pieceIndex := ⟨9, by decide⟩ }
   ]
 }
 
@@ -5848,8 +5728,8 @@ def scalarCert615 : MacroScalarCert 56 := {
   box := ⟨(26137/1024), (52451/2048)⟩
   a := (54324773825972371723691245464561/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26137/1024), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (52451/2048)⟩, pieceIndex := 24 }
+    { box := ⟨(26137/1024), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (52451/2048)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -5857,8 +5737,8 @@ def scalarCert616 : MacroScalarCert 56 := {
   box := ⟨(52333/2048), (26255/1024)⟩
   a := (261663957698583251444635700611369/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(52333/2048), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := 24 }
+    { box := ⟨(52333/2048), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -5866,8 +5746,8 @@ def scalarCert617 : MacroScalarCert 56 := {
   box := ⟨(26137/1024), (52569/2048)⟩
   a := (54324773825972371723691245464561/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26137/1024), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (52569/2048)⟩, pieceIndex := 24 }
+    { box := ⟨(26137/1024), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (52569/2048)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -5875,8 +5755,8 @@ def scalarCert618 : MacroScalarCert 56 := {
   box := ⟨(77703/2048), (19529/512)⟩
   a := (14257571006214851641434154028869929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(77703/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := 36 }
+    { box := ⟨(77703/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -5884,8 +5764,8 @@ def scalarCert619 : MacroScalarCert 56 := {
   box := ⟨(52333/2048), (13157/512)⟩
   a := (261663957698583251444635700611369/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(52333/2048), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (13157/512)⟩, pieceIndex := 24 }
+    { box := ⟨(52333/2048), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (13157/512)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -5893,8 +5773,8 @@ def scalarCert620 : MacroScalarCert 56 := {
   box := ⟨(38881/1024), (19529/512)⟩
   a := (4812837764803654107675019035354201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38881/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := 36 }
+    { box := ⟨(38881/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -5902,8 +5782,8 @@ def scalarCert621 : MacroScalarCert 56 := {
   box := ⟨(52333/2048), (52569/2048)⟩
   a := (261663957698583251444635700611369/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(52333/2048), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (52569/2048)⟩, pieceIndex := 24 }
+    { box := ⟨(52333/2048), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (52569/2048)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -5911,8 +5791,8 @@ def scalarCert622 : MacroScalarCert 56 := {
   box := ⟨(77821/2048), (19529/512)⟩
   a := (24993524701536833159244342492244929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(77821/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := 36 }
+    { box := ⟨(77821/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -5920,8 +5800,8 @@ def scalarCert623 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (13157/512)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (13157/512)⟩, pieceIndex := 24 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (13157/512)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -5929,8 +5809,8 @@ def scalarCert624 : MacroScalarCert 56 := {
   box := ⟨(91273/2048), (91745/2048)⟩
   a := (5848088301938050798969125031450921/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(91273/2048), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (91745/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(91273/2048), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (91745/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -5938,8 +5818,8 @@ def scalarCert625 : MacroScalarCert 56 := {
   box := ⟨(22833/512), (22951/512)⟩
   a := (403384292552130139662239000449081/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := 43 }
+    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -5947,8 +5827,8 @@ def scalarCert626 : MacroScalarCert 56 := {
   box := ⟨(22833/512), (91745/2048)⟩
   a := (403384292552130139662239000449081/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (91745/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (91745/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -5956,8 +5836,8 @@ def scalarCert627 : MacroScalarCert 56 := {
   box := ⟨(91391/2048), (22951/512)⟩
   a := (7090084302412694380181507846200921/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(91391/2048), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := 43 }
+    { box := ⟨(91391/2048), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -5965,8 +5845,8 @@ def scalarCert628 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (52569/2048)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (52569/2048)⟩, pieceIndex := 24 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (52569/2048)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -5974,8 +5854,8 @@ def scalarCert629 : MacroScalarCert 56 := {
   box := ⟨(91391/2048), (91745/2048)⟩
   a := (7090084302412694380181507846200921/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(91391/2048), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (91745/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(91391/2048), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (91745/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -5983,8 +5863,8 @@ def scalarCert630 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (19529/512)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := 36 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -5992,8 +5872,8 @@ def scalarCert631 : MacroScalarCert 56 := {
   box := ⟨(45725/1024), (22951/512)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := 43 }
+    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6001,8 +5881,8 @@ def scalarCert632 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (52687/2048)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (52687/2048)⟩, pieceIndex := 24 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (52687/2048)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -6010,8 +5890,8 @@ def scalarCert633 : MacroScalarCert 56 := {
   box := ⟨(77821/2048), (78175/2048)⟩
   a := (24993524701536833159244342492244929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(77821/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (78175/2048)⟩, pieceIndex := 36 }
+    { box := ⟨(77821/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (78175/2048)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6019,8 +5899,8 @@ def scalarCert634 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (78175/2048)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (78175/2048)⟩, pieceIndex := 36 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (78175/2048)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6028,8 +5908,8 @@ def scalarCert635 : MacroScalarCert 56 := {
   box := ⟨(9735/256), (39117/1024)⟩
   a := (491938936455960966047921141896161/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(9735/256), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6037,8 +5917,8 @@ def scalarCert636 : MacroScalarCert 56 := {
   box := ⟨(77939/2048), (39117/1024)⟩
   a := (38723052754148622434167907908744929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(77939/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(77939/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6046,8 +5926,8 @@ def scalarCert637 : MacroScalarCert 56 := {
   box := ⟨(22833/512), (91863/2048)⟩
   a := (403384292552130139662239000449081/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (91863/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(22833/512), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (91863/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6055,8 +5935,8 @@ def scalarCert638 : MacroScalarCert 56 := {
   box := ⟨(91391/2048), (91863/2048)⟩
   a := (7090084302412694380181507846200921/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(91391/2048), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (91863/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(91391/2048), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (91863/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6064,8 +5944,8 @@ def scalarCert639 : MacroScalarCert 56 := {
   box := ⟨(91391/2048), (45961/1024)⟩
   a := (7090084302412694380181507846200921/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(91391/2048), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(91391/2048), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6073,8 +5953,8 @@ def scalarCert640 : MacroScalarCert 56 := {
   box := ⟨(90801/2048), (91273/2048)⟩
   a := (1865947917513376303361814742084801/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(90801/2048), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (91273/2048)⟩, pieceIndex := 42 }
+    { box := ⟨(90801/2048), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (91273/2048)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -6082,8 +5962,8 @@ def scalarCert641 : MacroScalarCert 56 := {
   box := ⟨(22715/512), (91273/2048)⟩
   a := (140156038325279709457315581152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (91273/2048)⟩, pieceIndex := 42 }
+    { box := ⟨(22715/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (91273/2048)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -6091,8 +5971,8 @@ def scalarCert642 : MacroScalarCert 56 := {
   box := ⟨(52333/2048), (104961/4096)⟩
   a := (261663957698583251444635700611369/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(52333/2048), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (104961/4096)⟩, pieceIndex := 24 }
+    { box := ⟨(52333/2048), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (104961/4096)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -6100,8 +5980,8 @@ def scalarCert643 : MacroScalarCert 56 := {
   box := ⟨(104607/4096), (52451/2048)⟩
   a := (955866990002524559739871667673601/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(104607/4096), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (52451/2048)⟩, pieceIndex := 24 }
+    { box := ⟨(104607/4096), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (52451/2048)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -6109,8 +5989,8 @@ def scalarCert644 : MacroScalarCert 56 := {
   box := ⟨(104725/4096), (26255/1024)⟩
   a := (1141562903590983285695073331748601/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(104725/4096), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := 24 }
+    { box := ⟨(104725/4096), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -6118,8 +5998,8 @@ def scalarCert645 : MacroScalarCert 56 := {
   box := ⟨(155819/4096), (19529/512)⟩
   a := (140040092579999022552830549861057841/2048000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(155819/4096), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := 36 }
+    { box := ⟨(155819/4096), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6127,8 +6007,8 @@ def scalarCert646 : MacroScalarCert 56 := {
   box := ⟨(77939/2048), (78175/2048)⟩
   a := (38723052754148622434167907908744929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(77939/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (78175/2048)⟩, pieceIndex := 36 }
+    { box := ⟨(77939/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (78175/2048)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6136,8 +6016,8 @@ def scalarCert647 : MacroScalarCert 56 := {
   box := ⟨(38999/1024), (39117/1024)⟩
   a := (11677601791109548745136801743604201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6145,8 +6025,8 @@ def scalarCert648 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (105079/4096)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (105079/4096)⟩, pieceIndex := 24 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (105079/4096)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -6154,8 +6034,8 @@ def scalarCert649 : MacroScalarCert 56 := {
   box := ⟨(104843/4096), (52569/2048)⟩
   a := (1343731745198809347161712573948601/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(104843/4096), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (52569/2048)⟩, pieceIndex := 24 }
+    { box := ⟨(104843/4096), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (52569/2048)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -6163,8 +6043,8 @@ def scalarCert650 : MacroScalarCert 56 := {
   box := ⟨(77939/2048), (156291/4096)⟩
   a := (38723052754148622434167907908744929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(77939/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (156291/4096)⟩, pieceIndex := 36 }
+    { box := ⟨(77939/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (156291/4096)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6172,8 +6052,8 @@ def scalarCert651 : MacroScalarCert 56 := {
   box := ⟨(155937/4096), (78175/2048)⟩
   a := (170492723042512408859791057647182841/2048000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(155937/4096), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (78175/2048)⟩, pieceIndex := 36 }
+    { box := ⟨(155937/4096), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (78175/2048)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6181,8 +6061,8 @@ def scalarCert652 : MacroScalarCert 56 := {
   box := ⟨(77939/2048), (78293/2048)⟩
   a := (38723052754148622434167907908744929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(77939/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (78293/2048)⟩, pieceIndex := 36 }
+    { box := ⟨(77939/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (78293/2048)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6190,8 +6070,8 @@ def scalarCert653 : MacroScalarCert 56 := {
   box := ⟨(38999/1024), (78293/2048)⟩
   a := (11677601791109548745136801743604201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (78293/2048)⟩, pieceIndex := 36 }
+    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (78293/2048)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6199,8 +6079,8 @@ def scalarCert654 : MacroScalarCert 56 := {
   box := ⟨(78057/2048), (78293/2048)⟩
   a := (55446155164050219466204850278369929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(78057/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (78293/2048)⟩, pieceIndex := 36 }
+    { box := ⟨(78057/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (78293/2048)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6208,8 +6088,8 @@ def scalarCert655 : MacroScalarCert 56 := {
   box := ⟨(38999/1024), (4897/128)⟩
   a := (11677601791109548745136801743604201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (4897/128)⟩, pieceIndex := 36 }
+    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (4897/128)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6217,8 +6097,8 @@ def scalarCert656 : MacroScalarCert 56 := {
   box := ⟨(78057/2048), (4897/128)⟩
   a := (55446155164050219466204850278369929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(78057/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (4897/128)⟩, pieceIndex := 36 }
+    { box := ⟨(78057/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (4897/128)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6226,8 +6106,8 @@ def scalarCert657 : MacroScalarCert 56 := {
   box := ⟨(45725/1024), (91745/2048)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (91745/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (91745/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6235,8 +6115,8 @@ def scalarCert658 : MacroScalarCert 56 := {
   box := ⟨(45725/1024), (91863/2048)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (91863/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (91863/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6244,8 +6124,8 @@ def scalarCert659 : MacroScalarCert 56 := {
   box := ⟨(45725/1024), (45961/1024)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6253,8 +6133,8 @@ def scalarCert660 : MacroScalarCert 56 := {
   box := ⟨(91509/2048), (91863/2048)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(91509/2048), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (91863/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(91509/2048), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (91863/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6262,8 +6142,8 @@ def scalarCert661 : MacroScalarCert 56 := {
   box := ⟨(91509/2048), (45961/1024)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(91509/2048), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(91509/2048), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6271,8 +6151,8 @@ def scalarCert662 : MacroScalarCert 56 := {
   box := ⟨(91509/2048), (22951/512)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(91509/2048), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := 43 }
+    { box := ⟨(91509/2048), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6280,8 +6160,8 @@ def scalarCert663 : MacroScalarCert 56 := {
   box := ⟨(45725/1024), (91981/2048)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (91981/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(45725/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (91981/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6289,8 +6169,8 @@ def scalarCert664 : MacroScalarCert 56 := {
   box := ⟨(91509/2048), (11505/256)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(91509/2048), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := 43 }
+    { box := ⟨(91509/2048), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6298,8 +6178,8 @@ def scalarCert665 : MacroScalarCert 56 := {
   box := ⟨(38999/1024), (78411/2048)⟩
   a := (11677601791109548745136801743604201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (78411/2048)⟩, pieceIndex := 36 }
+    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (78411/2048)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6307,8 +6187,8 @@ def scalarCert666 : MacroScalarCert 56 := {
   box := ⟨(78057/2048), (39235/1024)⟩
   a := (55446155164050219466204850278369929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(78057/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39235/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(78057/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39235/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6316,8 +6196,8 @@ def scalarCert667 : MacroScalarCert 56 := {
   box := ⟨(78057/2048), (78411/2048)⟩
   a := (55446155164050219466204850278369929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(78057/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (78411/2048)⟩, pieceIndex := 36 }
+    { box := ⟨(78057/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (78411/2048)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6325,8 +6205,8 @@ def scalarCert668 : MacroScalarCert 56 := {
   box := ⟨(91509/2048), (91981/2048)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(91509/2048), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (91981/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(91509/2048), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (91981/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6334,8 +6214,8 @@ def scalarCert669 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (11505/256)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6343,8 +6223,8 @@ def scalarCert670 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (46079/1024)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (46079/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (46079/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6352,8 +6232,8 @@ def scalarCert671 : MacroScalarCert 56 := {
   box := ⟨(413/16), (6667/256)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (6667/256)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (6667/256)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -6361,8 +6241,8 @@ def scalarCert672 : MacroScalarCert 56 := {
   box := ⟨(413/16), (26727/1024)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (26727/1024)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (26727/1024)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -6370,8 +6250,8 @@ def scalarCert673 : MacroScalarCert 56 := {
   box := ⟨(26491/1024), (13393/512)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(26491/1024), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (13393/512)⟩, pieceIndex := 25 }
+    { box := ⟨(26491/1024), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (13393/512)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -6379,8 +6259,8 @@ def scalarCert674 : MacroScalarCert 56 := {
   box := ⟨(45843/1024), (46315/1024)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(45843/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (46315/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(45843/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (46315/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6388,8 +6268,8 @@ def scalarCert675 : MacroScalarCert 56 := {
   box := ⟨(9853/512), (19883/1024)⟩
   a := (308609266148826216472188856757689/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9853/512), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (19883/1024)⟩, pieceIndex := 18 }
+    { box := ⟨(9853/512), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (19883/1024)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -6397,8 +6277,8 @@ def scalarCert676 : MacroScalarCert 56 := {
   box := ⟨(19765/1024), (9971/512)⟩
   a := (1823736530063038278523442761733881/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19765/1024), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (9971/512)⟩, pieceIndex := 18 }
+    { box := ⟨(19765/1024), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (9971/512)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -6406,8 +6286,8 @@ def scalarCert677 : MacroScalarCert 56 := {
   box := ⟨(19765/1024), (19883/1024)⟩
   a := (1823736530063038278523442761733881/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19765/1024), (19351747/1000000)⟩, pieceIndex := 17 },
-    { box := ⟨(19351747/1000000), (19883/1024)⟩, pieceIndex := 18 }
+    { box := ⟨(19765/1024), (19351747/1000000)⟩, pieceIndex := ⟨17, by decide⟩ },
+    { box := ⟨(19351747/1000000), (19883/1024)⟩, pieceIndex := ⟨18, by decide⟩ }
   ]
 }
 
@@ -6415,8 +6295,8 @@ def scalarCert678 : MacroScalarCert 56 := {
   box := ⟨(4897/128), (39471/1024)⟩
   a := (17456552780050285252554156310809/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39471/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(4897/128), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39471/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -6424,8 +6304,8 @@ def scalarCert679 : MacroScalarCert 56 := {
   box := ⟨(39235/1024), (39589/1024)⟩
   a := (1369707961552329895632137911532401/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(39235/1024), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39589/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(39235/1024), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39589/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -6433,8 +6313,8 @@ def scalarCert680 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (91981/2048)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (91981/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (91981/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6442,8 +6322,8 @@ def scalarCert681 : MacroScalarCert 56 := {
   box := ⟨(413/16), (26609/1024)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (26609/1024)⟩, pieceIndex := 25 }
+    { box := ⟨(413/16), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (26609/1024)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -6451,8 +6331,8 @@ def scalarCert682 : MacroScalarCert 56 := {
   box := ⟨(45843/1024), (2891/64)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(45843/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (2891/64)⟩, pieceIndex := 43 }
+    { box := ⟨(45843/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (2891/64)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6460,8 +6340,8 @@ def scalarCert683 : MacroScalarCert 56 := {
   box := ⟨(26491/1024), (26727/1024)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(26491/1024), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (26727/1024)⟩, pieceIndex := 25 }
+    { box := ⟨(26491/1024), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (26727/1024)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -6469,8 +6349,8 @@ def scalarCert684 : MacroScalarCert 56 := {
   box := ⟨(13275/512), (13393/512)⟩
   a := (148698801/250000000000)
   segments := [
-    { box := ⟨(13275/512), (2597847/100000)⟩, pieceIndex := 24 },
-    { box := ⟨(2597847/100000), (13393/512)⟩, pieceIndex := 25 }
+    { box := ⟨(13275/512), (2597847/100000)⟩, pieceIndex := ⟨24, by decide⟩ },
+    { box := ⟨(2597847/100000), (13393/512)⟩, pieceIndex := ⟨25, by decide⟩ }
   ]
 }
 
@@ -6478,8 +6358,8 @@ def scalarCert685 : MacroScalarCert 56 := {
   box := ⟨(104725/4096), (104961/4096)⟩
   a := (1141562903590983285695073331748601/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(104725/4096), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (104961/4096)⟩, pieceIndex := 24 }
+    { box := ⟨(104725/4096), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (104961/4096)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -6487,8 +6367,8 @@ def scalarCert686 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (26255/1024)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := 24 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -6496,8 +6376,8 @@ def scalarCert687 : MacroScalarCert 56 := {
   box := ⟨(77939/2048), (19529/512)⟩
   a := (38723052754148622434167907908744929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(77939/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := 36 }
+    { box := ⟨(77939/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6505,8 +6385,8 @@ def scalarCert688 : MacroScalarCert 56 := {
   box := ⟨(155937/4096), (19529/512)⟩
   a := (170492723042512408859791057647182841/2048000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(155937/4096), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := 36 }
+    { box := ⟨(155937/4096), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6514,8 +6394,8 @@ def scalarCert689 : MacroScalarCert 56 := {
   box := ⟨(6549/256), (104961/4096)⟩
   a := (4846047689033107029255715842121/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (104961/4096)⟩, pieceIndex := 24 }
+    { box := ⟨(6549/256), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (104961/4096)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -6523,8 +6403,8 @@ def scalarCert690 : MacroScalarCert 56 := {
   box := ⟨(104843/4096), (26255/1024)⟩
   a := (1343731745198809347161712573948601/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(104843/4096), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := 24 }
+    { box := ⟨(104843/4096), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (26255/1024)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -6532,8 +6412,8 @@ def scalarCert691 : MacroScalarCert 56 := {
   box := ⟨(38999/1024), (19529/512)⟩
   a := (11677601791109548745136801743604201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := 36 }
+    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (19529/512)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6541,8 +6421,8 @@ def scalarCert692 : MacroScalarCert 56 := {
   box := ⟨(52333/2048), (52451/2048)⟩
   a := (261663957698583251444635700611369/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(52333/2048), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (52451/2048)⟩, pieceIndex := 24 }
+    { box := ⟨(52333/2048), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (52451/2048)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -6550,8 +6430,8 @@ def scalarCert693 : MacroScalarCert 56 := {
   box := ⟨(104843/4096), (105079/4096)⟩
   a := (1343731745198809347161712573948601/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(104843/4096), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (105079/4096)⟩, pieceIndex := 24 }
+    { box := ⟨(104843/4096), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (105079/4096)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -6559,8 +6439,8 @@ def scalarCert694 : MacroScalarCert 56 := {
   box := ⟨(155937/4096), (156291/4096)⟩
   a := (170492723042512408859791057647182841/2048000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(155937/4096), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (156291/4096)⟩, pieceIndex := 36 }
+    { box := ⟨(155937/4096), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (156291/4096)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6568,8 +6448,8 @@ def scalarCert695 : MacroScalarCert 56 := {
   box := ⟨(38999/1024), (156291/4096)⟩
   a := (11677601791109548745136801743604201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (156291/4096)⟩, pieceIndex := 36 }
+    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (156291/4096)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6577,8 +6457,8 @@ def scalarCert696 : MacroScalarCert 56 := {
   box := ⟨(38999/1024), (78175/2048)⟩
   a := (11677601791109548745136801743604201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (78175/2048)⟩, pieceIndex := 36 }
+    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (78175/2048)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6586,8 +6466,8 @@ def scalarCert697 : MacroScalarCert 56 := {
   box := ⟨(156055/4096), (78175/2048)⟩
   a := (203938927862315602923864942386432841/2048000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(156055/4096), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (78175/2048)⟩, pieceIndex := 36 }
+    { box := ⟨(156055/4096), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (78175/2048)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6595,8 +6475,8 @@ def scalarCert698 : MacroScalarCert 56 := {
   box := ⟨(38999/1024), (156409/4096)⟩
   a := (11677601791109548745136801743604201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (156409/4096)⟩, pieceIndex := 36 }
+    { box := ⟨(38999/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (156409/4096)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6604,8 +6484,8 @@ def scalarCert699 : MacroScalarCert 56 := {
   box := ⟨(156055/4096), (39117/1024)⟩
   a := (203938927862315602923864942386432841/2048000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(156055/4096), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(156055/4096), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6613,8 +6493,8 @@ def scalarCert700 : MacroScalarCert 56 := {
   box := ⟨(78057/2048), (156527/4096)⟩
   a := (55446155164050219466204850278369929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(78057/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (156527/4096)⟩, pieceIndex := 36 }
+    { box := ⟨(78057/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (156527/4096)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6622,8 +6502,8 @@ def scalarCert701 : MacroScalarCert 56 := {
   box := ⟨(156173/4096), (78293/2048)⟩
   a := (240378707039408604745052204078807841/2048000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(156173/4096), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (78293/2048)⟩, pieceIndex := 36 }
+    { box := ⟨(156173/4096), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (78293/2048)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6631,8 +6511,8 @@ def scalarCert702 : MacroScalarCert 56 := {
   box := ⟨(182959/4096), (91745/2048)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(182959/4096), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (91745/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(182959/4096), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (91745/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6640,8 +6520,8 @@ def scalarCert703 : MacroScalarCert 56 := {
   box := ⟨(156173/4096), (156527/4096)⟩
   a := (240378707039408604745052204078807841/2048000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(156173/4096), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (156527/4096)⟩, pieceIndex := 36 }
+    { box := ⟨(156173/4096), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (156527/4096)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6649,8 +6529,8 @@ def scalarCert704 : MacroScalarCert 56 := {
   box := ⟨(91509/2048), (91745/2048)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(91509/2048), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (91745/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(91509/2048), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (91745/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6658,8 +6538,8 @@ def scalarCert705 : MacroScalarCert 56 := {
   box := ⟨(156055/4096), (156409/4096)⟩
   a := (203938927862315602923864942386432841/2048000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(156055/4096), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (156409/4096)⟩, pieceIndex := 36 }
+    { box := ⟨(156055/4096), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (156409/4096)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6667,8 +6547,8 @@ def scalarCert706 : MacroScalarCert 56 := {
   box := ⟨(78057/2048), (39117/1024)⟩
   a := (55446155164050219466204850278369929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(78057/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(78057/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6676,8 +6556,8 @@ def scalarCert707 : MacroScalarCert 56 := {
   box := ⟨(78057/2048), (156409/4096)⟩
   a := (55446155164050219466204850278369929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(78057/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (156409/4096)⟩, pieceIndex := 36 }
+    { box := ⟨(78057/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (156409/4096)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6685,8 +6565,8 @@ def scalarCert708 : MacroScalarCert 56 := {
   box := ⟨(156055/4096), (156291/4096)⟩
   a := (203938927862315602923864942386432841/2048000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(156055/4096), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (156291/4096)⟩, pieceIndex := 36 }
+    { box := ⟨(156055/4096), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (156291/4096)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6694,8 +6574,8 @@ def scalarCert709 : MacroScalarCert 56 := {
   box := ⟨(78057/2048), (78175/2048)⟩
   a := (55446155164050219466204850278369929/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(78057/2048), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (78175/2048)⟩, pieceIndex := 36 }
+    { box := ⟨(78057/2048), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (78175/2048)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6703,8 +6583,8 @@ def scalarCert710 : MacroScalarCert 56 := {
   box := ⟨(91509/2048), (183549/4096)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(91509/2048), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (183549/4096)⟩, pieceIndex := 43 }
+    { box := ⟨(91509/2048), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (183549/4096)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6712,8 +6592,8 @@ def scalarCert711 : MacroScalarCert 56 := {
   box := ⟨(183077/4096), (22951/512)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(183077/4096), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := 43 }
+    { box := ⟨(183077/4096), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6721,8 +6601,8 @@ def scalarCert712 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (91863/2048)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (91863/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (91863/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6730,8 +6610,8 @@ def scalarCert713 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (45961/1024)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (45961/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6739,8 +6619,8 @@ def scalarCert714 : MacroScalarCert 56 := {
   box := ⟨(183077/4096), (91745/2048)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(183077/4096), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (91745/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(183077/4096), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (91745/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6748,8 +6628,8 @@ def scalarCert715 : MacroScalarCert 56 := {
   box := ⟨(156173/4096), (39117/1024)⟩
   a := (240378707039408604745052204078807841/2048000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(156173/4096), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(156173/4096), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39117/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -6757,8 +6637,8 @@ def scalarCert716 : MacroScalarCert 56 := {
   box := ⟨(183077/4096), (183549/4096)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(183077/4096), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (183549/4096)⟩, pieceIndex := 43 }
+    { box := ⟨(183077/4096), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (183549/4096)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6766,8 +6646,8 @@ def scalarCert717 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (22951/512)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (22951/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6775,8 +6655,8 @@ def scalarCert718 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (92099/2048)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (92099/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (92099/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6784,8 +6664,8 @@ def scalarCert719 : MacroScalarCert 56 := {
   box := ⟨(91627/2048), (46079/1024)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(91627/2048), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (46079/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(91627/2048), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (46079/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6793,8 +6673,8 @@ def scalarCert720 : MacroScalarCert 56 := {
   box := ⟨(5723/128), (183549/4096)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (183549/4096)⟩, pieceIndex := 43 }
+    { box := ⟨(5723/128), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (183549/4096)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6802,8 +6682,8 @@ def scalarCert721 : MacroScalarCert 56 := {
   box := ⟨(104725/4096), (52451/2048)⟩
   a := (1141562903590983285695073331748601/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(104725/4096), (2560347/100000)⟩, pieceIndex := 23 },
-    { box := ⟨(2560347/100000), (52451/2048)⟩, pieceIndex := 24 }
+    { box := ⟨(104725/4096), (2560347/100000)⟩, pieceIndex := ⟨23, by decide⟩ },
+    { box := ⟨(2560347/100000), (52451/2048)⟩, pieceIndex := ⟨24, by decide⟩ }
   ]
 }
 
@@ -6811,8 +6691,8 @@ def scalarCert722 : MacroScalarCert 56 := {
   box := ⟨(91627/2048), (92099/2048)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(91627/2048), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (92099/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(91627/2048), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (92099/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6820,8 +6700,8 @@ def scalarCert723 : MacroScalarCert 56 := {
   box := ⟨(91627/2048), (11505/256)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(91627/2048), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := 43 }
+    { box := ⟨(91627/2048), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (11505/256)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6829,8 +6709,8 @@ def scalarCert724 : MacroScalarCert 56 := {
   box := ⟨(45843/1024), (92099/2048)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(45843/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (92099/2048)⟩, pieceIndex := 43 }
+    { box := ⟨(45843/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (92099/2048)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6838,8 +6718,8 @@ def scalarCert725 : MacroScalarCert 56 := {
   box := ⟨(45843/1024), (23069/512)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(45843/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := 43 }
+    { box := ⟨(45843/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (23069/512)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6847,8 +6727,8 @@ def scalarCert726 : MacroScalarCert 56 := {
   box := ⟨(45843/1024), (46197/1024)⟩
   a := (236947891/1000000000000)
   segments := [
-    { box := ⟨(45843/1024), (1399599/31250)⟩, pieceIndex := 42 },
-    { box := ⟨(1399599/31250), (46197/1024)⟩, pieceIndex := 43 }
+    { box := ⟨(45843/1024), (1399599/31250)⟩, pieceIndex := ⟨42, by decide⟩ },
+    { box := ⟨(1399599/31250), (46197/1024)⟩, pieceIndex := ⟨43, by decide⟩ }
   ]
 }
 
@@ -6856,8 +6736,8 @@ def scalarCert727 : MacroScalarCert 56 := {
   box := ⟨(32509/1024), (16343/512)⟩
   a := (26038539485972255876043813792489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32509/1024), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (16343/512)⟩, pieceIndex := 30 }
+    { box := ⟨(32509/1024), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (16343/512)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -6865,8 +6745,8 @@ def scalarCert728 : MacroScalarCert 56 := {
   box := ⟨(39235/1024), (19765/512)⟩
   a := (1369707961552329895632137911532401/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(39235/1024), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := 37 }
+    { box := ⟨(39235/1024), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -6874,8 +6754,8 @@ def scalarCert729 : MacroScalarCert 56 := {
   box := ⟨(32509/1024), (32745/1024)⟩
   a := (26038539485972255876043813792489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32509/1024), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (32745/1024)⟩, pieceIndex := 30 }
+    { box := ⟨(32509/1024), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (32745/1024)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -6883,8 +6763,8 @@ def scalarCert730 : MacroScalarCert 56 := {
   box := ⟨(19647/512), (1239/32)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := 37 }
+    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -6892,8 +6772,8 @@ def scalarCert731 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (8201/256)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (8201/256)⟩, pieceIndex := 30 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (8201/256)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -6901,8 +6781,8 @@ def scalarCert732 : MacroScalarCert 56 := {
   box := ⟨(39235/1024), (39471/1024)⟩
   a := (1369707961552329895632137911532401/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(39235/1024), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39471/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(39235/1024), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39471/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -6910,8 +6790,8 @@ def scalarCert733 : MacroScalarCert 56 := {
   box := ⟨(4071/128), (32745/1024)⟩
   a := (611979482867143614802669851201/5000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (32745/1024)⟩, pieceIndex := 30 }
+    { box := ⟨(4071/128), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (32745/1024)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -6919,8 +6799,8 @@ def scalarCert734 : MacroScalarCert 56 := {
   box := ⟨(45135/1024), (11387/256)⟩
   a := (8326505390882798349213653439169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45135/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (11387/256)⟩, pieceIndex := 42 }
+    { box := ⟨(45135/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (11387/256)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -6928,9 +6808,9 @@ def scalarCert735 : MacroScalarCert 56 := {
   box := ⟨(25901/512), (52333/1024)⟩
   a := (3016845497858850148660534470361/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (52333/1024)⟩, pieceIndex := 49 }
+    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (52333/1024)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -6938,9 +6818,9 @@ def scalarCert736 : MacroScalarCert 56 := {
   box := ⟨(51861/1024), (6549/128)⟩
   a := (17667571024850201693389455584569/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(51861/1024), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := 49 }
+    { box := ⟨(51861/1024), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -6948,8 +6828,8 @@ def scalarCert737 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (52451/1024)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (52451/1024)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (52451/1024)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -6957,8 +6837,8 @@ def scalarCert738 : MacroScalarCert 56 := {
   box := ⟨(51979/1024), (26255/512)⟩
   a := (13135780216075039115731298598211929/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(51979/1024), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := 49 }
+    { box := ⟨(51979/1024), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -6966,8 +6846,8 @@ def scalarCert739 : MacroScalarCert 56 := {
   box := ⟨(26019/512), (13157/256)⟩
   a := (4108970484551816539322694210502201/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13157/256)⟩, pieceIndex := 49 }
+    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13157/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -6975,8 +6855,8 @@ def scalarCert740 : MacroScalarCert 56 := {
   box := ⟨(51625/1024), (52097/1024)⟩
   a := (1652284170473624845145301959569/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(51625/1024), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (52097/1024)⟩, pieceIndex := 48 }
+    { box := ⟨(51625/1024), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (52097/1024)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -6984,8 +6864,8 @@ def scalarCert741 : MacroScalarCert 56 := {
   box := ⟨(12921/256), (13039/256)⟩
   a := (253733660265444510657503816809/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (13039/256)⟩, pieceIndex := 48 }
+    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (13039/256)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -6993,8 +6873,8 @@ def scalarCert742 : MacroScalarCert 56 := {
   box := ⟨(51743/1024), (52215/1024)⟩
   a := (7531437837901037420352339709569/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(51743/1024), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (52215/1024)⟩, pieceIndex := 48 }
+    { box := ⟨(51743/1024), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (52215/1024)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -7002,8 +6882,8 @@ def scalarCert743 : MacroScalarCert 56 := {
   box := ⟨(25901/512), (26137/512)⟩
   a := (3016845497858850148660534470361/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (26137/512)⟩, pieceIndex := 48 }
+    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (26137/512)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -7011,8 +6891,8 @@ def scalarCert744 : MacroScalarCert 56 := {
   box := ⟨(45135/1024), (45489/1024)⟩
   a := (8326505390882798349213653439169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45135/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45489/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(45135/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45489/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -7020,8 +6900,8 @@ def scalarCert745 : MacroScalarCert 56 := {
   box := ⟨(22597/512), (11387/256)⟩
   a := (12404326906898653543170837152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (11387/256)⟩, pieceIndex := 42 }
+    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (11387/256)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -7029,8 +6909,8 @@ def scalarCert746 : MacroScalarCert 56 := {
   box := ⟨(51743/1024), (13039/256)⟩
   a := (7531437837901037420352339709569/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(51743/1024), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (13039/256)⟩, pieceIndex := 48 }
+    { box := ⟨(51743/1024), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (13039/256)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -7038,8 +6918,8 @@ def scalarCert747 : MacroScalarCert 56 := {
   box := ⟨(25901/512), (52215/1024)⟩
   a := (3016845497858850148660534470361/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (52215/1024)⟩, pieceIndex := 48 }
+    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (52215/1024)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -7047,8 +6927,8 @@ def scalarCert748 : MacroScalarCert 56 := {
   box := ⟨(22597/512), (45489/1024)⟩
   a := (12404326906898653543170837152761/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45489/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(22597/512), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45489/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -7056,8 +6936,8 @@ def scalarCert749 : MacroScalarCert 56 := {
   box := ⟨(51861/1024), (26137/512)⟩
   a := (17667571024850201693389455584569/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(51861/1024), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (26137/512)⟩, pieceIndex := 48 }
+    { box := ⟨(51861/1024), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (26137/512)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -7065,8 +6945,8 @@ def scalarCert750 : MacroScalarCert 56 := {
   box := ⟨(45253/1024), (11387/256)⟩
   a := (125492473536974126032423063314169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45253/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (11387/256)⟩, pieceIndex := 42 }
+    { box := ⟨(45253/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (11387/256)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -7074,9 +6954,9 @@ def scalarCert751 : MacroScalarCert 56 := {
   box := ⟨(51861/1024), (52333/1024)⟩
   a := (17667571024850201693389455584569/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(51861/1024), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (52333/1024)⟩, pieceIndex := 49 }
+    { box := ⟨(51861/1024), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (52333/1024)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7084,8 +6964,8 @@ def scalarCert752 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (6549/128)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7093,8 +6973,8 @@ def scalarCert753 : MacroScalarCert 56 := {
   box := ⟨(26019/512), (26373/512)⟩
   a := (4108970484551816539322694210502201/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26373/512)⟩, pieceIndex := 49 }
+    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26373/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7102,8 +6982,8 @@ def scalarCert754 : MacroScalarCert 56 := {
   box := ⟨(26019/512), (52569/1024)⟩
   a := (4108970484551816539322694210502201/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (52569/1024)⟩, pieceIndex := 49 }
+    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (52569/1024)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7111,8 +6991,8 @@ def scalarCert755 : MacroScalarCert 56 := {
   box := ⟨(52097/1024), (13157/256)⟩
   a := (20105418147297356482899790730336929/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(52097/1024), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13157/256)⟩, pieceIndex := 49 }
+    { box := ⟨(52097/1024), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13157/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7120,8 +7000,8 @@ def scalarCert756 : MacroScalarCert 56 := {
   box := ⟨(13039/256), (26373/512)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26373/512)⟩, pieceIndex := 49 }
+    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26373/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7129,8 +7009,8 @@ def scalarCert757 : MacroScalarCert 56 := {
   box := ⟨(13039/256), (413/8)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (413/8)⟩, pieceIndex := 49 }
+    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (413/8)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7138,8 +7018,8 @@ def scalarCert758 : MacroScalarCert 56 := {
   box := ⟨(13039/256), (13275/256)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13275/256)⟩, pieceIndex := 49 }
+    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13275/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7147,8 +7027,8 @@ def scalarCert759 : MacroScalarCert 56 := {
   box := ⟨(13039/256), (26491/512)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26491/512)⟩, pieceIndex := 49 }
+    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26491/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7156,8 +7036,8 @@ def scalarCert760 : MacroScalarCert 56 := {
   box := ⟨(13039/256), (26609/512)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26609/512)⟩, pieceIndex := 49 }
+    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26609/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7165,8 +7045,8 @@ def scalarCert761 : MacroScalarCert 56 := {
   box := ⟨(26137/512), (6667/128)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(26137/512), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (6667/128)⟩, pieceIndex := 49 }
+    { box := ⟨(26137/512), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (6667/128)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7174,8 +7054,8 @@ def scalarCert762 : MacroScalarCert 56 := {
   box := ⟨(26137/512), (13275/256)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(26137/512), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13275/256)⟩, pieceIndex := 49 }
+    { box := ⟨(26137/512), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13275/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7183,8 +7063,8 @@ def scalarCert763 : MacroScalarCert 56 := {
   box := ⟨(7257/128), (62500000/1094977)⟩
   a := (1341291391080906536525222929/312500000000000000000000000000000)
   segments := [
-    { box := ⟨(7257/128), (5696637/100000)⟩, pieceIndex := 53 },
-    { box := ⟨(5696637/100000), (62500000/1094977)⟩, pieceIndex := 54 }
+    { box := ⟨(7257/128), (5696637/100000)⟩, pieceIndex := ⟨53, by decide⟩ },
+    { box := ⟨(5696637/100000), (62500000/1094977)⟩, pieceIndex := ⟨54, by decide⟩ }
   ]
 }
 
@@ -7192,8 +7072,8 @@ def scalarCert764 : MacroScalarCert 56 := {
   box := ⟨(19411/512), (39353/1024)⟩
   a := (625761533908596174465411009662769/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (39353/1024)⟩, pieceIndex := 36 }
+    { box := ⟨(19411/512), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (39353/1024)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -7201,8 +7081,8 @@ def scalarCert765 : MacroScalarCert 56 := {
   box := ⟨(38881/1024), (9853/256)⟩
   a := (4812837764803654107675019035354201/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(38881/1024), (38138093/1000000)⟩, pieceIndex := 35 },
-    { box := ⟨(38138093/1000000), (9853/256)⟩, pieceIndex := 36 }
+    { box := ⟨(38881/1024), (38138093/1000000)⟩, pieceIndex := ⟨35, by decide⟩ },
+    { box := ⟨(38138093/1000000), (9853/256)⟩, pieceIndex := ⟨36, by decide⟩ }
   ]
 }
 
@@ -7210,8 +7090,8 @@ def scalarCert766 : MacroScalarCert 56 := {
   box := ⟨(9499/512), (19175/1024)⟩
   a := (30605320513697079304403802721444329/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9499/512), (9300873/500000)⟩, pieceIndex := 14 },
-    { box := ⟨(9300873/500000), (19175/1024)⟩, pieceIndex := 15 }
+    { box := ⟨(9499/512), (9300873/500000)⟩, pieceIndex := ⟨14, by decide⟩ },
+    { box := ⟨(9300873/500000), (19175/1024)⟩, pieceIndex := ⟨15, by decide⟩ }
   ]
 }
 
@@ -7219,8 +7099,8 @@ def scalarCert767 : MacroScalarCert 56 := {
   box := ⟨(32627/1024), (32863/1024)⟩
   a := (54965343560194319646569821692489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32627/1024), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (32863/1024)⟩, pieceIndex := 30 }
+    { box := ⟨(32627/1024), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (32863/1024)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -7228,8 +7108,8 @@ def scalarCert768 : MacroScalarCert 56 := {
   box := ⟨(39353/1024), (39707/1024)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(39353/1024), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39707/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(39353/1024), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39707/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -7237,8 +7117,8 @@ def scalarCert769 : MacroScalarCert 56 := {
   box := ⟨(9853/256), (19883/512)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := 37 }
+    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19883/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -7246,8 +7126,8 @@ def scalarCert770 : MacroScalarCert 56 := {
   box := ⟨(16461/512), (8319/256)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8319/256)⟩, pieceIndex := 31 }
+    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8319/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -7255,8 +7135,8 @@ def scalarCert771 : MacroScalarCert 56 := {
   box := ⟨(19647/512), (39589/1024)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39589/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39589/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -7264,8 +7144,8 @@ def scalarCert772 : MacroScalarCert 56 := {
   box := ⟨(32627/1024), (65667/2048)⟩
   a := (54965343560194319646569821692489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32627/1024), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (65667/2048)⟩, pieceIndex := 30 }
+    { box := ⟨(32627/1024), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (65667/2048)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -7273,8 +7153,8 @@ def scalarCert773 : MacroScalarCert 56 := {
   box := ⟨(19647/512), (79119/2048)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (79119/2048)⟩, pieceIndex := 37 }
+    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (79119/2048)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -7282,8 +7162,8 @@ def scalarCert774 : MacroScalarCert 56 := {
   box := ⟨(78647/2048), (39589/1024)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(78647/2048), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39589/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(78647/2048), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39589/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -7291,8 +7171,8 @@ def scalarCert775 : MacroScalarCert 56 := {
   box := ⟨(9853/256), (39707/1024)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39707/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(9853/256), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39707/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -7300,8 +7180,8 @@ def scalarCert776 : MacroScalarCert 56 := {
   box := ⟨(1711/128), (3481/256)⟩
   a := (1610977803/1000000000000)
   segments := [
-    { box := ⟨(1711/128), (13505291/1000000)⟩, pieceIndex := 12 },
-    { box := ⟨(13505291/1000000), (3481/256)⟩, pieceIndex := 13 }
+    { box := ⟨(1711/128), (13505291/1000000)⟩, pieceIndex := ⟨12, by decide⟩ },
+    { box := ⟨(13505291/1000000), (3481/256)⟩, pieceIndex := ⟨13, by decide⟩ }
   ]
 }
 
@@ -7309,8 +7189,8 @@ def scalarCert777 : MacroScalarCert 56 := {
   box := ⟨(39353/1024), (1239/32)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(39353/1024), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := 37 }
+    { box := ⟨(39353/1024), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (1239/32)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -7318,8 +7198,8 @@ def scalarCert778 : MacroScalarCert 56 := {
   box := ⟨(65667/2048), (2065/64)⟩
   a := (521331652913686265731490975482681/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(65667/2048), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := 31 }
+    { box := ⟨(65667/2048), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -7327,8 +7207,8 @@ def scalarCert779 : MacroScalarCert 56 := {
   box := ⟨(26727/2048), (3363/256)⟩
   a := (80864734612032863947739505791316289/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26727/2048), (13130291/1000000)⟩, pieceIndex := 11 },
-    { box := ⟨(13130291/1000000), (3363/256)⟩, pieceIndex := 12 }
+    { box := ⟨(26727/2048), (13130291/1000000)⟩, pieceIndex := ⟨11, by decide⟩ },
+    { box := ⟨(13130291/1000000), (3363/256)⟩, pieceIndex := ⟨12, by decide⟩ }
   ]
 }
 
@@ -7336,8 +7216,8 @@ def scalarCert780 : MacroScalarCert 56 := {
   box := ⟨(32863/1024), (2065/64)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(32863/1024), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := 31 }
+    { box := ⟨(32863/1024), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (2065/64)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -7345,8 +7225,8 @@ def scalarCert781 : MacroScalarCert 56 := {
   box := ⟨(16461/512), (16579/512)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (16579/512)⟩, pieceIndex := 31 }
+    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (16579/512)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -7354,8 +7234,8 @@ def scalarCert782 : MacroScalarCert 56 := {
   box := ⟨(16461/512), (33217/1024)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (33217/1024)⟩, pieceIndex := 31 }
+    { box := ⟨(16461/512), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (33217/1024)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -7363,8 +7243,8 @@ def scalarCert783 : MacroScalarCert 56 := {
   box := ⟨(32981/1024), (33217/1024)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(32981/1024), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (33217/1024)⟩, pieceIndex := 31 }
+    { box := ⟨(32981/1024), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (33217/1024)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -7372,8 +7252,8 @@ def scalarCert784 : MacroScalarCert 56 := {
   box := ⟨(32981/1024), (8319/256)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(32981/1024), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (8319/256)⟩, pieceIndex := 31 }
+    { box := ⟨(32981/1024), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (8319/256)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -7381,8 +7261,8 @@ def scalarCert785 : MacroScalarCert 56 := {
   box := ⟨(32981/1024), (33335/1024)⟩
   a := (104124691/250000000000)
   segments := [
-    { box := ⟨(32981/1024), (6448527/200000)⟩, pieceIndex := 30 },
-    { box := ⟨(6448527/200000), (33335/1024)⟩, pieceIndex := 31 }
+    { box := ⟨(32981/1024), (6448527/200000)⟩, pieceIndex := ⟨30, by decide⟩ },
+    { box := ⟨(6448527/200000), (33335/1024)⟩, pieceIndex := ⟨31, by decide⟩ }
   ]
 }
 
@@ -7390,8 +7270,8 @@ def scalarCert786 : MacroScalarCert 56 := {
   box := ⟨(51979/1024), (52451/1024)⟩
   a := (13135780216075039115731298598211929/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(51979/1024), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (52451/1024)⟩, pieceIndex := 49 }
+    { box := ⟨(51979/1024), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (52451/1024)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7399,8 +7279,8 @@ def scalarCert787 : MacroScalarCert 56 := {
   box := ⟨(26019/512), (26255/512)⟩
   a := (4108970484551816539322694210502201/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := 49 }
+    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7408,8 +7288,8 @@ def scalarCert788 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (3481/64)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (3481/64)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (3481/64)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7417,8 +7297,8 @@ def scalarCert789 : MacroScalarCert 56 := {
   box := ⟨(12685/512), (25547/1024)⟩
   a := (83827002079925057429895526208721/500000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12685/512), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (25547/1024)⟩, pieceIndex := 21 }
+    { box := ⟨(12685/512), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (25547/1024)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -7426,8 +7306,8 @@ def scalarCert790 : MacroScalarCert 56 := {
   box := ⟨(25429/1024), (12803/512)⟩
   a := (13224910662800597294854280157649/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25429/1024), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (12803/512)⟩, pieceIndex := 21 }
+    { box := ⟨(25429/1024), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (12803/512)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -7435,8 +7315,8 @@ def scalarCert791 : MacroScalarCert 56 := {
   box := ⟨(3127/128), (12685/512)⟩
   a := (3618639448549524540551593999563489/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3127/128), (24478469/1000000)⟩, pieceIndex := 19 },
-    { box := ⟨(24478469/1000000), (12685/512)⟩, pieceIndex := 20 }
+    { box := ⟨(3127/128), (24478469/1000000)⟩, pieceIndex := ⟨19, by decide⟩ },
+    { box := ⟨(24478469/1000000), (12685/512)⟩, pieceIndex := ⟨20, by decide⟩ }
   ]
 }
 
@@ -7444,8 +7324,8 @@ def scalarCert792 : MacroScalarCert 56 := {
   box := ⟨(12567/512), (1593/64)⟩
   a := (1859160367141373243742933961/7629394531250000000000000000000)
   segments := [
-    { box := ⟨(12567/512), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := 21 }
+    { box := ⟨(12567/512), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -7453,8 +7333,8 @@ def scalarCert793 : MacroScalarCert 56 := {
   box := ⟨(25311/1024), (1593/64)⟩
   a := (1859160367141373243742933961/7629394531250000000000000000000)
   segments := [
-    { box := ⟨(25311/1024), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := 21 }
+    { box := ⟨(25311/1024), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -7462,8 +7342,8 @@ def scalarCert794 : MacroScalarCert 56 := {
   box := ⟨(12685/512), (1593/64)⟩
   a := (1859160367141373243742933961/7629394531250000000000000000000)
   segments := [
-    { box := ⟨(12685/512), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := 21 }
+    { box := ⟨(12685/512), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (1593/64)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -7471,8 +7351,8 @@ def scalarCert795 : MacroScalarCert 56 := {
   box := ⟨(25429/1024), (25547/1024)⟩
   a := (83827002079925057429895526208721/500000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25429/1024), (24853469/1000000)⟩, pieceIndex := 20 },
-    { box := ⟨(24853469/1000000), (25547/1024)⟩, pieceIndex := 21 }
+    { box := ⟨(25429/1024), (24853469/1000000)⟩, pieceIndex := ⟨20, by decide⟩ },
+    { box := ⟨(24853469/1000000), (25547/1024)⟩, pieceIndex := ⟨21, by decide⟩ }
   ]
 }
 
@@ -7480,8 +7360,8 @@ def scalarCert796 : MacroScalarCert 56 := {
   box := ⟨(32627/1024), (8201/256)⟩
   a := (54965343560194319646569821692489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32627/1024), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (8201/256)⟩, pieceIndex := 30 }
+    { box := ⟨(32627/1024), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (8201/256)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -7489,8 +7369,8 @@ def scalarCert797 : MacroScalarCert 56 := {
   box := ⟨(9499/256), (19293/512)⟩
   a := (201784954112817680932822514341729/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9499/256), (9347023/250000)⟩, pieceIndex := 32 },
-    { box := ⟨(9347023/250000), (19293/512)⟩, pieceIndex := 33 }
+    { box := ⟨(9499/256), (9347023/250000)⟩, pieceIndex := ⟨32, by decide⟩ },
+    { box := ⟨(9347023/250000), (19293/512)⟩, pieceIndex := ⟨33, by decide⟩ }
   ]
 }
 
@@ -7498,8 +7378,8 @@ def scalarCert798 : MacroScalarCert 56 := {
   box := ⟨(19057/512), (19293/512)⟩
   a := (201784954112817680932822514341729/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19057/512), (9347023/250000)⟩, pieceIndex := 32 },
-    { box := ⟨(9347023/250000), (19293/512)⟩, pieceIndex := 33 }
+    { box := ⟨(19057/512), (9347023/250000)⟩, pieceIndex := ⟨32, by decide⟩ },
+    { box := ⟨(9347023/250000), (19293/512)⟩, pieceIndex := ⟨33, by decide⟩ }
   ]
 }
 
@@ -7507,9 +7387,9 @@ def scalarCert799 : MacroScalarCert 56 := {
   box := ⟨(295/8), (9617/256)⟩
   a := (294155184355193927474896755253401/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(295/8), (9253273/250000)⟩, pieceIndex := 31 },
-    { box := ⟨(9253273/250000), (9347023/250000)⟩, pieceIndex := 32 },
-    { box := ⟨(9347023/250000), (9617/256)⟩, pieceIndex := 33 }
+    { box := ⟨(295/8), (9253273/250000)⟩, pieceIndex := ⟨31, by decide⟩ },
+    { box := ⟨(9253273/250000), (9347023/250000)⟩, pieceIndex := ⟨32, by decide⟩ },
+    { box := ⟨(9347023/250000), (9617/256)⟩, pieceIndex := ⟨33, by decide⟩ }
   ]
 }
 
@@ -7517,8 +7397,8 @@ def scalarCert800 : MacroScalarCert 56 := {
   box := ⟨(4779/128), (19293/512)⟩
   a := (201784954112817680932822514341729/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4779/128), (9347023/250000)⟩, pieceIndex := 32 },
-    { box := ⟨(9347023/250000), (19293/512)⟩, pieceIndex := 33 }
+    { box := ⟨(4779/128), (9347023/250000)⟩, pieceIndex := ⟨32, by decide⟩ },
+    { box := ⟨(9347023/250000), (19293/512)⟩, pieceIndex := ⟨33, by decide⟩ }
   ]
 }
 
@@ -7526,8 +7406,8 @@ def scalarCert801 : MacroScalarCert 56 := {
   box := ⟨(26137/512), (26609/512)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(26137/512), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26609/512)⟩, pieceIndex := 49 }
+    { box := ⟨(26137/512), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26609/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7535,8 +7415,8 @@ def scalarCert802 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (7021/128)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (7021/128)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (7021/128)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7544,9 +7424,9 @@ def scalarCert803 : MacroScalarCert 56 := {
   box := ⟨(413/8), (3599/64)⟩
   a := (6679430045452291605179741688609/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(413/8), (55841369/1000000)⟩, pieceIndex := 49 },
-    { box := ⟨(55841369/1000000), (56216369/1000000)⟩, pieceIndex := 50 },
-    { box := ⟨(56216369/1000000), (3599/64)⟩, pieceIndex := 51 }
+    { box := ⟨(413/8), (55841369/1000000)⟩, pieceIndex := ⟨49, by decide⟩ },
+    { box := ⟨(55841369/1000000), (56216369/1000000)⟩, pieceIndex := ⟨50, by decide⟩ },
+    { box := ⟨(56216369/1000000), (3599/64)⟩, pieceIndex := ⟨51, by decide⟩ }
   ]
 }
 
@@ -7554,8 +7434,8 @@ def scalarCert804 : MacroScalarCert 56 := {
   box := ⟨(26019/512), (52451/1024)⟩
   a := (4108970484551816539322694210502201/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (52451/1024)⟩, pieceIndex := 49 }
+    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (52451/1024)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7563,8 +7443,8 @@ def scalarCert805 : MacroScalarCert 56 := {
   box := ⟨(52097/1024), (26255/512)⟩
   a := (20105418147297356482899790730336929/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(52097/1024), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := 49 }
+    { box := ⟨(52097/1024), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7572,8 +7452,8 @@ def scalarCert806 : MacroScalarCert 56 := {
   box := ⟨(25783/512), (26019/512)⟩
   a := (77268664145143861057015595361/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25783/512), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (26019/512)⟩, pieceIndex := 48 }
+    { box := ⟨(25783/512), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (26019/512)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -7581,8 +7461,8 @@ def scalarCert807 : MacroScalarCert 56 := {
   box := ⟨(52097/1024), (52569/1024)⟩
   a := (20105418147297356482899790730336929/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(52097/1024), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (52569/1024)⟩, pieceIndex := 49 }
+    { box := ⟨(52097/1024), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (52569/1024)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7590,8 +7470,8 @@ def scalarCert808 : MacroScalarCert 56 := {
   box := ⟨(13039/256), (13157/256)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13157/256)⟩, pieceIndex := 49 }
+    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13157/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7599,8 +7479,8 @@ def scalarCert809 : MacroScalarCert 56 := {
   box := ⟨(13039/256), (52687/1024)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (52687/1024)⟩, pieceIndex := 49 }
+    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (52687/1024)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7608,8 +7488,8 @@ def scalarCert810 : MacroScalarCert 56 := {
   box := ⟨(52215/1024), (26373/512)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(52215/1024), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26373/512)⟩, pieceIndex := 49 }
+    { box := ⟨(52215/1024), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26373/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7617,8 +7497,8 @@ def scalarCert811 : MacroScalarCert 56 := {
   box := ⟨(26137/512), (413/8)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(26137/512), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (413/8)⟩, pieceIndex := 49 }
+    { box := ⟨(26137/512), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (413/8)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7626,8 +7506,8 @@ def scalarCert812 : MacroScalarCert 56 := {
   box := ⟨(26137/512), (26491/512)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(26137/512), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26491/512)⟩, pieceIndex := 49 }
+    { box := ⟨(26137/512), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26491/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7635,8 +7515,8 @@ def scalarCert813 : MacroScalarCert 56 := {
   box := ⟨(59/2), (3953/128)⟩
   a := (1019479061325538470064869171844849/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(59/2), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (3953/128)⟩, pieceIndex := 26 }
+    { box := ⟨(59/2), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (3953/128)⟩, pieceIndex := ⟨26, by decide⟩ }
   ]
 }
 
@@ -7644,8 +7524,8 @@ def scalarCert814 : MacroScalarCert 56 := {
   box := ⟨(19647/512), (19765/512)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := 37 }
+    { box := ⟨(19647/512), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (19765/512)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -7653,8 +7533,8 @@ def scalarCert815 : MacroScalarCert 56 := {
   box := ⟨(39353/1024), (39589/1024)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(39353/1024), (38513093/1000000)⟩, pieceIndex := 36 },
-    { box := ⟨(38513093/1000000), (39589/1024)⟩, pieceIndex := 37 }
+    { box := ⟨(39353/1024), (38513093/1000000)⟩, pieceIndex := ⟨36, by decide⟩ },
+    { box := ⟨(38513093/1000000), (39589/1024)⟩, pieceIndex := ⟨37, by decide⟩ }
   ]
 }
 
@@ -7662,8 +7542,8 @@ def scalarCert816 : MacroScalarCert 56 := {
   box := ⟨(51979/1024), (6549/128)⟩
   a := (13135780216075039115731298598211929/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(51979/1024), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := 49 }
+    { box := ⟨(51979/1024), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7671,8 +7551,8 @@ def scalarCert817 : MacroScalarCert 56 := {
   box := ⟨(3245/64), (52333/1024)⟩
   a := (9965930645410815779513042967721/125000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (52333/1024)⟩, pieceIndex := 49 }
+    { box := ⟨(3245/64), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (52333/1024)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7680,8 +7560,8 @@ def scalarCert818 : MacroScalarCert 56 := {
   box := ⟨(9499/256), (9617/256)⟩
   a := (294155184355193927474896755253401/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9499/256), (9347023/250000)⟩, pieceIndex := 32 },
-    { box := ⟨(9347023/250000), (9617/256)⟩, pieceIndex := 33 }
+    { box := ⟨(9499/256), (9347023/250000)⟩, pieceIndex := ⟨32, by decide⟩ },
+    { box := ⟨(9347023/250000), (9617/256)⟩, pieceIndex := ⟨33, by decide⟩ }
   ]
 }
 
@@ -7689,8 +7569,8 @@ def scalarCert819 : MacroScalarCert 56 := {
   box := ⟨(19057/512), (9617/256)⟩
   a := (294155184355193927474896755253401/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(19057/512), (9347023/250000)⟩, pieceIndex := 32 },
-    { box := ⟨(9347023/250000), (9617/256)⟩, pieceIndex := 33 }
+    { box := ⟨(19057/512), (9347023/250000)⟩, pieceIndex := ⟨32, by decide⟩ },
+    { box := ⟨(9347023/250000), (9617/256)⟩, pieceIndex := ⟨33, by decide⟩ }
   ]
 }
 
@@ -7698,9 +7578,9 @@ def scalarCert820 : MacroScalarCert 56 := {
   box := ⟨(4661/128), (9617/256)⟩
   a := (294155184355193927474896755253401/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4661/128), (9253273/250000)⟩, pieceIndex := 31 },
-    { box := ⟨(9253273/250000), (9347023/250000)⟩, pieceIndex := 32 },
-    { box := ⟨(9347023/250000), (9617/256)⟩, pieceIndex := 33 }
+    { box := ⟨(4661/128), (9253273/250000)⟩, pieceIndex := ⟨31, by decide⟩ },
+    { box := ⟨(9253273/250000), (9347023/250000)⟩, pieceIndex := ⟨32, by decide⟩ },
+    { box := ⟨(9347023/250000), (9617/256)⟩, pieceIndex := ⟨33, by decide⟩ }
   ]
 }
 
@@ -7708,9 +7588,9 @@ def scalarCert821 : MacroScalarCert 56 := {
   box := ⟨(9381/256), (9617/256)⟩
   a := (294155184355193927474896755253401/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9381/256), (9253273/250000)⟩, pieceIndex := 31 },
-    { box := ⟨(9253273/250000), (9347023/250000)⟩, pieceIndex := 32 },
-    { box := ⟨(9347023/250000), (9617/256)⟩, pieceIndex := 33 }
+    { box := ⟨(9381/256), (9253273/250000)⟩, pieceIndex := ⟨31, by decide⟩ },
+    { box := ⟨(9253273/250000), (9347023/250000)⟩, pieceIndex := ⟨32, by decide⟩ },
+    { box := ⟨(9347023/250000), (9617/256)⟩, pieceIndex := ⟨33, by decide⟩ }
   ]
 }
 
@@ -7718,8 +7598,8 @@ def scalarCert822 : MacroScalarCert 56 := {
   box := ⟨(4779/128), (38527/1024)⟩
   a := (2352929906745592990941779764070041/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(4779/128), (9347023/250000)⟩, pieceIndex := 32 },
-    { box := ⟨(9347023/250000), (38527/1024)⟩, pieceIndex := 33 }
+    { box := ⟨(4779/128), (9347023/250000)⟩, pieceIndex := ⟨32, by decide⟩ },
+    { box := ⟨(9347023/250000), (38527/1024)⟩, pieceIndex := ⟨33, by decide⟩ }
   ]
 }
 
@@ -7727,8 +7607,8 @@ def scalarCert823 : MacroScalarCert 56 := {
   box := ⟨(12921/256), (52097/1024)⟩
   a := (253733660265444510657503816809/20000000000000000000000000000000000)
   segments := [
-    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (52097/1024)⟩, pieceIndex := 48 }
+    { box := ⟨(12921/256), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (52097/1024)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -7736,8 +7616,8 @@ def scalarCert824 : MacroScalarCert 56 := {
   box := ⟨(25901/512), (13039/256)⟩
   a := (3016845497858850148660534470361/80000000000000000000000000000000000)
   segments := [
-    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (13039/256)⟩, pieceIndex := 48 }
+    { box := ⟨(25901/512), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (13039/256)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -7745,8 +7625,8 @@ def scalarCert825 : MacroScalarCert 56 := {
   box := ⟨(51861/1024), (52215/1024)⟩
   a := (17667571024850201693389455584569/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(51861/1024), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (52215/1024)⟩, pieceIndex := 48 }
+    { box := ⟨(51861/1024), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (52215/1024)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -7754,8 +7634,8 @@ def scalarCert826 : MacroScalarCert 56 := {
   box := ⟨(45253/1024), (45489/1024)⟩
   a := (125492473536974126032423063314169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45253/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45489/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(45253/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45489/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -7763,8 +7643,8 @@ def scalarCert827 : MacroScalarCert 56 := {
   box := ⟨(51979/1024), (52333/1024)⟩
   a := (13135780216075039115731298598211929/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(51979/1024), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (52333/1024)⟩, pieceIndex := 49 }
+    { box := ⟨(51979/1024), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (52333/1024)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7772,8 +7652,8 @@ def scalarCert828 : MacroScalarCert 56 := {
   box := ⟨(26019/512), (52333/1024)⟩
   a := (4108970484551816539322694210502201/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (52333/1024)⟩, pieceIndex := 49 }
+    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (52333/1024)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7781,8 +7661,8 @@ def scalarCert829 : MacroScalarCert 56 := {
   box := ⟨(177/4), (11387/256)⟩
   a := (3600341844467488615851330529/122070312500000000000000000000000)
   segments := [
-    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (11387/256)⟩, pieceIndex := 42 }
+    { box := ⟨(177/4), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (11387/256)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -7790,8 +7670,8 @@ def scalarCert830 : MacroScalarCert 56 := {
   box := ⟨(26019/512), (6549/128)⟩
   a := (4108970484551816539322694210502201/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := 49 }
+    { box := ⟨(26019/512), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7799,8 +7679,8 @@ def scalarCert831 : MacroScalarCert 56 := {
   box := ⟨(52097/1024), (6549/128)⟩
   a := (20105418147297356482899790730336929/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(52097/1024), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := 49 }
+    { box := ⟨(52097/1024), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7808,8 +7688,8 @@ def scalarCert832 : MacroScalarCert 56 := {
   box := ⟨(45371/1024), (45607/1024)⟩
   a := (380995896373736237860712551314169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45371/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45607/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(45371/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45607/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -7817,8 +7697,8 @@ def scalarCert833 : MacroScalarCert 56 := {
   box := ⟨(52097/1024), (52451/1024)⟩
   a := (20105418147297356482899790730336929/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(52097/1024), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (52451/1024)⟩, pieceIndex := 49 }
+    { box := ⟨(52097/1024), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (52451/1024)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7826,8 +7706,8 @@ def scalarCert834 : MacroScalarCert 56 := {
   box := ⟨(13039/256), (26255/512)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := 49 }
+    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7835,8 +7715,8 @@ def scalarCert835 : MacroScalarCert 56 := {
   box := ⟨(13039/256), (52451/1024)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (52451/1024)⟩, pieceIndex := 49 }
+    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (52451/1024)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7844,8 +7724,8 @@ def scalarCert836 : MacroScalarCert 56 := {
   box := ⟨(52215/1024), (26255/512)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(52215/1024), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := 49 }
+    { box := ⟨(52215/1024), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26255/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7853,8 +7733,8 @@ def scalarCert837 : MacroScalarCert 56 := {
   box := ⟨(51625/1024), (26019/512)⟩
   a := (1652284170473624845145301959569/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(51625/1024), (50688511/1000000)⟩, pieceIndex := 47 },
-    { box := ⟨(50688511/1000000), (26019/512)⟩, pieceIndex := 48 }
+    { box := ⟨(51625/1024), (50688511/1000000)⟩, pieceIndex := ⟨47, by decide⟩ },
+    { box := ⟨(50688511/1000000), (26019/512)⟩, pieceIndex := ⟨48, by decide⟩ }
   ]
 }
 
@@ -7862,8 +7742,8 @@ def scalarCert838 : MacroScalarCert 56 := {
   box := ⟨(13039/256), (52569/1024)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (52569/1024)⟩, pieceIndex := 49 }
+    { box := ⟨(13039/256), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (52569/1024)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7871,8 +7751,8 @@ def scalarCert839 : MacroScalarCert 56 := {
   box := ⟨(52215/1024), (52569/1024)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(52215/1024), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (52569/1024)⟩, pieceIndex := 49 }
+    { box := ⟨(52215/1024), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (52569/1024)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7880,8 +7760,8 @@ def scalarCert840 : MacroScalarCert 56 := {
   box := ⟨(32509/1024), (65313/2048)⟩
   a := (26038539485972255876043813792489/320000000000000000000000000000000000)
   segments := [
-    { box := ⟨(32509/1024), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (65313/2048)⟩, pieceIndex := 30 }
+    { box := ⟨(32509/1024), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (65313/2048)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -7889,8 +7769,8 @@ def scalarCert841 : MacroScalarCert 56 := {
   box := ⟨(45371/1024), (91155/2048)⟩
   a := (380995896373736237860712551314169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(45371/1024), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (91155/2048)⟩, pieceIndex := 42 }
+    { box := ⟨(45371/1024), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (91155/2048)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -7898,8 +7778,8 @@ def scalarCert842 : MacroScalarCert 56 := {
   box := ⟨(52097/1024), (104725/2048)⟩
   a := (20105418147297356482899790730336929/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(52097/1024), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (104725/2048)⟩, pieceIndex := 49 }
+    { box := ⟨(52097/1024), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (104725/2048)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7907,8 +7787,8 @@ def scalarCert843 : MacroScalarCert 56 := {
   box := ⟨(65077/2048), (16343/512)⟩
   a := (129075198159352798032893421273081/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(65077/2048), (6373527/200000)⟩, pieceIndex := 29 },
-    { box := ⟨(6373527/200000), (16343/512)⟩, pieceIndex := 30 }
+    { box := ⟨(65077/2048), (6373527/200000)⟩, pieceIndex := ⟨29, by decide⟩ },
+    { box := ⟨(6373527/200000), (16343/512)⟩, pieceIndex := ⟨30, by decide⟩ }
   ]
 }
 
@@ -7916,8 +7796,8 @@ def scalarCert844 : MacroScalarCert 56 := {
   box := ⟨(90801/2048), (45607/1024)⟩
   a := (1865947917513376303361814742084801/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(90801/2048), (5551521/125000)⟩, pieceIndex := 41 },
-    { box := ⟨(5551521/125000), (45607/1024)⟩, pieceIndex := 42 }
+    { box := ⟨(90801/2048), (5551521/125000)⟩, pieceIndex := ⟨41, by decide⟩ },
+    { box := ⟨(5551521/125000), (45607/1024)⟩, pieceIndex := ⟨42, by decide⟩ }
   ]
 }
 
@@ -7925,8 +7805,8 @@ def scalarCert845 : MacroScalarCert 56 := {
   box := ⟨(104253/2048), (6549/128)⟩
   a := (88314896737806401508891494164800841/512000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(104253/2048), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := 49 }
+    { box := ⟨(104253/2048), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (6549/128)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7934,8 +7814,8 @@ def scalarCert846 : MacroScalarCert 56 := {
   box := ⟨(52215/1024), (13157/256)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(52215/1024), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (13157/256)⟩, pieceIndex := 49 }
+    { box := ⟨(52215/1024), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (13157/256)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7943,8 +7823,8 @@ def scalarCert847 : MacroScalarCert 56 := {
   box := ⟨(52215/1024), (52687/1024)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(52215/1024), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (52687/1024)⟩, pieceIndex := 49 }
+    { box := ⟨(52215/1024), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (52687/1024)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7952,8 +7832,8 @@ def scalarCert848 : MacroScalarCert 56 := {
   box := ⟨(26137/512), (26373/512)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(26137/512), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (26373/512)⟩, pieceIndex := 49 }
+    { box := ⟨(26137/512), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (26373/512)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7961,8 +7841,8 @@ def scalarCert849 : MacroScalarCert 56 := {
   box := ⟨(26137/512), (52805/1024)⟩
   a := (587393/3125000000)
   segments := [
-    { box := ⟨(26137/512), (51063511/1000000)⟩, pieceIndex := 48 },
-    { box := ⟨(51063511/1000000), (52805/1024)⟩, pieceIndex := 49 }
+    { box := ⟨(26137/512), (51063511/1000000)⟩, pieceIndex := ⟨48, by decide⟩ },
+    { box := ⟨(51063511/1000000), (52805/1024)⟩, pieceIndex := ⟨49, by decide⟩ }
   ]
 }
 
@@ -7970,8 +7850,8 @@ def scalarCert850 : MacroScalarCert 56 := {
   box := ⟨(14573/256), (62500000/1094977)⟩
   a := (55533615788628111515970569841/1250000000000000000000000000000000)
   segments := [
-    { box := ⟨(14573/256), (5696637/100000)⟩, pieceIndex := 53 },
-    { box := ⟨(5696637/100000), (62500000/1094977)⟩, pieceIndex := 54 }
+    { box := ⟨(14573/256), (5696637/100000)⟩, pieceIndex := ⟨53, by decide⟩ },
+    { box := ⟨(5696637/100000), (62500000/1094977)⟩, pieceIndex := ⟨54, by decide⟩ }
   ]
 }
 
@@ -7979,8 +7859,8 @@ def scalarCert851 : MacroScalarCert 56 := {
   box := ⟨(1829/64), (3953/128)⟩
   a := (1019479061325538470064869171844849/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(1829/64), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (3953/128)⟩, pieceIndex := 26 }
+    { box := ⟨(1829/64), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (3953/128)⟩, pieceIndex := ⟨26, by decide⟩ }
   ]
 }
 
@@ -7988,8 +7868,8 @@ def scalarCert852 : MacroScalarCert 56 := {
   box := ⟨(3717/128), (3953/128)⟩
   a := (1019479061325538470064869171844849/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3717/128), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (3953/128)⟩, pieceIndex := 26 }
+    { box := ⟨(3717/128), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (3953/128)⟩, pieceIndex := ⟨26, by decide⟩ }
   ]
 }
 
@@ -7997,8 +7877,8 @@ def scalarCert853 : MacroScalarCert 56 := {
   box := ⟨(2301/128), (295/16)⟩
   a := (361710019498569118941886428649/312500000000000000000000000000000)
   segments := [
-    { box := ⟨(2301/128), (9113373/500000)⟩, pieceIndex := 13 },
-    { box := ⟨(9113373/500000), (295/16)⟩, pieceIndex := 14 }
+    { box := ⟨(2301/128), (9113373/500000)⟩, pieceIndex := ⟨13, by decide⟩ },
+    { box := ⟨(9113373/500000), (295/16)⟩, pieceIndex := ⟨14, by decide⟩ }
   ]
 }
 
@@ -8006,8 +7886,8 @@ def scalarCert854 : MacroScalarCert 56 := {
   box := ⟨(4661/256), (295/16)⟩
   a := (361710019498569118941886428649/312500000000000000000000000000000)
   segments := [
-    { box := ⟨(4661/256), (9113373/500000)⟩, pieceIndex := 13 },
-    { box := ⟨(9113373/500000), (295/16)⟩, pieceIndex := 14 }
+    { box := ⟨(4661/256), (9113373/500000)⟩, pieceIndex := ⟨13, by decide⟩ },
+    { box := ⟨(9113373/500000), (295/16)⟩, pieceIndex := ⟨14, by decide⟩ }
   ]
 }
 
@@ -8015,8 +7895,8 @@ def scalarCert855 : MacroScalarCert 56 := {
   box := ⟨(2537/64), (2773/64)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(2537/64), (43287167/1000000)⟩, pieceIndex := 37 },
-    { box := ⟨(43287167/1000000), (2773/64)⟩, pieceIndex := 38 }
+    { box := ⟨(2537/64), (43287167/1000000)⟩, pieceIndex := ⟨37, by decide⟩ },
+    { box := ⟨(43287167/1000000), (2773/64)⟩, pieceIndex := ⟨38, by decide⟩ }
   ]
 }
 
@@ -8024,8 +7904,8 @@ def scalarCert856 : MacroScalarCert 56 := {
   box := ⟨(9499/512), (4779/256)⟩
   a := (2891119993742916046127024249511169/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9499/512), (9300873/500000)⟩, pieceIndex := 14 },
-    { box := ⟨(9300873/500000), (4779/256)⟩, pieceIndex := 15 }
+    { box := ⟨(9499/512), (9300873/500000)⟩, pieceIndex := ⟨14, by decide⟩ },
+    { box := ⟨(9300873/500000), (4779/256)⟩, pieceIndex := ⟨15, by decide⟩ }
   ]
 }
 
@@ -8033,8 +7913,8 @@ def scalarCert857 : MacroScalarCert 56 := {
   box := ⟨(649/16), (2773/64)⟩
   a := (76986939/250000000000)
   segments := [
-    { box := ⟨(649/16), (43287167/1000000)⟩, pieceIndex := 37 },
-    { box := ⟨(43287167/1000000), (2773/64)⟩, pieceIndex := 38 }
+    { box := ⟨(649/16), (43287167/1000000)⟩, pieceIndex := ⟨37, by decide⟩ },
+    { box := ⟨(43287167/1000000), (2773/64)⟩, pieceIndex := ⟨38, by decide⟩ }
   ]
 }
 
@@ -8042,8 +7922,8 @@ def scalarCert858 : MacroScalarCert 56 := {
   box := ⟨(4661/256), (9381/512)⟩
   a := (1610977803/1000000000000)
   segments := [
-    { box := ⟨(4661/256), (9113373/500000)⟩, pieceIndex := 13 },
-    { box := ⟨(9113373/500000), (9381/512)⟩, pieceIndex := 14 }
+    { box := ⟨(4661/256), (9113373/500000)⟩, pieceIndex := ⟨13, by decide⟩ },
+    { box := ⟨(9113373/500000), (9381/512)⟩, pieceIndex := ⟨14, by decide⟩ }
   ]
 }
 
@@ -8051,8 +7931,8 @@ def scalarCert859 : MacroScalarCert 56 := {
   box := ⟨(3835/128), (3953/128)⟩
   a := (1019479061325538470064869171844849/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3835/128), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (3953/128)⟩, pieceIndex := 26 }
+    { box := ⟨(3835/128), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (3953/128)⟩, pieceIndex := ⟨26, by decide⟩ }
   ]
 }
 
@@ -8060,8 +7940,8 @@ def scalarCert860 : MacroScalarCert 56 := {
   box := ⟨(3127/128), (6313/256)⟩
   a := (1408273486016716753984882108683841/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(3127/128), (24478469/1000000)⟩, pieceIndex := 19 },
-    { box := ⟨(24478469/1000000), (6313/256)⟩, pieceIndex := 20 }
+    { box := ⟨(3127/128), (24478469/1000000)⟩, pieceIndex := ⟨19, by decide⟩ },
+    { box := ⟨(24478469/1000000), (6313/256)⟩, pieceIndex := ⟨20, by decide⟩ }
   ]
 }
 
@@ -8069,8 +7949,8 @@ def scalarCert861 : MacroScalarCert 56 := {
   box := ⟨(9499/512), (19057/1024)⟩
   a := (65131799414638878784077755001194329/128000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(9499/512), (9300873/500000)⟩, pieceIndex := 14 },
-    { box := ⟨(9300873/500000), (19057/1024)⟩, pieceIndex := 15 }
+    { box := ⟨(9499/512), (9300873/500000)⟩, pieceIndex := ⟨14, by decide⟩ },
+    { box := ⟨(9300873/500000), (19057/1024)⟩, pieceIndex := ⟨15, by decide⟩ }
   ]
 }
 
@@ -8078,8 +7958,8 @@ def scalarCert862 : MacroScalarCert 56 := {
   box := ⟨(7847/256), (7965/256)⟩
   a := (1624834442189069327106291141707521/8000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(7847/256), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (7965/256)⟩, pieceIndex := 26 }
+    { box := ⟨(7847/256), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (7965/256)⟩, pieceIndex := ⟨26, by decide⟩ }
   ]
 }
 
@@ -8087,8 +7967,8 @@ def scalarCert863 : MacroScalarCert 56 := {
   box := ⟨(7847/256), (15871/512)⟩
   a := (10850930469794583755741281507783209/32000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(7847/256), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (15871/512)⟩, pieceIndex := 26 }
+    { box := ⟨(7847/256), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (15871/512)⟩, pieceIndex := ⟨26, by decide⟩ }
   ]
 }
 
@@ -8096,8 +7976,8 @@ def scalarCert864 : MacroScalarCert 56 := {
   box := ⟨(15871/512), (15989/512)⟩
   a := (122123177780190359515549805444329/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(15871/512), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (15989/512)⟩, pieceIndex := 27 }
+    { box := ⟨(15871/512), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (15989/512)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -8105,8 +7985,8 @@ def scalarCert865 : MacroScalarCert 56 := {
   box := ⟨(15871/512), (31919/1024)⟩
   a := (724867626890627674425335282355441/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(15871/512), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (31919/1024)⟩, pieceIndex := 27 }
+    { box := ⟨(15871/512), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (31919/1024)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -8114,8 +7994,8 @@ def scalarCert866 : MacroScalarCert 56 := {
   box := ⟨(31801/1024), (15989/512)⟩
   a := (122123177780190359515549805444329/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(31801/1024), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (15989/512)⟩, pieceIndex := 27 }
+    { box := ⟨(31801/1024), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (15989/512)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -8123,8 +8003,8 @@ def scalarCert867 : MacroScalarCert 56 := {
   box := ⟨(7965/256), (32037/1024)⟩
   a := (298611415772547729059981618230441/5120000000000000000000000000000000000)
   segments := [
-    { box := ⟨(7965/256), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (32037/1024)⟩, pieceIndex := 27 }
+    { box := ⟨(7965/256), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (32037/1024)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -8132,8 +8012,8 @@ def scalarCert868 : MacroScalarCert 56 := {
   box := ⟨(1947/64), (3953/128)⟩
   a := (1019479061325538470064869171844849/2000000000000000000000000000000000000)
   segments := [
-    { box := ⟨(1947/64), (15371317/500000)⟩, pieceIndex := 25 },
-    { box := ⟨(15371317/500000), (3953/128)⟩, pieceIndex := 26 }
+    { box := ⟨(1947/64), (15371317/500000)⟩, pieceIndex := ⟨25, by decide⟩ },
+    { box := ⟨(15371317/500000), (3953/128)⟩, pieceIndex := ⟨26, by decide⟩ }
   ]
 }
 
@@ -8141,8 +8021,8 @@ def scalarCert869 : MacroScalarCert 56 := {
   box := ⟨(7965/256), (15989/512)⟩
   a := (122123177780190359515549805444329/1280000000000000000000000000000000000)
   segments := [
-    { box := ⟨(7965/256), (15558817/500000)⟩, pieceIndex := 26 },
-    { box := ⟨(15558817/500000), (15989/512)⟩, pieceIndex := 27 }
+    { box := ⟨(7965/256), (15558817/500000)⟩, pieceIndex := ⟨26, by decide⟩ },
+    { box := ⟨(15558817/500000), (15989/512)⟩, pieceIndex := ⟨27, by decide⟩ }
   ]
 }
 
@@ -8150,8 +8030,8 @@ def scalarCert870 : MacroScalarCert 56 := {
   box := ⟨(3127/128), (12567/512)⟩
   a := (459565243/500000000000)
   segments := [
-    { box := ⟨(3127/128), (24478469/1000000)⟩, pieceIndex := 19 },
-    { box := ⟨(24478469/1000000), (12567/512)⟩, pieceIndex := 20 }
+    { box := ⟨(3127/128), (24478469/1000000)⟩, pieceIndex := ⟨19, by decide⟩ },
+    { box := ⟨(24478469/1000000), (12567/512)⟩, pieceIndex := ⟨20, by decide⟩ }
   ]
 }
 

@@ -1,4 +1,4 @@
-import Zeta23.ThmD.Sextuple.Macro.TreeWords
+import Zeta23.ThmD.Sextuple.Macro.TreeFormat
 
 /-!
 # Linear-time physical layout checks

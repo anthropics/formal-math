@@ -1,3 +1,4 @@
+import Zeta23.ThmD.Sextuple.Macro.TreeFormat
 import Zeta23.ThmD.Sextuple.Macro.ScalarData
 import Zeta23.ThmD.Sextuple.Macro.LeafCheck
 
@@ -25,12 +26,6 @@ noncomputable section
 namespace Zeta23.ThmD.Sextuple.MacroPrototype
 
 open Zeta23.ThmD.Sextuple
-
-/-- Width in bits of one packed leaf word. -/
-def leafWordBits : ℕ := 321
-
-/-- Leaf words per block word. -/
-def leafBlockSize : ℕ := 256
 
 /-- Extract the `k`-th `16`-bit field starting at bit `1 + 16 k`. -/
 def leafField (w k : ℕ) : ℕ := (w >>> (1 + 16 * k)) &&& 65535

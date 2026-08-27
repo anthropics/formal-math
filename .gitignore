@@ -1,3 +1,2 @@
-/.lake/
-*.olean
-*.ilean
+.lake/
+**/.lake/

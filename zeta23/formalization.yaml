@@ -133,8 +133,9 @@ automation:
       tool_setup: >-
         Claude (Anthropic) agents wrote all Lean code — definitions, statements and proofs — against
         the pinned Mathlib, iterating against the Lean compiler; the trusted Challenge files were
-        produced the same way. Humans directed the project, chose the targets and reviewed the
-        outputs. The recorded checks are in AUDIT.md.
+        produced the same way. Humans — the paper's authors, with Eric Easley orchestrating the Lean
+        work — directed the project, chose the targets and reviewed the outputs; nobody wrote Lean by
+        hand. The recorded checks are in AUDIT.md.
       cost:
         wall_time: not tracked
         spend_usd: not tracked
@@ -146,8 +147,8 @@ automation:
     including Zeta23/LinAlg/ (the §3 linear algebra, produced first as a standalone development
     accompanying the paper, under the paper authors' direction, and incorporated unchanged). The
     paper's authors wrote the mathematics being formalized, directed the formalization and reviewed
-    its outputs, and wrote no Lean by hand; the paper author read the main challenge module against
-    the paper (review.notes). See AUDIT.md for the checks run at each revision.
+    its outputs, and wrote no Lean by hand; Eric Easley orchestrated the Lean work (paper
+    Acknowledgments); the paper author read the main challenge module against the paper (review.notes). See AUDIT.md for the checks run at each revision.
 
 fidelity:
   divergences: >-

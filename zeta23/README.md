@@ -262,8 +262,8 @@ of inertia, the rank–trace inequality and Weyl's bound) was produced first, as
 accompanying §3 of the paper, and is incorporated here unchanged; it has no upstream outside this project. Everything builds on [Mathlib](https://github.com/leanprover-community/mathlib4).
 
 Authorship: **all Lean code in this repository — `Zeta23/LinAlg/` included — was written by Claude (Anthropic)**; the
-paper's authors (Levent Alpöge and Ralph Furman) wrote the mathematics being formalized and, with Eric Easley, directed
-the formalization and reviewed its outputs; they wrote no Lean by hand. `formalization.yaml` (`project.authors`,
+paper's authors (Levent Alpöge and Ralph Furman) wrote the mathematics being formalized, directed the formalization and
+reviewed its outputs, and wrote no Lean by hand; Eric Easley orchestrated the Lean work (paper Acknowledgments). `formalization.yaml` (`project.authors`,
 `automation`, `review`) and `AUDIT.md` record the same account.
 
 Released under the Apache License, Version 2.0 — see [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE).

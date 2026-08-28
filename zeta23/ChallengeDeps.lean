@@ -5,7 +5,7 @@ SPDX-License-Identifier: Apache-2.0
 -/
 /-
 ChallengeDeps.lean — the TRUSTED definition layer for the comparator challenge
-(see comparator/README.md).
+(see README.md, "Verifying the statements").
 
 Everything the challenge statements in Challenge.lean mention is defined HERE, from Mathlib alone:
 the nontrivial zeros of Mathlib's `riemannZeta` (resp. of Mathlib's `DirichletCharacter.LFunction χ`),

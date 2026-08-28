@@ -4,10 +4,10 @@ Released under Apache 2.0 license as described in the file LICENSE.
 SPDX-License-Identifier: Apache-2.0
 -/
 /-
-comparator/PrintAxioms.lean — quick axiom audit of the seventeen headline theorems WITHOUT the comparator
-tool:   lake build Solution && lake env lean comparator/PrintAxioms.lean
+scripts/PrintAxioms.lean — quick axiom audit of the seventeen headline theorems WITHOUT the comparator
+tool:   lake build Solution && lake env lean scripts/PrintAxioms.lean
 Every line must print exactly:  'X' depends on axioms: [propext, Classical.choice, Quot.sound]
-(no sorryAx, no other axiom).  The comparator run (comparator/README.md) is the stronger check: it also
+(no sorryAx, no other axiom).  The comparator run (README.md, "Verifying the statements") is the stronger check: it also
 verifies that these statements coincide with the trusted ones in Challenge.lean.
 -/
 import Solution

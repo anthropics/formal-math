@@ -1,0 +1,187 @@
+name: Zeta23 CI
+
+# The cheap checks (metadata, licence, README submission link, Landrun-wrapper policy) run on every
+# change under zeta23/. The Lean build, the doc-gen4 build and the pinned Comparator run take hours
+# on a hosted runner (Zeta23 is ~9000 Lake jobs on top of the Mathlib cache), so they run only on
+# manual dispatch. Pinned to immutable action commits, as in PalomarRegistry/PalomarTemplate.
+
+on:
+  push:
+    branches: [main]
+    paths: ["zeta23/**", ".github/workflows/zeta23-ci.yml", "LICENSE"]
+  pull_request:
+    paths: ["zeta23/**", ".github/workflows/zeta23-ci.yml", "LICENSE"]
+  workflow_dispatch:
+    inputs:
+      run_build:
+        description: "Build the Lean project with lean-action"
+        type: boolean
+        default: true
+      run_docs:
+        description: "Build doc-gen4 documentation"
+        type: boolean
+        default: false
+      run_comparator:
+        description: "Run the pinned Comparator toolchain on comparator.json"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: zeta23
+
+jobs:
+  license:
+    name: Check metadata and Apache licence
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b
+        with:
+          ruby-version: "3.3.12"
+          bundler-cache: true
+          working-directory: zeta23
+      - name: Test the metadata validator
+        run: ruby test/validate_formalization_test.rb
+      - name: Reject retained template values
+        run: ruby scripts/validate-formalization.rb
+      - name: Detect the repository licence (root and zeta23/)
+        run: |
+          for license in ../LICENSE LICENSE; do
+            bundle exec licensee detect "$license" --json --no-packages --no-readme > "$RUNNER_TEMP/license.json"
+            ruby -rjson -e '
+              report = JSON.parse(File.read(ARGV.fetch(0)))
+              identifiers = report.fetch("licenses").map { |item| item.fetch("spdx_id") }
+              abort "#{ARGV.fetch(1)} is not detected exactly as Apache-2.0" unless identifiers == ["Apache-2.0"]
+            ' "$RUNNER_TEMP/license.json" "$license"
+          done
+      - name: Check the Comparator configurations
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, re
+          for path in ["comparator.json", "comparator-xiprime.json"]:
+              config = json.loads(pathlib.Path(path).read_text())
+              allowed = {"challenge_module", "solution_module", "theorem_names", "definition_names", "permitted_axioms", "enable_nanoda"}
+              assert set(config) <= allowed, f"{path}: unexpected keys {set(config) - allowed}"
+              assert config["theorem_names"] and all(isinstance(n, str) and n for n in config["theorem_names"]), path
+              assert set(config["permitted_axioms"]) <= {"propext", "Quot.sound", "Classical.choice"}, path
+              for module in (config["challenge_module"], config["solution_module"]):
+                  assert all(re.fullmatch(r"[A-Za-z_][A-Za-z0-9_']*", c) for c in module.split(".")), module
+                  assert pathlib.Path(module.replace(".", "/") + ".lean").is_file(), module
+              print(path, "ok:", len(config["theorem_names"]), "theorems")
+          PY
+
+  submission-link:
+    name: Check where the README sends a submitter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Check the submission form the README names
+        run: |
+          python3 - <<'PY'
+          import pathlib
+          import re
+
+          form = "https://submit.palomar-registry.org/"
+          retired = re.compile(r"PalomarSubmission/issues/new")
+          failed = False
+          if form not in pathlib.Path("README.md").read_text():
+              print(f"README.md: does not send a submitter to {form}")
+              failed = True
+          for document in sorted(pathlib.Path(".").rglob("*.md")):
+              if ".lake" in document.parts:
+                  continue
+              for number, line in enumerate(document.read_text().splitlines(), 1):
+                  if retired.search(line):
+                      print(f"{document}:{number}: that submission form was deleted; submissions go to {form}")
+                      failed = True
+          raise SystemExit(failed)
+          PY
+
+  sandbox:
+    name: Check the Landrun wrapper's flag policy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Test the Landrun wrapper
+        run: ./test/landrun_wrapper_test.sh
+
+  build:
+    name: Build with Lean
+    if: github.event_name == 'workflow_dispatch' && inputs.run_build
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+        with:
+          build: true
+          lake-package-directory: zeta23
+      - name: Axiom audit
+        run: |
+          lake build Solution.XiPrime
+          lake env lean scripts/PrintAxioms.lean | tee axioms.txt
+          lake env lean scripts/PrintAxioms/XiPrime.lean | tee -a axioms.txt
+          test "$(wc -l < axioms.txt)" -eq 23
+          ! grep -v "depends on axioms: \[propext, Classical.choice, Quot.sound\]$" axioms.txt
+
+  docs:
+    name: Build API documentation
+    if: github.event_name == 'workflow_dispatch' && inputs.run_docs
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+        with:
+          build: false
+          lake-package-directory: zeta23
+      - name: Build doc-gen4 output
+        working-directory: zeta23/docbuild
+        env:
+          MATHLIB_NO_CACHE_ON_UPDATE: "1"
+          DISABLE_EQUATIONS: "1"
+          DOCGEN_SRC: github
+        run: lake build Zeta23:docs
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: api-documentation
+          path: zeta23/docbuild/.lake/build/doc
+          if-no-files-found: error
+
+  comparator:
+    name: Check statement against solution
+    if: github.event_name == 'workflow_dispatch' && inputs.run_comparator
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+        with:
+          build: false
+          lake-package-directory: zeta23
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
+        with:
+          go-version: "1.24.0"
+          cache: false
+      - name: Run pinned Comparator toolchain
+        run: ./scripts/verify-comparator.sh comparator.json

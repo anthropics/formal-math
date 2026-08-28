@@ -9,6 +9,7 @@
     "xiPrime_simple_zeros_on_critical_line_quartic",
     "xiPrime_simple_zeros_on_critical_line_quartic_cumulative"
   ],
+  "definition_names": [],
   "permitted_axioms": [
     "propext",
     "Quot.sound",

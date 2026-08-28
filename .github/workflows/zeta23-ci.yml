@@ -1,9 +1,10 @@
 name: Zeta23 CI
 
-# The cheap checks (metadata, licence, README submission link, Landrun-wrapper policy) run on every
-# change under zeta23/. The Lean build, the doc-gen4 build and the pinned Comparator run take hours
-# on a hosted runner (Zeta23 is ~9000 Lake jobs on top of the Mathlib cache), so they run only on
-# manual dispatch. Pinned to immutable action commits, as in PalomarRegistry/PalomarTemplate.
+# The cheap Palomar checks from PalomarRegistry/PalomarTemplate (formalization.yaml validation, licence
+# detection, README submission link, Landrun-wrapper policy, comparator.json shape) run on every change
+# under zeta23/. The Lean build and the Comparator run are done by lean-projects.yml for every changed
+# project; only the doc-gen4 build (hours on a hosted runner) is kept here, on manual dispatch.
+# Pinned to immutable action commits, as in the template.
 
 on:
   push:
@@ -12,19 +13,6 @@ on:
   pull_request:
     paths: ["zeta23/**", ".github/workflows/zeta23-ci.yml", "LICENSE"]
   workflow_dispatch:
-    inputs:
-      run_build:
-        description: "Build the Lean project with lean-action"
-        type: boolean
-        default: true
-      run_docs:
-        description: "Build doc-gen4 documentation"
-        type: boolean
-        default: false
-      run_comparator:
-        description: "Run the pinned Comparator toolchain on comparator.json"
-        type: boolean
-        default: false
 
 permissions:
   contents: read
@@ -119,30 +107,10 @@ jobs:
       - name: Test the Landrun wrapper
         run: ./test/landrun_wrapper_test.sh
 
-  build:
-    name: Build with Lean
-    if: github.event_name == 'workflow_dispatch' && inputs.run_build
-    runs-on: ubuntu-latest
-    timeout-minutes: 360
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-        with:
-          persist-credentials: false
-      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
-        with:
-          build: true
-          lake-package-directory: zeta23
-      - name: Axiom audit
-        run: |
-          lake build Solution.XiPrime
-          lake env lean scripts/PrintAxioms.lean | tee axioms.txt
-          lake env lean scripts/PrintAxioms/XiPrime.lean | tee -a axioms.txt
-          test "$(wc -l < axioms.txt)" -eq 23
-          ! grep -v "depends on axioms: \[propext, Classical.choice, Quot.sound\]$" axioms.txt
 
   docs:
     name: Build API documentation
-    if: github.event_name == 'workflow_dispatch' && inputs.run_docs
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
@@ -166,22 +134,3 @@ jobs:
           path: zeta23/docbuild/.lake/build/doc
           if-no-files-found: error
 
-  comparator:
-    name: Check statement against solution
-    if: github.event_name == 'workflow_dispatch' && inputs.run_comparator
-    runs-on: ubuntu-latest
-    timeout-minutes: 360
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-        with:
-          persist-credentials: false
-      - uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
-        with:
-          build: false
-          lake-package-directory: zeta23
-      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
-        with:
-          go-version: "1.24.0"
-          cache: false
-      - name: Run pinned Comparator toolchain
-        run: ./scripts/verify-comparator.sh comparator.json

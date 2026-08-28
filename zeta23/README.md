@@ -205,6 +205,10 @@ Go, Rust/Cargo, Python 3, `lake`, and a working Landrun (Landlock) sandbox.
 ./scripts/verify-comparator.sh comparator-xiprime.json  # the ξ′ topic
 ```
 
+The repository's CI (`.github/workflows/lean-projects.yml`) runs the same bar for every changed project through
+`.github/scripts/comparator-check.sh` (every `comparator*.json`, at the registry verifier's tool pins); from this
+directory, `bash ../.github/scripts/comparator-check.sh` runs it locally.
+
 Success ends with `Your solution is okay!`. Do not rely on a run against a tree in which you have already built
 `Challenge`/`Solution` yourself (Comparator README, assumption 2); a clean checkout, or deleting
 `.lake/build/lib/lean/{Challenge,Solution}*`, lets Comparator build both in its sandbox. To run Comparator by hand

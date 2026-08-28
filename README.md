@@ -78,6 +78,15 @@ Also included, beyond Theorems A–E (each group has its own trusted statement f
   cheap kernel lookups, and `A1275/FlatEquivalence.lean` proves the replayed streams equal the audited flat packed streams. Data, generators,
   independent audits, and logs are under [`certificates/sextuple/a1275/`](certificates/sextuple/a1275/).
 
+* **Refined sextuple certificate at `A = 257/20000`** (`Zeta23/ThmD/Sextuple/A1285/`; comparator topic `SextupleA1285`, four statements): the same
+  argument at `A = 0.01285`, giving `liminf N₀ˢ(T,2T)/N(T,2T) ≥ (6·B_MT − 10π·B₆)/(6 − 257/20000) = 0.67279494…` in dyadic and cumulative windows
+  (`Zeta23.ThmD.Sextuple.A1285.thmD₀_sextuple`, `_cumulative`) with the fixed corollaries `thmD₀_sextuple_6727949489`, `thmD₀_sextuple_cumulative_6727949489`
+  at `0.6727949489`. Its certificate `A1285.Certificate.sextuple_affine` replays a 1,771,973-node exact tree (885,987 leaves, 3,365 scalar seam
+  certificates over the same 272-model catalog) as 30,153 subtree modules and 302 assembly modules; all Lean modules of the target are produced by one
+  generator (`certificates/sextuple/tools/gen_sextuple_target_lean.py`) from the canonical streams. Data, audits, and logs are under
+  [`certificates/sextuple/a1285/`](certificates/sextuple/a1285/). The neighbouring `A = 129/10000` does not close within a 6,000,000-node
+  branch-and-bound cap (no obstruction found); see `certificates/sextuple/a1285/frontier/`.
+
 * **Conditional simple-critical-line collision/energy seam** (`Zeta23/ThmD/LineConditional.lean`; `#print axioms` audit only): the exact combinatorial inequality
   `N ≤ N₀ˢ + Σγ M(γ)(M(γ)-1)` yields `liminf N₀ˢ/N ≥ 1-κ` from an explicitly assumed factorial
   ordinary-ordinate collision cap `Σγ M(γ)(M(γ)-1) ≤ (κ+o(1))N`. More generally, for a kernel
@@ -153,8 +162,8 @@ lake exe cache get        # fetch prebuilt Mathlib for the pinned commit (a few 
                           # for your platform / offline), just proceed: the next step builds Mathlib from
                           # source, which takes several hours of CPU time but needs nothing else.
 lake build                # builds library Zeta23 (the default target imports exactly the headline modules)
-lake build Solution Solution.XiPrime Solution.Union Solution.LineDecimal Solution.Sextuple Solution.SextupleA1275
-lake env lean comparator/PrintAxioms.lean; lake env lean comparator/PrintAxioms/XiPrime.lean; lake env lean comparator/PrintAxioms/Union.lean; lake env lean comparator/PrintAxioms/LineDecimal.lean; lake env lean comparator/PrintAxioms/Sextuple.lean; lake env lean comparator/PrintAxioms/SextupleA1275.lean   # axiom audit of the 17 + 6 + 4 + 4 + 4 + 4 unconditional theorems
+lake build Solution Solution.XiPrime Solution.Union Solution.LineDecimal Solution.Sextuple Solution.SextupleA1275 Solution.SextupleA1285
+lake env lean comparator/PrintAxioms.lean; lake env lean comparator/PrintAxioms/XiPrime.lean; lake env lean comparator/PrintAxioms/Union.lean; lake env lean comparator/PrintAxioms/LineDecimal.lean; lake env lean comparator/PrintAxioms/Sextuple.lean; lake env lean comparator/PrintAxioms/SextupleA1275.lean; lake env lean comparator/PrintAxioms/SextupleA1285.lean   # axiom audit of the 17 + 6 + 4 + 4 + 4 + 4 + 4 unconditional theorems
 lake env lean comparator/PrintAxioms/UnionConditional.lean
 lake env lean comparator/PrintAxioms/LineConditional.lean
 lake env lean comparator/PrintAxioms/PairCeiling.lean   # axiom audit of the ceiling theorems (no trusted statement file; see AUDIT.md)

@@ -472,3 +472,55 @@ Checks run at this commit (logs under `certificates/sextuple/logs/`):
   files had `theorem improvedNodeNNNN :=` with no statement and had never been compiled), and `TreeWords.lean`,
   `TreeReader.lean`, `Layout.lean` use the two-level word layout; the 8,953 chunk sources and the 31 `WordData`
   modules are byte-identical to the frozen publication.
+
+## Amendment: refined sextuple certificate at `A = 257/20000` (`0.6727949489`)
+
+`Zeta23.ThmD.Sextuple.A1285` (the same module layout as `A1275`: `ScalarData`, `TreeReader`, `TreeWords`,
+`WordData/LeafBlocks000..138`, `Layout`, `FlatEquivalence`, `Chunks/Chunk00000..30152`, `Assembly/Part000..301`,
+`TreeAssembly`, `Certificate`, `Assembly`, `Unconditional`, `LineDecimal`, `AxiomAudit`; the catalog and refinement
+data are shared with `A1275`) proves the sextuple improvement at `A = 257/20000 = 0.01285`, `B₆` unchanged:
+`liminf N₀ˢ/N ≥ (6·B_MT − 10π·B₆)/(6 − 257/20000) = 0.67279494…` in dyadic and cumulative windows
+(`Zeta23.ThmD.Sextuple.A1285.thmD₀_sextuple`, `_cumulative`), the certified strict enclosure
+`6727949489/10^10 < sextupleLowerConstant` (`ImprovedAssembly.A1285.sextupleLowerConstant_gt_6727949489`, from
+`HD_one_decimal.1` and `Real.pi_lt_d20` only; exact margin `18463270896911983481/299357500000000000000000000000`),
+and the fixed-coefficient theorems `thmD₀_sextuple_6727949489`, `thmD₀_sextuple_cumulative_6727949489`. The only
+numerical ingredient is `A1285.Certificate.sextuple_affine : ∀ g ≥ 0, 257/20000 ≤ E₆(g) + B₆·Σg`, a `decide +kernel`
+replay of an exact rational branch-and-bound certificate over the same 272-model catalog: 3,365 exact scalar seam
+certificates (17,697 segments, proof-bearing `Fin` constructors only, each check lemma `decide +kernel`) and a
+1,771,973-node dyadic tree with 885,987 leaves (884,314 quadratic, 1,673 affine tails, depth ≤ 73), replayed as
+30,153 subtree chunks of ≤ 100 topology tokens and assembled by 30,152 applications of the generic split lemma in
+302 modules. Every Lean module of the target is emitted by `certificates/sextuple/tools/gen_sextuple_target_lean.py`
+from the canonical streams (the generator was validated by regenerating every committed `A1275` artifact); the words
+are two-level literals, `improvedScalarTable` is a two-level `match`, and `A1285/FlatEquivalence.lean` proves the
+replayed streams are extensionally the audited flat packed streams.
+
+Checks run at this commit (logs under `certificates/sextuple/logs/`):
+
+* Exact external replay of the serialized tree by the independent verifier
+  (`certificates/sextuple/a1275/generators/verify_exact_refined_scalar_tree.py`): status PASS, full topology / kind /
+  quadratic exhaustion, smallest quadratic margin `3.41×10⁻¹¹`, smallest tail margin `7.07×10⁻⁵`
+  (`certificates/sextuple/a1285/macro-scalar-tree/exact-replay-report.json`).
+* Foundation build: success; `A1285.ScalarData` 455 s (1,701 s with a flat scalar table), `TreeWords` 40 s,
+  `Layout` 19 s, `FlatEquivalence` 12 s, `Assembly` 5.9 s (`a1285-foundation*.log`).
+* The 30,153 chunk modules (`certificates/sextuple/a1275/tools/build_a1275_chunks.py --ns A1285`, 61 Lake batches of
+  500, nine concurrent builders): 30,153/30,153 built, zero failures, **48,654 s wall (13.5 h), 420,042 s CPU,
+  longest single chunk 27 s** (`a1285-chunks-driver.log`, `a1285-chunks-state.json`).
+* Assembly (`lake build +…A1285.LineDecimal`): the 302 part modules in ≈ 3,334 s total (≤ 25 s each), `TreeAssembly`
+  (`improvedRootReplay`) 4.5 s, `Certificate` 30 s, `Unconditional` 30 s, `LineDecimal` 4.5 s; 39,481 jobs, success
+  (`a1285-assembly-build.pass1.log`, `a1285-assembly-build.log`; the first pass stopped at `Certificate` on a missing
+  `open`, fixed in the generator and the module, no other change).
+* Default `lake build` (root `Zeta23`, now importing `Zeta23.ThmD.Sextuple.A1285.LineDecimal`): 51,748 jobs, success
+  (`a1285-root-build.log`).
+* `lake build Challenge.SextupleA1285 Solution.SextupleA1285`: success; the only warnings are the four deliberate
+  challenge `sorry`s (`lake_comparator_sextuple_a1285.log`). `comparator/PrintAxioms/SextupleA1285.lean`: all eleven
+  printed declarations depend on exactly `[propext, Classical.choice, Quot.sound]` (`printaxioms_sextuple_a1285.log`).
+* `Zeta23/ThmD/Sextuple/A1285/AxiomAudit.lean` (24 declarations): every line is `[propext, Classical.choice, Quot.sound]`
+  except the two physical-layout lemmas on `[propext, Quot.sound]` (`a1285-axiom-audit.log`, `audit-report.txt`).
+* Forbidden-construct scan (now covering `A1285/` and `comparator/Solution/SextupleA1285.lean`): clean over 42,712
+  files; `sorry` census unchanged (0 under `Zeta23/`, 0 in any `Solution` file); `axiom` declarations: 0.
+* External consistency: `certificates/sextuple/a1275/tools/verify_a1275_packed_words.py --ns A1285` decodes the Lean
+  word literals back to the four canonical byte streams and reproduces the SHA-256 values of
+  `certificates/sextuple/a1285/macro-scalar-tree/manifest.json` (`certificates/sextuple/a1285/packed-words-verification.json`).
+* Frontier evidence (`certificates/sextuple/a1285/frontier/`): `A = 8/625 = 0.0128` also closes (771,969 tokens, verifier
+  PASS; not integrated, superseded by `A1285`); `A = 129/10000 = 0.0129` does not close within a 6,000,000-node
+  branch-and-bound cap (32 boxes pending, no obstruction) — a resource result, not a mathematical no-go.

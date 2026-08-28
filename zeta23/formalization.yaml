@@ -133,8 +133,9 @@ automation:
       tool_setup: >-
         Claude (Anthropic) agents wrote all Lean code — definitions, statements and proofs — against
         the pinned Mathlib, iterating against the Lean compiler; the trusted Challenge files were
-        produced the same way. Humans directed the project, chose the targets and reviewed the
-        outputs. The recorded checks are in AUDIT.md.
+        produced the same way. Humans — the paper's authors, with Eric Easley orchestrating the Lean
+        work — directed the project, chose the targets and reviewed the outputs; nobody wrote Lean by
+        hand. The recorded checks are in AUDIT.md.
       cost:
         wall_time: not tracked
         spend_usd: not tracked
@@ -142,9 +143,12 @@ automation:
       prompting_notes: n/a
   spend_usd: not tracked
   notes: >-
-    The formalization was entirely automated: Claude produced all Lean code. Humans directed the
-    project and reviewed its outputs; the paper author read the main challenge module against the
-    paper (review.notes). See AUDIT.md for the checks run at each revision.
+    The formalization was entirely automated: Claude produced all Lean code in the repository,
+    including Zeta23/LinAlg/ (the §3 linear algebra, produced first as a standalone development
+    accompanying the paper, under the paper authors' direction, and incorporated unchanged). The
+    paper's authors wrote the mathematics being formalized, directed the formalization and reviewed
+    its outputs, and wrote no Lean by hand; Eric Easley orchestrated the Lean work (paper
+    Acknowledgments); the paper author read the main challenge module against the paper (review.notes). See AUDIT.md for the checks run at each revision.
 
 fidelity:
   divergences: >-
@@ -242,6 +246,8 @@ alignment:
         Zeta23.XiPrime.xiDeriv_simple_on_line (+_cumulative, _quartic_std) in Zeta23/XiPrime/Final.lean.
 
 acknowledgements: >-
-  The Lean formalisation was orchestrated by Eric Easley (paper Acknowledgments). Files under
+  The mathematics formalized is due to the paper's authors, Levent Alpöge and Ralph Furman, who also
+  directed the formalization; the Lean formalisation was orchestrated by Eric Easley (paper
+  Acknowledgments). Files under
   Zeta23/FromPNTPlus/ derive from the PrimeNumberTheoremAnd project (see NOTICE). Built on Mathlib
   and verified with leanprover/comparator, lean4export and NanoDa.

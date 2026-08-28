@@ -205,6 +205,10 @@ Go, Rust/Cargo, Python 3, `lake`, and a working Landrun (Landlock) sandbox.
 ./scripts/verify-comparator.sh comparator-xiprime.json  # the ξ′ topic
 ```
 
+The repository's CI (`.github/workflows/lean-projects.yml`) runs the same bar for every changed project through
+`.github/scripts/comparator-check.sh` (every `comparator*.json`, at the registry verifier's tool pins); from this
+directory, `bash ../.github/scripts/comparator-check.sh` runs it locally.
+
 Success ends with `Your solution is okay!`. Do not rely on a run against a tree in which you have already built
 `Challenge`/`Solution` yourself (Comparator README, assumption 2); a clean checkout, or deleting
 `.lake/build/lib/lean/{Challenge,Solution}*`, lets Comparator build both in its sandbox. To run Comparator by hand
@@ -254,10 +258,12 @@ Files under `Zeta23/FromPNTPlus/` are ported from the
 carries a header naming the upstream file and commit, the upstream copyright and license, and the local
 modifications; the upstream text (including its informal comments) is otherwise unedited. `Zeta23/LinAlg/` (the
 linear-algebra core of §3: von Neumann's trace inequality for Hermitian matrices, both directions of Sylvester's law
-of inertia, the rank–trace inequality and Weyl's bound) was written first as a self-contained development (namespace `RHLinalg`) accompanying §3 of the
-paper, by the paper's authors, and is incorporated here unchanged; it has no upstream outside this project. Everything builds on [Mathlib](https://github.com/leanprover-community/mathlib4).
+of inertia, the rank–trace inequality and Weyl's bound) was produced first, as a self-contained development (namespace `RHLinalg`)
+accompanying §3 of the paper, and is incorporated here unchanged; it has no upstream outside this project. Everything builds on [Mathlib](https://github.com/leanprover-community/mathlib4).
 
-All Lean code in this repository was written by Claude (Anthropic); humans directed the project and reviewed its
-outputs (`formalization.yaml`, `automation` and `review`; `AUDIT.md`).
+Authorship: **all Lean code in this repository — `Zeta23/LinAlg/` included — was written by Claude (Anthropic)**; the
+paper's authors (Levent Alpöge and Ralph Furman) wrote the mathematics being formalized, directed the formalization and
+reviewed its outputs, and wrote no Lean by hand; Eric Easley orchestrated the Lean work (paper Acknowledgments). `formalization.yaml` (`project.authors`,
+`automation`, `review`) and `AUDIT.md` record the same account.
 
 Released under the Apache License, Version 2.0 — see [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE).

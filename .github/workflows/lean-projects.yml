@@ -9,7 +9,9 @@ name: Lean projects
 # workflow manually (workflow_dispatch) with projects = "all" (the default), or name the projects to run.
 # For each selected project the `verify` job
 #   1. installs elan (the toolchain comes from the project's own lean-toolchain),
-#   2. fetches the Mathlib cache when the project depends on Mathlib,
+#   2. fetches the Mathlib cache when the project depends on Mathlib and, on pull requests only, restores
+#      the project's previous .lake/build so that only changed modules are rebuilt (pushes to main and
+#      manual runs build from scratch),
 #   3. runs `lake build` and fails on any `sorry` outside the trusted comparator statement files
 #      (Challenge.lean, Challenge/<Topic>.lean), and
 #   4. applies the Palomar registry's acceptance bar (.github/scripts/comparator-check.sh):
@@ -207,6 +209,20 @@ jobs:
           else
             echo "no Mathlib dependency in lake-manifest.json; nothing to fetch"
           fi
+
+      # Iterative PR testing: restore the most recent Lake build of this project for the same toolchain,
+      # manifest and lakefile, so `lake build` re-elaborates only the modules that changed, and save the
+      # result under this commit. Pull requests only: pushes to main and manual (workflow_dispatch) runs
+      # neither restore nor save, so the result of record is always a build from scratch. Only .lake/build
+      # is cached; .lake/packages (Mathlib) comes from `lake exe cache get` above.
+      - name: Restore the previous Lake build (pull requests only)
+        if: github.event_name == 'pull_request'
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ matrix.project }}/.lake/build
+          key: lakebuild-${{ runner.os }}-${{ matrix.project }}-${{ hashFiles(format('{0}/lean-toolchain', matrix.project), format('{0}/lake-manifest.json', matrix.project), format('{0}/lakefile.*', matrix.project)) }}-${{ github.sha }}
+          restore-keys: |
+            lakebuild-${{ runner.os }}-${{ matrix.project }}-${{ hashFiles(format('{0}/lean-toolchain', matrix.project), format('{0}/lake-manifest.json', matrix.project), format('{0}/lakefile.*', matrix.project)) }}-
 
       - name: lake build (no sorry outside the comparator challenge files)
         run: |

@@ -228,14 +228,7 @@ class ValidateFormalizationTest < Minitest::Test
   end
 end
 
-class MetadataWorkflowRoutingTest < Minitest::Test
-  WORKFLOW = File.read(Pathname(__dir__).parent / ".github/workflows/ci.yml")
-  CONDITIONS = WORKFLOW.lines.map(&:strip).grep(/\Aif:/).freeze
-
-  def test_only_the_canonical_repository_uses_template_mode
-    assert_includes CONDITIONS,
-                    "if: github.repository == 'PalomarRegistry/PalomarTemplate'"
-    assert_includes CONDITIONS,
-                    "if: github.repository != 'PalomarRegistry/PalomarTemplate'"
-  end
-end
+# The template's MetadataWorkflowRoutingTest is omitted: it asserts the canonical
+# PalomarRegistry/PalomarTemplate repository's --expect-template routing, which the
+# workflow of this repository (.github/workflows/zeta23-ci.yml at the repository root)
+# does not have — it always requires every TEMPLATE value to be replaced.

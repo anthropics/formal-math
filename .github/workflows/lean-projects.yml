@@ -3,9 +3,11 @@ name: Lean projects
 # Per-project CI for this multi-project repository.
 #
 # A "project" is a top-level directory containing lakefile.toml or lakefile.lean. On a pull request or a
-# push to main only the projects with changed files are verified (all of them when anything under .github/
-# changed, on the first push of a branch, or on a manual run with projects = "all"). For each selected
-# project the `verify` job
+# push to main only the projects with changed files are verified. Changes outside the project directories
+# (CI configuration under .github/, README.md, LICENSE, .gitignore, ...) do not trigger project
+# verification: such a run selects no project and `verify` is skipped. To re-verify everything, start the
+# workflow manually (workflow_dispatch) with projects = "all" (the default), or name the projects to run.
+# For each selected project the `verify` job
 #   1. installs elan (the toolchain comes from the project's own lean-toolchain),
 #   2. fetches the Mathlib cache when the project depends on Mathlib,
 #   3. runs `lake build` and fails on any `sorry` outside the trusted comparator statement files
@@ -76,41 +78,48 @@ jobs:
           done
           echo "projects in repository: ${projects[*]:-(none)}"
 
-          # Changed files: base...head of the pull request, or before...after of the push. Everything is
-          # selected when there is nothing to diff against (new branch, manual run with "all"), when the
-          # diff cannot be computed, or when the CI configuration itself (.github/) changed.
+          # Selection rule: a project is verified iff one of its files is in the diff (pull request:
+          # base...head; push: before...after). CI configuration changes (.github/) and other files outside
+          # the project directories do not trigger project verification; use workflow_dispatch with
+          # projects = "all" to re-verify everything. When there is no usable `before` commit (first push of
+          # a branch, or a `before` that is no longer in the history) the diff is taken against the merge-base
+          # with main instead; if even that is impossible, nothing is selected (rather than everything) and a
+          # warning points at the manual full run.
           all=false
           range=""
+          note=""
+          zero=0000000000000000000000000000000000000000
           case "$GITHUB_EVENT_NAME" in
             pull_request) range="$PR_BASE...$PR_HEAD" ;;
             push)
-              if [ -z "$PUSH_BEFORE" ] || [ "$PUSH_BEFORE" = "0000000000000000000000000000000000000000" ]; then
-                all=true
-              else
+              if [ -n "$PUSH_BEFORE" ] && [ "$PUSH_BEFORE" != "$zero" ] \
+                 && git cat-file -e "$PUSH_BEFORE^{commit}" 2>/dev/null; then
                 range="$PUSH_BEFORE...$PUSH_HEAD"
+              elif git rev-parse --verify -q origin/main >/dev/null; then
+                note="no usable 'before' commit for this push; diffing against the merge-base with main"
+                range="origin/main...$PUSH_HEAD"
+              else
+                note="no usable 'before' commit and no main to diff against; selecting no project (run workflow_dispatch with projects=all to verify everything)"
               fi ;;
             *)
               if [ -z "${DISPATCH_PROJECTS// /}" ] || [ "$DISPATCH_PROJECTS" = "all" ]; then all=true; fi ;;
           esac
+          [ -z "$note" ] || echo "::warning::$note"
 
           selected=()
           if [ -n "$range" ]; then
             if changed="$(git diff --name-only "$range" --)"; then
               tops="$(printf '%s\n' "$changed" | cut -d/ -f1 | sort -u)"
               echo "changed top-level entries in $range: $(tr '\n' ' ' <<<"$tops")"
-              if grep -qxF .github <<<"$tops"; then
-                echo "CI configuration changed: selecting all projects"
-                all=true
-              else
-                for p in "${projects[@]}"; do
-                  if grep -qxF "$p" <<<"$tops"; then selected+=("$p"); fi
-                done
-              fi
+              for p in "${projects[@]}"; do
+                if grep -qxF "$p" <<<"$tops"; then selected+=("$p"); fi
+              done
             else
-              echo "could not diff $range: selecting all projects"
-              all=true
+              echo "::warning::could not diff $range; selecting no project (run workflow_dispatch with projects=all to verify everything)"
             fi
-          elif ! $all; then
+          elif $all; then
+            selected=("${projects[@]}")
+          elif [ "$GITHUB_EVENT_NAME" = workflow_dispatch ]; then
             # Manual run with an explicit list: keep the names that are projects.
             for want in $DISPATCH_PROJECTS; do
               for p in "${projects[@]}"; do
@@ -118,7 +127,6 @@ jobs:
               done
             done
           fi
-          if $all; then selected=("${projects[@]}"); fi
 
           if [ "${#selected[@]}" -eq 0 ]; then
             json='[]'
@@ -132,7 +140,10 @@ jobs:
     name: verify (${{ matrix.project }})
     needs: detect
     if: needs.detect.outputs.projects != '[]' && needs.detect.outputs.projects != ''
-    runs-on: ubuntu-latest
+    # Set repository/org variable LEAN_CI_RUNNER to a GitHub larger-runner label (e.g. ubuntu-latest-16-cores)
+    # to speed up builds; falls back to the standard hosted runner. Lake uses every core of the runner by
+    # default, so a larger runner needs no other change.
+    runs-on: ${{ vars.LEAN_CI_RUNNER || 'ubuntu-latest' }}
     timeout-minutes: 360
     strategy:
       fail-fast: false

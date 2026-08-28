@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Batched, memory-shaped Lake build of the A1275 chunk modules.
+"""Batched, memory-shaped Lake build of a sextuple target's chunk modules (`--ns`, default A1275).
 
 Every chunk module `Zeta23.ThmD.Sextuple.A1275.Chunks.ChunkNNNN` is one `decide +kernel`
 subtree replay.  Lake 5 has no `-j`; the number of concurrent `lean` builders is capped by
@@ -16,10 +16,23 @@ import argparse, json, os, re, subprocess, sys, time
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[4]
-CHUNK_DIR = REPO / "Zeta23/ThmD/Sextuple/A1275/Chunks"
-OLEAN_DIR = REPO / ".lake/build/lib/lean/Zeta23/ThmD/Sextuple/A1275/Chunks"
+NS = "A1275"
+CHUNK_DIR = REPO / f"Zeta23/ThmD/Sextuple/{NS}/Chunks"
+OLEAN_DIR = REPO / f".lake/build/lib/lean/Zeta23/ThmD/Sextuple/{NS}/Chunks"
 LAKE = Path.home() / ".elan/bin/lake"
 HEADER = re.compile(r"topology cursor (\d+), payload cursor (\d+), depth (\d+), (\d+) tokens")
+WIDTH = 4
+
+
+def set_namespace(ns: str) -> None:
+    global NS, CHUNK_DIR, OLEAN_DIR, WIDTH
+    NS = ns
+    CHUNK_DIR = REPO / f"Zeta23/ThmD/Sextuple/{NS}/Chunks"
+    OLEAN_DIR = REPO / f".lake/build/lib/lean/Zeta23/ThmD/Sextuple/{NS}/Chunks"
+    names = sorted(CHUNK_DIR.glob("Chunk*.lean"))
+    if not names:
+        raise SystemExit(f"no chunk sources under {CHUNK_DIR}")
+    WIDTH = len(names[0].stem) - len("Chunk")
 
 
 def chunk_table() -> list[dict]:
@@ -39,8 +52,8 @@ def predicted_gib(row: dict, base: float, per_token: float, per_token_cursor: fl
 
 
 def built(idx: int) -> bool:
-    return (OLEAN_DIR / f"Chunk{idx:04d}.olean").exists() and \
-        (OLEAN_DIR / f"Chunk{idx:04d}.trace").exists()
+    return (OLEAN_DIR / f"Chunk{idx:0{WIDTH}d}.olean").exists() and \
+        (OLEAN_DIR / f"Chunk{idx:0{WIDTH}d}.trace").exists()
 
 
 def free_gib() -> float:
@@ -55,6 +68,7 @@ def free_gib() -> float:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--ns", default="A1275", help="target namespace tag (Zeta23/ThmD/Sextuple/<NS>/Chunks)")
     ap.add_argument("--budget-gib", type=float, default=100.0)
     ap.add_argument("--max-workers", type=int, default=8)
     ap.add_argument("--min-workers", type=int, default=2)
@@ -63,10 +77,15 @@ def main() -> int:
     ap.add_argument("--mem-per-token", type=float, default=0.0)
     ap.add_argument("--mem-per-token-cursor", type=float, default=0.0)
     ap.add_argument("--order", choices=("index", "heavy-first"), default="index")
-    ap.add_argument("--log", type=Path, default=REPO / "certificates/sextuple/logs/a1275-chunks-driver.log")
-    ap.add_argument("--state", type=Path, default=REPO / "certificates/sextuple/logs/a1275-chunks-state.json")
+    ap.add_argument("--log", type=Path, default=None)
+    ap.add_argument("--state", type=Path, default=None)
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
+    set_namespace(a.ns)
+    if a.log is None:
+        a.log = REPO / f"certificates/sextuple/logs/{a.ns.lower()}-chunks-driver.log"
+    if a.state is None:
+        a.state = REPO / f"certificates/sextuple/logs/{a.ns.lower()}-chunks-state.json"
 
     rows = chunk_table()
     for r in rows:
@@ -86,7 +105,7 @@ def main() -> int:
         i += a.batch_size
         peak = max(r["gib"] for r in batch)
         workers = max(a.min_workers, min(a.max_workers, int(a.budget_gib // peak)))
-        targets = [f"+Zeta23.ThmD.Sextuple.A1275.Chunks.Chunk{r['idx']:04d}" for r in batch]
+        targets = [f"+Zeta23.ThmD.Sextuple.{NS}.Chunks.Chunk{r['idx']:0{WIDTH}d}" for r in batch]
         say(f"batch {len(state['batches'])}: {len(batch)} chunks idx {batch[0]['idx']}..{batch[-1]['idx']} "
             f"peak_pred={peak:.1f}GiB workers={workers} free={free_gib():.1f}GiB")
         if a.dry_run:
@@ -96,7 +115,7 @@ def main() -> int:
         proc = subprocess.run([str(LAKE), "build", *targets], cwd=REPO, env=env,
                               capture_output=True, text=True)
         dt = time.time() - t0
-        built_lines = [l for l in proc.stdout.splitlines() if "Built Zeta23.ThmD.Sextuple.A1275.Chunks" in l]
+        built_lines = [l for l in proc.stdout.splitlines() if f"Built Zeta23.ThmD.Sextuple.{NS}.Chunks" in l]
         secs = [float(m[1]) for l in built_lines for m in [re.search(r"\((\d+\.?\d*)s\)", l)] if m]
         rec = {"first": batch[0]["idx"], "last": batch[-1]["idx"], "n": len(batch), "workers": workers,
                "exit": proc.returncode, "wall": round(dt, 1), "built": len(built_lines),

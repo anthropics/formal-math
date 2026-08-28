@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Decode the Lean word literals of the A1275 certificate back to the canonical byte streams.
+"""Decode the Lean word literals of a sextuple target (`--ns`, default A1275) back to the canonical byte streams.
 
 Reads `Zeta23/ThmD/Sextuple/A1275/TreeWords.lean` (topology blocks) and the 31
 `WordData/LeafBlocksNNN.lean` modules (leaf block words), reconstructs the four
@@ -42,9 +42,10 @@ def parse_flat(src: str, name: str) -> list[int]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[4])
+    ap.add_argument("--ns", default="A1275", help="target namespace tag (A1275, A1285, ...)")
     a = ap.parse_args()
-    a1275 = a.repo / "Zeta23/ThmD/Sextuple/A1275"
-    tree = a.repo / "certificates/sextuple/a1275/macro-scalar-tree"
+    a1275 = a.repo / f"Zeta23/ThmD/Sextuple/{a.ns}"
+    tree = a.repo / f"certificates/sextuple/{a.ns.lower()}/macro-scalar-tree"
     manifest = json.loads((tree / "manifest.json").read_text())
     tw = (a1275 / "TreeWords.lean").read_text()
     blocks = parse_nested(tw, "improvedTopologyBlocks")
@@ -61,13 +62,14 @@ def main() -> int:
     topo = b"".join(w.to_bytes(8, "little") for w in words)
     # leaf words
     group_names = re.findall(r"improvedLeafBlocksChunk(\d{3})", tw[tw.index("def improvedLeafBlockGroups"):])
-    if [int(g) for g in group_names] != list(range(GROUPS)):
-        fail("leaf group list is not LeafBlocks000..030 in order")
+    groups = len(group_names)
+    if [int(g) for g in group_names] != list(range(groups)):
+        fail("leaf group list is not LeafBlocks000.. in order")
     block_words: list[int] = []
-    for g in range(GROUPS):
+    for g in range(groups):
         src = (a1275 / f"WordData/LeafBlocks{g:03d}.lean").read_text()
         arr = parse_flat(src, f"improvedLeafBlocksChunk{g:03d}")
-        if g < GROUPS - 1 and len(arr) != 25:
+        if g < groups - 1 and len(arr) != 25:
             fail(f"group {g} has {len(arr)} block words, expected 25")
         block_words.extend(arr)
     if len(block_words) != (leaf_count + LEAF_PER_BLOCK - 1) // LEAF_PER_BLOCK:

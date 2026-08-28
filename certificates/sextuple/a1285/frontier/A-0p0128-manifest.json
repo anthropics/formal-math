@@ -1,0 +1,139 @@
+{
+  "A": "8/625",
+  "B": "1094977/5000000000",
+  "catalog_piece_count": 272,
+  "cutoff": "64000000/1094977",
+  "data_sha256": "961a0281a134382f9c2678cc49487839d2b9c2cbd9df382871f2c7b706552a5b",
+  "elapsed_seconds": 249.0531923742965,
+  "format": {
+    "anchors": "5 u16le codes per quadratic leaf; relative denominator 16384",
+    "kinds": "u8: 0 tail, 1 quadratic",
+    "terms": "15 u16le codes: 0..271 catalog, 32768+n stable scalar cert, 65535 zero",
+    "topology": "20 3-bit tokens per u64le word; unused high bits zero"
+  },
+  "fuel": 70,
+  "full_stack_exhaustion": true,
+  "generator_sha256": "7de8e8215ffa4bd19e69b82bd5ba05455469c2730c94ef83c7e8f9120e6b0931",
+  "leaves": 385985,
+  "maximum_depth": 69,
+  "python": {
+    "executable": "/Users/mdumitrean/Desktop/dev/aigent/agi/.venv/bin/python",
+    "realpath": "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/bin/python3.14"
+  },
+  "quadratic_leaves": 384475,
+  "refinement_piece_count": 216,
+  "refinement_term_count": 393130,
+  "refinements_sha256": "3f83563fb3d6f5a4e1aa0263384d0781494a672368233445a8c6e8e0e9817cb9",
+  "scalar_certificate_count": 2739,
+  "scalar_certificate_segment_count": 16161,
+  "scalar_certificates_sha256": "facce986ef9139a8344c7373ac74994dca28145e28ca30cca2f020c5bbd9cc34",
+  "scalar_term_count": 4226597,
+  "schema": 2,
+  "smallest_quadratic_margin": "9229910132748823963026015686438941/128000000000000000000000000000000000000000000",
+  "smallest_quadratic_margin_float": 7.210867291210018e-11,
+  "smallest_tail_margin": "603643/5000000000",
+  "smallest_tail_margin_float": 0.0001207286,
+  "stable_piece_count": 56,
+  "stream_bytes": {
+    "anchors": 3844750,
+    "kinds": 385985,
+    "terms": 11534250,
+    "topology": 308792
+  },
+  "stream_sha256": {
+    "anchors": "dab1f327e301dca0efac16a31db887031cf20dd3f4647ad6b61067c013ae3c9f",
+    "kinds": "e27b9635fed140b7a68d65912d35b218eb1094beeb14ba502b2e5a0231d55c68",
+    "terms": "4008892a3233f79e130684e82264f4f7a12471ec0af272b91caecc79a6effe9b",
+    "topology": "6c63b059c37593080432d013e5ab4562b622ebc80e31bd18913fa79b600713a7"
+  },
+  "tail_leaves": 1510,
+  "tightest_quadratic_leaf": {
+    "anchor": [
+      "6785/1024",
+      "102129/8192",
+      "53867/8192",
+      "51153/4096",
+      "6785/1024"
+    ],
+    "anchor_codes": [
+      16384,
+      0,
+      16384,
+      16384,
+      16384
+    ],
+    "box": [
+      [
+        "54221/8192",
+        "6785/1024"
+      ],
+      [
+        "102129/8192",
+        "25547/2048"
+      ],
+      [
+        "3363/512",
+        "53867/8192"
+      ],
+      [
+        "102247/8192",
+        "51153/4096"
+      ],
+      [
+        "54221/8192",
+        "6785/1024"
+      ]
+    ],
+    "depth": 65,
+    "lower": "1638400009229910132748823963026015686438941/128000000000000000000000000000000000000000000",
+    "margin": "9229910132748823963026015686438941/128000000000000000000000000000000000000000000",
+    "term_codes": [
+      78,
+      34269,
+      34373,
+      34396,
+      34614,
+      34186,
+      34095,
+      34266,
+      34396,
+      75,
+      34192,
+      34556,
+      86,
+      34402,
+      78
+    ]
+  },
+  "tightest_tail_leaf": {
+    "box": [
+      [
+        "177/16",
+        "413/32"
+      ],
+      [
+        "177/16",
+        "413/32"
+      ],
+      [
+        "177/32",
+        "59/8"
+      ],
+      [
+        "177/16",
+        "413/32"
+      ],
+      [
+        "649/32",
+        "177/8"
+      ]
+    ],
+    "depth": 25,
+    "margin": "603643/5000000000"
+  },
+  "token_count": 771969,
+  "topology_word_count": 38599,
+  "trust_note": "Float proposals only; every terminal and refined seam-cache comparison uses exact Fraction arithmetic. Refinement soundness is a separate Lean WellCert replay.",
+  "visited_nodes": 771969,
+  "zero_term_count": 531912
+}

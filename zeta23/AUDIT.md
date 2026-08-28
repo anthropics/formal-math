@@ -250,7 +250,8 @@ this revision additionally records an independent warm-cache build of them.
 
 Layout- and metadata-only; no statement, definition, proof or import bytes change (the Lean sources with all comments
 stripped are byte-identical before and after this revision; the only edits inside `.lean` files are path mentions in
-comment headers). Following the layout of
+comment headers, and — in the seven `Zeta23/LinAlg/*.lean` headers — the authorship sentence, reworded to say
+that these files, like all Lean code here, were written by Claude under the paper authors' direction). Following the layout of
 [PalomarRegistry/PalomarTemplate](https://github.com/PalomarRegistry/PalomarTemplate), the former `comparator/`
 directory is dissolved: `comparator/Challenge.lean`, `comparator/Solution.lean`, `comparator/ChallengeDeps.lean` and
 their `XiPrime` submodules move to the top level of this directory (`Challenge.lean`, `Challenge/XiPrime.lean`, …),

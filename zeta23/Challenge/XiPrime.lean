@@ -4,13 +4,13 @@ Released under Apache 2.0 license as described in the file LICENSE.
 SPDX-License-Identifier: Apache-2.0
 -/
 /-
-comparator/Challenge/XiPrime.lean — CHALLENGE: the zeros of ξ′.
+Challenge/XiPrime.lean — CHALLENGE: the zeros of ξ′.
 Trusted vocabulary: ChallengeDeps.XiPrime (ξ, ξ′, its zero-counting functions) over Mathlib.
 -/
 import Mathlib
 
 /-
-The definitions below are inlined character-for-character from comparator/ChallengeDeps/XiPrime.lean
+The definitions below are inlined character-for-character from ChallengeDeps/XiPrime.lean
 (the trusted Mathlib-only definition layer, which continues to exist for the Solution build), so
 that this module's ONLY import is Mathlib. The anonymous `section` scopes that file's
 `open`s to the inlined definitions, leaving the elaboration context of the statements below exactly

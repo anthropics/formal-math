@@ -29,7 +29,7 @@ warnings when building this module.
 import Mathlib
 
 /-
-The definitions below are inlined character-for-character from comparator/ChallengeDeps.lean
+The definitions below are inlined character-for-character from ChallengeDeps.lean
 (the trusted Mathlib-only definition layer, which continues to exist for the Solution build), so
 that this module's ONLY import is Mathlib. The anonymous `section` scopes ChallengeDeps.lean's
 `open`s to the inlined definitions, leaving the elaboration context of the statements below exactly

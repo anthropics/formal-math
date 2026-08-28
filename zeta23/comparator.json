@@ -20,6 +20,7 @@
     "dirichlet_montgomery_taylor_simple_on_critical_line_mult",
     "dirichlet_montgomery_taylor_distinct_mult"
   ],
+  "definition_names": [],
   "permitted_axioms": [
     "propext",
     "Quot.sound",

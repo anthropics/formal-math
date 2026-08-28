@@ -1,6 +1,6 @@
 # Audit record
 
-This file records the checks that were run on exactly the sources in this repository and how to reproduce them. Nothing here is part of the trusted base: a reader can re-run everything below, and can run the [comparator](https://github.com/leanprover/comparator) tool against the trusted statement files in `comparator/` (see `comparator/README.md`).
+This file records the checks that were run on exactly the sources in this repository and how to reproduce them. Nothing here is part of the trusted base: a reader can re-run everything below, and can run the [comparator](https://github.com/leanprover/comparator) tool against the trusted statement files `Challenge.lean` and `Challenge/XiPrime.lean` (see README.md, "Verifying the statements with Comparator"). Paths and configuration names in the revision notes below are those of the revision they describe; since the Palomar-layout revision (last section) the challenge, solution and configuration files live at the top level of this directory (`comparator/config.json` → `comparator.json`, `comparator/config-xiprime.json` → `comparator-xiprime.json`, `comparator/PrintAxioms*.lean` → `scripts/PrintAxioms*.lean`).
 
 Toolchain: Lean `leanprover/lean4:v4.33.0-rc2`; Mathlib commit `51e6992efd06126df61a496bebf8f49482a4e129` (the commit Mathlib's tag `v4.33.0-rc2` points to, read from the tag archive; pinned in `lake-manifest.json`). Library name: `Zeta23`. Repository: <https://github.com/anthropics/formal-math/tree/main/zeta23>.
 
@@ -9,9 +9,9 @@ Toolchain: Lean `leanprover/lean4:v4.33.0-rc2`; Mathlib commit `51e6992efd06126d
 ```bash
 lake exe cache get            # optional: prebuilt Mathlib for the pinned commit; otherwise Mathlib builds from source
 lake build                    # the Zeta23 library (default target: the headline modules imported by Zeta23.lean)
-lake build Solution && lake env lean comparator/PrintAxioms.lean
-lake build Solution.XiPrime && lake env lean comparator/PrintAxioms/XiPrime.lean
-lake env lean comparator/PrintAxioms/PairCeiling.lean
+lake build Solution && lake env lean scripts/PrintAxioms.lean
+lake build Solution.XiPrime && lake env lean scripts/PrintAxioms/XiPrime.lean
+lake env lean scripts/PrintAxioms/PairCeiling.lean
 lake build Challenge          # the trusted statement files; expect only the deliberate sorry placeholders
 ```
 
@@ -19,12 +19,12 @@ lake build Challenge          # the trusted statement files; expect only the del
 
 * `lake build`: completed successfully (8890 jobs, counting the Mathlib dependency closure); no errors and no `sorry` warnings.
 * `lake build Solution` and `lake build Solution.Multiplicity`: completed successfully; no errors and no `sorry` warnings.
-* `lake build Challenge` and the topic challenge files: complete with `declaration uses 'sorry'` warnings **only** in the trusted statement files, which state each theorem with a placeholder proof by design (`comparator/Challenge.lean`: 15, `comparator/Challenge/Multiplicity.lean`: 12), and with no other warnings or errors.
+* `lake build Challenge` and the topic challenge files: complete with `declaration uses 'sorry'` warnings **only** in the trusted statement files, which state each theorem with a placeholder proof by design (`Challenge.lean`: 15, `Challenge/Multiplicity.lean`: 12), and with no other warnings or errors.
 * Declarations of new axioms (`axiom ...`) anywhere in the repository, counted on the sources with comments and docstrings stripped: **0**.
-* Occurrences of the `sorry` token outside comments: **27**, all in the trusted challenge statement files (`comparator/Challenge.lean`: 15, `comparator/Challenge/Multiplicity.lean`: 12); none under `Zeta23/` and none in any `Solution` file.
+* Occurrences of the `sorry` token outside comments: **27**, all in the trusted challenge statement files (`Challenge.lean`: 15, `Challenge/Multiplicity.lean`: 12); none under `Zeta23/` and none in any `Solution` file.
 * Axiom audit: every line printed by the `#print axioms` commands below is exactly `[propext, Classical.choice, Quot.sound]`, Lean's three standard axioms; in particular no `sorryAx` and no project-specific axiom.
 
-### `#print axioms` for the 27 comparator statements (`comparator/PrintAxioms*.lean`), verbatim
+### `#print axioms` for the 27 comparator statements (`scripts/PrintAxioms*.lean`), verbatim
 
 ```
 'two_thirds_on_critical_line' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -97,12 +97,12 @@ The trusted statement files and configurations for the comparator tool are in `c
 
 ## Amendment: the zeros of ξ′ and the bandwidth-one ceiling
 
-This revision adds `Zeta23/XiPrime/` (comparator topic `XiPrime`, six statements) and `Zeta23/PairCeiling/` (no comparator topic), and replaces 69 shared modules by later versions with the same public statements (the trusted files `comparator/ChallengeDeps.lean`, `Challenge.lean`, `Challenge/Multiplicity.lean` are unchanged byte for byte). The checks above were re-run on exactly these sources:
+This revision adds `Zeta23/XiPrime/` (comparator topic `XiPrime`, six statements) and `Zeta23/PairCeiling/` (no comparator topic), and replaces 69 shared modules by later versions with the same public statements (the trusted files `ChallengeDeps.lean`, `Challenge.lean`, `Challenge/Multiplicity.lean` are unchanged byte for byte). The checks above were re-run on exactly these sources:
 
 * `lake build` (default target): completed successfully (9010 jobs); no errors and no `sorry` warnings.
-* `lake build Solution Solution.Multiplicity Solution.XiPrime Challenge Challenge.Multiplicity Challenge.XiPrime ChallengeDeps ChallengeDeps.XiPrime`: complete, with `declaration uses 'sorry'` warnings **only** in the trusted statement files (`comparator/Challenge.lean`: 15, `comparator/Challenge/Multiplicity.lean`: 12, `comparator/Challenge/XiPrime.lean`: 6) and no other warnings or errors.
+* `lake build Solution Solution.Multiplicity Solution.XiPrime Challenge Challenge.Multiplicity Challenge.XiPrime ChallengeDeps ChallengeDeps.XiPrime`: complete, with `declaration uses 'sorry'` warnings **only** in the trusted statement files (`Challenge.lean`: 15, `Challenge/Multiplicity.lean`: 12, `Challenge/XiPrime.lean`: 6) and no other warnings or errors.
 * Occurrences of the `sorry` token outside comments: **33**, all in the three trusted challenge files; none under `Zeta23/` and none in any `Solution` file. No `axiom` declarations anywhere in the repository outside the trusted challenge files' deliberate `sorry`s (the word `axiom` occurs in `Zeta23/FromPNTPlus/Tactic/AdditiveCombination.lean` only inside a commented-out upstream test block, unchanged from upstream and from the previous revision; it declares nothing).
-* `#print axioms`, 15 + 12 + 6 comparator statements (`comparator/PrintAxioms.lean`, `PrintAxioms/Multiplicity.lean`, `PrintAxioms/XiPrime.lean`): every line `[propext, Classical.choice, Quot.sound]`. The six ξ′ lines:
+* `#print axioms`, 15 + 12 + 6 comparator statements (`scripts/PrintAxioms.lean`, `PrintAxioms/Multiplicity.lean`, `PrintAxioms/XiPrime.lean`): every line `[propext, Classical.choice, Quot.sound]`. The six ξ′ lines:
 
 ```
 'xiPrime_zeros_in_open_critical_strip' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -113,7 +113,7 @@ This revision adds `Zeta23/XiPrime/` (comparator topic `XiPrime`, six statements
 'xiPrime_simple_zeros_on_critical_line_quartic_cumulative' depends on axioms: [propext, Classical.choice, Quot.sound]
 ```
 
-* `#print axioms`, the ceiling theorems (`comparator/PrintAxioms/PairCeiling.lean`). All of these except the two kernel checks carry the displayed hypothesis `EnclOK` described in the README:
+* `#print axioms`, the ceiling theorems (`scripts/PrintAxioms/PairCeiling.lean`). All of these except the two kernel checks carry the displayed hypothesis `EnclOK` described in the README:
 
 ```
 'Zeta23.PairCeiling.ceiling_stability' depends on axioms: [propext, Classical.choice, Quot.sound]
@@ -133,7 +133,7 @@ This revision adds `Zeta23/XiPrime/` (comparator topic `XiPrime`, six statements
 
 ## Revision note: ChallengeDeps minimized to the statements' dependency closure
 
-This revision removes from `comparator/ChallengeDeps.lean` the four counting functions that no
+This revision removes from `ChallengeDeps.lean` the four counting functions that no
 challenge statement depends on (`N0`, `Nsimple`, `N0L`, `NsimpleL` — previously kept for
 block-parity with the Zeta23 statement layer) and updates the README notes accordingly.
 `Challenge.lean`, `Challenge/Multiplicity.lean` and `Challenge/XiPrime.lean` are unchanged byte
@@ -145,8 +145,8 @@ re-run on exactly these sources:
   dependency closure); no errors and no `sorry` warnings.
 * `lake build Solution Solution.Multiplicity Solution.XiPrime Challenge Challenge.Multiplicity
   Challenge.XiPrime ChallengeDeps ChallengeDeps.XiPrime`: complete, with `declaration uses 'sorry'`
-  warnings **only** in the trusted statement files (`comparator/Challenge.lean`: 15,
-  `comparator/Challenge/Multiplicity.lean`: 12, `comparator/Challenge/XiPrime.lean`: 6). One
+  warnings **only** in the trusted statement files (`Challenge.lean`: 15,
+  `Challenge/Multiplicity.lean`: 12, `Challenge/XiPrime.lean`: 6). One
   informational lint surfaced during the Solution build in an untouched library file
   (`Zeta23/XiPrime/ExplicitFormula/EntryError.lean:121`: "Variable name `hb` is not explicitly
   referenced"), unrelated to this revision; no other warnings and no errors.
@@ -175,7 +175,7 @@ This revision makes two changes to `comparator/`, neither touching anything unde
 
 **The challenge modules import only Mathlib.** Each trusted statement module (`Challenge.lean`,
 `Challenge/XiPrime.lean`) now has `import Mathlib` as its single import, with the definition layer
-(`comparator/ChallengeDeps.lean`, resp. `ChallengeDeps/XiPrime.lean`) inlined character-for-character
+(`ChallengeDeps.lean`, resp. `ChallengeDeps/XiPrime.lean`) inlined character-for-character
 inside an anonymous section reproducing the layer's exact open context, so each trusted file can be
 read completely on its own. The inlined block is the COMPLETE definition layer, not just the
 constants the statements mention: elaborating the layer as a whole keeps the auxiliary lemmas it
@@ -207,7 +207,7 @@ The checks above were re-run on exactly these sources:
   dependency closure); no errors and no `sorry` warnings.
 * `lake build ChallengeDeps ChallengeDeps.XiPrime Challenge Challenge.XiPrime` and `lake build
   Solution Solution.XiPrime`: complete, with `declaration uses 'sorry'` warnings **only** in the two
-  trusted statement files (`comparator/Challenge.lean`: 17, `comparator/Challenge/XiPrime.lean`: 6); informational deprecation warnings surfaced in untouched library files (same pinned Mathlib, unrelated to this revision), and no errors.
+  trusted statement files (`Challenge.lean`: 17, `Challenge/XiPrime.lean`: 6); informational deprecation warnings surfaced in untouched library files (same pinned Mathlib, unrelated to this revision), and no errors.
 * Occurrences of the `sorry` token outside comments: **23**, all in the two trusted challenge files
   (17 + 6); none under `Zeta23/` and none in any `Solution` file. Declarations of new axioms
   (`axiom ...`), counted the same way: **0**.
@@ -235,13 +235,42 @@ The checks above were re-run on exactly these sources:
 
 Comment- and README-only; no statement, definition, or import bytes change (checked mechanically:
 the Lean sources with all comments stripped are byte-identical before and after this revision).
-`comparator/Challenge.lean`'s module header and two Theorem-D doc comments drop the
+`Challenge.lean`'s module header and two Theorem-D doc comments drop the
 Cauchy–Schwarz-constant mentions (those forms are no longer stated in this file), the header is
 tightened, and the quoted paper title — with the README's title and citation — is updated to the
 arXiv version, "More than two thirds of the zeros of the Riemann zeta function are simple and on
 the critical line" (arXiv:2608.13637). The cMT docstring edit is applied identically in
-`comparator/ChallengeDeps.lean`, keeping the inlined definition layer a character-for-character
+`ChallengeDeps.lean`, keeping the inlined definition layer a character-for-character
 copy. Because the comment-stripped sources are byte-identical to the previous revision, that
 revision's recorded results — the build, `#print axioms` (23/23 standard-three) and the comparator
 runs on both configurations — carry over to these sources unchanged; the pull request that carried
 this revision additionally records an independent warm-cache build of them.
+
+## Revision note: Palomar template layout
+
+Layout- and metadata-only; no statement, definition, proof or import bytes change (the Lean sources with all comments
+stripped are byte-identical before and after this revision; the only edits inside `.lean` files are path mentions in
+comment headers). Following the layout of
+[PalomarRegistry/PalomarTemplate](https://github.com/PalomarRegistry/PalomarTemplate), the former `comparator/`
+directory is dissolved: `comparator/Challenge.lean`, `comparator/Solution.lean`, `comparator/ChallengeDeps.lean` and
+their `XiPrime` submodules move to the top level of this directory (`Challenge.lean`, `Challenge/XiPrime.lean`, …),
+`comparator/config.json` becomes `comparator.json` and `comparator/config-xiprime.json` becomes
+`comparator-xiprime.json` (each gains the explicit `"definition_names": []` of the template; the theorem lists and
+permitted axioms are unchanged), `comparator/PrintAxioms*.lean` move to `scripts/`, and `comparator/README.md` is
+merged into `README.md`. `lakefile.toml` replaces the three `srcDir = "comparator"` stanzas by root-level libraries
+(`roots = ["Challenge"]` etc.) and adds `Challenge` and `Solution` to the default targets, so `lake build` now
+also builds the trusted files (expect their deliberate `sorry` warnings there). Added from the template:
+`scripts/verify-comparator.sh` (Comparator and lean4export pinned at their `v4.33.0-rc2` tags; Landrun and NanoDa at
+the template's commits), `scripts/landrun-wrapper.sh`, `scripts/validate-formalization.rb`, `test/`, `Gemfile`,
+`docbuild/` (doc-gen4 at `v4.33.0-rc2`), and a CI workflow at the repository root
+(`.github/workflows/zeta23-ci.yml`). `formalization.yaml` gains the required `project.description` (the registry
+abstract), the template's automation/cost fields, per-statement alignment notes, the Palomar source-type vocabulary
+(`paper`), and records that the Palomar submission is `comparator.json` only. The previous revision's recorded
+results — the build, `#print axioms` (23/23 standard-three) and the Comparator runs on both configurations — carry
+over to these sources unchanged. Checked in this revision: that Lake resolves every module in the new layout
+(`lake build <module> --no-build` for `Challenge`, `Challenge.XiPrime`, `ChallengeDeps`, `ChallengeDeps.XiPrime`,
+`Solution`, `Solution.XiPrime` and `Zeta23` reports each target as merely out of date, while a nonexistent module
+name is rejected with the path Lake looked for), and that the comment-stripped Lean sources are byte-identical to
+the previous revision's. No full build or Comparator run was performed for this revision (the Mathlib build cache for
+the pinned commit was not reachable from the machine that prepared it); the CI workflow's manually dispatched
+`build` and `comparator` jobs perform them on demand.

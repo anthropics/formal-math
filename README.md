@@ -65,6 +65,19 @@ Also included, beyond Theorems A–E (each group has its own trusted statement f
   oracle enters the proof; the checker soundness layer (`Zeta23/ThmD/Sextuple/AffineTree.lean`) is stated for arbitrary streams.
   Generators, canonical certificate data, independent audits, and build logs are under [`certificates/sextuple/`](certificates/sextuple/).
 
+* **Refined sextuple certificate at `A = 51/4000`** (`Zeta23/ThmD/Sextuple/A1275/`; comparator topic `SextupleA1275`, four statements): the same sextuple
+  argument with the stronger affine coefficient `A = 51/4000 = 0.01275` (same `B₆`), giving
+  `liminf N₀ˢ(T,2T)/N(T,2T) ≥ (6·B_MT − 10π·B₆)/(6 − 51/4000) = 0.67278371…` in dyadic and cumulative windows
+  (`Zeta23.ThmD.Sextuple.A1275.thmD₀_sextuple`, `_cumulative`) with the fixed-coefficient corollaries `thmD₀_sextuple_6727837118`
+  and `thmD₀_sextuple_cumulative_6727837118` at `0.6727837118`. The certificate `Zeta23.ThmD.Sextuple.A1275.Certificate.sextuple_affine`
+  (`51/4000 ≤ E₆(g) + B₆·(g₀+…+g₄)`) is again a `decide +kernel` replay of an exact rational branch-and-bound tree: the unchanged 56-piece
+  envelope plus a separately Lean-checked 216-cell refinement catalog (`A1275/RefinementData.lean`, 272 selectable one-dimensional models),
+  1,383 exact scalar seam certificates, and a 385,967-node dyadic tree with 192,984 leaves split over 8,953 subtree modules (`A1275/Chunks/`),
+  assembled through the same generic split lemma in 90 modules (`A1275/Assembly/`). The analytic layers (`Base`, `Ledger`, `Final`, the generic
+  checker soundness in `AffineTree.lean` and `Macro/ParametricAdapter.lean`) are reused unchanged; the words are stored two levels deep for
+  cheap kernel lookups, and `A1275/FlatEquivalence.lean` proves the replayed streams equal the audited flat packed streams. Data, generators,
+  independent audits, and logs are under [`certificates/sextuple/a1275/`](certificates/sextuple/a1275/).
+
 * **Conditional simple-critical-line collision/energy seam** (`Zeta23/ThmD/LineConditional.lean`; `#print axioms` audit only): the exact combinatorial inequality
   `N ≤ N₀ˢ + Σγ M(γ)(M(γ)-1)` yields `liminf N₀ˢ/N ≥ 1-κ` from an explicitly assumed factorial
   ordinary-ordinate collision cap `Σγ M(γ)(M(γ)-1) ≤ (κ+o(1))N`. More generally, for a kernel
@@ -140,8 +153,8 @@ lake exe cache get        # fetch prebuilt Mathlib for the pinned commit (a few 
                           # for your platform / offline), just proceed: the next step builds Mathlib from
                           # source, which takes several hours of CPU time but needs nothing else.
 lake build                # builds library Zeta23 (the default target imports exactly the headline modules)
-lake build Solution Solution.XiPrime Solution.Union Solution.LineDecimal Solution.Sextuple
-lake env lean comparator/PrintAxioms.lean; lake env lean comparator/PrintAxioms/XiPrime.lean; lake env lean comparator/PrintAxioms/Union.lean; lake env lean comparator/PrintAxioms/LineDecimal.lean; lake env lean comparator/PrintAxioms/Sextuple.lean   # axiom audit of the 17 + 6 + 4 + 4 + 4 unconditional theorems
+lake build Solution Solution.XiPrime Solution.Union Solution.LineDecimal Solution.Sextuple Solution.SextupleA1275
+lake env lean comparator/PrintAxioms.lean; lake env lean comparator/PrintAxioms/XiPrime.lean; lake env lean comparator/PrintAxioms/Union.lean; lake env lean comparator/PrintAxioms/LineDecimal.lean; lake env lean comparator/PrintAxioms/Sextuple.lean; lake env lean comparator/PrintAxioms/SextupleA1275.lean   # axiom audit of the 17 + 6 + 4 + 4 + 4 + 4 unconditional theorems
 lake env lean comparator/PrintAxioms/UnionConditional.lean
 lake env lean comparator/PrintAxioms/LineConditional.lean
 lake env lean comparator/PrintAxioms/PairCeiling.lean   # axiom audit of the ceiling theorems (no trusted statement file; see AUDIT.md)

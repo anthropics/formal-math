@@ -178,3 +178,26 @@ lake env lean Zeta23/ThmD/Sextuple/AxiomAudit.lean                # #print axiom
 - Default `lake build`: 12,057 jobs, success.
 - `README.md`, `comparator/README.md`, `AUDIT.md` amended; research ledger `post-anthropic-rh.md` §5 records the result.
 - Not done (requires tools not on this machine): a Comparator/nanoda run of `config-sextuple.json`.
+
+## A = 51/4000 REFINED CERTIFICATE (2026-08-27)
+
+- `Zeta23/ThmD/Sextuple/A1275/`: `Certificate.sextuple_affine` at `A = 51/4000`, `B = B₆`, kernel-checked;
+  `A1275.thmD₀_sextuple(_cumulative)` and the fixed `thmD₀_sextuple(_cumulative)_6727837118` endpoints
+  (`0.6727837118`, exact endpoint `0.67278371…`), all on `[propext, Classical.choice, Quot.sound]`.
+- Design numbers: 272-model catalog (56 stable + 216 refinement cells), 1,383 scalar certificates / 2,979 segments,
+  385,967-node tree, 192,984 leaves, depth ≤ 89, fuel 90; 8,953 chunks (≤ 100 tokens) in `A1275/Chunks/`,
+  8,952 split-step nodes in 90 parts, root `improvedNode8951`.
+- Words stored two levels deep (140 topology words per block; 31 leaf groups of 25 block words): with the frozen
+  flat 19,299-word array a 99-token chunk near the end of the stream cost 90–165 s and ≈ 39 GB (kernel array
+  lookups are linear in the index and not shared across reads), and the 31-way `Array.append` leaf chain added
+  ≈ 9 s to every chunk; two-level literals give ≈ 10 s / 7 GB for the same chunk. `FlatEquivalence.lean` proves the
+  two-level streams equal the audited flat packed streams.
+- Assembly parts: never pass `(box := improvedPathBox improvedRootBox [...])` (or an explicit path list) to
+  `replayAffineTree_split_step` — the elaborator's unification then blows up exponentially in the path depth
+  (depth 29 ≈ 1 s, depth 33 > 150 s); with the box inferred from the theorem statement a 100-node part builds in
+  4–10 s even at depth 73.
+- Build record: chunks 10,552 s wall / 98,753 s CPU at ten builders (max chunk 50 s); 90 parts ≈ 662 s; root
+  replay, certificate, endpoints ≈ 3.5 s each; baseline chain rebuilt (11,881 jobs); default `lake build` 21,145
+  jobs; comparator topic `SextupleA1275` built, 11/11 print-axioms standard; audit report
+  `logs/audit-report.txt`; forbidden scan clean over 12,105 files.
+- Provenance, generators, verifiers, manifests and independent audits: `certificates/sextuple/a1275/`.

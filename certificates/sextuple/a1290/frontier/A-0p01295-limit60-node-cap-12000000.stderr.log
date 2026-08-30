@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/sextuple-improvement/frontier-2026-08-28/generate_exact_refined_scalar_tree_v3.py", line 18, in <module>
+    G.main()
+    ~~~~~~^^
+  File "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/sextuple-improvement/frontier-2026-08-28/generate_exact_refined_scalar_tree_limit.py", line 187, in main
+    raise ArithmeticError(f"node limit exceeded with {len(stack)} pending")
+ArithmeticError: node limit exceeded with 36 pending

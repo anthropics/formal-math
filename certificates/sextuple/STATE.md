@@ -219,3 +219,22 @@ lake env lean Zeta23/ThmD/Sextuple/AxiomAudit.lean                # #print axiom
   `SextupleA1285` 11/11 standard axioms; forbidden scan clean over 42,712 files.
 - Frontier: `A = 0.0128` closes (not integrated); `A = 0.0129` does not close within 6,000,000 nodes (32 boxes
   pending, no obstruction). Provenance under `certificates/sextuple/a1285/`.
+
+## A = 129/10000 REFINED CERTIFICATE OVER THE 666-MODEL CATALOG (2026-08-30)
+
+- `Zeta23/ThmD/Sextuple/A1290/`: `Certificate.sextuple_affine` at `A = 129/10000`, `B = B₆`, kernel-checked;
+  `A1290.thmD₀_sextuple(_cumulative)` and the fixed `thmD₀_sextuple(_cumulative)_6728005676` endpoints
+  (`0.6728005676`, exact endpoint `0.67280056…`), all on `[propext, Classical.choice, Quot.sound]`.
+- Catalog v2/v3 (`A1290/RefinementData2.lean`, `A1290/Catalog.lean`): +394 Lean-checked pieces (24 wells on piece 36;
+  370 barrier cells of width 1/64 on piece 43 and on [59,60]) with constants set to Lean's own `kernelRange` bound via
+  the exact Fraction replica `a1290/catalog/kernel_interval.py`. Lesson: constant-barrier pieces certified by interval
+  arithmetic are only as tight as their cells (width 1: 60–80% of 2K²; width 1/64: 99.5%); the seam at 44.787 cost
+  0.000131 of the 0.000163 catalog gap at the tight point.
+- Frontier: true-kernel ceiling A* ≤ 0.0129938 (R ≤ 0.6728111) at B₆; B cannot help; catalog v3 ceiling 0.0129616;
+  A = 0.01293 (limit 60) closes externally (10.0M tokens, verifier PASS) but is not integrated (≈ 2.8× this kernel time
+  for +4×10⁻⁶); A ≥ 0.01295 does not close in 12M nodes. The next real gain needs a different analytic input.
+- Design numbers: 4,299 scalar certificates / 31,664 segments, 3,550,925-node tree, 1,775,463 leaves, depth ≤ 73,
+  fuel 74; 56,924 chunks, 56,923 split-step nodes in 570 parts.
+- Build record: chunks 114,916 s wall / 996,422 s CPU at nine builders (max chunk 57 s); 570 parts ≈ 10,843 s; root
+  replay 11 s; certificate 10 s; default `lake build` 109,531 jobs; comparator topic `SextupleA1290` 11/11 standard
+  axioms; forbidden scan clean over 100,498 files.

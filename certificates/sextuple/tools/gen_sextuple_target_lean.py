@@ -33,7 +33,10 @@ NODES_PER_PART = 100
 B6 = Fraction(1094977, 5000000000)
 HD1_LOWER = Fraction(672500703679, 10**12)
 PI_UPPER = Fraction(314159265358979323847, 10**20)
-LIMIT = 59
+LIMIT = 59            # root-box limit (overridden by --limit); the catalog must cover [0, A/B] ⊆ [0, LIMIT]
+CATALOG_MODULE = "Zeta23.ThmD.Sextuple.A1275.Catalog"
+CATALOG_SIZE = 272
+CATALOG_NAME = "improvedCatalog"   # the `Fin CATALOG_SIZE → MacroPiece` table; `<name>_check` must exist
 
 
 def require(cond: bool, msg: str) -> None:
@@ -91,11 +94,11 @@ class Tree:
         require(q(sc["A"]) == self.A and q(sc["B"]) == self.B, "scalar certificates A/B")
         self.cutoff = self.A / self.B
         require(self.cutoff == q(m["cutoff"]), "cutoff")
-        require(self.A <= self.B * LIMIT, "A must satisfy A <= B * 59 (root box limit)")
+        require(self.A <= self.B * LIMIT, f"A must satisfy A <= B * {LIMIT} (root box limit)")
         for x in self.anchors:
             require(0 <= x <= 16384, "anchor code range")
         for x in self.terms:
-            require(x < 272 or 32768 <= x < 32768 + self.scalar_count or x == 65535, "term code range")
+            require(x < CATALOG_SIZE or 32768 <= x < 32768 + self.scalar_count or x == 65535, "term code range")
         self.max_depth = int(m["maximum_depth"])
         self.fuel = int(m["fuel"])
         require(self.fuel == self.max_depth + 1, "fuel must be maximum depth + 1")
@@ -252,23 +255,23 @@ class Emitter:
         L += [f"  improvedLeafBlocksChunk{g:03d}" + ("," if g < self.group_count - 1 else "") for g in range(self.group_count)]
         L += ["]", "", "def improvedTopologyStream : CursorStream AffineTreeToken :=",
               "  blockedTopologyStream improvedTokenCount improvedTopologyBlockSize improvedTopologyBlocks", "",
-              f"def improvedPayloadStream : CursorStream (AffineLeafPayload (MacroScalarLeaf 272 {t.scalar_count})) :=",
+              f"def improvedPayloadStream : CursorStream (AffineLeafPayload (MacroScalarLeaf {CATALOG_SIZE} {t.scalar_count})) :=",
               "  groupedLeafStream improvedLeafCount improvedLeafBlockGroups", "",
               f"def improvedRootBox : GapBox := initialGapBox {LIMIT}", "", f"end {self.mp}", "end", ""]
         return "\n".join(L)
 
     def scalar_data(self) -> str:
         t = self.tree
-        L = ["import Zeta23.ThmD.Sextuple.A1275.Catalog", "", f"namespace {self.mp}", "",
+        L = [f"import {CATALOG_MODULE}", "", f"namespace {self.mp}", "",
              "open Zeta23.ThmD.Sextuple", "open RatInterval", "", "set_option maxRecDepth 1000000",
              "set_option maxHeartbeats 0", ""]
         piece_lists = []
         for i, c in enumerate(t.scalars):
             segs = c["segments"]
-            require(segs and all(0 <= s["piece_index"] < 272 for s in segs), f"scalar {i}: segments")
+            require(segs and all(0 <= s["piece_index"] < CATALOG_SIZE for s in segs), f"scalar {i}: segments")
             lo, hi, a = q(c["lo"]), q(c["hi"]), q(c["a"])
             require(lo <= hi and a >= 0, f"scalar {i}: box/a")
-            L.append(f"def improvedScalarCert{i} : MacroScalarCert 272 := {{")
+            L.append(f"def improvedScalarCert{i} : MacroScalarCert {CATALOG_SIZE} := {{")
             L.append(f"  box := ⟨{lean_rat(lo)}, {lean_rat(hi)}⟩")
             L.append(f"  a := {lean_rat(a)}")
             L.append("  segments := [")
@@ -291,18 +294,18 @@ class Emitter:
         # Kernel evaluation of the Boolean check (the `norm_num` route used for the A1275 stable-piece
         # certificates overflows the recursion depth on refinement-piece segments).
         for i in range(t.scalar_count):
-            L.append(f"lemma improvedScalarCert{i}_check : improvedScalarCert{i}.check improvedCatalog = true := by")
+            L.append(f"lemma improvedScalarCert{i}_check : improvedScalarCert{i}.check {CATALOG_NAME} = true := by")
             L.append("  decide +kernel")
         # Two-level table: a Nat-literal `match` compiles to a linear `casesOn` chain, so a flat
         # N-arm table costs O(index) kernel steps per lookup (measured: ~54 ms at index 3300);
         # nesting on (i / 64, i % 64) bounds every lookup by ~117 steps.
         G = 64
-        L += ["", f"def improvedScalarTable (i : Fin {t.scalar_count}) : MacroScalarCert 272 :=",
+        L += ["", f"def improvedScalarTable (i : Fin {t.scalar_count}) : MacroScalarCert {CATALOG_SIZE} :=",
               f"  match i.val / {G}, i.val % {G} with"]
         L += [f"  | {i // G}, {i % G} => improvedScalarCert{i}" for i in range(t.scalar_count)]
         L += [f"  | _, _ => improvedScalarCert0", "",
               f"theorem improvedScalarTable_check (i : Fin {t.scalar_count}) :",
-              "    (improvedScalarTable i).check improvedCatalog = true := by", "  fin_cases i"]
+              f"    (improvedScalarTable i).check {CATALOG_NAME} = true := by", "  fin_cases i"]
         L += [f"  · exact improvedScalarCert{i}_check" for i in range(t.scalar_count)]
         L += ["", "#print axioms improvedScalarTable_check", "", f"end {self.mp}", ""]
         return "\n".join(L)
@@ -338,14 +341,14 @@ def improvedLeafBlockSize : ℕ := {LEAF_PER_BLOCK}
 
 def improvedLeafField (w k : ℕ) : ℕ := (w >>> (1 + 16 * k)) &&& 65535
 
-def improvedDecodeTermRef (code : ℕ) : Option (MacroTermRef 272 {n}) :=
-  if h : code < 272 then some (.piece ⟨code, h⟩)
+def improvedDecodeTermRef (code : ℕ) : Option (MacroTermRef {CATALOG_SIZE} {n}) :=
+  if h : code < {CATALOG_SIZE} then some (.piece ⟨code, h⟩)
   else if code = 65535 then some .zero
   else if h : 32768 ≤ code ∧ code - 32768 < {n} then
     some (.scalar ⟨code - 32768, h.2⟩)
   else none
 
-def improvedLeafTerm (w : ℕ) (p : Fin 15) : MacroTermRef 272 {n} :=
+def improvedLeafTerm (w : ℕ) (p : Fin 15) : MacroTermRef {CATALOG_SIZE} {n} :=
   (improvedDecodeTermRef (improvedLeafField w (5 + p.val))).getD .zero
 
 def improvedLeafTermsValid (w : ℕ) : Bool :=
@@ -356,7 +359,7 @@ def improvedLeafAnchor (w : ℕ) : RelativeAnchor :=
   ⟨fun i => improvedLeafField w i.val⟩
 
 def improvedDecodeLeafWord (w : ℕ) :
-    Option (AffineLeafPayload (MacroScalarLeaf 272 {n})) :=
+    Option (AffineLeafPayload (MacroScalarLeaf {CATALOG_SIZE} {n})) :=
   if w = 0 then some .tail
   else if w % 2 = 1 ∧ w < 2 ^ improvedLeafWordBits ∧
       improvedLeafTermsValid w = true then
@@ -372,7 +375,7 @@ def improvedLeafWordRead (blocks : Array ℕ) (p : ℕ) : Option ℕ :=
 
 /-- Flat payload stream (the audited single-level form). -/
 def improvedPackedLeafStream (leafCount : ℕ) (blocks : Array ℕ) :
-    CursorStream (AffineLeafPayload (MacroScalarLeaf 272 {n})) where
+    CursorStream (AffineLeafPayload (MacroScalarLeaf {CATALOG_SIZE} {n})) where
   length := leafCount
   read := fun p =>
     match improvedLeafWordRead blocks p with
@@ -409,7 +412,7 @@ def groupedLeafWordRead (groups : Array (Array ℕ)) (p : ℕ) : Option ℕ :=
       (2 ^ improvedLeafWordBits - 1))
 
 def groupedLeafStream (leafCount : ℕ) (groups : Array (Array ℕ)) :
-    CursorStream (AffineLeafPayload (MacroScalarLeaf 272 {n})) where
+    CursorStream (AffineLeafPayload (MacroScalarLeaf {CATALOG_SIZE} {n})) where
   length := leafCount
   read := fun p =>
     match groupedLeafWordRead groups p with
@@ -417,10 +420,10 @@ def groupedLeafStream (leafCount : ℕ) (groups : Array (Array ℕ)) :
     | some w => improvedDecodeLeafWord w
 
 def improvedConcreteLeafCheck :
-    GapBox → AffineLeafPayload (MacroScalarLeaf 272 {n}) → Bool :=
+    GapBox → AffineLeafPayload (MacroScalarLeaf {CATALOG_SIZE} {n}) → Bool :=
   affineLeafCheck improvedA improvedB
     (fastLeafCheckAt 16384 improvedCutoff improvedA improvedB
-      improvedCatalog improvedScalarTable)
+      {CATALOG_NAME} improvedScalarTable)
 
 theorem improvedConcreteLeafCheck_sound :
     ∀ box payload, improvedConcreteLeafCheck box payload = true →
@@ -428,7 +431,7 @@ theorem improvedConcreteLeafCheck_sound :
   affineLeafCheck_sound
     (fastLeafCheckAt_sound (by norm_num [improvedB])
       (by norm_num [improvedA, improvedB, improvedCutoff])
-      improvedCatalog_check improvedScalarTable_check)
+      {CATALOG_NAME}_check improvedScalarTable_check)
 
 /-- A chain of midpoint halvings from a root box (head = deepest halving). -/
 def improvedPathBox (root : GapBox) : List (Bool × Fin 5) → GapBox
@@ -1107,10 +1110,16 @@ def main() -> int:
     ap.add_argument("--ns", required=True, help="namespace tag, e.g. A1290")
     ap.add_argument("--repo", type=Path, required=True, help="output root (repository or scratch)")
     ap.add_argument("--chunk-width", type=int, default=4)
+    ap.add_argument("--limit", type=int, default=59, help="root-box limit (A <= B*limit; catalog must cover [0, A/B])")
+    ap.add_argument("--catalog-module", default="Zeta23.ThmD.Sextuple.A1275.Catalog")
+    ap.add_argument("--catalog-size", type=int, default=272)
+    ap.add_argument("--catalog-name", default="improvedCatalog")
     ap.add_argument("--report", type=Path, default=None)
     ap.add_argument("--validate-a1275", type=Path, default=None,
                     help="repository root holding the committed A1275 target and its bounded plan; diff against it")
     a = ap.parse_args()
+    global LIMIT, CATALOG_MODULE, CATALOG_SIZE, CATALOG_NAME
+    LIMIT, CATALOG_MODULE, CATALOG_SIZE, CATALOG_NAME = a.limit, a.catalog_module, a.catalog_size, a.catalog_name
     tree = Tree(a.tree_dir)
     root, order = build_tree(tree)
     chunks, nodes = partition(root, order)
@@ -1186,7 +1195,7 @@ def main() -> int:
         theirs = (R / rel).read_text()
         mine = files[rel]
         def certs(s):
-            return re.findall(r"def improvedScalarCert\d+ : MacroScalarCert 272 := \{.*?\n\}", s, re.S)
+            return re.findall(r"def improvedScalarCert\d+ : MacroScalarCert {CATALOG_SIZE} := \{.*?\n\}", s, re.S)
         def checks(s):
             return re.findall(r"lemma improvedScalarCert\d+_check.*?\]\n", s, re.S)
         if certs(mine) != certs(theirs):

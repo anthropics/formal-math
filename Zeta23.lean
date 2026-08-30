@@ -17,6 +17,7 @@ import Zeta23.ThmD.LineDecimal
 import Zeta23.ThmD.Sextuple.LineDecimal
 import Zeta23.ThmD.Sextuple.A1275.LineDecimal
 import Zeta23.ThmD.Sextuple.A1285.LineDecimal
+import Zeta23.ThmD.Sextuple.A1290.LineDecimal
 import Zeta23.ThmD.LineConditional
 import Zeta23.ThmD.UnionConditional
 import Zeta23.ThmE.Mult

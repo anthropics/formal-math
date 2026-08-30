@@ -291,8 +291,8 @@ topics, the `Zeta23/ThmD/Sextuple/` development with its `A1275`, `A1285`, `A129
 `README.md`. No statement, definition or proof bytes of this fork's modules change in the merge; the amendments below
 were written before the layout change and their path mentions have been rewritten to the template positions. The seven
 `Zeta23/LinAlg/*.lean` authorship-header edits of the upstream revision change those files' source hashes, so every
-module downstream of them — the whole library including the three certificate chains — is rebuilt from source after the
-merge; the result of that rebuild is recorded in the note that follows the amendments.
+module downstream of them is reported out of date by `lake build --no-build`; the actual rebuild after the merge is recorded
+in the note that follows the amendments.
 
 ## Amendment: the simple-or-on-line endpoint
 
@@ -622,3 +622,21 @@ Checks run at this commit (logs under `certificates/sextuple/logs/`):
   cannot help (`dA*/dB = S(p*) ≈ 44.8 < 46.7`). The v3 catalog's ceiling is `A* ≤ 0.0129616`. Externally, `A = 1293/100000` (limit 60)
   closes with an independently replayed 10,003,455-token tree (5,302 scalar certificates; report kept, streams not committed);
   `A = 0.01295` reaches a 12,000,000-node cap with 37 boxes pending; `A = 0.01298` exceeds the depth limit.
+
+## Revision note: checks after the merge into the `formal-math` layout
+
+Run from `zeta23/` on the merged sources (logs under `certificates/sextuple/logs/`):
+
+* `lake build` (default targets `Zeta23`, `Challenge`, `Solution`; nine builders): 109,536 jobs, success in about a minute
+  (`formal-math-layout-rebuild.log`). Exactly seven modules were recompiled — the seven `Zeta23/LinAlg/*.lean` whose
+  comment headers changed upstream (1.8–10 s each) — and everything else, including the 2,969 + 8,953 + 30,153 + 56,924 chunk
+  modules of the four certificate chains, was replayed from the existing build: Lake keys a module's trace on the hashes of
+  the oleans it imports, and comment-only edits produce identical oleans. The only `declaration uses 'sorry'` warnings are the
+  deliberate ones of the trusted `Challenge*` files.
+* `certificates/sextuple/tools/run_audits.sh` (`audit-report.txt`): the baseline, `A1275`, `A1285` and `A1290` axiom audits all exit 0
+  with no `sorryAx`; forbidden-construct scan clean over 100,498 files.
+* `lake env lean scripts/PrintAxioms.lean` and `scripts/PrintAxioms/{XiPrime,Union,LineDecimal,Sextuple,SextupleA1275,SextupleA1285,SextupleA1290}.lean`
+  (`printaxioms_*.layout.log`): 17 + 6 + 4 + 11 + 14 + 11 + 11 + 11 = 85 declarations, every one on exactly
+  `[propext, Classical.choice, Quot.sound]`.
+* `ruby scripts/validate-formalization.rb`: `formalization.yaml` parses and contains no template values.
+* Not run: the CI workflows and `scripts/verify-comparator.sh` (the pinned Comparator/NanoDa tools are not installed on this machine).

@@ -1,26 +1,9 @@
-# audit 2026-08-30T04:20:45Z
+# audit 2026-08-30T14:44:40Z
 ## git
-1d0529afe19cc13be3378b88e4c06e48c92f81f0
+e25f2f93659062c9c072a9e3dd7b5044a18581cb
 ## feat/a1275-sextuple-6727837118...fork/feat/a1275-sextuple-6727837118
- M README.md
- M Zeta23.lean
- M certificates/sextuple/README.md
  M certificates/sextuple/logs/audit-report.txt
- M certificates/sextuple/tools/forbidden_scan.sh
- M certificates/sextuple/tools/gen_sextuple_target_lean.py
- M certificates/sextuple/tools/run_audits.sh
- M comparator/README.md
-?? Zeta23/ThmD/Sextuple/A1290/
-?? certificates/sextuple/a1290/
-?? certificates/sextuple/logs/a1290-assembly-build.log
-?? certificates/sextuple/logs/a1290-axiom-audit.log
-?? certificates/sextuple/logs/a1290-catalog-build.log
-?? certificates/sextuple/logs/a1290-chunks-driver.log
-?? certificates/sextuple/logs/a1290-chunks-driver.stdout
-?? certificates/sextuple/logs/a1290-chunks-state.json
-?? certificates/sextuple/logs/a1290-finish.log
-?? certificates/sextuple/logs/a1290-foundation.log
-?? certificates/sextuple/logs/a1290-refinement2-build.log
+?? certificates/sextuple/logs/formal-math-layout-rebuild.log
 ## axioms (lake env lean AxiomAudit.lean)
 'Zeta23.ThmD.Sextuple.Certificate.sextuple_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Zeta23.ThmD.Sextuple.MacroPrototype.treeCheck' depends on axioms: [propext, Classical.choice, Quot.sound]

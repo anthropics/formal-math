@@ -1,0 +1,41 @@
+{
+  "artifact_source": "ImprovedAssembly.lean",
+  "artifact_source_sha256": "322936ef431ae96201d11a4e1d63fb7f720745fdcf2c28ae8dd707837a286a5b",
+  "certificate_status": "Neither concrete affine certificate is supplied; each remains an explicit adapter hypothesis.",
+  "direct_build_log_sha256": "67ceee8f08259b3b94e3893d0b653720589e1c192b54f9261f86ca215659ddf3",
+  "directed_comparators": {
+    "A_51_over_4000": {
+      "A": "51/4000",
+      "B": "B6 = 1094977/5000000000",
+      "HD_lower": "672500703679/1000000000000",
+      "feedback_lower": "201406213933795020896911983481/299362500000000000000000000000",
+      "pi_upper": "314159265358979323847/100000000000000000000",
+      "positive_margin": "10067520896911983481/299362500000000000000000000000",
+      "target": "6727837118/10000000000"
+    },
+    "A_63_over_5000": {
+      "A": "63/5000",
+      "B": "1094977/5000000000",
+      "HD_lower": "672500703679/1000000000000",
+      "feedback_lower": "201406213933795020896911983481/299370000000000000000000000000",
+      "pi_upper": "314159265358979323847/100000000000000000000",
+      "positive_margin": "13579020896911983481/299370000000000000000000000000",
+      "target": "6727668568/10000000000"
+    }
+  },
+  "forbidden_scan_log_sha256": "6c07fb0e8eade0cd130eec7b73c418f592675471fb684a0ca6e22245bc6072e3",
+  "imported_sources": {
+    "Zeta23/ThmD/Sextuple/Final.lean": "bf127fc2c11e52a2c211a07b1bc256cbacc94bb2f67fecdd4d22584b4b52dcd1",
+    "Zeta23/ThmD/Sextuple/Ledger.lean": "b87b71ff4b52213b9626ab4bb634dc5d919da40e8e3a9a4417707287078a4fe4"
+  },
+  "lean_binary": "/Users/mdumitrean/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/bin/lean",
+  "lean_githash": "d8b18978322de05a8f3dba51ef03cf5461676c17",
+  "lean_version": "4.33.0-rc2",
+  "native_olean": "ImprovedAssembly.olean",
+  "native_olean_sha256": "adac3cc40a515442e9ab2b352f573195b4fe15297bbd394f01d45bf40e968f98",
+  "public_endpoints_axiom_audited": 24,
+  "schema": 2,
+  "zeta23_git_clean": true,
+  "zeta23_git_head": "5e9617d84ece3aeecdf983a8e7e9bfa50f413e5a",
+  "zeta23_root": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean"
+}

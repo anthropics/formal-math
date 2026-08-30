@@ -1,0 +1,361 @@
+✔ [8701/8726] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks000 (6.8s)
+✔ [8702/8726] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks001 (6.7s)
+✔ [8703/8726] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks002 (6.8s)
+✔ [8704/8726] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks003 (6.8s)
+✔ [8705/8726] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks004 (6.8s)
+✔ [8707/8727] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks005 (6.7s)
+ℹ [8709/8732] Replayed Zeta23.ThmD.Sextuple.Macro.EnvelopeData
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:561:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroEnvelope_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:563:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroPiece0_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:564:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroPiece3_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:565:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroPieces_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8710/8732] Replayed Zeta23.ThmD.Sextuple.A1275.RefinementData
+info: Zeta23/ThmD/Sextuple/A1275/RefinementData.lean:2177:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.refinementCatalog_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8715/8732] Replayed Zeta23.ThmD.Sextuple.Macro.StableCatalog
+info: Zeta23/ThmD/Sextuple/Macro/StableCatalog.lean:128:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.stableMacroTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [8716/8732] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks006 (6.7s)
+✔ [8717/8732] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks007 (6.7s)
+✔ [8718/8732] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks008 (6.7s)
+✔ [8719/8732] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks009 (6.7s)
+✔ [8720/8732] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks010 (6.7s)
+✔ [8721/8733] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks011 (6.6s)
+ℹ [8722/8737] Replayed Zeta23.ThmD.Sextuple.Macro.ParametricAdapter
+info: Zeta23/ThmD/Sextuple/Macro/ParametricAdapter.lean:157:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.fastLeafCheckAt_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/ParametricAdapter.lean:158:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.affineTree_global_at' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8723/8737] Replayed Zeta23.ThmD.Sextuple.A1275.Catalog
+info: Zeta23/ThmD/Sextuple/A1275/Catalog.lean:460:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.refinementTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Catalog.lean:461:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.improvedCatalog_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [8724/8737] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks012 (6.7s)
+✔ [8725/8737] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks013 (6.7s)
+✔ [8726/8737] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks014 (6.7s)
+✔ [8727/8737] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks015 (6.7s)
+✔ [8728/8737] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks016 (6.7s)
+✔ [8729/8738] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks017 (6.6s)
+✔ [8730/8739] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks018 (6.9s)
+✔ [8731/8739] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks020 (6.9s)
+✔ [8732/8742] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks019 (6.9s)
+✔ [8733/8742] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks021 (6.9s)
+✔ [8734/8743] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks022 (6.9s)
+✔ [8735/8747] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks023 (6.9s)
+✔ [8736/8747] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks024 (6.9s)
+✔ [8737/8747] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks025 (6.9s)
+✔ [8738/8747] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks026 (6.9s)
+✔ [8739/8748] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks027 (6.8s)
+✔ [8740/8748] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks028 (6.9s)
+✔ [8741/8748] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks029 (6.8s)
+✔ [8742/8753] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks030 (6.8s)
+✔ [8743/8753] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks031 (6.8s)
+✔ [8744/8753] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks032 (6.8s)
+✔ [8745/8754] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks033 (6.9s)
+✔ [8746/8754] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks034 (6.9s)
+✔ [8747/8758] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks035 (6.9s)
+✔ [8748/8758] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks036 (6.9s)
+✔ [8749/8758] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks037 (6.8s)
+✔ [8750/8763] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks038 (6.9s)
+✔ [8751/8763] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks039 (6.8s)
+✔ [8752/8763] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks040 (6.8s)
+✔ [8753/8763] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks041 (6.8s)
+✔ [8754/8763] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks042 (6.8s)
+✔ [8755/8763] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks043 (6.7s)
+✔ [8756/8763] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks044 (6.7s)
+✔ [8757/8768] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks045 (6.7s)
+✔ [8758/8768] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks046 (6.7s)
+✔ [8759/8768] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks047 (6.7s)
+✔ [8760/8773] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks048 (6.7s)
+✔ [8761/8773] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks049 (6.7s)
+✔ [8762/8773] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks050 (6.7s)
+✔ [8763/8773] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks051 (6.7s)
+✔ [8764/8773] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks052 (6.7s)
+✔ [8765/8778] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks053 (6.7s)
+✔ [8766/8778] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks054 (6.7s)
+✔ [8767/8778] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks055 (6.7s)
+✔ [8768/8778] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks056 (6.7s)
+✔ [8769/8778] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks057 (6.7s)
+✔ [8770/8778] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks058 (6.7s)
+✔ [8771/8783] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks059 (6.8s)
+✔ [8772/8783] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks060 (6.8s)
+✔ [8773/8783] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks061 (6.7s)
+✔ [8774/8783] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks062 (6.7s)
+✔ [8775/8784] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks067 (10s)
+✔ [8776/8786] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks063 (10s)
+✔ [8777/8786] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks064 (10s)
+✔ [8778/8787] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks066 (10s)
+✔ [8779/8788] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks065 (10s)
+✔ [8780/8789] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks069 (15s)
+✔ [8781/8792] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks068 (16s)
+✔ [8782/8792] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks070 (16s)
+✔ [8783/8792] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks071 (15s)
+✔ [8784/8793] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks072 (16s)
+✔ [8785/8794] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks073 (22s)
+✔ [8786/8795] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks075 (22s)
+✔ [8787/8796] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks076 (23s)
+✔ [8788/8797] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks074 (24s)
+✔ [8789/8798] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks077 (23s)
+✔ [8790/8799] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks078 (28s)
+✔ [8791/8800] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks079 (30s)
+✔ [8792/8801] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks081 (29s)
+✔ [8793/8802] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks080 (31s)
+✔ [8794/8803] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks082 (31s)
+✔ [8795/8804] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks083 (27s)
+✔ [8796/8805] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks084 (25s)
+✔ [8797/8806] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks086 (26s)
+✔ [8798/8807] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks085 (28s)
+✔ [8799/8808] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks087 (26s)
+✔ [8800/8809] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks088 (22s)
+✔ [8801/8810] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks089 (22s)
+✔ [8802/8811] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks092 (19s)
+✔ [8803/8812] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks090 (20s)
+✔ [8804/8813] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks091 (20s)
+✔ [8805/8814] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks094 (15s)
+✔ [8806/8815] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks093 (15s)
+✔ [8807/8816] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks095 (16s)
+✔ [8808/8817] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks097 (15s)
+✔ [8809/8817] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks096 (17s)
+✔ [8810/8819] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks098 (19s)
+✔ [8811/8820] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks099 (19s)
+✔ [8812/8821] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks100 (18s)
+✔ [8813/8822] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks101 (18s)
+✔ [8814/8823] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks102 (18s)
+✔ [8815/8824] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks103 (17s)
+✔ [8816/8825] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks104 (17s)
+✔ [8817/8826] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks105 (17s)
+✔ [8818/8827] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks106 (17s)
+✔ [8819/8828] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks107 (17s)
+✔ [8820/8830] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks108 (15s)
+✔ [8821/8830] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks109 (15s)
+✔ [8822/8830] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks110 (15s)
+✔ [8823/8832] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks112 (14s)
+✔ [8824/8833] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks111 (15s)
+✔ [8825/8834] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks113 (16s)
+✔ [8826/8834] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks114 (16s)
+✔ [8827/8836] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks116 (15s)
+✔ [8828/8836] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks115 (15s)
+✔ [8829/8838] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks117 (15s)
+✔ [8830/8839] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks118 (13s)
+✔ [8831/8840] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks119 (13s)
+✔ [8832/8841] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks120 (12s)
+✔ [8833/8842] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks121 (12s)
+✔ [8834/8843] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks122 (13s)
+✔ [8835/8845] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks123 (12s)
+✔ [8836/8845] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks124 (12s)
+✔ [8837/8846] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks125 (12s)
+✔ [8838/8847] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks126 (11s)
+✔ [8839/8848] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks127 (11s)
+✔ [8840/8849] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks129 (10s)
+✔ [8841/8850] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks128 (10s)
+✔ [8842/8851] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks130 (10s)
+✔ [8843/8852] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks132 (10s)
+✔ [8844/8852] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks131 (10s)
+✔ [8845/8854] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks134 (9.3s)
+✔ [8846/8990] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks133 (9.4s)
+✔ [8847/8990] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks135 (9.2s)
+⚠ [8862/8990] Replayed Zeta23.ZeroSide
+warning: Zeta23/ZeroSide.lean:701:4: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ZeroSide.lean:706:66: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ZeroSide.lean:712:52: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ZeroSide.lean:755:53: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8863/8990] Replayed Zeta23.ZeroSide.RankTraceMult
+warning: Zeta23/ZeroSide/RankTraceMult.lean:49:32: Variable name `ht0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:49:60: Variable name `hx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:56:30: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:56:43: Variable name `hx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:81:32: Variable name `hp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:81:58: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:164:20: This simp argument is unused:
+  Matrix.mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:359:28: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8869/8990] Replayed Zeta23.Assembly
+warning: Zeta23/Assembly.lean:885:47: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/Assembly.lean:958:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/Assembly.lean:962:90: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8874/8990] Replayed Zeta23.Tail
+warning: Zeta23/Tail.lean:290:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/Tail.lean:399:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8882/8990] Replayed Zeta23.Statement
+warning: Zeta23/Statement.lean:148:30: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8883/8990] Replayed Zeta23.Statement.Seam
+warning: Zeta23/Statement/Seam.lean:59:13: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+⚠ [8884/8990] Replayed Zeta23.ZetaReflect
+warning: Zeta23/ZetaReflect.lean:91:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8914/8990] Replayed Zeta23.PrimeSideA.EndsE1
+warning: Zeta23/PrimeSideA/EndsE1.lean:326:41: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [8919/8990] Replayed Zeta23.PrimeSideA
+info: Zeta23/PrimeSideA.lean:372:0: lem_ends : ∀ (cϱ lam : ℝ),
+  GammaFacts →
+    ChebyshevMertens →
+      0 < lam ∧ lam ≤ 1 →
+        ∃ C, EventuallyAtCore cϱ lam fun p F ↦ |trGt2A p F - MtotalA p F| ≤ C * (p.L * p.l * log p.l * (p.l ^ 2 + p.X))
+info: Zeta23/PrimeSideA.lean:398:0: prop_mumu : ∀ (cϱ lam : ℝ),
+  GammaFacts →
+    ChebyshevMertens →
+      0 < lam ∧ lam ≤ 1 →
+        ∃ C,
+          EventuallyAtCore cϱ lam fun p F ↦
+            |Mform F.Phi p.T mu mu - 2 * π * F.b * p.L * ∫ (τ : ℝ) in p.T..2 * p.T, mu τ ^ 2| ≤ C * (p.l ^ 2 * log p.L)
+info: Zeta23/PrimeSideA.lean:404:0: prop_cross_muP : ∀ (cϱ lam : ℝ),
+  GammaFacts →
+    ChebyshevMertens →
+      0 < lam ∧ lam ≤ 1 → ∃ C, EventuallyAtCore cϱ lam fun p F ↦ |Mform F.Phi p.T mu (PX p.X)| ≤ C * (p.l * √p.X)
+⚠ [8926/8990] Replayed Zeta23.MV.Spacing
+warning: Zeta23/MV/Spacing.lean:58:0: automatically included section variable(s) unused in theorem `Zeta23.MV.Adm.itv_disjoint`:
+  [Fintype ι]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Zeta23/MV/Spacing.lean:153:8: automatically included section variable(s) unused in theorem `_private.Zeta23.MV.Spacing.0.Zeta23.MV.Adm.mem_window`:
+  [Fintype ι]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+ℹ [8935/8990] Replayed Zeta23.GammaFacts.Mu
+info: Zeta23/GammaFacts/Mu.lean:137:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [8937/8990] Replayed Zeta23.GammaFacts.StirlingVert
+info: Zeta23/GammaFacts/StirlingVert.lean:452:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [8941/8990] Replayed Zeta23.FromPNTPlus.StrongPNTPrefix
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:61:71: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:202:9: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:343:10: `Set.notMem_setOf_iff` has been deprecated: Use `Set.notMem_ofPred_iff` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:368:48: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:390:10: `Set.notMem_setOf_iff` has been deprecated: Use `Set.notMem_ofPred_iff` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:432:48: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8949/8990] Replayed Zeta23.FromPNTPlus.ZetaBounds
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:859:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:952:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1092:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1099:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1105:56: `Set.preimage_setOf_eq` has been deprecated: Use `Set.preimage_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1115:56: `Set.preimage_setOf_eq` has been deprecated: Use `Set.preimage_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1119:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1135:54: `Set.preimage_setOf_eq` has been deprecated: Use `Set.preimage_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1157:22: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1169:15: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1169:59: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1185:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1835:19: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1837:45: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1840:28: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1844:28: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1900:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1906:20: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:2091:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:2884:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:2940:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8951/8990] Replayed Zeta23.RvM.Halving
+warning: Zeta23/RvM/Halving.lean:52:55: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/RvM/Halving.lean:62:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/RvM/Halving.lean:70:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8957/8990] Replayed Zeta23.RvM.ReZeroCount
+warning: Zeta23/RvM/ReZeroCount.lean:272:15: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+⚠ [8962/8990] Replayed Zeta23.RvM.NcountWindow
+warning: Zeta23/RvM/NcountWindow.lean:23:22: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8965/8990] Replayed Zeta23.WeilEF.ZeroSummability
+warning: Zeta23/WeilEF/ZeroSummability.lean:189:4: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8968/8990] Replayed Zeta23.WeilEF.Landau
+warning: Zeta23/WeilEF/Landau.lean:341:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/WeilEF/Landau.lean:437:64: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8970/8990] Replayed Zeta23.WeilEF.Contour
+warning: Zeta23/WeilEF/Contour.lean:69:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8976/8990] Replayed Zeta23.ThmD.WindowCore
+warning: Zeta23/ThmD/WindowCore.lean:388:22: Variable name `u` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _u
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [8979/9022] Replayed Zeta23.WeilEF.Main
+info: Zeta23/WeilEF/Main.lean:38:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [8983/9022] Replayed Zeta23.ThmD.Window
+warning: Zeta23/ThmD/Window.lean:132:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8987/9022] Replayed Zeta23.ThmD.PP
+warning: Zeta23/ThmD/PP.lean:270:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ThmD/PP.lean:276:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8994/9022] Replayed Zeta23.Assembly.SeamMult
+warning: Zeta23/Assembly/SeamMult.lean:26:0: automatically included section variable(s) unused in theorem `Zeta23.Assembly.ctr_sub_frobSq_perturb`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [9014/9022] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks136 (9.2s)
+✔ [9015/9022] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks137 (8.8s)
+✔ [9016/9022] Built Zeta23.ThmD.Sextuple.A1285.WordData.LeafBlocks138 (3.6s)
+✔ [9017/9022] Built Zeta23.ThmD.Sextuple.A1285.Assembly (5.9s)
+ℹ [9018/9022] Built Zeta23.ThmD.Sextuple.A1285.ScalarData (1701s)
+info: Zeta23/ThmD/Sextuple/A1285/ScalarData.lean:51368:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedScalarTable_check' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [9019/9022] Built Zeta23.ThmD.Sextuple.A1285.TreeReader (3.0s)
+info: Zeta23/ThmD/Sextuple/A1285/TreeReader.lean:126:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedConcreteLeafCheck_sound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+✖ [9020/9022] Building Zeta23.ThmD.Sextuple.A1285.TreeWords (8.9s)
+trace: .> LEAN_PATH=/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/Cli/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/build/lib/lean /Users/mdumitrean/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/bin/lean /Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/Zeta23/ThmD/Sextuple/A1285/TreeWords.lean -o /Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/build/lib/lean/Zeta23/ThmD/Sextuple/A1285/TreeWords.olean -i /Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/build/lib/lean/Zeta23/ThmD/Sextuple/A1285/TreeWords.ilean -c /Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/build/ir/Zeta23/ThmD/Sextuple/A1285/TreeWords.c --setup /Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/build/ir/Zeta23/ThmD/Sextuple/A1285/TreeWords.setup.json --json
+error: Zeta23/ThmD/Sextuple/A1285/TreeWords.lean:587:2: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+error: Zeta23/ThmD/Sextuple/A1285/TreeWords.lean:942:69: Unknown identifier `improvedTopologyBlocks`
+error: Lean exited with code 1
+Some required targets logged failures:
+- Zeta23.ThmD.Sextuple.A1285.TreeWords
+error: build failed

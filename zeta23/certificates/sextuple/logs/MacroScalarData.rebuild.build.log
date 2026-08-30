@@ -1,0 +1,22 @@
+'Zeta23.ThmD.Sextuple.MacroPrototype.stableMacroTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.scalarCertTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+real 108.22
+user 1055.04
+sys 29.78
+         12924289024  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              940139  page reclaims
+                 152  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  47  voluntary context switches
+             3209639  involuntary context switches
+          3038753303  instructions retired
+          1281301475  cycles elapsed
+           137125488  peak memory footprint

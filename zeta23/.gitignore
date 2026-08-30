@@ -1,0 +1,5 @@
+/.cache/
+/.lake/
+/docbuild/.lake/
+*.olean
+*.ilean

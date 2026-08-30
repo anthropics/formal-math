@@ -1,0 +1,259 @@
+name: Lean projects
+
+# Per-project CI for this multi-project repository.
+#
+# A "project" is a top-level directory containing lakefile.toml or lakefile.lean. On a pull request or a
+# push to main only the projects with changed files are verified. Changes outside the project directories
+# (CI configuration under .github/, README.md, LICENSE, .gitignore, ...) do not trigger project
+# verification: such a run selects no project and `verify` is skipped. To re-verify everything, start the
+# workflow manually (workflow_dispatch) with projects = "all" (the default), or name the projects to run.
+# For each selected project the `verify` job
+#   1. installs elan (the toolchain comes from the project's own lean-toolchain),
+#   2. fetches the Mathlib cache when the project depends on Mathlib and, on pull requests only, restores
+#      the project's previous .lake/build so that only changed modules are rebuilt (pushes to main and
+#      manual runs build from scratch),
+#   3. runs `lake build` and fails on any `sorry` outside the trusted comparator statement files
+#      (Challenge.lean, Challenge/<Topic>.lean), and
+#   4. applies the Palomar registry's acceptance bar (.github/scripts/comparator-check.sh):
+#      leanprover/comparator, with a toolchain-matched lean4export, the independent nanoda kernel and the
+#      landrun sandbox, at the tool pins of the registry's verifier
+#      (https://github.com/PalomarRegistry/PalomarSubmission/blob/main/.github/workflows/submission.yml),
+#      must accept every comparator configuration the project declares ("Your solution is okay!").
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      projects:
+        description: 'Space-separated project directories to verify, or "all"'
+        default: all
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Tool pins, from PalomarRegistry/PalomarSubmission .github/workflows/submission.yml (commit e215b18).
+  # lean4export is not pinned here: like the registry, each project uses the lean4export release tag that
+  # matches its lean-toolchain (resolved in the `pins` step below).
+  ELAN_VERSION: v4.2.3
+  ELAN_SHA256: df0b2b3a439961ffcbb3985214365ffe40f49bc871df04dff268c7d8e21ca8b2
+  COMPARATOR_COMMIT: 575674928e239f5bc452aab72d1dd7b0f1326494
+  NANODA_COMMIT: 68d5ca9db226849b41a6fff59d796ff19d0a8840
+  LANDRUN_COMMIT: 811cfff51ceaf3d9843708aa6d22e9b84ccac8b4
+
+jobs:
+  detect:
+    name: detect changed projects
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      projects: ${{ steps.select.outputs.projects }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Select projects
+        id: select
+        shell: bash
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+          PUSH_HEAD: ${{ github.sha }}
+          DISPATCH_PROJECTS: ${{ inputs.projects }}
+        run: |
+          # Projects: top-level directories with a lakefile.
+          projects=()
+          for dir in */; do
+            dir="${dir%/}"
+            if [ -f "$dir/lakefile.toml" ] || [ -f "$dir/lakefile.lean" ]; then
+              projects+=("$dir")
+            fi
+          done
+          echo "projects in repository: ${projects[*]:-(none)}"
+
+          # Selection rule: a project is verified iff one of its files is in the diff (pull request:
+          # base...head; push: before...after). CI configuration changes (.github/) and other files outside
+          # the project directories do not trigger project verification; use workflow_dispatch with
+          # projects = "all" to re-verify everything. When there is no usable `before` commit (first push of
+          # a branch, or a `before` that is no longer in the history) the diff is taken against the merge-base
+          # with main instead; if even that is impossible, nothing is selected (rather than everything) and a
+          # warning points at the manual full run.
+          all=false
+          range=""
+          note=""
+          zero=0000000000000000000000000000000000000000
+          case "$GITHUB_EVENT_NAME" in
+            pull_request) range="$PR_BASE...$PR_HEAD" ;;
+            push)
+              if [ -n "$PUSH_BEFORE" ] && [ "$PUSH_BEFORE" != "$zero" ] \
+                 && git cat-file -e "$PUSH_BEFORE^{commit}" 2>/dev/null; then
+                range="$PUSH_BEFORE...$PUSH_HEAD"
+              elif git rev-parse --verify -q origin/main >/dev/null; then
+                note="no usable 'before' commit for this push; diffing against the merge-base with main"
+                range="origin/main...$PUSH_HEAD"
+              else
+                note="no usable 'before' commit and no main to diff against; selecting no project (run workflow_dispatch with projects=all to verify everything)"
+              fi ;;
+            *)
+              if [ -z "${DISPATCH_PROJECTS// /}" ] || [ "$DISPATCH_PROJECTS" = "all" ]; then all=true; fi ;;
+          esac
+          [ -z "$note" ] || echo "::warning::$note"
+
+          selected=()
+          if [ -n "$range" ]; then
+            if changed="$(git diff --name-only "$range" --)"; then
+              tops="$(printf '%s\n' "$changed" | cut -d/ -f1 | sort -u)"
+              echo "changed top-level entries in $range: $(tr '\n' ' ' <<<"$tops")"
+              for p in "${projects[@]}"; do
+                if grep -qxF "$p" <<<"$tops"; then selected+=("$p"); fi
+              done
+            else
+              echo "::warning::could not diff $range; selecting no project (run workflow_dispatch with projects=all to verify everything)"
+            fi
+          elif $all; then
+            selected=("${projects[@]}")
+          elif [ "$GITHUB_EVENT_NAME" = workflow_dispatch ]; then
+            # Manual run with an explicit list: keep the names that are projects.
+            for want in $DISPATCH_PROJECTS; do
+              for p in "${projects[@]}"; do
+                if [ "$want" = "$p" ]; then selected+=("$p"); fi
+              done
+            done
+          fi
+
+          if [ "${#selected[@]}" -eq 0 ]; then
+            json='[]'
+          else
+            json="$(printf '%s\n' "${selected[@]}" | jq -R . | jq -sc .)"
+          fi
+          echo "selected projects: $json"
+          echo "projects=$json" >> "$GITHUB_OUTPUT"
+
+  verify:
+    name: verify (${{ matrix.project }})
+    needs: detect
+    if: needs.detect.outputs.projects != '[]' && needs.detect.outputs.projects != ''
+    # Set repository/org variable LEAN_CI_RUNNER to a GitHub larger-runner label (e.g. ubuntu-latest-16-cores)
+    # to speed up builds; falls back to the standard hosted runner. Lake uses every core of the runner by
+    # default, so a larger runner needs no other change.
+    runs-on: ${{ vars.LEAN_CI_RUNNER || 'ubuntu-latest' }}
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        project: ${{ fromJSON(needs.detect.outputs.projects) }}
+    defaults:
+      run:
+        shell: bash
+        working-directory: ${{ matrix.project }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Free disk space on the hosted runner
+        working-directory: .
+        run: |
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc /opt/hostedtoolcache/CodeQL || true
+          df -h /
+
+      - name: Read toolchain and resolve the matching lean4export release
+        id: pins
+        run: |
+          toolchain="$(tr -d '[:space:]' < lean-toolchain)"
+          tag="v${toolchain#*:v}"
+          # Palomar's rule: lean4export at the release tag named after the project's Lean version.
+          refs="$(git ls-remote https://github.com/leanprover/lean4export "refs/tags/$tag" "refs/tags/$tag^{}")"
+          commit="$(awk -v t="refs/tags/$tag^{}" '$2==t {print $1}' <<<"$refs")"
+          [ -n "$commit" ] || commit="$(awk -v t="refs/tags/$tag" '$2==t {print $1}' <<<"$refs")"
+          if [ -z "$commit" ]; then
+            echo "::error::leanprover/lean4export has no release $tag for toolchain $toolchain"
+            exit 1
+          fi
+          echo "toolchain=$toolchain lean4export=$tag@$commit"
+          echo "toolchain=$toolchain" >> "$GITHUB_OUTPUT"
+          echo "lean4export_commit=$commit" >> "$GITHUB_OUTPUT"
+
+      - name: Cache elan toolchains
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.elan
+          key: elan-${{ env.ELAN_VERSION }}-${{ steps.pins.outputs.toolchain }}-comparator-${{ env.COMPARATOR_COMMIT }}
+
+      - name: Install elan
+        run: |
+          if [ ! -x "$HOME/.elan/bin/elan" ]; then
+            curl --fail --location --proto '=https' --tlsv1.2 --output "$RUNNER_TEMP/elan.tar.gz" \
+              "https://github.com/leanprover/elan/releases/download/${ELAN_VERSION}/elan-x86_64-unknown-linux-gnu.tar.gz"
+            echo "${ELAN_SHA256}  $RUNNER_TEMP/elan.tar.gz" | sha256sum --check
+            mkdir -p "$RUNNER_TEMP/elan"
+            tar -xzf "$RUNNER_TEMP/elan.tar.gz" -C "$RUNNER_TEMP/elan"
+            "$RUNNER_TEMP/elan/elan-init" -y --no-modify-path --default-toolchain none
+          fi
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Fetch the Mathlib cache
+        run: |
+          lean --version
+          if grep -q '"name": *"mathlib"' lake-manifest.json 2>/dev/null; then
+            lake exe cache get
+          else
+            echo "no Mathlib dependency in lake-manifest.json; nothing to fetch"
+          fi
+
+      # Iterative PR testing: restore the most recent Lake build of this project for the same toolchain,
+      # manifest and lakefile, so `lake build` re-elaborates only the modules that changed, and save the
+      # result under this commit. Pull requests only: pushes to main and manual (workflow_dispatch) runs
+      # neither restore nor save, so the result of record is always a build from scratch. Only .lake/build
+      # is cached; .lake/packages (Mathlib) comes from `lake exe cache get` above.
+      - name: Restore the previous Lake build (pull requests only)
+        if: github.event_name == 'pull_request'
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ matrix.project }}/.lake/build
+          key: lakebuild-${{ runner.os }}-${{ matrix.project }}-${{ hashFiles(format('{0}/lean-toolchain', matrix.project), format('{0}/lake-manifest.json', matrix.project), format('{0}/lakefile.*', matrix.project)) }}-${{ github.sha }}
+          restore-keys: |
+            lakebuild-${{ runner.os }}-${{ matrix.project }}-${{ hashFiles(format('{0}/lean-toolchain', matrix.project), format('{0}/lake-manifest.json', matrix.project), format('{0}/lakefile.*', matrix.project)) }}-
+
+      - name: lake build (no sorry outside the comparator challenge files)
+        run: |
+          lake build 2>&1 | tee "$RUNNER_TEMP/lake-build.log"
+          # The trusted comparator statement files (Challenge.lean, Challenge/<Topic>.lean) carry placeholder
+          # proofs by design; a sorry reported for any other file fails the job.
+          if grep -F "declaration uses 'sorry'" "$RUNNER_TEMP/lake-build.log" \
+               | grep -v -E '(^|[ /])Challenge(/[^ :]*)?\.lean:'; then
+            echo "::error::sorry outside the comparator challenge files"
+            exit 1
+          fi
+
+      - name: Cache comparator tools
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/lean-ci-tools
+          key: comparator-${{ env.COMPARATOR_COMMIT }}-lean4export-${{ steps.pins.outputs.lean4export_commit }}-nanoda-${{ env.NANODA_COMMIT }}-landrun-${{ env.LANDRUN_COMMIT }}
+
+      - name: Palomar bar (comparator accepts every declared configuration)
+        env:
+          LEAN4EXPORT_COMMIT: ${{ steps.pins.outputs.lean4export_commit }}
+          LOG_DIR: ${{ runner.temp }}/comparator-logs
+        run: bash ../.github/scripts/comparator-check.sh
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: logs-${{ matrix.project }}
+          path: |
+            ${{ runner.temp }}/lake-build.log
+            ${{ runner.temp }}/comparator-logs/
+          if-no-files-found: ignore
+          retention-days: 30

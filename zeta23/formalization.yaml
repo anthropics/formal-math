@@ -1,0 +1,310 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml v0.4 (https://github.com/mathlib-initiative/formalization.yaml), in the shape of
+# the Palomar starter template (https://github.com/PalomarRegistry/PalomarTemplate). Check it with
+# `ruby scripts/validate-formalization.rb`. The Palomar submission is the configuration
+# comparator.json (Challenge.lean / Solution.lean, Theorems A–E); comparator-xiprime.json is an
+# additional topic of the repository and is not submitted.
+version: v0.4
+
+project:
+  name: Zeta23 — more than two thirds of the zeta zeros are simple and on the critical line
+  # The concise public registry abstract (Palomar shows exactly this text).
+  description: >-
+    A complete, sorry-free Lean 4 / Mathlib formalization of the headline theorems of Alpöge–Furman,
+    "More than two thirds of the zeta zeros are simple and on the critical line" (arXiv:2608.13637).
+    Writing N(T) for the number of nontrivial zeros ρ of the Riemann zeta function with 0 < Im ρ ≤ T,
+    counted with multiplicity, the formalization proves unconditionally that, as T → ∞, at least 2/3
+    of them are simple and lie on the critical line Re ρ = 1/2 and at least 5/6 are distinct (liminf
+    bounds on the ratios), and that with the optimal Montgomery–Taylor window the constants improve
+    to 2 − 1/c₁* = 0.67250… and (3 − 1/c₁*)/2 = 0.83625…, where c₁* = √2·tan ϑ/(1 + ϑ·tan ϑ),
+    ϑ = 1/√2. The same bounds are proved on dyadic windows T < Im ρ ≤ 2T, for the companion
+    on-the-line counts, and verbatim for the zeros of L(s,χ) for every primitive Dirichlet character
+    χ modulo q > 1. The statements are made against Mathlib's `riemannZeta` and
+    `DirichletCharacter.LFunction`, with multiplicity via `analyticOrderAt`; nothing is assumed —
+    every analytic input (Weil's explicit formula for ζ and for L(s,χ), the Riemann–von Mangoldt
+    formula, Stirling-type estimates for Γ′/Γ, Chebyshev–Mertens bounds, the Montgomery–Vaughan
+    Hilbert inequality) is proved in the repository over Mathlib alone, and every theorem depends only
+    on the axioms propext, Classical.choice and Quot.sound. All Lean code was written by Claude; the
+    trusted statement file was read against the paper by a paper author. The repository additionally
+    proves, in a separate Comparator configuration, the analogous results of the paper's Remark 7.1
+    for the zeros of ξ′ (at least 85.838% simple and on the critical line, at least 92.919% distinct).
+  # Required nonempty list of name strings.
+  authors:
+    - Claude
+  # Required root licence; matches the LICENSE file at the repository root (and this directory).
+  license: Apache-2.0
+  responsible_maintainers:
+    - Ralph Furman
+
+# `repository` is omitted: this directory contains the substantive proof development (it is not a
+# thin wrapper around another formalization).
+
+classification:
+  arxiv:
+    - math.NT
+  msc2020:
+    - 11M06
+    - 11M26
+    - 15A42
+
+sources:
+  # Source-based result: the formalization formalizes the theorems of the paper below.
+  - title: More than two thirds of the zeta zeros are simple and on the critical line
+    authors:
+      - Levent Alpöge
+      - Ralph Furman
+    id: arXiv:2608.13637
+    type: paper
+    location: https://arxiv.org/abs/2608.13637
+    relationship: formalizes
+    note: >-
+      Formalizes Theorems A and B (the zeta and Dirichlet L-function forms, including the
+      Montgomery–Taylor-window constants) and the on-the-line companion statements recorded in the
+      paper's Appendix A — the 17 statements of Challenge.lean — and, in the separate, non-submitted
+      configuration comparator-xiprime.json, Remark 7.1 (the zeros of ξ′). The formal statements are
+      the ε-forms of the paper's liminf bounds; see fidelity.divergences and README.md.
+    author_endorsement: participated
+
+related_formalizations:
+  - id: https://github.com/AlexKontorovich/PrimeNumberTheoremAnd
+    relationship: adapts
+    note: >-
+      Files under Zeta23/FromPNTPlus/ are derived from the PrimeNumberTheoremAnd project with local
+      modifications; each carries its upstream notice (file, commit, copyright, licence). See NOTICE.
+
+status:
+  scope: >-
+    Complete, sorry-free Lean 4 proofs over Mathlib alone (axioms propext/Classical.choice/Quot.sound)
+    of the paper's headline theorems. The submitted configuration comparator.json covers the 17
+    statements of the Mathlib-only challenge module Challenge.lean: Theorems A and B at the constants
+    stated in the paper, including the Montgomery–Taylor-window forms and the Dirichlet analogues,
+    with their on-the-line companion statements. Also in the repository, each checked but not part of
+    the submission: comparator-xiprime.json (Challenge/XiPrime.lean, 6 statements on the zeros of ξ′,
+    Remark 7.1 of the paper), the bandwidth-one ceiling (Zeta23/PairCeiling/, no Comparator
+    configuration, `#print axioms` only), whose theorems carry one displayed hypothesis, `EnclOK`
+    (README.md), and six further Mathlib-only topics added in this fork, each with its own
+    configuration: comparator-union.json (Challenge/Union.lean, 4 simple-or-on-line inclusion-exclusion
+    endpoints), comparator-line-decimal.json (Challenge/LineDecimal.lean, 4 certified-decimal
+    0.672500703679 endpoints), comparator-sextuple.json (Challenge/Sextuple.lean, 4 statements of the
+    unconditional six-translate improvement 0.672755620655 / 0.6727556 of the simple critical-line
+    proportion, whose five-dimensional numerical certificate is replayed in the kernel), and
+    comparator-sextuple-a1275.json, comparator-sextuple-a1285.json, comparator-sextuple-a1290.json
+    (Challenge/SextupleA1275.lean, Challenge/SextupleA1285.lean, Challenge/SextupleA1290.lean: the same
+    at 0.6727837118, 0.6727949489 and 0.6728005676, with certificates of 8,953, 30,153 and 56,924
+    kernel-replayed subtree modules).
+  # Counts for the proof development; the deliberate `sorry`s of the two Challenge files (17 + 6),
+  # which state each theorem with a placeholder proof by design, are excluded.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  # A short curated list; comparator.json lists all 17 compared statements.
+  main_results:
+    - declaration: two_thirds_simple_on_critical_line
+      file: Challenge.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      comparator_config: comparator.json
+      literature_dependencies: []
+    - declaration: five_sixths_distinct
+      file: Challenge.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      comparator_config: comparator.json
+      literature_dependencies: []
+    - declaration: montgomery_taylor_simple_on_critical_line_mult
+      file: Challenge.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      comparator_config: comparator.json
+      literature_dependencies: []
+    - declaration: two_thirds_on_critical_line
+      file: Challenge.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      comparator_config: comparator.json
+      literature_dependencies: []
+    - declaration: dirichlet_two_thirds_simple_on_critical_line
+      file: Challenge.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      comparator_config: comparator.json
+      literature_dependencies: []
+
+automation:
+  methods:
+    - method: autonomous
+      models:
+        - Claude
+      framework: n/a
+      tool_setup: >-
+        Claude (Anthropic) agents wrote all Lean code — definitions, statements and proofs — against
+        the pinned Mathlib, iterating against the Lean compiler; the trusted Challenge files were
+        produced the same way. Humans — the paper's authors, with Eric Easley orchestrating the Lean
+        work — directed the project, chose the targets and reviewed the outputs; nobody wrote Lean by
+        hand. The recorded checks are in AUDIT.md.
+      cost:
+        wall_time: not tracked
+        spend_usd: not tracked
+        hardware: not recorded
+      prompting_notes: n/a
+  spend_usd: not tracked
+  notes: >-
+    The formalization was entirely automated: Claude produced all Lean code in the repository,
+    including Zeta23/LinAlg/ (the §3 linear algebra, produced first as a standalone development
+    accompanying the paper, under the paper authors' direction, and incorporated unchanged). The
+    paper's authors wrote the mathematics being formalized, directed the formalization and reviewed
+    its outputs, and wrote no Lean by hand; Eric Easley orchestrated the Lean work (paper
+    Acknowledgments); the paper author read the main challenge module against the paper (review.notes). See AUDIT.md for the checks run at each revision.
+
+fidelity:
+  divergences: >-
+    liminf bounds are rendered as: for all ε > 0 there is T₀ such that for all T ≥ T₀,
+    (c − ε)·N ≤ X. "Nontrivial zero" is rendered as a zero with 0 < Re ρ < 1. Windows are
+    T₁ < Im ρ ≤ T₂ (positive ordinates). Left sides count with multiplicity; N₀*, N₀ˢ, N_d count
+    distinct points (the strong direction). Theorem B of the paper is formalized for primitive
+    characters of modulus q > 1. The repository states the theorems at the paper's constants; the
+    weaker Cauchy–Schwarz-form variants that earlier revisions also certified are implied by these and
+    are no longer separately stated. The 5/6 constant is obtained from the rank–trace inequality with
+    parameter c = 3 where the paper's text uses Proposition 4.5(iii) with c = 2. (In the non-submitted
+    ξ′ configuration the proportion statements carry fixed decimal constants rather than ε-forms.)
+    See README.md, "Reading notes for the statements".
+
+review:
+  status: author-verified
+  reviewers:
+    - Ralph Furman
+  notes: >-
+    Ralph Furman (paper author) read the challenge module Challenge.lean (the 17 statements and
+    their definition layer) and confirmed it matches the paper; the ξ′ challenge module
+    (Challenge/XiPrime.lean, not submitted) is agent-reviewed. Recorded in AUDIT.md at the pinned
+    commit: `#print axioms` checks for all 23 statements (exactly [propext, Classical.choice,
+    Quot.sound]) and Comparator + NanoDa kernel runs for both configurations. The underlying paper was
+    reviewed and endorsed by a human analytic number theorist, who also produced an independent
+    condensed proof of the main result; journal peer review is pending. The Lean statements were
+    additionally cold-read by Claude instances with no prior project context.
+
+alignment:
+  # Namespace of the proof development. The compared Challenge/Solution declarations are in the root
+  # namespace, one topic per module (Challenge, Challenge.XiPrime), as Comparator expects.
+  namespace: Zeta23
+  statements:
+    - source: >-
+        Theorem A(i) (arXiv:2608.13637): at least 2/3 of the zeros are simple and on the critical
+        line; the Montgomery–Taylor window improves the constant to 2 − 1/c₁* = 0.67250…
+      lean: >-
+        two_thirds_simple_on_critical_line (+_cumulative);
+        montgomery_taylor_simple_on_critical_line_mult (+_cumulative)
+      module: Challenge
+      status: proved
+      note: >-
+        Root-namespace statements in Challenge.lean; Solution.lean proves them by delegating to
+        Zeta23.thmB₀_mult (Zeta23/FinalMult.lean) and Zeta23.ThmD.thmD₀_simple_mult
+        (Zeta23/ThmD/Mult.lean). The repository's internal labels for these are Theorems B and D.
+    - source: >-
+        Theorem A(ii): at least 5/6 of the zeros are distinct; the Montgomery–Taylor window improves
+        the constant to (3 − 1/c₁*)/2 = 0.83625…
+      lean: five_sixths_distinct (+_cumulative); montgomery_taylor_distinct_mult (+_cumulative)
+      module: Challenge
+      status: proved
+      note: >-
+        Delegates to Zeta23.thmC₀_mult (Zeta23/FinalMult.lean) and Zeta23.ThmD.thmD₀_dist_mult
+        (Zeta23/ThmD/Mult.lean). Internal labels: Theorems C and D.
+    - source: >-
+        Theorem B: Theorem A holds verbatim for L(s,χ), χ a fixed primitive Dirichlet character
+        (formalized for modulus q > 1)
+      lean: >-
+        dirichlet_two_thirds_simple_on_critical_line; dirichlet_five_sixths_distinct;
+        dirichlet_montgomery_taylor_simple_on_critical_line_mult;
+        dirichlet_montgomery_taylor_distinct_mult
+      module: Challenge
+      status: proved
+      note: >-
+        L(s,χ) is Mathlib's `DirichletCharacter.LFunction χ`. Delegates to Zeta23.ThmE.thmE_B₀_mult,
+        thmE_C₀_mult (Zeta23/ThmE/Mult.lean) and Zeta23.ThmDE.thmE_D₀_simple_mult, thmE_D₀_dist_mult
+        (Zeta23/ThmDE/Mult.lean). Internal label: Theorem E (with Theorem D for L(s,χ)).
+    - source: >-
+        Companions recorded in the paper's Appendix A: the on-the-line counts (N₀* ≥ N₀ˢ), at 2/3 and
+        at the Montgomery–Taylor constant, for ζ and for L(s,χ)
+      lean: >-
+        two_thirds_on_critical_line (+_cumulative); montgomery_taylor_on_critical_line;
+        dirichlet_two_thirds_on_critical_line; dirichlet_montgomery_taylor_on_critical_line
+      module: Challenge
+      status: proved
+      note: >-
+        Delegates to Zeta23.thmA₀ (Zeta23/Final.lean), Zeta23.ThmD.thmD₀ (Zeta23/ThmD/Final.lean),
+        Zeta23.ThmE.thmE_A₀ (Zeta23/ThmE/Final.lean) and Zeta23.ThmDE.thmE_D₀
+        (Zeta23/ThmDE/Final.lean). Internal labels: Theorems A, D and E.
+    - source: >-
+        Remark 7.1 (zeros of ξ′): at least 85.838% simple and on the critical line and 92.919%
+        distinct (flat window); 86.864% and 93.432% (quartic window); plus two supporting statements
+        not stated in the paper: every zero of ξ′ lies in the open critical strip, and Re(ξ′/ξ) > 0
+        on Re s ≥ 1
+      lean: >-
+        xiPrime_simple_zeros_on_critical_line (+_cumulative);
+        xiPrime_simple_zeros_on_critical_line_quartic (+_cumulative);
+        xiPrime_zeros_in_open_critical_strip; xiPrime_over_xi_re_pos
+      module: Challenge.XiPrime
+      status: proved
+      note: >-
+        Not part of the Palomar submission: separate configuration comparator-xiprime.json, with its
+        own Mathlib-only definition layer (ChallengeDeps/XiPrime.lean, inlined into
+        Challenge/XiPrime.lean). Solution/XiPrime.lean delegates to
+        Zeta23.XiPrime.xiDeriv_simple_on_line (+_cumulative, _quartic_std) in Zeta23/XiPrime/Final.lean.
+
+    - source: >-
+        Beyond the paper (fork): exact and certified-decimal simple-or-on-line inclusion-exclusion
+        endpoints in dyadic and cumulative windows (the union count N₀ + Nˢ − N₀ˢ over N)
+      lean: >-
+        montgomery_taylor_simple_or_on_critical_line_union (+_cumulative);
+        montgomery_taylor_simple_or_on_critical_line_union_decimal (+_cumulative_decimal)
+      module: Challenge.Union
+      status: proved
+      note: >-
+        Not submitted: configuration comparator-union.json with its own Mathlib-only definition layer
+        (ChallengeDeps/Union.lean, inlined into Challenge/Union.lean). Solution/Union.lean delegates
+        to Zeta23.ThmD.thmD₀_union (+_cumulative) and the certified enclosure of Zeta23/ThmD/UnionDecimal.lean.
+    - source: >-
+        Beyond the paper (fork): the Montgomery–Taylor critical-line constant 2 − 1/c₁* enclosed by a
+        kernel-checked rational: 0.672500703679 < HD(1) < 0.6725007036796, hence fixed-decimal
+        distinct-on-line and simple-on-line proportions
+      lean: >-
+        montgomery_taylor_on_critical_line_decimal (+_cumulative);
+        montgomery_taylor_simple_on_critical_line_decimal (+_cumulative)
+      module: Challenge.LineDecimal
+      status: proved
+      note: >-
+        Not submitted: configuration comparator-line-decimal.json. Solution/LineDecimal.lean delegates to
+        Zeta23.ThmD.thmD₀_6725 and thmD₀_simple_mult_6725 (Zeta23/ThmD/LineDecimal.lean).
+    - source: >-
+        Beyond the paper (fork): an unconditional improvement of the simple critical-line proportion
+        to (6·B_MT − 10π·B₆)/(6 − A) with a positive spectral penalty for six translates of the
+        Montgomery–Taylor kernel; A₆ = 1/80 gives 0.672755620655 (fixed 0.6727556), and the refined
+        certificates A = 51/4000, 257/20000, 129/10000 give 0.6727837118, 0.6727949489, 0.6728005676
+      lean: >-
+        sextuple_simple_on_critical_line_decimal (+_cumulative_decimal),
+        sextuple_simple_on_critical_line_6727556 (+_cumulative_6727556);
+        sextuple_a1275_simple_on_critical_line_decimal (+_cumulative_decimal),
+        sextuple_a1275_simple_on_critical_line_6727837118 (+_cumulative_6727837118);
+        sextuple_a1285_…_6727949489; sextuple_a1290_…_6728005676 (the same four shapes each)
+      module: Challenge.Sextuple, Challenge.SextupleA1275, Challenge.SextupleA1285, Challenge.SextupleA1290
+      status: proved
+      note: >-
+        Not submitted: configurations comparator-sextuple.json, comparator-sextuple-a1275.json,
+        comparator-sextuple-a1285.json, comparator-sextuple-a1290.json. The only numerical ingredient
+        of each is a five-dimensional affine inequality A ≤ E₆(g) + B₆·Σg for all nonnegative gap
+        vectors, proved by kernel replay (`decide +kernel`) of an exact rational branch-and-bound
+        certificate over a Lean-checked one-dimensional lower envelope of 2·K(d)² (56 stable pieces,
+        plus 216 and 394 refinement pieces for the refined targets); the analytic transfer is
+        Zeta23/ThmD/Sextuple/{Base,Ledger,Final}.lean. Solution/Sextuple*.lean delegate to
+        Zeta23.ThmD.Sextuple.thmD₀_sextuple_… and Zeta23.ThmD.Sextuple.A12xx.thmD₀_sextuple_….
+        Generators, canonical data, independent exact replays and build logs: certificates/sextuple/.
+
+acknowledgements: >-
+  The mathematics formalized is due to the paper's authors, Levent Alpöge and Ralph Furman, who also
+  directed the formalization; the Lean formalisation was orchestrated by Eric Easley (paper
+  Acknowledgments). Files under
+  Zeta23/FromPNTPlus/ derive from the PrimeNumberTheoremAnd project (see NOTICE). Built on Mathlib
+  and verified with leanprover/comparator, lean4export and NanoDa.

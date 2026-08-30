@@ -1,3 +1,23 @@
-/.lake/
+# Lake / Lean build artefacts (any project subfolder)
+.lake/
+**/.lake/
+**/build/
+**/lake-packages/
 *.olean
 *.ilean
+*.trace
+*.c.tmp
+
+# Tool caches
+.cache/
+**/.cache/
+
+# Editor / OS
+.DS_Store
+*.swp
+*~
+.vscode/
+.idea/
+
+# NOTE: lakefile.toml / lakefile.lean, lean-toolchain and lake-manifest.json
+# are NOT ignored — they pin each project's toolchain and dependencies.

@@ -1,0 +1,31 @@
+name = "Zeta23"
+version = "0.1.0"
+defaultTargets = ["Zeta23", "Challenge", "Solution"]
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "51e6992efd06126df61a496bebf8f49482a4e129"
+
+# The proof development.
+[[lean_lib]]
+name = "Zeta23"
+
+# --- Comparator challenge/solution layer (README.md, "Verifying the statements"). Trusted:
+# ChallengeDeps + Challenge (Mathlib-only). Untrusted: Solution (imports Zeta23). Topic modules
+# (Challenge.XiPrime, Solution.XiPrime, ChallengeDeps.XiPrime) live under the matching directories.
+[[lean_lib]]
+name = "ChallengeDeps"
+roots = ["ChallengeDeps"]
+
+[[lean_lib]]
+name = "Challenge"
+roots = ["Challenge"]
+
+[[lean_lib]]
+name = "Solution"
+roots = ["Solution"]

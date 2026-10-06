@@ -170,13 +170,20 @@ jobs:
         id: pins
         run: |
           toolchain="$(tr -d '[:space:]' < lean-toolchain)"
-          tag="v${toolchain#*:v}"
+          tags=("v${toolchain#*:v}")
           # Palomar's rule: lean4export at the release tag named after the project's Lean version.
-          refs="$(git ls-remote https://github.com/leanprover/lean4export "refs/tags/$tag" "refs/tags/$tag^{}")"
-          commit="$(awk -v t="refs/tags/$tag^{}" '$2==t {print $1}' <<<"$refs")"
-          [ -n "$commit" ] || commit="$(awk -v t="refs/tags/$tag" '$2==t {print $1}' <<<"$refs")"
+          # This repository's addition: when a stable patch release (vX.Y.Z, Z > 0) has no tag of its own, the
+          # vX.Y.0 tag is taken, and comparator-check.sh builds it with the project's toolchain. Release
+          # candidates do not fall back.
+          if [[ "${tags[0]}" =~ ^(v[0-9]+\.[0-9]+)\.[1-9][0-9]*$ ]]; then tags+=("${BASH_REMATCH[1]}.0"); fi
+          for tag in "${tags[@]}"; do
+            refs="$(git ls-remote https://github.com/leanprover/lean4export "refs/tags/$tag" "refs/tags/$tag^{}")"
+            commit="$(awk -v t="refs/tags/$tag^{}" '$2==t {print $1}' <<<"$refs")"
+            [ -n "$commit" ] || commit="$(awk -v t="refs/tags/$tag" '$2==t {print $1}' <<<"$refs")"
+            [ -z "$commit" ] || break
+          done
           if [ -z "$commit" ]; then
-            echo "::error::leanprover/lean4export has no release $tag for toolchain $toolchain"
+            echo "::error::leanprover/lean4export has no release ${tags[0]}${tags[1]:+ or ${tags[1]}} for toolchain $toolchain"
             exit 1
           fi
           echo "toolchain=$toolchain lean4export=$tag@$commit"
@@ -239,7 +246,7 @@ jobs:
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: ~/.cache/lean-ci-tools
-          key: comparator-${{ env.COMPARATOR_COMMIT }}-lean4export-${{ steps.pins.outputs.lean4export_commit }}-nanoda-${{ env.NANODA_COMMIT }}-landrun-${{ env.LANDRUN_COMMIT }}
+          key: comparator-${{ env.COMPARATOR_COMMIT }}-lean4export-${{ steps.pins.outputs.lean4export_commit }}-${{ steps.pins.outputs.toolchain }}-nanoda-${{ env.NANODA_COMMIT }}-landrun-${{ env.LANDRUN_COMMIT }}
 
       - name: Palomar bar (comparator accepts every declared configuration)
         env:

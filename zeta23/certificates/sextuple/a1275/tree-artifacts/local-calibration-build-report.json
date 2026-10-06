@@ -1,0 +1,89 @@
+{
+  "bounds": {
+    "hashes": {
+      "hostile_log": "5254d72201b957a319a89d3eb6553a33ade79ac599488b030b67ef690513905b",
+      "hostile_olean_exists": false,
+      "hostile_source": "280782848cdfe591ad6ccae740189015052f66dcedf23f0148fef21845585dd7",
+      "log": "135e14f081c4a038b8676b7b91049ce3a5d9abd48e70fcc9fcc330b21fa59d96",
+      "olean": "46a29e9c83cd68b7853bb4cf4da284c073cbce0de52dce05cfc11db476ee10b6",
+      "olean_bytes": 58512,
+      "source": "825f465368b10a53227ba50b5eaf20cdeca48fb58b8cbe84d736c4219d60ecbb"
+    },
+    "max_rss": 8369274880,
+    "real": 12.03,
+    "sys": 2.82,
+    "user": 8.16
+  },
+  "calibration": {
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "hashes": {
+      "log": "3beed1bc2cb2462386bceaa586cf462568aba71448a0e739871585210e0c8cdd",
+      "olean": "7d7a94b2fbf841081d73c9e6d05382722011f2d79160d9f54b7b3ca575f64efc",
+      "olean_bytes": 19864,
+      "source": "c286e835992b2bf5519f50ad7546695f028d5490a8ab2b7a829bdb194403f239"
+    },
+    "max_rss": 11021058048,
+    "payloads": 50,
+    "real": 21.67,
+    "sys": 2.96,
+    "tokens": 99,
+    "user": 18.71
+  },
+  "full_chunks_started": false,
+  "generator_candidate_sha256": "423b71327008ecad9c97583d8d777a484eab751d28f24df23bb5ce6e82069d50",
+  "generator_independent_audit_sha256": "538f7a269556095b5b1d2f64a3b0a6351899eb6344b56aad605b9c9b14ae86ae",
+  "layout": {
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ],
+    "hashes": {
+      "log": "e1889d26dd16319ba3dbb47a44e37b7c2f9bcb705d15f17fda7952c1fa30dfb1",
+      "olean": "5fb0108c7e0d1c4f17128b4e10bf8e055910af15314e3bd59ca00790c75d9712",
+      "olean_bytes": 11104,
+      "source": "c8d6874294bb87cc6309d372f2a3c5f8b08a9dd63df7b849f65045eda340fb2f"
+    },
+    "max_rss": 8678408192,
+    "real": 13.4,
+    "sys": 2.6,
+    "user": 10.8
+  },
+  "reader": {
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "hashes": {
+      "log": "ef48896c3627e6fb1e9846de941a59c85bd5fd3c77babbe57a5945d65f9140fc",
+      "olean": "b09774e3e9b77847455741100f3e5ca977411776cc64d8d02f8c240e4d049996",
+      "olean_bytes": 149944,
+      "source": "238a9b6c782654196dc08308ecf8da93770e8368d7d72110f5cd7d0a815191c4"
+    },
+    "max_rss": 5913280512,
+    "real": 4.59,
+    "sys": 2.66,
+    "user": 1.96
+  },
+  "repo_shadow_status": "WAITING_STABLECATALOG_FINAL_HASHES",
+  "schema": 1,
+  "source_validation_sha256": "681a1cfc0073f9b03cfa88236e5d7c3834495c2a00057aeb4c7cdd671657e53d",
+  "status": "PASS",
+  "treewords": {
+    "hashes": {
+      "log": "0bf329bbfb640b25a07f9b55653bbc10c27142ab3631fd4477efe09bf89f44fa",
+      "olean": "68beb31561a6b69b711122fc06fb1fc910602bd49e58e42b41d3d5448b94c05e",
+      "olean_bytes": 25758584,
+      "source": "0cfb2ab70bff047ab462e59353f8ab7527ddd36fadbf0e571e34b9f8a43add39"
+    },
+    "max_rss": 6500450304,
+    "real": 29.47,
+    "sys": 4.87,
+    "user": 9.02
+  },
+  "word_data_build_report_sha256": "d83503a76cb1123d86a10ad6691261217f8331a22e8b364e5d83210c16e0c994"
+}

@@ -1,0 +1,54 @@
+{
+  "elapsed_seconds": 0.075,
+  "pieces_parsed": 56,
+  "piece_json_mismatches": [],
+  "envelope_tiles_0_59": true,
+  "stableMacroTable_arms_ok": true,
+  "stableMacroTable_check_order_ok": true,
+  "scalarCertTable_arms_ok": true,
+  "scalarCertTable_check_order_ok": true,
+  "lemma_scripts_ok": 871,
+  "lemma_scripts_bad": [],
+  "json_cert_mismatches": [],
+  "macroCutoff_equals_A_over_B": true,
+  "CUTOFF": "62500000/1094977",
+  "counts": {
+    "certs": 871,
+    "segments": 1932,
+    "cover_ok": 871,
+    "inside_piece_ok": 1932,
+    "model_min_ok": 1932,
+    "a_pos": 871,
+    "a_nonneg": 871,
+    "lo_le_hi": 871,
+    "weight_nonneg": 1932,
+    "cert_check_true": 871,
+    "py_model_min_eq": 1932,
+    "a_eq_min": 871,
+    "hi_le_cutoff": 871,
+    "seg_is_full_intersection": 1932,
+    "well_segments": 1352,
+    "base_segments": 580,
+    "tight_segments": 871
+  },
+  "failures": [],
+  "failure_count": 0,
+  "min_slack": "0",
+  "min_slack_float": 0.0,
+  "min_slack_cert": [
+    0,
+    1
+  ],
+  "segments_per_cert": {
+    "min": 2,
+    "max": 4
+  },
+  "a_min": "9576976453294042395280846609/80000000000000000000000000000000000",
+  "a_max": "14630385677/1000000000000",
+  "sha256": {
+    "ScalarData": "0b8d55345d942a11af83ca6ff6698c3c562eea360307f6091bd7433bced8bb7f",
+    "EnvelopeData": "44a3295dbf1eb76b5ae99263d282ac2397bc6b0953c8456632768476f25ee052",
+    "scalar_certificates_json": "2d322e4a35f7c61ac093684f39503c76e4ac5ada8dbb9a95892aea1718e302e0",
+    "macro_data_exact_json": "961a0281a134382f9c2678cc49487839d2b9c2cbd9df382871f2c7b706552a5b"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "aggregate_check": "refinementCatalog_all",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "individual_checks": "216/216 elaborated",
+  "lean_source": "post-anthropic-rh-artifacts/checkers/sextuple-improvement/RefinementEnvelopeData.lean",
+  "lean_source_sha256": "e18afeb05ac3e56c94617ba136a61b9d79226899c5c4e192caa109aa2f9dde11",
+  "maximum_resident_set_size_reported": 13531234304,
+  "olean": "post-anthropic-rh-artifacts/checkers/sextuple-improvement/RefinementEnvelopeData.olean",
+  "olean_sha256": "d185ac225ba4bb085011c742a5521349d40a6c7d5310cec35762bb2f820efd21",
+  "peak_memory_footprint_reported": 8158814112,
+  "piece_count": 216,
+  "stable_inputs_modified": false,
+  "status": "PASS",
+  "stderr_sha256": "de010001ba783c6b7bd1bf487caed588a9be172f8ae4a0653c12f725a6494100",
+  "stdout_sha256": "c62dfd52640a69a0ed38e8dc920f21898f57eda8a5ec9fcf4e4f471f54f4e11d",
+  "sys_seconds": 516.63,
+  "user_seconds": 1163.76,
+  "wall_seconds": 175.05
+}

@@ -1,0 +1,171 @@
+{
+  "accepted_generic_and_baseline_sources": {
+    "Layout.lean": "4146c8be0788f3b5adbade43f322ba34960af93f4775730e1d271cbf7f2efc7c",
+    "Layout.olean": "7267932cf8f6b0a163bb5355832719e782c5b3c4c9b6351964c4011d287a405d",
+    "StableCatalog.lean": "a1a1c09382864916874d5445763793c24b0431e68ee918ad76f8cb8d2cbcc527",
+    "TreeFormat.lean": "6fccdd766b799e520969a71ee8194c3811f714f90f2e52b751f562968ff526cc",
+    "TreeReader.lean": "83a2d50fc8dce74c30dd74b22e5a7ec07805d7bc6f8aa774928113ccab6269e6",
+    "extracted_explicit_Fin_ScalarData.lean": "aa43ed4fc1598611b6537076a8e53a7e36fed05c0aeb935d0f6ccbbe1f50153e",
+    "hardened_baseline_generator.py": "6f3a783342fdcc0ea8fa5bbc69d8736cd0d2e0ef68a9f748bb3246f18dcad79a"
+  },
+  "arithmetic": {
+    "directed_lower": "201406213933795020896911983481/299362500000000000000000000000",
+    "positive_margin": "10067520896911983481/299362500000000000000000000000",
+    "status": "PASS",
+    "target": "6727837118/10^10"
+  },
+  "authoritative_files": {
+    "CertificateFromReplayProbe.lean": {
+      "bytes": 2278,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/CertificateFromReplayProbe.lean",
+      "sha256": "4bd52c88f06fb28d64f58acb533623b4b7d3bf8fd041f4989cbab250236f789d"
+    },
+    "EndpointCompositionProbe.lean": {
+      "bytes": 1778,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/EndpointCompositionProbe.lean",
+      "sha256": "cb13ae659a434a905b7b66ba8c80d033ccb5ed8be58dbe5e73361579ffbb0cb0"
+    },
+    "PostCertificateModulesProbe.lean": {
+      "bytes": 3007,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/PostCertificateModulesProbe.lean",
+      "sha256": "6dbb23417cdc7864013c80a444cbb05eac06dff2cc598b701f1b266dbfde1230"
+    },
+    "comparator-arithmetic.json": {
+      "bytes": 1686,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/comparator-arithmetic.json",
+      "sha256": "06edda42c490e1f9e3643e6c84e0310daa69e0c99bf0ff453ad4e038c89984cc"
+    },
+    "git-file-manifest.txt": {
+      "bytes": 783593,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/git-file-manifest.txt",
+      "sha256": "690cce29df38aac4d6ec0c615218d2c3e9031f95053086adc3d927f91e91a160"
+    },
+    "input-hashes.json": {
+      "bytes": 12995,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/input-hashes.json",
+      "sha256": "1443fdb7ab268773c068ec449c1aa8ad4ccb6cc90ba75a9639d239f4d84cd58c"
+    },
+    "integration-plan.md": {
+      "bytes": 30048,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/integration-plan.md",
+      "sha256": "b35bc38d100b55ea933f92df8ba39a1493c86e248c29d43651500c9ef5ff642a"
+    },
+    "module-graph.json": {
+      "bytes": 13729,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/module-graph.json",
+      "sha256": "29b0bf424f00b252339a3f481f7794b300f0dadf2445c48fe6e54542aa736ad9"
+    },
+    "probe-report.json": {
+      "bytes": 10698,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/probe-report.json",
+      "sha256": "58acdcc550479f047e93d7b5efce885a35d62a4f78bf674a5f9cda43bbf159b9"
+    },
+    "qualified-repo-shadow-manifest.json": {
+      "bytes": 43123,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/qualified-repo-shadow-manifest.json",
+      "sha256": "c25afd5ae0293745ea7f92552da69d076bb21be06184b0e4fc937aa8367c3b13"
+    },
+    "v2-source-delta.patch": {
+      "bytes": 5276,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/v2-source-delta.patch",
+      "sha256": "5cc5f24cf848b77c78fd1f093f6cdc2d557e303af66b6adb989552854803ceee"
+    },
+    "v2-treeformat-audit.json": {
+      "bytes": 5643,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/v2-treeformat-audit.json",
+      "sha256": "b6b161e627b42bd238209d41f88bbff7f75e89d4f1653ed2d8a41f4072f951f1"
+    }
+  },
+  "gates_remaining": [
+    "freeze exact qualified sources and current hashes into owner repo-shadow",
+    "fresh v2 resolved source/olean closure",
+    "qualified ChunkCalibration plus representative/hostile matrix",
+    "owner build and inspect all 8953 chunks",
+    "owner build and inspect all 8952 assembly nodes/90 parts",
+    "improvedRootReplay/treeCheck",
+    "independent full tree final PASS",
+    "concrete Certificate",
+    "Unconditional/LineDecimal/AxiomAudit/root import/full clean build"
+  ],
+  "generated_utc": "2026-08-24T05:45:45.076545+00:00",
+  "git_manifest": {
+    "added": 9116,
+    "modified": 12,
+    "paths": 9128,
+    "sha256": "690cce29df38aac4d6ec0c615218d2c3e9031f95053086adc3d927f91e91a160"
+  },
+  "independent_baseline_v2_audit": {
+    "report_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-baseline-fin-hardening/AUDIT-REPORT.md",
+    "report_sha256": "819f1466155510f3ce54c0e2c224bd56b94e379efe3b1fad43cbcb1a78e40e03",
+    "sha256sums_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-baseline-fin-hardening/SHA256SUMS",
+    "sha256sums_sha256": "782296e7821d8ac7057f53c10a972bd6a0259b0d6affd20bc4bd837e00f751bb",
+    "status": "PASS_PATCH_AVAILABLE_FULL_OWNER_TREE_PENDING",
+    "verdict_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-baseline-fin-hardening/VERDICT.json",
+    "verdict_sha256": "26f1635bb64a52ad9b74615842d10147fcb9644763661f1dd6bbfe1e8c8db91a"
+  },
+  "output_directory": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan",
+  "planned_qualified_source_hashes": {
+    "Zeta23.ThmD.Sextuple.A1275.Assembly": "322936ef431ae96201d11a4e1d63fb7f720745fdcf2c28ae8dd707837a286a5b",
+    "Zeta23.ThmD.Sextuple.A1275.AxiomAudit_draft": "757d3f2a34d3c083ecaac89f1cc2bb1cd91f392c6a7b8d10db8688a72da53083",
+    "Zeta23.ThmD.Sextuple.A1275.Catalog": "aebd5f60f8f2f137e6b8181d567cf371e375ce01a51ec3aeb7d58499f24920ee",
+    "Zeta23.ThmD.Sextuple.A1275.Certificate_draft": "3d708452a8e018141f148c6baf1fb6993f27db0393cc826b9adbac4507869ae8",
+    "Zeta23.ThmD.Sextuple.A1275.ChunkCalibration": "cb6fbc57c3e7b3e29cc938b40db6140055bfff83a8c070f6ec95de43aef71442",
+    "Zeta23.ThmD.Sextuple.A1275.Layout": "77e3152d78fc4871bb790e9775f7f02e256265975cd84b1cfdb857c6fa3ca911",
+    "Zeta23.ThmD.Sextuple.A1275.LineDecimal_draft": "e64341f15829bac4499d0214a7c32b1d565834009a348b828c76656ea7cc35bd",
+    "Zeta23.ThmD.Sextuple.A1275.RefinementData": "67b78979fc1e7dcbd291f2da19cb53071142ef11104eeeea08af718269f16d43",
+    "Zeta23.ThmD.Sextuple.A1275.ScalarData": "26c7d828f4347e5827efc822d49f61d24403a65590078d6d873fa03a9fa37b01",
+    "Zeta23.ThmD.Sextuple.A1275.TreeReader": "6ea9b96db3ca92c96e43bf1c5eee9311c391cfea40cd7383e9ccf4aae9187752",
+    "Zeta23.ThmD.Sextuple.A1275.TreeWords": "1407a17502b086957d5af7d2c1f24fde0897b93c18adb0903dbbbac85c33da27",
+    "Zeta23.ThmD.Sextuple.A1275.Unconditional_draft": "0b416e07b80b7a2e3a18aeb5909524fa09abaed43685b381d647cc91c161ad09",
+    "Zeta23_root_draft": "46fc105077e13e66358e66e580946179a866fa699c305c1eafcb36e6d02f6a51"
+  },
+  "probe_status": {
+    "CatalogClosure": "PASS",
+    "StableCatalog": "PASS",
+    "TreeFormat_v2": "PASS",
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "conditional_Assembly_Unconditional_LineDecimal": "PASS",
+    "conditional_Certificate": "PASS"
+  },
+  "prohibitions": [
+    "no theorem claim yet",
+    "no full chunks before independent v2 approval",
+    "no /tmp",
+    "no stable repo edits in this audit",
+    "no push",
+    "no merge",
+    "no stale oleans",
+    "no Python assert admission",
+    "no bare generated Fin numerals"
+  ],
+  "repo": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean",
+  "repo_clean": true,
+  "repo_head": "5e9617d84ece3aeecdf983a8e7e9bfa50f413e5a",
+  "schema": 1,
+  "scope": "Freeze exact qualified repo-shadow and execute v2 pre-owner gate; no unconditional A1275 theorem claimed.",
+  "selected_architecture": {
+    "gate_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/audits/lean25-a1275-tree-audit/ARCHITECTURE-ACCEPTANCE-v2.md",
+    "gate_sha256": "29df7d74599ed437b685a3bc476f3dd53eb6648ddfc3b0273827b70198334a93",
+    "v1_immutable_sha256": "18e023b1ceafd677cfa2e9dc849f68181572bf24eb947b17c5ae8cc14a3d858f",
+    "version": "v2 TreeFormat"
+  },
+  "status": "PASS_EXACT_INTEGRATION_PLAN_FULL_OWNER_TREE_PENDING",
+  "target_prefix": "Zeta23.ThmD.Sextuple.A1275",
+  "tree_counts": {
+    "assembly_explicit_Fin5": 8952,
+    "assembly_nodes": 8952,
+    "assembly_parts": 90,
+    "chunk_path_explicit_Fin5": 397456,
+    "chunks": 8953,
+    "fuel": 90,
+    "leaves": 192984,
+    "maximum_depth": 89,
+    "root_cursor": "some (385967, 192984)",
+    "tokens": 385967,
+    "total_axis_explicit_Fin5": 406408
+  }
+}

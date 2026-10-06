@@ -1,0 +1,26 @@
+{
+  "calibration_bare_path_axis_count": 0,
+  "calibration_sha256": "c286e835992b2bf5519f50ad7546695f028d5490a8ab2b7a829bdb194403f239",
+  "generation_report_sha256": "53f2549203d6aeedc92f60f5beae623b25b7e571df49bf56b07b210266f2b390",
+  "independent_report_sha256": "291a8cd8f9d5b077da930037d4e36116b41ee858725c66370b4d3b1e908c29de",
+  "layout_sha256": "c8d6874294bb87cc6309d372f2a3c5f8b08a9dd63df7b849f65045eda340fb2f",
+  "physical_payload_sha256": "a0f816354c1505d96960038ced115f0c777348c0dca0a3759fdf56cad067b365",
+  "plan_sha256": "e33c363129cc0d2b00480a04e914a1977680265994f1bd7cd7e6fae068aeccf5",
+  "reader": {
+    "guarded_piece_constructor": true,
+    "guarded_scalar_constructor": true,
+    "source_sha256": "238a9b6c782654196dc08308ecf8da93770e8368d7d72110f5cd7d0a815191c4"
+  },
+  "scalar_final": {
+    "expected_olean_sha256": "0d563050370f994bc59370878a6e75201a4cf26398f630781a08bc812472b14d",
+    "expected_source_sha256": "1ae4e940ffa5860768c7756ac4b60a0bde643db3140ad14c070f94e3a8a94adc",
+    "olean_sha256": "0d563050370f994bc59370878a6e75201a4cf26398f630781a08bc812472b14d",
+    "source_sha256": "1ae4e940ffa5860768c7756ac4b60a0bde643db3140ad14c070f94e3a8a94adc"
+  },
+  "schema": 1,
+  "status": "PASS",
+  "tree_generator_sha256": "7c629e908828bb0bac67e99d71f689704d8a406bc4e7c77ad962dcad8418ff52",
+  "tree_words_sha256": "0cfb2ab70bff047ab462e59353f8ab7527ddd36fadbf0e571e34b9f8a43add39",
+  "word_module_count": 31,
+  "word_module_hashes_match": true
+}

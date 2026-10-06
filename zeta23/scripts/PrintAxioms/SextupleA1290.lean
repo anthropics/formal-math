@@ -1,0 +1,14 @@
+import Solution.SextupleA1290
+import Zeta23.ThmD.Sextuple.A1290.LineDecimal
+
+#print axioms Zeta23.ThmD.Sextuple.A1290.Certificate.sextuple_affine
+#print axioms Zeta23.ThmD.Sextuple.A1290.zetaSextupleLedgerInterface
+#print axioms Zeta23.ThmD.Sextuple.ImprovedAssembly.A1290.sextupleLowerConstant_gt_6728005676
+#print axioms Zeta23.ThmD.Sextuple.A1290.thmD₀_sextuple
+#print axioms Zeta23.ThmD.Sextuple.A1290.thmD₀_sextuple_cumulative
+#print axioms Zeta23.ThmD.Sextuple.A1290.thmD₀_sextuple_6728005676
+#print axioms Zeta23.ThmD.Sextuple.A1290.thmD₀_sextuple_cumulative_6728005676
+#print axioms sextuple_a1290_simple_on_critical_line_decimal
+#print axioms sextuple_a1290_simple_on_critical_line_cumulative_decimal
+#print axioms sextuple_a1290_simple_on_critical_line_6728005676
+#print axioms sextuple_a1290_simple_on_critical_line_cumulative_6728005676

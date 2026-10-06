@@ -1,0 +1,374 @@
+{
+  "architecture_acceptance": {
+    "selected": "v2 TreeFormat API-preserving refactor",
+    "v1": {
+      "path": "audits/lean25-a1275-tree-audit/ARCHITECTURE-ACCEPTANCE.md",
+      "sha256": "18e023b1ceafd677cfa2e9dc849f68181572bf24eb947b17c5ae8cc14a3d858f",
+      "status": "immutable alternative"
+    },
+    "v2": {
+      "path": "audits/lean25-a1275-tree-audit/ARCHITECTURE-ACCEPTANCE-v2.md",
+      "sha256": "29df7d74599ed437b685a3bc476f3dd53eb6648ddfc3b0273827b70198334a93",
+      "status": "selected conditional gate"
+    }
+  },
+  "confirmed_target_prefix": "Zeta23.ThmD.Sextuple.A1275",
+  "counts": {
+    "assembly_axis_fin5_constructors": 8952,
+    "assembly_parts": 90,
+    "axis_histogram_assembly": {
+      "0": 1862,
+      "1": 1787,
+      "2": 1753,
+      "3": 1808,
+      "4": 1742
+    },
+    "axis_histogram_paths": {
+      "0": 77785,
+      "1": 81305,
+      "2": 83024,
+      "3": 79539,
+      "4": 75803
+    },
+    "chunk_path_axis_fin5_constructors": 397456,
+    "chunks": 8953,
+    "fuel": 90,
+    "internal_nodes": 8952,
+    "maximum_depth": 89,
+    "payloads": 192984,
+    "topology_tokens": 385967,
+    "total_generated_axis_fin5_constructors": 406408,
+    "word_modules": 31
+  },
+  "design": "minimal post-replay graph; improved namespace/API retained; Ledger.lean and Final.lean reused unchanged",
+  "forbidden_edges": [
+    "ImprovedCatalog -> Macro.ScalarData",
+    "ImprovedTreeWords -> Macro.TreeReader or Macro.TreeWords",
+    "ImprovedLayout -> Macro.TreeReader, Macro.TreeWords, or Macro.ScalarData",
+    "any A1275 certificate/chunk/assembly resolved closure -> Macro.ScalarData",
+    "any A1275 certificate/chunk/assembly resolved closure -> Macro.TreeReader",
+    "any A1275 certificate/chunk/assembly resolved closure -> Macro.TreeWords",
+    "Macro.Layout is allowed only at the exact v2 refactored source/olean hashes and data-independent closure",
+    "ImprovedAssembly -> A1275.Certificate",
+    "Ledger -> A1275 concrete modules",
+    "Final -> A1275 concrete modules"
+  ],
+  "independent_baseline_v2_audit": {
+    "accepted_source_hashes": {
+      "ImprovedCatalog.import-delta": "f3d6b6b69df120c390628b3cbccc79b343c68961c13138f9b728ae886ff89a7b",
+      "ImprovedTreeWords.import-delta": "ca120e6bcd30931ec47187234942cf2786c08072e11d4b3a9f58585c0ad54e3e",
+      "Layout.lean": "4146c8be0788f3b5adbade43f322ba34960af93f4775730e1d271cbf7f2efc7c",
+      "ScalarData.lean": "aa43ed4fc1598611b6537076a8e53a7e36fed05c0aeb935d0f6ccbbe1f50153e",
+      "StableCatalog.lean": "a1a1c09382864916874d5445763793c24b0431e68ee918ad76f8cb8d2cbcc527",
+      "TreeFormat.lean": "6fccdd766b799e520969a71ee8194c3811f714f90f2e52b751f562968ff526cc",
+      "TreeReader.lean": "83a2d50fc8dce74c30dd74b22e5a7ec07805d7bc6f8aa774928113ccab6269e6"
+    },
+    "report_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-baseline-fin-hardening/AUDIT-REPORT.md",
+    "report_sha256": "819f1466155510f3ce54c0e2c224bd56b94e379efe3b1fad43cbcb1a78e40e03",
+    "status": "PASS_PRE_OWNER_CONDITIONAL"
+  },
+  "nodes": [
+    {
+      "accepted_source_sha256": "a1a1c09382864916874d5445763793c24b0431e68ee918ad76f8cb8d2cbcc527",
+      "exports": [
+        "stableMacroTable",
+        "stableMacroTable_check"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.Macro.EnvelopeData"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.Macro.StableCatalog",
+      "note": "exact extraction from Macro.ScalarData; no declaration-body changes",
+      "status": "new_pre_replay"
+    },
+    {
+      "accepted_source_sha256": "aa43ed4fc1598611b6537076a8e53a7e36fed05c0aeb935d0f6ccbbe1f50153e",
+      "imports": [
+        "Zeta23.ThmD.Sextuple.Macro.StableCatalog",
+        "Zeta23.ThmD.Sextuple.Macro.ScalarAdapter"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.Macro.ScalarData",
+      "note": "remove extracted declarations; harden all Fin construction; baseline-only",
+      "status": "modified_independent_baseline_hardening"
+    },
+    {
+      "accepted_source_sha256": "6fccdd766b799e520969a71ee8194c3811f714f90f2e52b751f562968ff526cc",
+      "exports": [
+        "leafWordBits",
+        "leafBlockSize"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.AffineTree"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.Macro.TreeFormat",
+      "note": "owns exactly the two moved constants 321 and 256",
+      "status": "new_pre_replay_v2"
+    },
+    {
+      "accepted_source_sha256": "83a2d50fc8dce74c30dd74b22e5a7ec07805d7bc6f8aa774928113ccab6269e6",
+      "imports": [
+        "Zeta23.ThmD.Sextuple.Macro.ScalarData",
+        "Zeta23.ThmD.Sextuple.Macro.LeafCheck",
+        "Zeta23.ThmD.Sextuple.Macro.TreeFormat"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.Macro.TreeReader",
+      "note": "only add TreeFormat import and delete local leafWordBits/leafBlockSize blocks; API unchanged",
+      "status": "modified_pre_replay_v2_exact_move"
+    },
+    {
+      "accepted_olean_sha256": "7267932cf8f6b0a163bb5355832719e782c5b3c4c9b6351964c4011d287a405d",
+      "accepted_source_sha256": "4146c8be0788f3b5adbade43f322ba34960af93f4775730e1d271cbf7f2efc7c",
+      "imports": [
+        "Zeta23.ThmD.Sextuple.Macro.TreeFormat"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.Macro.Layout",
+      "note": "only direct import changes Macro.TreeWords -> Macro.TreeFormat; all declarations/proofs source-identical",
+      "status": "modified_pre_replay_v2_import_only"
+    },
+    {
+      "exports": [
+        "macroScalarLeafCheckAt",
+        "macroScalarLeafCheckAt_sound"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.Macro.LeafCheck"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.Macro.ParametricAdapter",
+      "note": "promote audited adapter unchanged except qualified import",
+      "status": "new_pre_replay"
+    },
+    {
+      "exports": [
+        "refinementCatalog",
+        "refinementCatalog_check"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.Macro.EnvelopeData"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.RefinementData",
+      "status": "new_pre_replay"
+    },
+    {
+      "accepted_unqualified_import_delta_sha256": "f3d6b6b69df120c390628b3cbccc79b343c68961c13138f9b728ae886ff89a7b",
+      "exports": [
+        "improvedMacroTable",
+        "improvedMacroTable_check"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.RefinementData",
+        "Zeta23.ThmD.Sextuple.Macro.ParametricAdapter",
+        "Zeta23.ThmD.Sextuple.Macro.StableCatalog"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.Catalog",
+      "note": "must not import Macro.ScalarData",
+      "planned_qualified_source_sha256": "aebd5f60f8f2f137e6b8181d567cf371e375ce01a51ec3aeb7d58499f24920ee",
+      "status": "new_pre_replay"
+    },
+    {
+      "exports": [
+        "improvedScalarCertTable",
+        "improvedScalarCertTable_check"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.Catalog"
+      ],
+      "invariants": {
+        "all_Fin_explicit": true,
+        "scalar_count": 1383,
+        "segments": 2979,
+        "table_size": 272
+      },
+      "module": "Zeta23.ThmD.Sextuple.A1275.ScalarData",
+      "planned_qualified_source_sha256": "26c7d828f4347e5827efc822d49f61d24403a65590078d6d873fa03a9fa37b01",
+      "status": "new_pre_replay"
+    },
+    {
+      "exports": [
+        "improvedConcreteLeafCheck",
+        "improvedConcreteLeafCheck_sound",
+        "improvedRootBox"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.ScalarData",
+        "Zeta23.ThmD.Sextuple.Macro.ParametricAdapter"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.TreeReader",
+      "planned_qualified_source_sha256": "6ea9b96db3ca92c96e43bf1c5eee9311c391cfea40cd7383e9ccf4aae9187752",
+      "status": "new_pre_replay"
+    },
+    {
+      "count": 31,
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.TreeReader"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks000..LeafBlocks030",
+      "status": "new_pre_replay"
+    },
+    {
+      "accepted_unqualified_import_delta_sha256": "ca120e6bcd30931ec47187234942cf2786c08072e11d4b3a9f58585c0ad54e3e",
+      "exports": [
+        "improvedTopologyStream",
+        "improvedPayloadStream"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.TreeReader",
+        "Zeta23.ThmD.Sextuple.AffineTree",
+        "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks000..LeafBlocks030"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.TreeWords",
+      "note": "body/numeric arrays unchanged; direct AffineTree import replaces forbidden baseline Macro.TreeReader",
+      "planned_qualified_source_sha256": "1407a17502b086957d5af7d2c1f24fde0897b93c18adb0903dbbbac85c33da27",
+      "status": "new_pre_replay"
+    },
+    {
+      "exports": [
+        "improvedTopologyLayoutValid",
+        "improvedLeafLayoutValid"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.TreeWords",
+        "Zeta23.ThmD.Sextuple.Macro.Layout"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.Layout",
+      "note": "v2 permits refactored frozen lightweight Macro.Layout; body unchanged",
+      "planned_qualified_source_sha256": "77e3152d78fc4871bb790e9775f7f02e256265975cd84b1cfdb857c6fa3ca911",
+      "status": "new_pre_replay"
+    },
+    {
+      "exports": [
+        "improvedChunkCalibration"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.TreeWords"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.ChunkCalibration",
+      "planned_qualified_source_sha256": "cb6fbc57c3e7b3e29cc938b40db6140055bfff83a8c070f6ec95de43aef71442",
+      "status": "new_pre_owner_v2_gate"
+    },
+    {
+      "count": 8953,
+      "exports": [
+        "improvedChunk0000..improvedChunk8952"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.TreeWords"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.Chunks.Chunk0000..Chunk8952",
+      "status": "blocked_on_owner_generation_and_full_lean"
+    },
+    {
+      "count": 90,
+      "exports": [
+        "8952 improved internal-node replay lemmas total"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.TreeWords",
+        "assigned chunk modules",
+        "earlier assembly parts as generated"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.Assembly.Part000..Part089",
+      "status": "blocked_on_all_chunks"
+    },
+    {
+      "exports": [
+        "improvedRootReplay",
+        "improvedTreeCheck",
+        "improvedRootBox_predicate"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.Layout",
+        "Zeta23.ThmD.Sextuple.A1275.Assembly.Part000..Part089"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.TreeAssembly",
+      "status": "blocked_on_all_parts"
+    },
+    {
+      "exports": [
+        "sextuple_affine"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.TreeAssembly"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.Certificate",
+      "status": "blocked_on_improvedRootReplay"
+    },
+    {
+      "exports": [
+        "A1275.zetaSextupleLedgerInterface_of_certificate",
+        "A1275.sextupleLowerConstant_gt_6727837118",
+        "A1275.sextupleDyadic_6727837118_of_interfaces",
+        "A1275.sextupleCumulative_6727837118_of_interfaces"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.Ledger",
+        "Zeta23.ThmD.Sextuple.Final"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.Assembly",
+      "note": "conditional audited core; retains ImprovedAssembly.A1275 theorem namespace; no Certificate import",
+      "status": "new_pre_replay_conditional"
+    },
+    {
+      "exports": [
+        "zetaSextupleLedgerInterface",
+        "zetaSextupleLedgerInterface_exactConstants",
+        "thmD\u2080_sextuple",
+        "thmD\u2080_sextuple_cumulative"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.Base",
+        "Zeta23.ThmD.Sextuple.A1275.Certificate",
+        "Zeta23.ThmD.Sextuple.A1275.Assembly"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.Unconditional",
+      "status": "blocked_on_certificate_and_independent_tree_PASS"
+    },
+    {
+      "exports": [
+        "thmD\u2080_sextuple_6727837118",
+        "thmD\u2080_sextuple_cumulative_6727837118"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.Unconditional"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.LineDecimal",
+      "status": "blocked_on_certificate_and_independent_tree_PASS"
+    },
+    {
+      "exports": [
+        "#print axioms inventory"
+      ],
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.LineDecimal"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.AxiomAudit",
+      "status": "blocked_on_all_final_theorems"
+    },
+    {
+      "imports_added": [
+        "Zeta23.ThmD.Sextuple.A1275.LineDecimal"
+      ],
+      "module": "Zeta23",
+      "status": "blocked_on_final_endpoint"
+    }
+  ],
+  "qualified_import_rewrite_rules": {
+    "ImprovedCatalog": "Zeta23.ThmD.Sextuple.A1275.Catalog",
+    "ImprovedChunkCalibration": "Zeta23.ThmD.Sextuple.A1275.ChunkCalibration",
+    "ImprovedLayout": "Zeta23.ThmD.Sextuple.A1275.Layout",
+    "ImprovedRefinementData": "Zeta23.ThmD.Sextuple.A1275.RefinementData",
+    "ImprovedScalarData": "Zeta23.ThmD.Sextuple.A1275.ScalarData",
+    "ImprovedTreeReader": "Zeta23.ThmD.Sextuple.A1275.TreeReader",
+    "ImprovedTreeWords": "Zeta23.ThmD.Sextuple.A1275.TreeWords",
+    "ImprovedWordData.ImprovedLeafBlocksNNN": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocksNNN",
+    "assembly_parts": "Zeta23.ThmD.Sextuple.A1275.Assembly.PartNNN",
+    "chunks": "Zeta23.ThmD.Sextuple.A1275.Chunks.ChunkNNNN"
+  },
+  "repo_head": "5e9617d84ece3aeecdf983a8e7e9bfa50f413e5a",
+  "reused_unchanged": [
+    "Zeta23.ThmD.Sextuple.Ledger",
+    "Zeta23.ThmD.Sextuple.Final",
+    "Zeta23.ThmD.Sextuple.Feedback",
+    "Zeta23.ThmD.Sextuple.Base"
+  ],
+  "schema": 1
+}

@@ -1,0 +1,72 @@
+{
+  "audit_local_build_timing_log": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/audits/lean25-a1275-scalar-audit/patched-native-rebuild/direct-build.stderr.log",
+    "sha256": "7b1c89d32bd74fad5857875ea50b1b3e14c041b4548aef837ce1fc5df9631947"
+  },
+  "audit_local_olean": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/audits/lean25-a1275-scalar-audit/patched-native-rebuild/ImprovedScalarData.audit.olean",
+    "sha256": "0d563050370f994bc59370878a6e75201a4cf26398f630781a08bc812472b14d"
+  },
+  "axiom_log": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/audits/lean25-a1275-scalar-audit/patched-lean-probes/PatchedArtifactAudit.stdout.log",
+    "sha256": "12cacbb81184395328b562f32dc8df93d2629e305e1132f072d6a7a7e520979c"
+  },
+  "checkpoint": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/audits/lean25-a1275-scalar-audit/RECOVERY.json",
+    "sha256": "669511a21baa81aff4bb53a77341f0cfaa4f21c0bba045beaa834d2b8888e5c7"
+  },
+  "combined_catalog_source": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedCatalog.lean",
+    "sha256": "04f0f5215abfa69fd00e83e25d7db6ce53aabdfa2c44c5b87019d60fd4d86652"
+  },
+  "direct_build_axiom_stdout": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/audits/lean25-a1275-scalar-audit/patched-native-rebuild/direct-build.stdout.log",
+    "sha256": "8ddb5ccd56c938282343b547293f71b35ebff8ba730e4f4b64c6d05fe51d98ba"
+  },
+  "evidence": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/audits/lean25-a1275-scalar-audit/FINAL-EVIDENCE.json",
+    "sha256": "5c28ee69f83933637f8409e8b4b51f18edcc7ef6962574a25d01e9bf9985096a"
+  },
+  "hostile_replay_log": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/audits/lean25-a1275-scalar-audit/patched-lean-probes/HostileOutOfRangeFinProbe.stderr.log",
+    "sha256": "014a5801d1cd62c999f4ed35490fe2dbf9691daf991eb11b841d114bcee204fa"
+  },
+  "owner_build_log": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedScalarData.explicit-fin.build.log",
+    "sha256": "c88bca0a506eb1140e5fcb0a9309c79a4a5f3912d47b7615f204a7805f03aad3"
+  },
+  "owner_olean": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedScalarData.olean",
+    "sha256": "0d563050370f994bc59370878a6e75201a4cf26398f630781a08bc812472b14d"
+  },
+  "patched_exact_audit": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/audits/lean25-a1275-scalar-audit/patched-exact-audit.json",
+    "sha256": "ae63e636df5ad6371ddc0c4932e96da651e17acf609be1a33eb955120311e0d0"
+  },
+  "patched_generator": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/generate_improved_scalar_lean.py",
+    "sha256": "6ad0eedbd054b11f7fd387dbebf5878f5f9d201114fff948aaf75987fce29f08"
+  },
+  "patched_scalar_source": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedScalarData.lean",
+    "sha256": "1ae4e940ffa5860768c7756ac4b60a0bde643db3140ad14c070f94e3a8a94adc"
+  },
+  "provenance_replay": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/audits/lean25-a1275-scalar-audit/provenance-replay/report.json",
+    "sha256": "2585829b0afe59a33f1345dd17dad7a5fbca7f41abfc230bc2461c65abcdf308"
+  },
+  "report": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/audits/lean25-a1275-scalar-audit/REPORT.md",
+    "sha256": "7c6248b1eea42284f750438eafdd8c2dfae927bd980aecc94914c32f3b4300f4"
+  },
+  "schema": 1,
+  "source_json": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/sextuple-improvement/refined-A-0p01275/scalar-certificates.json",
+    "sha256": "66264d3d9bc6cd0cde88f4d1bdb946ad3c8a64053d73d45a29176cdb8611dfe7"
+  },
+  "superseded_scalar_source": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/superseded-scalar-bare-fin/ImprovedScalarData.bare-fin.lean",
+    "sha256": "6791d1ff415bdabeb7feea0d534f04e293ca41d565d2935a2515ea2efd8ab7d0"
+  },
+  "verdict": "PASS"
+}

@@ -1,0 +1,63 @@
+✔ [8701/8722] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks000 (6.6s)
+✔ [8702/8722] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks001 (6.6s)
+✔ [8703/8722] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks002 (6.5s)
+✔ [8705/8723] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks003 (6.5s)
+✔ [8706/8723] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks004 (6.6s)
+ℹ [8708/8727] Replayed Zeta23.ThmD.Sextuple.Macro.EnvelopeData
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:561:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroEnvelope_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:563:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroPiece0_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:564:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroPiece3_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:565:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroPieces_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [8711/8727] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks005 (6.6s)
+✔ [8712/8727] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks006 (6.6s)
+✔ [8713/8727] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks007 (6.6s)
+ℹ [8714/8729] Replayed Zeta23.ThmD.Sextuple.A1275.RefinementData
+info: Zeta23/ThmD/Sextuple/A1275/RefinementData.lean:2177:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.refinementCatalog_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8716/8729] Replayed Zeta23.ThmD.Sextuple.Macro.StableCatalog
+info: Zeta23/ThmD/Sextuple/Macro/StableCatalog.lean:128:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.stableMacroTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [8717/8729] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks008 (6.5s)
+✔ [8718/8729] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks009 (6.6s)
+✔ [8720/8731] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks010 (6.6s)
+✔ [8721/8731] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks011 (6.6s)
+ℹ [8722/8732] Replayed Zeta23.ThmD.Sextuple.Macro.ParametricAdapter
+info: Zeta23/ThmD/Sextuple/Macro/ParametricAdapter.lean:157:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.fastLeafCheckAt_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/ParametricAdapter.lean:158:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.affineTree_global_at' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [8723/8732] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks012 (6.7s)
+ℹ [8724/8733] Replayed Zeta23.ThmD.Sextuple.A1275.Catalog
+info: Zeta23/ThmD/Sextuple/A1275/Catalog.lean:460:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.refinementTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Catalog.lean:461:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.improvedCatalog_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [8725/8733] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks013 (6.7s)
+ℹ [8726/8734] Replayed Zeta23.ThmD.Sextuple.A1275.ScalarData
+info: Zeta23/ThmD/Sextuple/A1275/ScalarData.lean:20980:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.improvedScalarTable_check' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+✔ [8727/8734] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks014 (6.7s)
+✔ [8728/8734] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks015 (6.7s)
+✔ [8729/8735] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks016 (6.7s)
+✔ [8730/8737] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks017 (6.7s)
+✔ [8731/8737] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks018 (6.7s)
+✔ [8732/8738] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks019 (6.8s)
+✔ [8733/8740] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks020 (6.8s)
+✔ [8734/8740] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks021 (6.8s)
+✔ [8735/8741] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks022 (6.8s)
+✔ [8736/8743] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks023 (6.8s)
+✔ [8737/8743] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks024 (6.8s)
+ℹ [8738/8744] Built Zeta23.ThmD.Sextuple.A1275.TreeReader (25s)
+info: Zeta23/ThmD/Sextuple/A1275/TreeReader.lean:139:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.improvedConcreteLeafCheck_sound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+✔ [8739/8746] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks025 (6.8s)
+✔ [8741/8750] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks026 (6.8s)
+✔ [8742/8750] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks027 (6.8s)
+✔ [8745/8750] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks030 (1.1s)
+✔ [8746/8750] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks028 (6.4s)
+✔ [8747/8750] Built Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks029 (6.4s)
+✔ [8748/8750] Built Zeta23.ThmD.Sextuple.A1275.TreeWords (12s)
+ℹ [8749/8750] Built Zeta23.ThmD.Sextuple.A1275.Layout (7.4s)
+info: Zeta23/ThmD/Sextuple/A1275/Layout.lean:42:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.improvedTopologyLayoutValid' depends on axioms: [propext, Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Layout.lean:43:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.improvedLeafLayoutValid' depends on axioms: [propext, Quot.sound]
+ℹ [8750/8750] Built Zeta23.ThmD.Sextuple.A1275.ChunkCalibration (13s)
+info: Zeta23/ThmD/Sextuple/A1275/ChunkCalibration.lean:16:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.improvedChunkCalibration' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Build completed successfully (8750 jobs).

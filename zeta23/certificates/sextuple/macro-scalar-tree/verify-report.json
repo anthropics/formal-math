@@ -1,0 +1,17 @@
+{
+  "data_sha256": "961a0281a134382f9c2678cc49487839d2b9c2cbd9df382871f2c7b706552a5b",
+  "elapsed_seconds": 6.98593520745635,
+  "full_kind_exhaustion": true,
+  "full_quadratic_exhaustion": true,
+  "full_topology_exhaustion": true,
+  "kind_cursor": 49754,
+  "maximum_depth": 60,
+  "quadratic_cursor": 48260,
+  "quadratic_leaves": 48260,
+  "scalar_certificate_count": 871,
+  "smallest_margin": "183119768982144686089776740666084933541/34359738368000000000000000000000000000000000000",
+  "smallest_margin_float": 5.329486709732582e-09,
+  "status": "PASS",
+  "tail_leaves": 1494,
+  "token_count": 99507
+}

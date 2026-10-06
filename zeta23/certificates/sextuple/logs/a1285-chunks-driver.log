@@ -1,0 +1,124 @@
+2026-08-28T01:14:02Z chunks total=30153 todo=30153 budget=100.0GiB max_workers=9
+2026-08-28T01:14:02Z batch 0: 500 chunks idx 0..499 peak_pred=11.0GiB workers=9 free=83.2GiB
+2026-08-28T01:23:03Z   -> exit=0 wall=542s built=500 sum=4695s max=23s
+2026-08-28T01:23:03Z batch 1: 500 chunks idx 500..999 peak_pred=11.0GiB workers=9 free=82.9GiB
+2026-08-28T01:33:01Z   -> exit=0 wall=597s built=500 sum=5179s max=27s
+2026-08-28T01:33:01Z batch 2: 500 chunks idx 1000..1499 peak_pred=11.0GiB workers=9 free=81.8GiB
+2026-08-28T01:47:17Z   -> exit=0 wall=856s built=500 sum=7453s max=27s
+2026-08-28T01:47:17Z batch 3: 500 chunks idx 1500..1999 peak_pred=11.0GiB workers=9 free=81.4GiB
+2026-08-28T02:01:17Z   -> exit=0 wall=841s built=500 sum=7242s max=21s
+2026-08-28T02:01:17Z batch 4: 500 chunks idx 2000..2499 peak_pred=11.0GiB workers=9 free=82.0GiB
+2026-08-28T02:15:06Z   -> exit=0 wall=829s built=500 sum=7146s max=22s
+2026-08-28T02:15:06Z batch 5: 500 chunks idx 2500..2999 peak_pred=11.0GiB workers=9 free=81.5GiB
+2026-08-28T02:28:29Z   -> exit=0 wall=803s built=500 sum=6929s max=22s
+2026-08-28T02:28:29Z batch 6: 500 chunks idx 3000..3499 peak_pred=11.0GiB workers=9 free=80.9GiB
+2026-08-28T02:42:19Z   -> exit=0 wall=830s built=500 sum=7176s max=23s
+2026-08-28T02:42:19Z batch 7: 500 chunks idx 3500..3999 peak_pred=11.0GiB workers=9 free=81.4GiB
+2026-08-28T02:56:16Z   -> exit=0 wall=837s built=500 sum=7216s max=23s
+2026-08-28T02:56:16Z batch 8: 500 chunks idx 4000..4499 peak_pred=11.0GiB workers=9 free=80.6GiB
+2026-08-28T03:10:45Z   -> exit=0 wall=869s built=500 sum=7493s max=22s
+2026-08-28T03:10:45Z batch 9: 500 chunks idx 4500..4999 peak_pred=11.0GiB workers=9 free=80.7GiB
+2026-08-28T03:24:04Z   -> exit=0 wall=798s built=500 sum=6879s max=23s
+2026-08-28T03:24:04Z batch 10: 500 chunks idx 5000..5499 peak_pred=11.0GiB workers=9 free=80.7GiB
+2026-08-28T03:38:34Z   -> exit=0 wall=870s built=500 sum=7488s max=24s
+2026-08-28T03:38:34Z batch 11: 500 chunks idx 5500..5999 peak_pred=11.0GiB workers=9 free=79.2GiB
+2026-08-28T03:52:43Z   -> exit=0 wall=849s built=500 sum=7373s max=23s
+2026-08-28T03:52:43Z batch 12: 500 chunks idx 6000..6499 peak_pred=11.0GiB workers=9 free=81.4GiB
+2026-08-28T04:07:04Z   -> exit=0 wall=862s built=500 sum=7452s max=23s
+2026-08-28T04:07:04Z batch 13: 500 chunks idx 6500..6999 peak_pred=11.0GiB workers=9 free=80.7GiB
+2026-08-28T04:21:29Z   -> exit=0 wall=864s built=500 sum=7468s max=22s
+2026-08-28T04:21:29Z batch 14: 500 chunks idx 7000..7499 peak_pred=11.0GiB workers=9 free=80.6GiB
+2026-08-28T04:36:08Z   -> exit=0 wall=879s built=500 sum=7590s max=23s
+2026-08-28T04:36:08Z batch 15: 500 chunks idx 7500..7999 peak_pred=11.0GiB workers=9 free=79.6GiB
+2026-08-28T04:50:55Z   -> exit=0 wall=887s built=500 sum=7628s max=22s
+2026-08-28T04:50:55Z batch 16: 500 chunks idx 8000..8499 peak_pred=11.0GiB workers=9 free=78.0GiB
+2026-08-28T05:05:08Z   -> exit=0 wall=853s built=500 sum=7343s max=21s
+2026-08-28T05:05:08Z batch 17: 500 chunks idx 8500..8999 peak_pred=11.0GiB workers=9 free=78.3GiB
+2026-08-28T05:19:42Z   -> exit=0 wall=873s built=500 sum=7561s max=23s
+2026-08-28T05:19:42Z batch 18: 500 chunks idx 9000..9499 peak_pred=11.0GiB workers=9 free=79.6GiB
+2026-08-28T05:33:46Z   -> exit=0 wall=844s built=500 sum=7252s max=22s
+2026-08-28T05:33:46Z batch 19: 500 chunks idx 9500..9999 peak_pred=11.0GiB workers=9 free=79.5GiB
+2026-08-28T05:47:05Z   -> exit=0 wall=799s built=500 sum=6903s max=22s
+2026-08-28T05:47:05Z batch 20: 500 chunks idx 10000..10499 peak_pred=11.0GiB workers=9 free=78.8GiB
+2026-08-28T06:01:10Z   -> exit=0 wall=845s built=500 sum=7274s max=23s
+2026-08-28T06:01:10Z batch 21: 500 chunks idx 10500..10999 peak_pred=11.0GiB workers=9 free=78.3GiB
+2026-08-28T06:15:19Z   -> exit=0 wall=849s built=500 sum=7315s max=22s
+2026-08-28T06:15:19Z batch 22: 500 chunks idx 11000..11499 peak_pred=11.0GiB workers=9 free=78.0GiB
+2026-08-28T06:29:02Z   -> exit=0 wall=822s built=500 sum=7111s max=23s
+2026-08-28T06:29:02Z batch 23: 500 chunks idx 11500..11999 peak_pred=11.0GiB workers=9 free=76.8GiB
+2026-08-28T06:42:39Z   -> exit=0 wall=817s built=500 sum=7038s max=23s
+2026-08-28T06:42:39Z batch 24: 500 chunks idx 12000..12499 peak_pred=11.0GiB workers=9 free=77.3GiB
+2026-08-28T06:56:40Z   -> exit=0 wall=841s built=500 sum=7271s max=22s
+2026-08-28T06:56:40Z batch 25: 500 chunks idx 12500..12999 peak_pred=11.0GiB workers=9 free=77.6GiB
+2026-08-28T07:10:03Z   -> exit=0 wall=803s built=500 sum=6896s max=21s
+2026-08-28T07:10:03Z batch 26: 500 chunks idx 13000..13499 peak_pred=11.0GiB workers=9 free=76.7GiB
+2026-08-28T07:24:06Z   -> exit=0 wall=843s built=500 sum=7273s max=21s
+2026-08-28T07:24:06Z batch 27: 500 chunks idx 13500..13999 peak_pred=11.0GiB workers=9 free=77.3GiB
+2026-08-28T07:38:05Z   -> exit=0 wall=839s built=500 sum=7264s max=23s
+2026-08-28T07:38:05Z batch 28: 500 chunks idx 14000..14499 peak_pred=11.0GiB workers=9 free=77.9GiB
+2026-08-28T07:52:35Z   -> exit=0 wall=870s built=500 sum=7540s max=24s
+2026-08-28T07:52:35Z batch 29: 500 chunks idx 14500..14999 peak_pred=11.0GiB workers=9 free=78.0GiB
+2026-08-28T08:07:00Z   -> exit=0 wall=864s built=500 sum=7478s max=24s
+2026-08-28T08:07:00Z batch 30: 500 chunks idx 15000..15499 peak_pred=11.0GiB workers=9 free=77.8GiB
+2026-08-28T08:21:39Z   -> exit=0 wall=879s built=500 sum=7595s max=23s
+2026-08-28T08:21:39Z batch 31: 500 chunks idx 15500..15999 peak_pred=11.0GiB workers=9 free=77.5GiB
+2026-08-28T08:36:24Z   -> exit=0 wall=885s built=500 sum=7666s max=24s
+2026-08-28T08:36:24Z batch 32: 500 chunks idx 16000..16499 peak_pred=11.0GiB workers=9 free=78.4GiB
+2026-08-28T08:51:00Z   -> exit=0 wall=876s built=500 sum=7582s max=23s
+2026-08-28T08:51:00Z batch 33: 500 chunks idx 16500..16999 peak_pred=11.0GiB workers=9 free=78.1GiB
+2026-08-28T09:05:57Z   -> exit=0 wall=897s built=500 sum=7736s max=23s
+2026-08-28T09:05:57Z batch 34: 500 chunks idx 17000..17499 peak_pred=11.0GiB workers=9 free=78.2GiB
+2026-08-28T09:21:02Z   -> exit=0 wall=905s built=500 sum=7824s max=24s
+2026-08-28T09:21:02Z batch 35: 500 chunks idx 17500..17999 peak_pred=11.0GiB workers=9 free=78.4GiB
+2026-08-28T09:35:32Z   -> exit=0 wall=871s built=500 sum=7509s max=23s
+2026-08-28T09:35:32Z batch 36: 500 chunks idx 18000..18499 peak_pred=11.0GiB workers=9 free=77.1GiB
+2026-08-28T09:49:56Z   -> exit=0 wall=863s built=500 sum=7440s max=23s
+2026-08-28T09:49:56Z batch 37: 500 chunks idx 18500..18999 peak_pred=11.0GiB workers=9 free=77.9GiB
+2026-08-28T10:04:17Z   -> exit=0 wall=861s built=500 sum=7413s max=22s
+2026-08-28T10:04:17Z batch 38: 500 chunks idx 19000..19499 peak_pred=11.0GiB workers=9 free=77.8GiB
+2026-08-28T10:18:40Z   -> exit=0 wall=863s built=500 sum=7452s max=23s
+2026-08-28T10:18:40Z batch 39: 500 chunks idx 19500..19999 peak_pred=11.0GiB workers=9 free=78.2GiB
+2026-08-28T10:32:57Z   -> exit=0 wall=857s built=500 sum=7396s max=21s
+2026-08-28T10:32:57Z batch 40: 500 chunks idx 20000..20499 peak_pred=11.0GiB workers=9 free=77.9GiB
+2026-08-28T10:47:12Z   -> exit=0 wall=855s built=500 sum=7375s max=23s
+2026-08-28T10:47:12Z batch 41: 500 chunks idx 20500..20999 peak_pred=11.0GiB workers=9 free=77.7GiB
+2026-08-28T11:01:35Z   -> exit=0 wall=863s built=500 sum=7421s max=22s
+2026-08-28T11:01:35Z batch 42: 500 chunks idx 21000..21499 peak_pred=11.0GiB workers=9 free=76.8GiB
+2026-08-28T11:16:07Z   -> exit=0 wall=872s built=500 sum=7509s max=23s
+2026-08-28T11:16:07Z batch 43: 500 chunks idx 21500..21999 peak_pred=11.0GiB workers=9 free=76.8GiB
+2026-08-28T11:29:36Z   -> exit=0 wall=809s built=500 sum=6981s max=23s
+2026-08-28T11:29:36Z batch 44: 500 chunks idx 22000..22499 peak_pred=11.0GiB workers=9 free=77.6GiB
+2026-08-28T11:40:08Z   -> exit=0 wall=632s built=500 sum=5465s max=23s
+2026-08-28T11:40:08Z batch 45: 500 chunks idx 22500..22999 peak_pred=11.0GiB workers=9 free=77.2GiB
+2026-08-28T11:50:06Z   -> exit=0 wall=598s built=500 sum=5129s max=23s
+2026-08-28T11:50:06Z batch 46: 500 chunks idx 23000..23499 peak_pred=11.0GiB workers=9 free=77.5GiB
+2026-08-28T12:02:44Z   -> exit=0 wall=758s built=500 sum=6528s max=23s
+2026-08-28T12:02:44Z batch 47: 500 chunks idx 23500..23999 peak_pred=11.0GiB workers=9 free=77.6GiB
+2026-08-28T12:14:51Z   -> exit=0 wall=727s built=500 sum=6302s max=23s
+2026-08-28T12:14:51Z batch 48: 500 chunks idx 24000..24499 peak_pred=11.0GiB workers=9 free=75.8GiB
+2026-08-28T12:25:39Z   -> exit=0 wall=647s built=500 sum=5613s max=25s
+2026-08-28T12:25:39Z batch 49: 500 chunks idx 24500..24999 peak_pred=11.0GiB workers=9 free=76.4GiB
+2026-08-28T12:38:54Z   -> exit=0 wall=795s built=500 sum=6870s max=23s
+2026-08-28T12:38:54Z batch 50: 500 chunks idx 25000..25499 peak_pred=11.0GiB workers=9 free=76.3GiB
+2026-08-28T12:52:38Z   -> exit=0 wall=825s built=500 sum=7084s max=22s
+2026-08-28T12:52:38Z batch 51: 500 chunks idx 25500..25999 peak_pred=11.0GiB workers=9 free=76.5GiB
+2026-08-28T13:06:51Z   -> exit=0 wall=853s built=500 sum=7348s max=27s
+2026-08-28T13:06:51Z batch 52: 500 chunks idx 26000..26499 peak_pred=11.0GiB workers=9 free=73.8GiB
+2026-08-28T13:21:21Z   -> exit=0 wall=870s built=500 sum=7506s max=25s
+2026-08-28T13:21:21Z batch 53: 500 chunks idx 26500..26999 peak_pred=11.0GiB workers=9 free=75.3GiB
+2026-08-28T13:35:52Z   -> exit=0 wall=871s built=500 sum=7553s max=25s
+2026-08-28T13:35:52Z batch 54: 500 chunks idx 27000..27499 peak_pred=11.0GiB workers=9 free=76.4GiB
+2026-08-28T13:51:39Z   -> exit=0 wall=947s built=500 sum=8190s max=25s
+2026-08-28T13:51:39Z batch 55: 500 chunks idx 27500..27999 peak_pred=11.0GiB workers=9 free=75.3GiB
+2026-08-28T14:05:41Z   -> exit=0 wall=842s built=500 sum=7301s max=27s
+2026-08-28T14:05:41Z batch 56: 500 chunks idx 28000..28499 peak_pred=11.0GiB workers=9 free=75.4GiB
+2026-08-28T14:17:31Z   -> exit=0 wall=710s built=500 sum=6158s max=27s
+2026-08-28T14:17:31Z batch 57: 500 chunks idx 28500..28999 peak_pred=11.0GiB workers=9 free=76.0GiB
+2026-08-28T14:25:49Z   -> exit=0 wall=498s built=500 sum=4258s max=22s
+2026-08-28T14:25:49Z batch 58: 500 chunks idx 29000..29499 peak_pred=11.0GiB workers=9 free=75.8GiB
+2026-08-28T14:34:08Z   -> exit=0 wall=499s built=500 sum=4317s max=24s
+2026-08-28T14:34:08Z batch 59: 500 chunks idx 29500..29999 peak_pred=11.0GiB workers=9 free=76.1GiB
+2026-08-28T14:42:21Z   -> exit=0 wall=494s built=500 sum=4271s max=23s
+2026-08-28T14:42:21Z batch 60: 153 chunks idx 30000..30152 peak_pred=11.0GiB workers=9 free=75.0GiB
+2026-08-28T14:44:56Z   -> exit=0 wall=155s built=153 sum=1322s max=17s
+2026-08-28T14:44:58Z done; missing=0

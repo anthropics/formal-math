@@ -1,0 +1,17 @@
+{
+  "challenge_module": "Challenge.SextupleA1275",
+  "solution_module": "Solution.SextupleA1275",
+  "theorem_names": [
+    "sextuple_a1275_simple_on_critical_line_decimal",
+    "sextuple_a1275_simple_on_critical_line_cumulative_decimal",
+    "sextuple_a1275_simple_on_critical_line_6727837118",
+    "sextuple_a1275_simple_on_critical_line_cumulative_6727837118"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

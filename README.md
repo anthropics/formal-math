@@ -5,6 +5,7 @@ Machine-checked Lean 4 formalizations published by Anthropic. Each subdirectory 
 | Project | Statement | Lean / Mathlib |
 |---|---|---|
 | [`zeta23/`](zeta23/) | More than two thirds of the zeros of the Riemann zeta function are simple and on the critical line (Alpöge–Furman, arXiv:2608.13637) | `leanprover/lean4:v4.33.0-rc2` / Mathlib `v4.33.0-rc2` |
+| [`3sum-apsp/`](3sum-apsp/) | Programs of a word RAM solve 3SUM in O(n^1.9992) steps and the (min,+)-product and APSP in O(n^2.99942) steps, on integers of polynomial size; also bounds for Exact Triangle and Zero-Weight k-Clique, and further results of the paper, item by item (Alman–Vassilevska Williams, arXiv:2610.06783) | `leanprover/lean4:v4.33.1` / Mathlib `v4.33.1` |
 
 ## CI
 

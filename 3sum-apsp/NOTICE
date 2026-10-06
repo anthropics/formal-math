@@ -1,0 +1,20 @@
+ThreeSumApsp: a Lean 4 formalization of "Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in
+Sparse Lopsided Graphs"
+Copyright 2026 Anthropic, PBC
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The comments of the Lean files and the documents of this product quote statements and sentences of the paper named
+above. The quoted passages are included, under the Apache License, Version 2.0, with the permission of the authors of
+the paper.
+
+This product depends on, but does not include, Lean 4 (https://github.com/leanprover/lean4) and
+mathlib4 with its standard dependency set, fetched by the build tool from their public repositories at the
+revisions pinned in lake-manifest.json: batteries, aesop, Qq, ProofWidgets4, import-graph, LeanSearchClient and
+plausible are released under the Apache License, Version 2.0; Cli (leanprover/lean4-cli) is released under the
+MIT License (Copyright (c) 2021 mhuisi). None of these dependencies is included in this product, apart from
+four proofs in ThreeSumApsp/Util/PrimesInWindow.lean: the proofs of prod_middle_le and centralBinom_le are adapted
+from that of centralBinom_le_of_no_bertrand_prime, and the proofs of concaveOn_log_add_sqrt_mul_log_sub and
+log_add_sqrt_mul_log_le from that of Bertrand.real_main_inequality, all in the file
+Mathlib/NumberTheory/Bertrand.lean of mathlib4 (Copyright (c) 2020 Patrick Stevens. All rights reserved. Released under
+Apache 2.0 license. Authors: Patrick Stevens, Bolton Bailey).

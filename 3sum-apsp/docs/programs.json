@@ -1,0 +1,148 @@
+[
+ {
+  "item": "Theorems 1 to 4",
+  "pages": "5 to 8",
+  "statements": [
+   "wordRam_theorem_1",
+   "wordRam_theorem_2",
+   "wordRam_theorem_2_graphs",
+   "wordRam_theorem_3",
+   "wordRam_theorem_4"
+  ]
+ },
+ {
+  "item": "Theorem 5",
+  "pages": "13",
+  "statements": [
+   "wordRam_theorem_5"
+  ],
+  "programs": [
+   "Light.Sec2.programThin"
+  ],
+  "lemmas": {
+   "bandArrayBody": "bandArrayL_entry bandArrayR_entry",
+   "encodeBandsBody": "encodeBandsL_entry encodeBandsR_entry",
+   "pickBody": "pickSet_entry pickAdd_entry"
+  }
+ },
+ {
+  "item": "Corollaries 15 and 16",
+  "pages": "32",
+  "statements": [
+   "wordRam_corollary_15",
+   "wordRam_corollary_16"
+  ],
+  "lemmas": {
+   "lopDetectBody": "LopHosts.detect_spec",
+   "lopSplitBody": "LopSplitHost.split_spec"
+  }
+ },
+ {
+  "item": "Theorem 19",
+  "pages": "35",
+  "statements": [
+   "wordRam_theorem_19"
+  ],
+  "programs": [
+   "Light.Sec3.et17Procs",
+   "Light.Sec3.paramProcs"
+  ],
+  "lemmas": {
+   "strBody": "strassen_spec"
+  }
+ },
+ {
+  "item": "Theorem 22",
+  "pages": "36",
+  "statements": [
+   "wordRam_theorem_22_first",
+   "wordRam_theorem_22_second",
+   "wordRam_theorem_22_threeSum"
+  ],
+  "own": [
+   "Light.Sec3.ntBody",
+   "Light.Sec3.affineBody",
+   "Light.Sec3.prefDownBody"
+  ]
+ },
+ {
+  "item": "Theorems 24 and 25",
+  "pages": "39",
+  "statements": [
+   "wordRam_theorem_24",
+   "wordRam_theorem_25"
+  ]
+ },
+ {
+  "item": "Corollary 26",
+  "pages": "40",
+  "statements": [
+   "wordRam_corollary_26",
+   "wordRam_corollary_26_wanted"
+  ],
+  "programs": [
+   "Light.Sec4.program26"
+  ],
+  "lemmas": {
+   "query31Body": "query31_meets",
+   "preMain31Body": "preMain31_meets",
+   "queryMain31Body": "queryMain31_meets",
+   "offline32Body": "offline32_meets",
+   "offlineMain32Body": "offlineMain32_meets"
+  }
+ },
+ {
+  "item": "Theorem 30",
+  "pages": "46 and 47",
+  "statements": [
+   "wordRam_theorem_30",
+   "wordRam_theorem_30_wanted"
+  ],
+  "programs": [
+   "Light.Sec4.program30"
+  ]
+ },
+ {
+  "item": "Corollaries 31 and 32",
+  "pages": "49",
+  "statements": [
+   "wordRam_corollary_31",
+   "wordRam_corollary_32"
+  ],
+  "programs": [
+   "Light.Sec4.program31"
+  ]
+ },
+ {
+  "item": "Corollary 39",
+  "pages": "58",
+  "statements": [
+   "wordRam_corollary_39_zero",
+   "wordRam_corollary_39_min_max"
+  ]
+ },
+ {
+  "item": "Corollary 40",
+  "pages": "59",
+  "statements": [
+   "wordRam_corollary_40_times",
+   "wordRam_corollary_40_general_times",
+   "wordRam_corollary_40_fail"
+  ],
+  "lemmas": {
+   "mvPhase1Body": "mv_lightPhases",
+   "vPhase1Body": "v_lightPhases"
+  }
+ },
+ {
+  "item": "The five claims of EndStatement.lean",
+  "pages": "",
+  "statements": [
+   "endStatement_theorem_19",
+   "endStatement_theorem_22_3SUM",
+   "endStatement_theorem_22_MinPlus",
+   "endStatement_theorem_22_APSP",
+   "endStatement_corollary_39_zeroWeight"
+  ]
+ }
+]

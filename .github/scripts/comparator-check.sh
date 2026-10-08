@@ -17,6 +17,8 @@
 # Tool pins default to those of the Palomar registry's verifier
 # (https://github.com/PalomarRegistry/PalomarSubmission, .github/workflows/submission.yml); lean4export is
 # taken at the release tag named after the project's Lean version unless LEAN4EXPORT_COMMIT is set.
+# This repository's addition: when a stable patch release (vX.Y.Z, Z > 0) has no tag of its own, the vX.Y.0
+# tag is taken and built with the project's toolchain; release candidates do not fall back.
 set -euo pipefail
 
 COMPARATOR_COMMIT="${COMPARATOR_COMMIT:-575674928e239f5bc452aab72d1dd7b0f1326494}"
@@ -33,12 +35,20 @@ for tool in git go cargo jq lean lake; do
 done
 
 toolchain="$(tr -d '[:space:]' < lean-toolchain)"
-tag="v${toolchain#*:v}"
+tags=("v${toolchain#*:v}")
+patch_zero=""
+if [[ "$toolchain" =~ ^(.*:v[0-9]+\.[0-9]+)\.[1-9][0-9]*$ ]]; then
+  patch_zero="${BASH_REMATCH[1]}.0"
+  tags+=("v${patch_zero#*:v}")
+fi
 if [ -z "${LEAN4EXPORT_COMMIT:-}" ]; then
-  refs="$(git ls-remote https://github.com/leanprover/lean4export "refs/tags/$tag" "refs/tags/$tag^{}")"
-  LEAN4EXPORT_COMMIT="$(awk -v t="refs/tags/$tag^{}" '$2==t {print $1}' <<<"$refs")"
-  [ -n "$LEAN4EXPORT_COMMIT" ] || LEAN4EXPORT_COMMIT="$(awk -v t="refs/tags/$tag" '$2==t {print $1}' <<<"$refs")"
-  [ -n "$LEAN4EXPORT_COMMIT" ] || die "leanprover/lean4export has no release $tag for toolchain $toolchain"
+  for tag in "${tags[@]}"; do
+    refs="$(git ls-remote https://github.com/leanprover/lean4export "refs/tags/$tag" "refs/tags/$tag^{}")"
+    LEAN4EXPORT_COMMIT="$(awk -v t="refs/tags/$tag^{}" '$2==t {print $1}' <<<"$refs")"
+    [ -n "$LEAN4EXPORT_COMMIT" ] || LEAN4EXPORT_COMMIT="$(awk -v t="refs/tags/$tag" '$2==t {print $1}' <<<"$refs")"
+    [ -z "$LEAN4EXPORT_COMMIT" ] || break
+  done
+  [ -n "$LEAN4EXPORT_COMMIT" ] || die "leanprover/lean4export has no release ${tags[0]}${tags[1]:+ or ${tags[1]}} for toolchain $toolchain"
 fi
 
 shopt -s nullglob
@@ -64,12 +74,16 @@ checkout_at https://github.com/leanprover/comparator.git "$TOOLS_DIR/comparator"
 (cd "$TOOLS_DIR/comparator" && lake build comparator)
 comparator_bin="$TOOLS_DIR/comparator/.lake/build/bin/comparator"
 
-echo "== lean4export @ $LEAN4EXPORT_COMMIT (release $tag)"
+echo "== lean4export @ $LEAN4EXPORT_COMMIT"
 checkout_at https://github.com/leanprover/lean4export.git "$TOOLS_DIR/lean4export" "$LEAN4EXPORT_COMMIT"
 export_toolchain="$(tr -d '[:space:]' < "$TOOLS_DIR/lean4export/lean-toolchain")"
-[ "$export_toolchain" = "$toolchain" ] \
-  || die "lean4export $LEAN4EXPORT_COMMIT targets $export_toolchain but the project uses $toolchain"
-(cd "$TOOLS_DIR/lean4export" && lake build lean4export)
+if [ "$export_toolchain" = "$toolchain" ]; then
+  (cd "$TOOLS_DIR/lean4export" && lake build lean4export)
+elif [ -n "$patch_zero" ] && [ "$export_toolchain" = "$patch_zero" ]; then
+  (cd "$TOOLS_DIR/lean4export" && lake "+$toolchain" build lean4export)
+else
+  die "lean4export $LEAN4EXPORT_COMMIT targets $export_toolchain but the project uses $toolchain"
+fi
 lean4export_bin="$TOOLS_DIR/lean4export/.lake/build/bin/lean4export"
 
 echo "== nanoda_lib @ $NANODA_COMMIT"

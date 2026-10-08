@@ -1,0 +1,36 @@
+name = "ThreeSumApsp"
+version = "0.1.0"
+defaultTargets = ["EndStatement", "PaperStatements", "ThreeSumApsp", "Challenge", "Solution"]
+
+[leanOptions]
+pp.unicode.fun = true
+autoImplicit = false
+relaxedAutoImplicit = false
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "v4.33.1"
+
+# Trusted: the five claims, with the machine and the problems that they speak of.  One file beside this one, which imports nothing.
+[[lean_lib]]
+name = "EndStatement"
+
+# Trusted: further statements of the paper, with the definitions that they use.  One file beside this one; it imports Mathlib and EndStatement only.
+[[lean_lib]]
+name = "PaperStatements"
+
+# Untrusted: the proofs.
+[[lean_lib]]
+name = "ThreeSumApsp"
+globs = ["ThreeSumApsp", "ThreeSumApsp.+"]
+
+# Trusted: the statements, each with sorry in place of its proof.
+[[lean_lib]]
+name = "Challenge"
+globs = ["Challenge.+"]
+
+# Untrusted: for each file of statements, a file of the same name that imports the proofs.
+[[lean_lib]]
+name = "Solution"
+globs = ["Solution.+"]

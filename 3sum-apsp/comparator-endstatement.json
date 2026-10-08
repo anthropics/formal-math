@@ -1,0 +1,18 @@
+{
+  "challenge_module": "Challenge.EndStatement",
+  "solution_module": "Solution.EndStatement",
+  "theorem_names": [
+    "ThreeSumApsp.endStatement_theorem_19",
+    "ThreeSumApsp.endStatement_theorem_22_3SUM",
+    "ThreeSumApsp.endStatement_theorem_22_MinPlus",
+    "ThreeSumApsp.endStatement_theorem_22_APSP",
+    "ThreeSumApsp.endStatement_corollary_39_zeroWeight"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

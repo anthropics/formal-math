@@ -1,0 +1,156 @@
+progress visited=100000 pending=31 depth=68 seconds=51.3
+progress visited=200000 pending=31 depth=70 seconds=85.0
+progress visited=400000 pending=37 depth=70 seconds=148.7
+progress visited=700000 pending=39 depth=70 seconds=246.5
+progress visited=1200000 pending=35 depth=73 seconds=442.7
+progress visited=1500000 pending=37 depth=73 seconds=561.7
+progress visited=1600000 pending=41 depth=73 seconds=595.9
+progress visited=1800000 pending=41 depth=73 seconds=667.7
+progress visited=1900000 pending=37 depth=73 seconds=704.2
+progress visited=2000000 pending=33 depth=73 seconds=736.3
+progress visited=2100000 pending=37 depth=73 seconds=767.7
+progress visited=2300000 pending=41 depth=73 seconds=837.0
+progress visited=2700000 pending=25 depth=73 seconds=975.8
+progress visited=2800000 pending=33 depth=73 seconds=1006.0
+progress visited=3000000 pending=33 depth=73 seconds=1087.1
+progress visited=3400000 pending=35 depth=73 seconds=1242.5
+progress visited=3500000 pending=25 depth=73 seconds=1274.3
+{
+  "A": "129/10000",
+  "B": "1094977/5000000000",
+  "catalog_piece_count": 602,
+  "cutoff": "64500000/1094977",
+  "data_sha256": "961a0281a134382f9c2678cc49487839d2b9c2cbd9df382871f2c7b706552a5b",
+  "elapsed_seconds": 1285.5167718743905,
+  "format": {
+    "anchors": "5 u16le codes per quadratic leaf; relative denominator 16384",
+    "kinds": "u8: 0 tail, 1 quadratic",
+    "terms": "15 u16le codes: 0..271 catalog, 32768+n stable scalar cert, 65535 zero",
+    "topology": "20 3-bit tokens per u64le word; unused high bits zero"
+  },
+  "fuel": 74,
+  "full_stack_exhaustion": true,
+  "generator_sha256": "7de8e8215ffa4bd19e69b82bd5ba05455469c2730c94ef83c7e8f9120e6b0931",
+  "leaves": 1775463,
+  "maximum_depth": 73,
+  "python": {
+    "executable": "/Users/mdumitrean/Desktop/dev/aigent/agi/.venv/bin/python",
+    "realpath": "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/bin/python3.14"
+  },
+  "quadratic_leaves": 1773735,
+  "refinement_piece_count": 546,
+  "refinement_term_count": 5971681,
+  "refinements_sha256": "3f83563fb3d6f5a4e1aa0263384d0781494a672368233445a8c6e8e0e9817cb9",
+  "scalar_certificate_count": 4299,
+  "scalar_certificate_segment_count": 31664,
+  "scalar_certificates_sha256": "b871c95a64b96628d9048de66907e9f7186fc1b0f80fd7037df644d25654875d",
+  "scalar_term_count": 17903683,
+  "schema": 2,
+  "smallest_quadratic_margin": "341518883023779193045610318101367759/4096000000000000000000000000000000000000000000",
+  "smallest_quadratic_margin_float": 8.337863355072735e-11,
+  "smallest_tail_margin": "103643/5000000000",
+  "smallest_tail_margin_float": 2.07286e-05,
+  "stable_piece_count": 56,
+  "stream_bytes": {
+    "anchors": 17737350,
+    "kinds": 1775463,
+    "terms": 53212050,
+    "topology": 1420376
+  },
+  "stream_sha256": {
+    "anchors": "f82cf5e90bd2b972f8064fe98187b8c90064d283409befa08cdc0c63dbbc1a4a",
+    "kinds": "dd5afcab647609be5e9c969ecb6c6b8511b61f377f1031e86ce7fc0d8837e80c",
+    "terms": "2447260f01df2812f2ea35a551ca76d7452cbaa863ca9e9623fd9c73566c0047",
+    "topology": "a3fe30548dfcf5c0277b73815911efef6d7863409ffc37b779c897dca7413bc0"
+  },
+  "tail_leaves": 1728,
+  "tightest_quadratic_leaf": {
+    "anchor": [
+      "6785/1024",
+      "102247/8192",
+      "53749/8192",
+      "25665/2048",
+      "27081/4096"
+    ],
+    "anchor_codes": [
+      0,
+      16384,
+      16384,
+      16384,
+      16384
+    ],
+    "box": [
+      [
+        "6785/1024",
+        "27199/4096"
+      ],
+      [
+        "25547/2048",
+        "102247/8192"
+      ],
+      [
+        "26845/4096",
+        "53749/8192"
+      ],
+      [
+        "102601/8192",
+        "25665/2048"
+      ],
+      [
+        "13511/2048",
+        "27081/4096"
+      ]
+    ],
+    "depth": 63,
+    "lower": "52838400341518883023779193045610318101367759/4096000000000000000000000000000000000000000000",
+    "margin": "341518883023779193045610318101367759/4096000000000000000000000000000000000000000000",
+    "term_codes": [
+      34140,
+      34657,
+      34508,
+      35181,
+      35519,
+      86,
+      34053,
+      34687,
+      34826,
+      74,
+      34659,
+      34769,
+      89,
+      34764,
+      77
+    ]
+  },
+  "tightest_tail_leaf": {
+    "box": [
+      [
+        "767/64",
+        "413/32"
+      ],
+      [
+        "767/64",
+        "413/32"
+      ],
+      [
+        "767/64",
+        "413/32"
+      ],
+      [
+        "767/64",
+        "413/32"
+      ],
+      [
+        "177/16",
+        "413/32"
+      ]
+    ],
+    "depth": 29,
+    "margin": "103643/5000000000"
+  },
+  "token_count": 3550925,
+  "topology_word_count": 177547,
+  "trust_note": "Float proposals only; every terminal and refined seam-cache comparison uses exact Fraction arithmetic. Refinement soundness is a separate Lean WellCert replay.",
+  "visited_nodes": 3550925,
+  "zero_term_count": 916216
+}

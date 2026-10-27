@@ -1,0 +1,22 @@
+ℹ [8704/8714] Replayed Zeta23.ThmD.Sextuple.Macro.EnvelopeData
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:561:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroEnvelope_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:563:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroPiece0_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:564:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroPiece3_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:565:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroPieces_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8705/8714] Replayed Zeta23.ThmD.Sextuple.A1275.RefinementData
+info: Zeta23/ThmD/Sextuple/A1275/RefinementData.lean:2177:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.refinementCatalog_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8710/8714] Replayed Zeta23.ThmD.Sextuple.Macro.ParametricAdapter
+info: Zeta23/ThmD/Sextuple/Macro/ParametricAdapter.lean:157:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.fastLeafCheckAt_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/ParametricAdapter.lean:158:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.affineTree_global_at' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8711/8714] Replayed Zeta23.ThmD.Sextuple.Macro.StableCatalog
+info: Zeta23/ThmD/Sextuple/Macro/StableCatalog.lean:128:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.stableMacroTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8712/8714] Replayed Zeta23.ThmD.Sextuple.A1275.Catalog
+info: Zeta23/ThmD/Sextuple/A1275/Catalog.lean:460:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.refinementTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Catalog.lean:461:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.improvedCatalog_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8713/8714] Built Zeta23.ThmD.Sextuple.A1290.RefinementData2 (115s)
+info: Zeta23/ThmD/Sextuple/A1290/RefinementData2.lean:4748:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.refinement2Table_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8714/8714] Built Zeta23.ThmD.Sextuple.A1290.Catalog (3.1s)
+info: Zeta23/ThmD/Sextuple/A1290/Catalog.lean:26:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.A1290.improvedCatalog2_check' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Build completed successfully (8714 jobs).

@@ -1,0 +1,530 @@
+⚠ [3123/3498] Replayed Zeta23.Assembly
+warning: Zeta23/Assembly.lean:885:47: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/Assembly.lean:958:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/Assembly.lean:962:90: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3125/3498] Replayed Zeta23.ZeroSide
+warning: Zeta23/ZeroSide.lean:701:4: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ZeroSide.lean:706:66: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ZeroSide.lean:712:52: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ZeroSide.lean:755:53: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3129/3498] Replayed Zeta23.ZeroSide.RankTraceMult
+warning: Zeta23/ZeroSide/RankTraceMult.lean:49:32: Variable name `ht0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:49:60: Variable name `hx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:56:30: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:56:43: Variable name `hx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:81:32: Variable name `hp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:81:58: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:164:20: This simp argument is unused:
+  Matrix.mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:359:28: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3302/3498] Replayed Zeta23.Statement
+warning: Zeta23/Statement.lean:148:30: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3621/4166] Replayed Zeta23.Statement.Seam
+warning: Zeta23/Statement/Seam.lean:59:13: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+⚠ [3623/4166] Replayed Zeta23.ZetaReflect
+warning: Zeta23/ZetaReflect.lean:91:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8728/8869] Replayed Zeta23.Tail
+warning: Zeta23/Tail.lean:290:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/Tail.lean:399:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [8742/8869] Replayed Zeta23.GammaFacts.Mu
+info: Zeta23/GammaFacts/Mu.lean:137:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [8744/8869] Replayed Zeta23.GammaFacts.StirlingVert
+info: Zeta23/GammaFacts/StirlingVert.lean:452:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [8748/8869] Replayed Zeta23.FromPNTPlus.StrongPNTPrefix
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:61:71: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:202:9: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:343:10: `Set.notMem_setOf_iff` has been deprecated: Use `Set.notMem_ofPred_iff` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:368:48: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:390:10: `Set.notMem_setOf_iff` has been deprecated: Use `Set.notMem_ofPred_iff` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:432:48: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8756/8869] Replayed Zeta23.FromPNTPlus.ZetaBounds
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:859:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:952:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1092:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1099:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1105:56: `Set.preimage_setOf_eq` has been deprecated: Use `Set.preimage_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1115:56: `Set.preimage_setOf_eq` has been deprecated: Use `Set.preimage_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1119:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1135:54: `Set.preimage_setOf_eq` has been deprecated: Use `Set.preimage_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1157:22: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1169:15: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1169:59: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1185:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1835:19: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1837:45: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1840:28: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1844:28: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1900:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1906:20: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:2091:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:2884:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:2940:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8758/8869] Replayed Zeta23.RvM.Halving
+warning: Zeta23/RvM/Halving.lean:52:55: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/RvM/Halving.lean:62:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/RvM/Halving.lean:70:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8764/8869] Replayed Zeta23.RvM.ReZeroCount
+warning: Zeta23/RvM/ReZeroCount.lean:272:15: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+⚠ [8769/8869] Replayed Zeta23.RvM.NcountWindow
+warning: Zeta23/RvM/NcountWindow.lean:23:22: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8772/8869] Replayed Zeta23.WeilEF.ZeroSummability
+warning: Zeta23/WeilEF/ZeroSummability.lean:189:4: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8775/8869] Replayed Zeta23.WeilEF.Landau
+warning: Zeta23/WeilEF/Landau.lean:341:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/WeilEF/Landau.lean:437:64: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8777/8869] Replayed Zeta23.WeilEF.Contour
+warning: Zeta23/WeilEF/Contour.lean:69:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [8782/8869] Replayed Zeta23.WeilEF.Main
+info: Zeta23/WeilEF/Main.lean:38:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [8784/8869] Replayed Zeta23.Assembly.SeamMult
+warning: Zeta23/Assembly/SeamMult.lean:26:0: automatically included section variable(s) unused in theorem `Zeta23.Assembly.ctr_sub_frobSq_perturb`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8813/8925] Replayed Zeta23.PrimeSideA.EndsE1
+warning: Zeta23/PrimeSideA/EndsE1.lean:326:41: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [8818/8925] Replayed Zeta23.PrimeSideA
+info: Zeta23/PrimeSideA.lean:372:0: lem_ends : ∀ (cϱ lam : ℝ),
+  GammaFacts →
+    ChebyshevMertens →
+      0 < lam ∧ lam ≤ 1 →
+        ∃ C, EventuallyAtCore cϱ lam fun p F ↦ |trGt2A p F - MtotalA p F| ≤ C * (p.L * p.l * log p.l * (p.l ^ 2 + p.X))
+info: Zeta23/PrimeSideA.lean:398:0: prop_mumu : ∀ (cϱ lam : ℝ),
+  GammaFacts →
+    ChebyshevMertens →
+      0 < lam ∧ lam ≤ 1 →
+        ∃ C,
+          EventuallyAtCore cϱ lam fun p F ↦
+            |Mform F.Phi p.T mu mu - 2 * π * F.b * p.L * ∫ (τ : ℝ) in p.T..2 * p.T, mu τ ^ 2| ≤ C * (p.l ^ 2 * log p.L)
+info: Zeta23/PrimeSideA.lean:404:0: prop_cross_muP : ∀ (cϱ lam : ℝ),
+  GammaFacts →
+    ChebyshevMertens →
+      0 < lam ∧ lam ≤ 1 → ∃ C, EventuallyAtCore cϱ lam fun p F ↦ |Mform F.Phi p.T mu (PX p.X)| ≤ C * (p.l * √p.X)
+⚠ [8824/8925] Replayed Zeta23.MV.Spacing
+warning: Zeta23/MV/Spacing.lean:58:0: automatically included section variable(s) unused in theorem `Zeta23.MV.Adm.itv_disjoint`:
+  [Fintype ι]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Zeta23/MV/Spacing.lean:153:8: automatically included section variable(s) unused in theorem `_private.Zeta23.MV.Spacing.0.Zeta23.MV.Adm.mem_window`:
+  [Fintype ι]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8832/8925] Replayed Zeta23.ThmD.WindowCore
+warning: Zeta23/ThmD/WindowCore.lean:388:22: Variable name `u` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _u
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8835/8925] Replayed Zeta23.ThmD.Window
+warning: Zeta23/ThmD/Window.lean:132:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8839/8925] Replayed Zeta23.ThmD.PP
+warning: Zeta23/ThmD/PP.lean:270:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ThmD/PP.lean:276:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [8856/8925] Replayed Zeta23.ThmD.Sextuple.Macro.EnvelopeData
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:561:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroEnvelope_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:563:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroPiece0_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:564:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroPiece3_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:565:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroPieces_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8857/8925] Replayed Zeta23.ThmD.Sextuple.A1275.RefinementData
+info: Zeta23/ThmD/Sextuple/A1275/RefinementData.lean:2177:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.refinementCatalog_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8862/8925] Replayed Zeta23.ThmD.Sextuple.Macro.ParametricAdapter
+info: Zeta23/ThmD/Sextuple/Macro/ParametricAdapter.lean:157:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.fastLeafCheckAt_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/ParametricAdapter.lean:158:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.affineTree_global_at' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8863/8925] Replayed Zeta23.ThmD.Sextuple.Macro.StableCatalog
+info: Zeta23/ThmD/Sextuple/Macro/StableCatalog.lean:128:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.stableMacroTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8864/8925] Replayed Zeta23.ThmD.Sextuple.A1275.Catalog
+info: Zeta23/ThmD/Sextuple/A1275/Catalog.lean:460:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.refinementTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Catalog.lean:461:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.improvedCatalog_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8865/8925] Replayed Zeta23.ThmD.Sextuple.A1285.ScalarData
+info: Zeta23/ThmD/Sextuple/A1285/ScalarData.lean:51368:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedScalarTable_check' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [8866/8925] Replayed Zeta23.ThmD.Sextuple.A1285.TreeReader
+info: Zeta23/ThmD/Sextuple/A1285/TreeReader.lean:126:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedConcreteLeafCheck_sound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [9010/9463] Replayed Zeta23.ThmD.Sextuple.A1285.Layout
+info: Zeta23/ThmD/Sextuple/A1285/Layout.lean:36:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedTopologyLayoutValid' depends on axioms: [propext, Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1285/Layout.lean:37:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedLeafLayoutValid' depends on axioms: [propext, Quot.sound]
+✔ [39176/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part000 (25s)
+✔ [39177/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part001 (5.8s)
+✔ [39178/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part002 (6.1s)
+✔ [39179/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part003 (5.0s)
+✔ [39180/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part004 (6.1s)
+✔ [39181/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part005 (6.4s)
+✔ [39182/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part006 (6.3s)
+✔ [39183/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part007 (6.1s)
+✔ [39184/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part008 (6.1s)
+✔ [39185/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part009 (7.5s)
+✔ [39186/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part010 (8.0s)
+✔ [39187/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part011 (7.7s)
+✔ [39188/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part012 (8.2s)
+✔ [39189/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part013 (8.5s)
+✔ [39190/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part014 (8.4s)
+✔ [39191/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part015 (8.8s)
+✔ [39192/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part016 (8.8s)
+✔ [39193/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part017 (8.7s)
+✔ [39194/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part018 (8.7s)
+✔ [39195/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part019 (8.2s)
+✔ [39196/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part020 (8.3s)
+✔ [39197/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part021 (8.5s)
+✔ [39198/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part022 (8.6s)
+✔ [39199/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part023 (8.7s)
+✔ [39200/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part024 (9.0s)
+✔ [39201/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part025 (8.7s)
+✔ [39202/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part026 (8.9s)
+✔ [39203/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part027 (8.6s)
+✔ [39204/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part028 (8.2s)
+✔ [39205/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part029 (7.9s)
+✔ [39206/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part030 (8.8s)
+✔ [39207/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part031 (8.6s)
+✔ [39208/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part032 (8.8s)
+✔ [39209/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part033 (9.2s)
+✔ [39210/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part034 (8.9s)
+✔ [39211/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part035 (9.1s)
+✔ [39212/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part036 (8.8s)
+✔ [39213/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part037 (8.5s)
+✔ [39214/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part038 (8.8s)
+✔ [39215/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part039 (8.8s)
+✔ [39216/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part040 (8.0s)
+✔ [39217/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part041 (9.4s)
+✔ [39218/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part042 (9.1s)
+✔ [39219/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part043 (9.2s)
+✔ [39220/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part044 (9.1s)
+✔ [39221/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part045 (8.7s)
+✔ [39222/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part046 (8.0s)
+✔ [39223/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part047 (9.2s)
+✔ [39224/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part048 (9.2s)
+✔ [39225/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part049 (9.0s)
+✔ [39226/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part050 (9.7s)
+✔ [39227/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part051 (9.0s)
+✔ [39228/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part052 (9.4s)
+✔ [39229/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part053 (9.6s)
+✔ [39230/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part054 (9.4s)
+✔ [39231/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part055 (9.6s)
+✔ [39232/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part056 (9.4s)
+✔ [39233/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part057 (9.8s)
+✔ [39234/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part058 (9.2s)
+✔ [39235/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part059 (9.6s)
+✔ [39236/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part060 (9.8s)
+✔ [39237/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part061 (9.7s)
+✔ [39238/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part062 (9.7s)
+✔ [39239/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part063 (9.7s)
+✔ [39240/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part064 (9.6s)
+✔ [39241/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part065 (9.6s)
+✔ [39242/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part066 (9.8s)
+✔ [39243/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part067 (9.7s)
+✔ [39244/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part068 (9.4s)
+✔ [39245/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part069 (9.7s)
+✔ [39246/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part070 (10s)
+✔ [39247/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part071 (10s)
+✔ [39248/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part072 (10s)
+✔ [39249/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part073 (10s)
+✔ [39250/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part074 (10s)
+✔ [39251/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part075 (10s)
+✔ [39252/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part076 (10s)
+✔ [39253/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part077 (10s)
+✔ [39254/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part078 (10s)
+✔ [39255/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part079 (10s)
+✔ [39256/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part080 (10s)
+✔ [39257/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part081 (10s)
+✔ [39258/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part082 (10s)
+✔ [39259/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part083 (10s)
+✔ [39260/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part084 (10s)
+✔ [39261/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part085 (10s)
+✔ [39262/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part086 (10s)
+✔ [39263/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part087 (10s)
+✔ [39264/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part088 (10s)
+✔ [39265/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part089 (10s)
+✔ [39266/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part090 (10s)
+✔ [39267/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part091 (10s)
+✔ [39268/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part092 (10s)
+✔ [39269/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part093 (10s)
+✔ [39270/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part094 (11s)
+✔ [39271/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part095 (11s)
+✔ [39272/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part096 (10s)
+✔ [39273/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part097 (10s)
+✔ [39274/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part098 (10s)
+✔ [39275/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part099 (10s)
+✔ [39276/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part100 (10s)
+✔ [39277/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part101 (10s)
+✔ [39278/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part102 (10s)
+✔ [39279/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part103 (10s)
+✔ [39280/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part104 (10s)
+✔ [39281/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part105 (11s)
+✔ [39282/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part106 (10s)
+✔ [39283/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part107 (11s)
+✔ [39284/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part108 (11s)
+✔ [39285/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part109 (11s)
+✔ [39286/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part110 (11s)
+✔ [39287/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part111 (10s)
+✔ [39288/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part112 (11s)
+✔ [39289/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part113 (11s)
+✔ [39290/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part114 (10s)
+✔ [39291/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part115 (11s)
+✔ [39292/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part116 (10s)
+✔ [39293/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part117 (11s)
+✔ [39294/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part118 (10s)
+✔ [39295/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part119 (11s)
+✔ [39296/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part120 (11s)
+✔ [39297/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part121 (11s)
+✔ [39298/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part122 (11s)
+✔ [39299/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part123 (13s)
+✔ [39300/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part124 (12s)
+✔ [39301/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part125 (13s)
+✔ [39302/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part126 (11s)
+✔ [39303/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part127 (11s)
+✔ [39304/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part128 (11s)
+✔ [39305/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part129 (11s)
+✔ [39306/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part130 (11s)
+✔ [39307/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part131 (11s)
+✔ [39308/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part132 (11s)
+✔ [39309/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part133 (11s)
+✔ [39310/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part134 (11s)
+✔ [39311/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part135 (11s)
+✔ [39312/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part136 (11s)
+✔ [39313/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part137 (11s)
+✔ [39314/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part138 (10s)
+✔ [39315/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part139 (10s)
+✔ [39316/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part140 (10s)
+✔ [39317/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part141 (10s)
+✔ [39318/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part142 (11s)
+✔ [39319/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part143 (11s)
+✔ [39320/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part144 (11s)
+✔ [39321/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part145 (10s)
+✔ [39322/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part146 (11s)
+✔ [39323/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part147 (11s)
+✔ [39324/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part148 (11s)
+✔ [39325/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part149 (11s)
+✔ [39326/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part150 (11s)
+✔ [39327/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part151 (12s)
+✔ [39328/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part152 (11s)
+✔ [39329/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part153 (11s)
+✔ [39330/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part154 (11s)
+✔ [39331/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part155 (11s)
+✔ [39332/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part156 (12s)
+✔ [39333/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part157 (12s)
+✔ [39334/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part158 (12s)
+✔ [39335/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part159 (12s)
+✔ [39336/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part160 (12s)
+✔ [39337/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part161 (12s)
+✔ [39338/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part162 (12s)
+✔ [39339/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part163 (12s)
+✔ [39340/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part164 (12s)
+✔ [39341/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part165 (12s)
+✔ [39342/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part166 (12s)
+✔ [39343/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part167 (12s)
+✔ [39344/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part168 (12s)
+✔ [39345/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part169 (12s)
+✔ [39346/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part170 (12s)
+✔ [39347/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part171 (13s)
+✔ [39348/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part172 (12s)
+✔ [39349/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part173 (13s)
+✔ [39350/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part174 (13s)
+✔ [39351/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part175 (13s)
+✔ [39352/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part176 (12s)
+✔ [39353/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part177 (12s)
+✔ [39354/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part178 (12s)
+✔ [39355/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part179 (12s)
+✔ [39356/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part180 (12s)
+✔ [39357/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part181 (12s)
+✔ [39358/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part182 (13s)
+✔ [39359/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part183 (13s)
+✔ [39360/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part184 (13s)
+✔ [39361/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part185 (13s)
+✔ [39362/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part186 (13s)
+✔ [39363/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part187 (13s)
+✔ [39364/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part188 (13s)
+✔ [39365/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part189 (13s)
+✔ [39366/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part190 (13s)
+✔ [39367/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part191 (13s)
+✔ [39368/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part192 (12s)
+✔ [39369/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part193 (13s)
+✔ [39370/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part194 (13s)
+✔ [39371/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part195 (13s)
+✔ [39372/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part196 (13s)
+✔ [39373/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part197 (13s)
+✔ [39374/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part198 (13s)
+✔ [39375/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part199 (13s)
+✔ [39376/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part200 (13s)
+✔ [39377/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part201 (13s)
+✔ [39378/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part202 (13s)
+✔ [39379/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part203 (13s)
+✔ [39380/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part204 (13s)
+✔ [39381/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part205 (14s)
+✔ [39382/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part206 (14s)
+✔ [39383/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part207 (14s)
+✔ [39384/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part208 (13s)
+✔ [39385/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part209 (13s)
+✔ [39386/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part210 (13s)
+✔ [39387/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part211 (13s)
+✔ [39388/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part212 (12s)
+✔ [39389/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part213 (13s)
+✔ [39390/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part214 (13s)
+✔ [39391/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part215 (13s)
+✔ [39392/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part216 (13s)
+✔ [39393/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part217 (13s)
+✔ [39394/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part218 (12s)
+✔ [39395/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part219 (12s)
+✔ [39396/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part220 (11s)
+✔ [39397/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part221 (11s)
+✔ [39398/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part222 (10s)
+✔ [39399/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part223 (11s)
+✔ [39400/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part224 (11s)
+✔ [39401/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part225 (11s)
+✔ [39402/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part226 (11s)
+✔ [39403/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part227 (11s)
+✔ [39404/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part228 (10s)
+✔ [39405/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part229 (11s)
+✔ [39406/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part230 (12s)
+✔ [39407/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part231 (12s)
+✔ [39408/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part232 (11s)
+✔ [39409/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part233 (11s)
+✔ [39410/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part234 (12s)
+✔ [39411/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part235 (11s)
+✔ [39412/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part236 (12s)
+✔ [39413/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part237 (12s)
+✔ [39414/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part238 (13s)
+✔ [39415/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part239 (12s)
+✔ [39416/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part240 (11s)
+✔ [39417/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part241 (12s)
+✔ [39418/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part242 (11s)
+✔ [39419/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part243 (11s)
+✔ [39420/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part244 (13s)
+✔ [39421/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part245 (13s)
+✔ [39422/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part246 (13s)
+✔ [39423/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part247 (13s)
+✔ [39424/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part248 (14s)
+✔ [39425/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part249 (14s)
+✔ [39426/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part250 (14s)
+✔ [39427/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part251 (13s)
+✔ [39428/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part252 (14s)
+✔ [39429/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part253 (16s)
+✔ [39430/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part254 (14s)
+✔ [39431/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part255 (14s)
+✔ [39432/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part256 (14s)
+✔ [39433/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part257 (13s)
+✔ [39434/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part258 (13s)
+✔ [39435/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part259 (13s)
+✔ [39436/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part260 (14s)
+✔ [39437/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part261 (13s)
+✔ [39438/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part262 (15s)
+✔ [39439/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part263 (15s)
+✔ [39440/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part264 (13s)
+✔ [39441/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part265 (13s)
+✔ [39442/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part266 (13s)
+✔ [39443/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part267 (14s)
+✔ [39444/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part268 (14s)
+✔ [39445/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part269 (14s)
+✔ [39446/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part270 (14s)
+✔ [39447/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part271 (14s)
+✔ [39448/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part272 (14s)
+✔ [39449/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part273 (14s)
+✔ [39450/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part274 (14s)
+✔ [39451/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part275 (15s)
+✔ [39452/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part276 (15s)
+✔ [39453/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part277 (13s)
+✔ [39454/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part278 (13s)
+✔ [39455/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part279 (13s)
+✔ [39456/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part280 (13s)
+✔ [39457/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part281 (13s)
+✔ [39458/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part282 (12s)
+✔ [39459/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part283 (10s)
+✔ [39460/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part284 (10s)
+✔ [39461/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part285 (10s)
+✔ [39462/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part286 (10s)
+✔ [39463/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part287 (10s)
+✔ [39464/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part288 (11s)
+✔ [39465/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part289 (11s)
+✔ [39466/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part290 (10s)
+✔ [39467/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part291 (11s)
+✔ [39468/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part292 (12s)
+✔ [39469/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part293 (10s)
+✔ [39470/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part294 (10s)
+✔ [39471/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part295 (10s)
+✔ [39472/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part296 (11s)
+✔ [39473/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part297 (11s)
+✔ [39474/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part298 (11s)
+✔ [39475/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part299 (10s)
+✔ [39476/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part300 (9.3s)
+✔ [39477/39481] Built Zeta23.ThmD.Sextuple.A1285.Assembly.Part301 (6.7s)
+ℹ [39478/39481] Built Zeta23.ThmD.Sextuple.A1285.TreeAssembly (4.5s)
+info: Zeta23/ThmD/Sextuple/A1285/TreeAssembly.lean:17:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedRootReplay' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+✖ [39479/39481] Building Zeta23.ThmD.Sextuple.A1285.Certificate (4.4s)
+trace: .> LEAN_PATH=/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/Cli/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/build/lib/lean /Users/mdumitrean/.elan/toolchains/leanprover--lean4---v4.33.0-rc2/bin/lean /Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/Zeta23/ThmD/Sextuple/A1285/Certificate.lean -o /Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/build/lib/lean/Zeta23/ThmD/Sextuple/A1285/Certificate.olean -i /Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/build/lib/lean/Zeta23/ThmD/Sextuple/A1285/Certificate.ilean -c /Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/build/ir/Zeta23/ThmD/Sextuple/A1285/Certificate.c --setup /Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/.lake/build/ir/Zeta23/ThmD/Sextuple/A1285/Certificate.setup.json --json
+error: Zeta23/ThmD/Sextuple/A1285/Certificate.lean:41:18: Unknown identifier `affineTree_global_at`
+error: Zeta23/ThmD/Sextuple/A1285/Certificate.lean:39:66: unsolved goals
+g : Fin 5 → ℝ
+hg : ∀ (i : Fin 5), 0 ≤ g i
+hroot : BoxPredicate (affineEnergyGoal improvedA improvedB) improvedRootBox
+⊢ 257 / 20000 ≤ sextupleEnergy g + B6 * sextupleSpan g
+error: Lean exited with code 1
+Some required targets logged failures:
+- Zeta23.ThmD.Sextuple.A1285.Certificate
+error: build failed

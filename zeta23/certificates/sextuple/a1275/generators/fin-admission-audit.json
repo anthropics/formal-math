@@ -1,0 +1,53 @@
+{
+  "catalog": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedCatalog.lean",
+    "refinement_constructor_guarded": true,
+    "sha256": "04f0f5215abfa69fd00e83e25d7db6ce53aabdfa2c44c5b87019d60fd4d86652",
+    "stable_constructor_guarded": true
+  },
+  "decoder": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedTreeReader.lean",
+    "piece_constructor_guarded": true,
+    "scalar_constructor_guarded": true,
+    "sha256": "238a9b6c782654196dc08308ecf8da93770e8368d7d72110f5cd7d0a815191c4"
+  },
+  "generator": {
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/generate_improved_scalar_lean.py",
+    "sha256": "6ad0eedbd054b11f7fd387dbebf5878f5f9d201114fff948aaf75987fce29f08"
+  },
+  "hostile_probe": {
+    "exit_code": 1,
+    "log_sha256": "07ef28dc63aca03d7fe0f579a6bd8462d0d516b283ccd37b4c37b3644018c200",
+    "olean_created": false,
+    "rejected_bounds": [
+      "272 < 272",
+      "272 < 272",
+      "1383 < 1383"
+    ],
+    "source_sha256": "d1fe7052c4800cff0c6d7cf8e8cb7bcdc49efa910c8f824baa3c258cab42b304"
+  },
+  "regenerated_scalar": {
+    "bare_pieceIndex_numeric_count": 0,
+    "bytes": 1222852,
+    "expected_count": 2979,
+    "explicit_pieceIndex_constructor_count": 2979,
+    "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedScalarData.lean",
+    "sha256": "1ae4e940ffa5860768c7756ac4b60a0bde643db3140ad14c070f94e3a8a94adc"
+  },
+  "schema": 1,
+  "status": "PASS",
+  "superseded": {
+    "ImprovedScalarData.bare-fin.build.log": {
+      "bytes": 884,
+      "sha256": "6b92db544b25af83d8410a5d7c953ef55168a47482e4520b95edfdfb89d14f33"
+    },
+    "ImprovedScalarData.bare-fin.lean": {
+      "bytes": 1172209,
+      "sha256": "6791d1ff415bdabeb7feea0d534f04e293ca41d565d2935a2515ea2efd8ab7d0"
+    },
+    "ImprovedScalarData.bare-fin.olean": {
+      "bytes": 101453008,
+      "sha256": "7211f520241c4fafc108e13a41f59fa24e6c30e96540c10cd20dd49672c1b727"
+    }
+  }
+}

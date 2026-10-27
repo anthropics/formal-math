@@ -1,0 +1,629 @@
+{
+  "architecture": {
+    "audit_SHA256SUMS_sha256": "782296e7821d8ac7057f53c10a972bd6a0259b0d6affd20bc4bd837e00f751bb",
+    "baseline_audit_report": {
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-baseline-fin-hardening/AUDIT-REPORT.md",
+      "sha256": "819f1466155510f3ce54c0e2c224bd56b94e379efe3b1fad43cbcb1a78e40e03"
+    },
+    "v2_sha256": "29df7d74599ed437b685a3bc476f3dd53eb6648ddfc3b0273827b70198334a93",
+    "verdict_sha256": "26f1635bb64a52ad9b74615842d10147fcb9644763661f1dd6bbfe1e8c8db91a"
+  },
+  "canonical_inputs": {
+    "artifact/ImprovedAssembly.lean": {
+      "bytes": 15312,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-improved-assembly/ImprovedAssembly.lean",
+      "sha256": "322936ef431ae96201d11a4e1d63fb7f720745fdcf2c28ae8dd707837a286a5b"
+    },
+    "artifact/ImprovedCatalog.lean": {
+      "bytes": 14915,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedCatalog.lean",
+      "sha256": "04f0f5215abfa69fd00e83e25d7db6ce53aabdfa2c44c5b87019d60fd4d86652"
+    },
+    "artifact/ImprovedLayout.lean": {
+      "bytes": 880,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedLayout.lean",
+      "sha256": "c8d6874294bb87cc6309d372f2a3c5f8b08a9dd63df7b849f65045eda340fb2f"
+    },
+    "artifact/ImprovedRefinementData.lean": {
+      "bytes": 231043,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedRefinementData.lean",
+      "sha256": "67b78979fc1e7dcbd291f2da19cb53071142ef11104eeeea08af718269f16d43"
+    },
+    "artifact/ImprovedScalarData.lean": {
+      "bytes": 1222852,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedScalarData.lean",
+      "sha256": "1ae4e940ffa5860768c7756ac4b60a0bde643db3140ad14c070f94e3a8a94adc"
+    },
+    "artifact/ImprovedTreeReader.lean": {
+      "bytes": 2958,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedTreeReader.lean",
+      "sha256": "238a9b6c782654196dc08308ecf8da93770e8368d7d72110f5cd7d0a815191c4"
+    },
+    "artifact/ImprovedTreeWords.lean": {
+      "bytes": 411239,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedTreeWords.lean",
+      "sha256": "0cfb2ab70bff047ab462e59353f8ab7527ddd36fadbf0e571e34b9f8a43add39"
+    },
+    "artifact/MacroParametricAdapter.lean": {
+      "bytes": 7359,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/MacroParametricAdapter.lean",
+      "sha256": "71dbe0b3159b3785eb6c731eab6f994de515018e65a10de6d019c54d6249226f"
+    },
+    "audit/ARCHITECTURE-ACCEPTANCE-v2.md": {
+      "bytes": 4989,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/audits/lean25-a1275-tree-audit/ARCHITECTURE-ACCEPTANCE-v2.md",
+      "sha256": "29df7d74599ed437b685a3bc476f3dd53eb6648ddfc3b0273827b70198334a93"
+    },
+    "audit/ARCHITECTURE-ACCEPTANCE.md": {
+      "bytes": 3436,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/audits/lean25-a1275-tree-audit/ARCHITECTURE-ACCEPTANCE.md",
+      "sha256": "18e023b1ceafd677cfa2e9dc849f68181572bf24eb947b17c5ae8cc14a3d858f"
+    },
+    "audit/baseline-v2-AUDIT-REPORT.md": {
+      "bytes": 11356,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-baseline-fin-hardening/AUDIT-REPORT.md",
+      "sha256": "819f1466155510f3ce54c0e2c224bd56b94e379efe3b1fad43cbcb1a78e40e03"
+    },
+    "audit/baseline-v2-SHA256SUMS": {
+      "bytes": 20528,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-baseline-fin-hardening/SHA256SUMS",
+      "sha256": "782296e7821d8ac7057f53c10a972bd6a0259b0d6affd20bc4bd837e00f751bb"
+    },
+    "audit/baseline-v2-VERDICT.json": {
+      "bytes": 2417,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-baseline-fin-hardening/VERDICT.json",
+      "sha256": "26f1635bb64a52ad9b74615842d10147fcb9644763661f1dd6bbfe1e8c8db91a"
+    },
+    "raw/anchors-u16le.bin": {
+      "bytes": 1914740,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/sextuple-improvement/refined-A-0p01275/anchors-u16le.bin",
+      "sha256": "e6dbe9ca333f8757b5ba39ab62fd902e02662b5e412ad688d0890e7664677394"
+    },
+    "raw/exact-replay-report.json": {
+      "bytes": 2871,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/sextuple-improvement/refined-A-0p01275/exact-replay-report.json",
+      "sha256": "391a0fdf116a4016899d0ca6821eb3d82db3dd4ffe80478225ca64f85570f1f5"
+    },
+    "raw/manifest.json": {
+      "bytes": 3788,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/sextuple-improvement/refined-A-0p01275/manifest.json",
+      "sha256": "732a99cf5c4755ee18686f4a14669c61162bf6bdf87d7ca2d2564098e3346c30"
+    },
+    "raw/refinement-catalog-exact.json": {
+      "bytes": 67741,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/sextuple-improvement/refinement-catalog-exact.json",
+      "sha256": "3f83563fb3d6f5a4e1aa0263384d0781494a672368233445a8c6e8e0e9817cb9"
+    },
+    "raw/scalar-certificates.json": {
+      "bytes": 789958,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/sextuple-improvement/refined-A-0p01275/scalar-certificates.json",
+      "sha256": "66264d3d9bc6cd0cde88f4d1bdb946ad3c8a64053d73d45a29176cdb8611dfe7"
+    },
+    "raw/term-codes-u16le.bin": {
+      "bytes": 5744220,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/sextuple-improvement/refined-A-0p01275/term-codes-u16le.bin",
+      "sha256": "0f8c90f474e75f9dd41d29b4e2a2df77883250c8a1882258e62b6c7f28d6748f"
+    },
+    "raw/terminal-kinds-u8.bin": {
+      "bytes": 192984,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/sextuple-improvement/refined-A-0p01275/terminal-kinds-u8.bin",
+      "sha256": "a2df050738a1bc4052da743ea26a8e8aa56373b7bcd23ac9b6aed3bfa5fd0aab"
+    },
+    "raw/topology-u64le.bin": {
+      "bytes": 154392,
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/sextuple-improvement/refined-A-0p01275/topology-u64le.bin",
+      "sha256": "cc1dc05c152a218d4a44466d102db703a60e819cd83eccaf4196fed19ba8352b"
+    }
+  },
+  "definition_namespace": "Zeta23.ThmD.Sextuple.MacroPrototype for audited finite-data/tree definitions; no namespace body rewrite",
+  "generated_replay_schema": {
+    "assembly": {
+      "axis_explicit_Fin5": 8952,
+      "modules": "Zeta23.ThmD.Sextuple.A1275.Assembly.Part000 .. Part089",
+      "node_count": 8952,
+      "part_count": 90,
+      "paths": "Zeta23/ThmD/Sextuple/A1275/Assembly/Part000.lean .. Part089.lean",
+      "root_ref": "improvedNode8951",
+      "theorems": "improvedNode0000 .. improvedNode8951"
+    },
+    "chunks": {
+      "count": 8953,
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.TreeWords"
+      ],
+      "max_tokens": 100,
+      "modules": "Zeta23.ThmD.Sextuple.A1275.Chunks.Chunk0000 .. Chunk8952",
+      "path_axis_explicit_Fin5": 397456,
+      "paths": "Zeta23/ThmD/Sextuple/A1275/Chunks/Chunk0000.lean .. Chunk8952.lean",
+      "theorems": "improvedChunk0000 .. improvedChunk8952"
+    },
+    "constructor_contract": "every path and assembly axis uses \u27e8axis, by decide\u27e9 : Fin 5; Python rejects -1 and 5 in normal and -O before output/PASS",
+    "root": {
+      "cursor": "some (385967, 192984)",
+      "module": "Zeta23.ThmD.Sextuple.A1275.TreeAssembly",
+      "path": "Zeta23/ThmD/Sextuple/A1275/TreeAssembly.lean",
+      "theorems": [
+        "improvedRootReplay",
+        "improvedTreeCheck",
+        "improvedRootBox_predicate"
+      ]
+    }
+  },
+  "generic_modules": [
+    {
+      "audited_source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-baseline-fin-hardening/build/repo-shadow/Zeta23/ThmD/Sextuple/Macro/StableCatalog.lean",
+      "module": "Zeta23.ThmD.Sextuple.Macro.StableCatalog",
+      "path": "Zeta23/ThmD/Sextuple/Macro/StableCatalog.lean",
+      "sha256": "a1a1c09382864916874d5445763793c24b0431e68ee918ad76f8cb8d2cbcc527"
+    },
+    {
+      "audited_source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-baseline-fin-hardening/build/repo-shadow/Zeta23/ThmD/Sextuple/Macro/TreeFormat.lean",
+      "module": "Zeta23.ThmD.Sextuple.Macro.TreeFormat",
+      "path": "Zeta23/ThmD/Sextuple/Macro/TreeFormat.lean",
+      "sha256": "6fccdd766b799e520969a71ee8194c3811f714f90f2e52b751f562968ff526cc"
+    },
+    {
+      "module": "Zeta23.ThmD.Sextuple.Macro.ParametricAdapter",
+      "path": "Zeta23/ThmD/Sextuple/Macro/ParametricAdapter.lean",
+      "sha256": "71dbe0b3159b3785eb6c731eab6f994de515018e65a10de6d019c54d6249226f",
+      "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/MacroParametricAdapter.lean"
+    }
+  ],
+  "modified_baseline_modules": [
+    {
+      "audited_source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-baseline-fin-hardening/build/repo-shadow/Zeta23/ThmD/Sextuple/Macro/ScalarData.lean",
+      "delta": "StableCatalog import/extraction plus 1932 explicit Fin constructors",
+      "path": "Zeta23/ThmD/Sextuple/Macro/ScalarData.lean",
+      "sha256": "aa43ed4fc1598611b6537076a8e53a7e36fed05c0aeb935d0f6ccbbe1f50153e"
+    },
+    {
+      "after_sha256": "83a2d50fc8dce74c30dd74b22e5a7ec07805d7bc6f8aa774928113ccab6269e6",
+      "audited_source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-baseline-fin-hardening/build/repo-shadow/Zeta23/ThmD/Sextuple/Macro/TreeReader.lean",
+      "before_sha256": "c97d8d9c5614dbd3f19fe34cd23b25dc813e04ca43885f9b20b5b173c388178e",
+      "delta": "prepend TreeFormat import and delete only moved constants",
+      "path": "Zeta23/ThmD/Sextuple/Macro/TreeReader.lean"
+    },
+    {
+      "accepted_olean_sha256": "7267932cf8f6b0a163bb5355832719e782c5b3c4c9b6351964c4011d287a405d",
+      "after_sha256": "4146c8be0788f3b5adbade43f322ba34960af93f4775730e1d271cbf7f2efc7c",
+      "audited_source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-baseline-fin-hardening/build/repo-shadow/Zeta23/ThmD/Sextuple/Macro/Layout.lean",
+      "before_sha256": "a81a80f869716c2ef47580d97eb352b1ed7bb386692a772b00d4ee90d58893b9",
+      "delta": "TreeWords import -> TreeFormat only",
+      "path": "Zeta23/ThmD/Sextuple/Macro/Layout.lean"
+    }
+  ],
+  "pending_gates": [
+    "freeze these exact qualified sources/hashes",
+    "v2 qualified closure and fresh oleans",
+    "calibration/representative hostile matrix",
+    "all chunks/parts/root owner PASS",
+    "independent final tree PASS",
+    "Certificate/Unconditional/LineDecimal/AxiomAudit/root import"
+  ],
+  "post_replay_modules": [
+    {
+      "blocked": true,
+      "module": "Zeta23.ThmD.Sextuple.A1275.Certificate",
+      "path": "Zeta23/ThmD/Sextuple/A1275/Certificate.lean",
+      "planned_sha256": "3d708452a8e018141f148c6baf1fb6993f27db0393cc826b9adbac4507869ae8",
+      "planned_source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/v2-planned-sources/Certificate.lean"
+    },
+    {
+      "blocked": false,
+      "module": "Zeta23.ThmD.Sextuple.A1275.Assembly",
+      "namespace": "Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275",
+      "path": "Zeta23/ThmD/Sextuple/A1275/Assembly.lean",
+      "planned_sha256": "322936ef431ae96201d11a4e1d63fb7f720745fdcf2c28ae8dd707837a286a5b",
+      "planned_source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/v2-planned-sources/Assembly.lean",
+      "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-improved-assembly/ImprovedAssembly.lean"
+    },
+    {
+      "blocked": true,
+      "module": "Zeta23.ThmD.Sextuple.A1275.Unconditional",
+      "path": "Zeta23/ThmD/Sextuple/A1275/Unconditional.lean",
+      "planned_sha256": "0b416e07b80b7a2e3a18aeb5909524fa09abaed43685b381d647cc91c161ad09",
+      "planned_source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/v2-planned-sources/Unconditional.lean"
+    },
+    {
+      "blocked": true,
+      "module": "Zeta23.ThmD.Sextuple.A1275.LineDecimal",
+      "path": "Zeta23/ThmD/Sextuple/A1275/LineDecimal.lean",
+      "planned_sha256": "e64341f15829bac4499d0214a7c32b1d565834009a348b828c76656ea7cc35bd",
+      "planned_source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/v2-planned-sources/LineDecimal.lean"
+    },
+    {
+      "blocked": true,
+      "module": "Zeta23.ThmD.Sextuple.A1275.AxiomAudit",
+      "path": "Zeta23/ThmD/Sextuple/A1275/AxiomAudit.lean",
+      "planned_sha256": "757d3f2a34d3c083ecaac89f1cc2bb1cd91f392c6a7b8d10db8688a72da53083",
+      "planned_source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/v2-planned-sources/AxiomAudit.lean"
+    }
+  ],
+  "qualified_modules": [
+    {
+      "imports": [
+        "Zeta23.ThmD.Sextuple.Macro.EnvelopeData"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.RefinementData",
+      "path": "Zeta23/ThmD/Sextuple/A1275/RefinementData.lean",
+      "planned_sha256": "67b78979fc1e7dcbd291f2da19cb53071142ef11104eeeea08af718269f16d43",
+      "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedRefinementData.lean",
+      "source_sha256": "67b78979fc1e7dcbd291f2da19cb53071142ef11104eeeea08af718269f16d43"
+    },
+    {
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.RefinementData",
+        "Zeta23.ThmD.Sextuple.Macro.ParametricAdapter",
+        "Zeta23.ThmD.Sextuple.Macro.StableCatalog"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.Catalog",
+      "path": "Zeta23/ThmD/Sextuple/A1275/Catalog.lean",
+      "planned_sha256": "aebd5f60f8f2f137e6b8181d567cf371e375ce01a51ec3aeb7d58499f24920ee",
+      "planned_source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/v2-planned-sources/Catalog.lean",
+      "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedCatalog.lean",
+      "source_sha256": "04f0f5215abfa69fd00e83e25d7db6ce53aabdfa2c44c5b87019d60fd4d86652"
+    },
+    {
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.Catalog"
+      ],
+      "invariants": {
+        "certificates": 1383,
+        "explicit_Fin": 2979,
+        "segments": 2979
+      },
+      "module": "Zeta23.ThmD.Sextuple.A1275.ScalarData",
+      "path": "Zeta23/ThmD/Sextuple/A1275/ScalarData.lean",
+      "planned_sha256": "26c7d828f4347e5827efc822d49f61d24403a65590078d6d873fa03a9fa37b01",
+      "planned_source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/v2-planned-sources/ScalarData.lean",
+      "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedScalarData.lean",
+      "source_sha256": "1ae4e940ffa5860768c7756ac4b60a0bde643db3140ad14c070f94e3a8a94adc"
+    },
+    {
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.ScalarData",
+        "Zeta23.ThmD.Sextuple.Macro.ParametricAdapter"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.TreeReader",
+      "path": "Zeta23/ThmD/Sextuple/A1275/TreeReader.lean",
+      "planned_sha256": "6ea9b96db3ca92c96e43bf1c5eee9311c391cfea40cd7383e9ccf4aae9187752",
+      "planned_source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/v2-planned-sources/TreeReader.lean",
+      "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedTreeReader.lean",
+      "source_sha256": "238a9b6c782654196dc08308ecf8da93770e8368d7d72110f5cd7d0a815191c4"
+    },
+    {
+      "entries": [
+        {
+          "index": 0,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks000",
+          "planned_sha256": "3c12d91c38832d81f218446051283fc5a6686d7a05d59897b135b7841a1f4c95",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks000.lean",
+          "source_sha256": "3c12d91c38832d81f218446051283fc5a6686d7a05d59897b135b7841a1f4c95",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks000.lean"
+        },
+        {
+          "index": 1,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks001",
+          "planned_sha256": "159ad3fb21d0aa9f24e2b8b41773bd1817cc084c832ceb547fe7a4ba2664b0b2",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks001.lean",
+          "source_sha256": "159ad3fb21d0aa9f24e2b8b41773bd1817cc084c832ceb547fe7a4ba2664b0b2",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks001.lean"
+        },
+        {
+          "index": 2,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks002",
+          "planned_sha256": "9b1bc8b07e1ba57367c8aa5e953573a0ac1ef9e2615637d3c227c2c1a305a6c2",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks002.lean",
+          "source_sha256": "9b1bc8b07e1ba57367c8aa5e953573a0ac1ef9e2615637d3c227c2c1a305a6c2",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks002.lean"
+        },
+        {
+          "index": 3,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks003",
+          "planned_sha256": "60019ec95c3e8062d874849f5de925f9b933c401c459a28df5ebdd127c3d3197",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks003.lean",
+          "source_sha256": "60019ec95c3e8062d874849f5de925f9b933c401c459a28df5ebdd127c3d3197",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks003.lean"
+        },
+        {
+          "index": 4,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks004",
+          "planned_sha256": "55527476a9ea8960bc66fad75a21010bec218880faf3d99fbc5e29a649fc255a",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks004.lean",
+          "source_sha256": "55527476a9ea8960bc66fad75a21010bec218880faf3d99fbc5e29a649fc255a",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks004.lean"
+        },
+        {
+          "index": 5,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks005",
+          "planned_sha256": "7a9d4f23b95b3def56d2bb46414e404a7e3c343c1c82cf224f7b00f918df197f",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks005.lean",
+          "source_sha256": "7a9d4f23b95b3def56d2bb46414e404a7e3c343c1c82cf224f7b00f918df197f",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks005.lean"
+        },
+        {
+          "index": 6,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks006",
+          "planned_sha256": "72ffba625a9d0ed5aeeacdff92dd5bd81e1241125e08aa104c19cd9428bed927",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks006.lean",
+          "source_sha256": "72ffba625a9d0ed5aeeacdff92dd5bd81e1241125e08aa104c19cd9428bed927",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks006.lean"
+        },
+        {
+          "index": 7,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks007",
+          "planned_sha256": "727931c00eadf42435c353c41a344fb9b447c0bc8652b5d6bf202e476f98569e",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks007.lean",
+          "source_sha256": "727931c00eadf42435c353c41a344fb9b447c0bc8652b5d6bf202e476f98569e",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks007.lean"
+        },
+        {
+          "index": 8,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks008",
+          "planned_sha256": "1159d1a9c79b31246024c5da543174ec2e678b0930488b1aa14a711f9b2a98a6",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks008.lean",
+          "source_sha256": "1159d1a9c79b31246024c5da543174ec2e678b0930488b1aa14a711f9b2a98a6",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks008.lean"
+        },
+        {
+          "index": 9,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks009",
+          "planned_sha256": "97971182942c9ce74457c01b94dff28e4c79564e192e1d01f574e000c73fedca",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks009.lean",
+          "source_sha256": "97971182942c9ce74457c01b94dff28e4c79564e192e1d01f574e000c73fedca",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks009.lean"
+        },
+        {
+          "index": 10,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks010",
+          "planned_sha256": "ac45d6741972c9c4d4f507e39472547978f3c1b44fea7abb8f46273cb38fc0a5",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks010.lean",
+          "source_sha256": "ac45d6741972c9c4d4f507e39472547978f3c1b44fea7abb8f46273cb38fc0a5",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks010.lean"
+        },
+        {
+          "index": 11,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks011",
+          "planned_sha256": "2120830b2892789ca0836c61fb3a9b674522dd4ae373e4658966cbdaedd3769b",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks011.lean",
+          "source_sha256": "2120830b2892789ca0836c61fb3a9b674522dd4ae373e4658966cbdaedd3769b",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks011.lean"
+        },
+        {
+          "index": 12,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks012",
+          "planned_sha256": "8ddae3f1c1746882736453c81fe5b49f90e4a260d83878a0750eb828e6ae8bc8",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks012.lean",
+          "source_sha256": "8ddae3f1c1746882736453c81fe5b49f90e4a260d83878a0750eb828e6ae8bc8",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks012.lean"
+        },
+        {
+          "index": 13,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks013",
+          "planned_sha256": "76c3ea60fb2cc133e87196ef6d82cfed3b1bc33c12eafc74ce1df340252b7579",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks013.lean",
+          "source_sha256": "76c3ea60fb2cc133e87196ef6d82cfed3b1bc33c12eafc74ce1df340252b7579",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks013.lean"
+        },
+        {
+          "index": 14,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks014",
+          "planned_sha256": "92da5acaee216e456a825f1e182177f15a3b4726aa4ccb5fb2b272f318f7e40e",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks014.lean",
+          "source_sha256": "92da5acaee216e456a825f1e182177f15a3b4726aa4ccb5fb2b272f318f7e40e",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks014.lean"
+        },
+        {
+          "index": 15,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks015",
+          "planned_sha256": "9fefc5b98357028baaf664c9e2e17482c944084311cf92bc4d82107caa51af6a",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks015.lean",
+          "source_sha256": "9fefc5b98357028baaf664c9e2e17482c944084311cf92bc4d82107caa51af6a",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks015.lean"
+        },
+        {
+          "index": 16,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks016",
+          "planned_sha256": "99aa980933444f78b39779c7af9188e4e9035925d2428489ec94bee97ee77cbc",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks016.lean",
+          "source_sha256": "99aa980933444f78b39779c7af9188e4e9035925d2428489ec94bee97ee77cbc",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks016.lean"
+        },
+        {
+          "index": 17,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks017",
+          "planned_sha256": "5b2deceb70a44a10d5e416d0009b90ac87752724834d63363ee604d595dc3382",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks017.lean",
+          "source_sha256": "5b2deceb70a44a10d5e416d0009b90ac87752724834d63363ee604d595dc3382",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks017.lean"
+        },
+        {
+          "index": 18,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks018",
+          "planned_sha256": "a96a4883f79296d36e575478665ca7d418c6a035cc08d067623faed52c41f20a",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks018.lean",
+          "source_sha256": "a96a4883f79296d36e575478665ca7d418c6a035cc08d067623faed52c41f20a",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks018.lean"
+        },
+        {
+          "index": 19,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks019",
+          "planned_sha256": "b5da4186754306c3ff5e4b173296a3cd2f28e04105bf93aea7457bf3fd2b6753",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks019.lean",
+          "source_sha256": "b5da4186754306c3ff5e4b173296a3cd2f28e04105bf93aea7457bf3fd2b6753",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks019.lean"
+        },
+        {
+          "index": 20,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks020",
+          "planned_sha256": "1688a80ea723d4e76864acb83b21199e82532ae41752288f6a629fa44afac111",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks020.lean",
+          "source_sha256": "1688a80ea723d4e76864acb83b21199e82532ae41752288f6a629fa44afac111",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks020.lean"
+        },
+        {
+          "index": 21,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks021",
+          "planned_sha256": "5d57e09692b9d29f607c33abcf999fb294ccdf5cd73b6fecf32b2f93c2815cc7",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks021.lean",
+          "source_sha256": "5d57e09692b9d29f607c33abcf999fb294ccdf5cd73b6fecf32b2f93c2815cc7",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks021.lean"
+        },
+        {
+          "index": 22,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks022",
+          "planned_sha256": "b99a1e24c2adc562df30e875e14536da212480589d2e82b7b1b37855b652582f",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks022.lean",
+          "source_sha256": "b99a1e24c2adc562df30e875e14536da212480589d2e82b7b1b37855b652582f",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks022.lean"
+        },
+        {
+          "index": 23,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks023",
+          "planned_sha256": "47fbaf52ba032777f8f645b743abb93153ee06f1ba3fa2a0328459b0dc1f5df0",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks023.lean",
+          "source_sha256": "47fbaf52ba032777f8f645b743abb93153ee06f1ba3fa2a0328459b0dc1f5df0",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks023.lean"
+        },
+        {
+          "index": 24,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks024",
+          "planned_sha256": "06b310dfa0802eef52a32a5d75e7dc6d7f25b4460127020f8ea2a41ec5704f34",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks024.lean",
+          "source_sha256": "06b310dfa0802eef52a32a5d75e7dc6d7f25b4460127020f8ea2a41ec5704f34",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks024.lean"
+        },
+        {
+          "index": 25,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks025",
+          "planned_sha256": "99f871fc3b3d7ed54a749c6c715fa0944f5d7c75fca62d596a053c5434942f66",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks025.lean",
+          "source_sha256": "99f871fc3b3d7ed54a749c6c715fa0944f5d7c75fca62d596a053c5434942f66",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks025.lean"
+        },
+        {
+          "index": 26,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks026",
+          "planned_sha256": "3dfec4045a52319f6c3fa2fc8676f80b2255ba59f19459567a1b4c8eca701551",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks026.lean",
+          "source_sha256": "3dfec4045a52319f6c3fa2fc8676f80b2255ba59f19459567a1b4c8eca701551",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks026.lean"
+        },
+        {
+          "index": 27,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks027",
+          "planned_sha256": "10c507a6f4183ffa65318169a67784ac3903e3a2e71c716c8301a1bbc9ca8913",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks027.lean",
+          "source_sha256": "10c507a6f4183ffa65318169a67784ac3903e3a2e71c716c8301a1bbc9ca8913",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks027.lean"
+        },
+        {
+          "index": 28,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks028",
+          "planned_sha256": "2fa3c945df50cfe97ea6c797bbc0b6d43458af1296423bef3ee267cf3421842f",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks028.lean",
+          "source_sha256": "2fa3c945df50cfe97ea6c797bbc0b6d43458af1296423bef3ee267cf3421842f",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks028.lean"
+        },
+        {
+          "index": 29,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks029",
+          "planned_sha256": "04d84cb9e50f7f5dcea7492dfc62748f44a06ce9f8827978ae2e1165e4ee242e",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks029.lean",
+          "source_sha256": "04d84cb9e50f7f5dcea7492dfc62748f44a06ce9f8827978ae2e1165e4ee242e",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks029.lean"
+        },
+        {
+          "index": 30,
+          "module": "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks030",
+          "planned_sha256": "c7a707d68d8b6893a064e4ab08ce3756be3e9cc93021b258919c9f3ddd2400df",
+          "rewrite": "none; module identity comes from target path; definitions remain improvedLeafBlocksChunkNNN",
+          "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedWordData/ImprovedLeafBlocks030.lean",
+          "source_sha256": "c7a707d68d8b6893a064e4ab08ce3756be3e9cc93021b258919c9f3ddd2400df",
+          "target_path": "Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks030.lean"
+        }
+      ],
+      "range": "WordData"
+    },
+    {
+      "body_after_imports_byte_identical": true,
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.TreeReader",
+        "Zeta23.ThmD.Sextuple.AffineTree",
+        "Zeta23.ThmD.Sextuple.A1275.WordData.LeafBlocks000..030"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.TreeWords",
+      "path": "Zeta23/ThmD/Sextuple/A1275/TreeWords.lean",
+      "planned_sha256": "1407a17502b086957d5af7d2c1f24fde0897b93c18adb0903dbbbac85c33da27",
+      "planned_source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/v2-planned-sources/TreeWords.lean",
+      "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedTreeWords.lean",
+      "source_sha256": "0cfb2ab70bff047ab462e59353f8ab7527ddd36fadbf0e571e34b9f8a43add39"
+    },
+    {
+      "body_after_imports_byte_identical": true,
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.TreeWords",
+        "Zeta23.ThmD.Sextuple.Macro.Layout"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.Layout",
+      "path": "Zeta23/ThmD/Sextuple/A1275/Layout.lean",
+      "planned_sha256": "77e3152d78fc4871bb790e9775f7f02e256265975cd84b1cfdb857c6fa3ca911",
+      "planned_source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/v2-planned-sources/Layout.lean",
+      "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedLayout.lean",
+      "source_sha256": "c8d6874294bb87cc6309d372f2a3c5f8b08a9dd63df7b849f65045eda340fb2f"
+    },
+    {
+      "imports": [
+        "Zeta23.ThmD.Sextuple.A1275.TreeWords"
+      ],
+      "module": "Zeta23.ThmD.Sextuple.A1275.ChunkCalibration",
+      "path": "Zeta23/ThmD/Sextuple/A1275/ChunkCalibration.lean",
+      "planned_sha256": "cb6fbc57c3e7b3e29cc938b40db6140055bfff83a8c070f6ec95de43aef71442",
+      "planned_source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/v2-planned-sources/ChunkCalibration.lean",
+      "source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedChunkCalibration.lean",
+      "source_sha256": "c286e835992b2bf5519f50ad7546695f028d5490a8ab2b7a829bdb194403f239"
+    }
+  ],
+  "repo_head": "5e9617d84ece3aeecdf983a8e7e9bfa50f413e5a",
+  "root_import": {
+    "added_import": "import Zeta23.ThmD.Sextuple.A1275.LineDecimal",
+    "before_sha256": "f366fd4b516ba2bbbe9bd252d4c53f90dcc267cd50f1f2ffde85a6eec94dabdb",
+    "blocked": true,
+    "path": "Zeta23.lean",
+    "planned_sha256": "46fc105077e13e66358e66e580946179a866fa699c305c1eafcb36e6d02f6a51",
+    "planned_source_path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean25-a1275-integration-plan/v2-planned-sources/Zeta23.lean"
+  },
+  "schema": 1,
+  "status": "EXACT_QUALIFIED_SHADOW_PLAN_FULL_TREE_OUTPUTS_PENDING",
+  "target_prefix": "Zeta23.ThmD.Sextuple.A1275"
+}

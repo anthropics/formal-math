@@ -1,0 +1,15 @@
+import Zeta23.ThmD.Sextuple.Macro.TreeWords
+
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+
+namespace Zeta23.ThmD.Sextuple.MacroPrototype
+open Zeta23.ThmD.Sextuple
+
+/-- Subtree at topology cursor 45238, payload cursor 22611, depth 25, 1 tokens. -/
+theorem chunk1376 :
+    replayAffineTree concreteLeafCheck topologyStream payloadStream 36 45238 22611 (pathBox rootBox [(false, 4), (true, 0), (false, 3), (true, 1), (false, 2), (true, 4), (true, 0), (true, 3), (true, 1), (true, 2), (false, 4), (false, 0), (true, 3), (false, 1), (true, 2), (false, 4), (false, 0), (false, 3), (false, 1), (false, 2), (false, 4), (false, 0), (false, 3), (false, 1), (false, 2)]) =
+      some (45239, 22612) := by
+  decide +kernel
+
+end Zeta23.ThmD.Sextuple.MacroPrototype

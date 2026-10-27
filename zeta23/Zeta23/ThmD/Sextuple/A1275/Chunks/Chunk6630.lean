@@ -1,0 +1,16 @@
+import Zeta23.ThmD.Sextuple.A1275.TreeWords
+
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+
+namespace Zeta23.ThmD.Sextuple.MacroPrototype
+open Zeta23.ThmD.Sextuple
+
+/-- Subtree at topology cursor 307017, payload cursor 153500, depth 33, 5 tokens. -/
+theorem improvedChunk6630 :
+    replayAffineTree improvedConcreteLeafCheck improvedTopologyStream improvedPayloadStream
+      57 307017 153500 (improvedPathBox improvedRootBox [(false, ⟨3, by decide⟩), (true, ⟨1, by decide⟩), (true, ⟨2, by decide⟩), (true, ⟨4, by decide⟩), (true, ⟨0, by decide⟩), (true, ⟨3, by decide⟩), (false, ⟨1, by decide⟩), (true, ⟨2, by decide⟩), (false, ⟨4, by decide⟩), (true, ⟨0, by decide⟩), (false, ⟨3, by decide⟩), (true, ⟨1, by decide⟩), (false, ⟨2, by decide⟩), (true, ⟨4, by decide⟩), (true, ⟨0, by decide⟩), (true, ⟨3, by decide⟩), (true, ⟨1, by decide⟩), (true, ⟨2, by decide⟩), (true, ⟨4, by decide⟩), (false, ⟨0, by decide⟩), (true, ⟨3, by decide⟩), (false, ⟨1, by decide⟩), (true, ⟨2, by decide⟩), (false, ⟨4, by decide⟩), (false, ⟨0, by decide⟩), (false, ⟨3, by decide⟩), (false, ⟨1, by decide⟩), (false, ⟨2, by decide⟩), (false, ⟨4, by decide⟩), (false, ⟨0, by decide⟩), (false, ⟨3, by decide⟩), (false, ⟨1, by decide⟩), (false, ⟨2, by decide⟩)]) =
+      some (307022, 153503) := by
+  decide +kernel
+
+end Zeta23.ThmD.Sextuple.MacroPrototype

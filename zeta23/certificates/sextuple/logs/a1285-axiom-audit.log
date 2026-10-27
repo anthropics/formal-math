@@ -1,0 +1,52 @@
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedScalarTable_check' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedConcreteLeafCheck_sound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedTopologyLayoutValid' depends on axioms: [propext, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedLeafLayoutValid' depends on axioms: [propext, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedTopologyStream_eq_packed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedPayloadStream_eq_packed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedChunk00000' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedChunk15076' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedChunk30152' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedNode0000' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedNode30151' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedRootReplay' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedTreeCheck' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedRootBox_predicate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.A1285.Certificate.sextuple_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1285.zetaSextupleLedgerInterface_of_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1285.sextupleLowerConstant_exact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1285.sextupleLowerConstant_gt_6727949489' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.A1285.zetaSextupleLedgerInterface' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1285.zetaSextupleLedgerInterface_exactConstants' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.A1285.thmD₀_sextuple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1285.thmD₀_sextuple_cumulative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1285.thmD₀_sextuple_6727949489' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1285.thmD₀_sextuple_cumulative_6727949489' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

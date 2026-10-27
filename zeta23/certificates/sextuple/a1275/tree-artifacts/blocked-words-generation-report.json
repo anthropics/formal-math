@@ -1,0 +1,13 @@
+{
+ "block_count": 138,
+ "block_size": 140,
+ "frozen_cross_check": true,
+ "generator_sha256": "889625f354bea90c8c9168d9876f8e891f2bbcaf4b6201754f3939edb079515c",
+ "leaf_count": 192984,
+ "leaf_groups": 31,
+ "output": "Zeta23/ThmD/Sextuple/A1275/TreeWords.lean",
+ "output_bytes": 374378,
+ "output_sha256": "8ab4b6cc5f29be788ddc00fb8cd731107c666853bb9e2eaf1752e2d250502ddd",
+ "token_count": 385967,
+ "word_count": 19299
+}

@@ -1,0 +1,117 @@
+{
+  "A": "8/625",
+  "B": "1094977/5000000000",
+  "catalog_piece_count": 272,
+  "cutoff": "64000000/1094977",
+  "data_sha256": "961a0281a134382f9c2678cc49487839d2b9c2cbd9df382871f2c7b706552a5b",
+  "elapsed_seconds": 72.65138241648674,
+  "empty_stack": true,
+  "full_kind_exhaustion": true,
+  "full_quadratic_exhaustion": true,
+  "full_topology_exhaustion": true,
+  "kind_cursor": 385985,
+  "leaves": 385985,
+  "manifest_sha256": "97279d0a3cd5b404743546a2fbdeab4440c68f1a500c58c34083c78990c07dd3",
+  "maximum_depth": 69,
+  "quadratic_cursor": 384475,
+  "quadratic_leaves": 384475,
+  "refinement_piece_count": 216,
+  "refinements_sha256": "3f83563fb3d6f5a4e1aa0263384d0781494a672368233445a8c6e8e0e9817cb9",
+  "scalar_certificate_count": 2739,
+  "scalar_certificate_segment_count": 16161,
+  "scalar_certificates_sha256": "facce986ef9139a8344c7373ac74994dca28145e28ca30cca2f020c5bbd9cc34",
+  "smallest_quadratic_margin": "9229910132748823963026015686438941/128000000000000000000000000000000000000000000",
+  "smallest_quadratic_margin_float": 7.210867291210018e-11,
+  "smallest_tail_margin": "603643/5000000000",
+  "smallest_tail_margin_float": 0.0001207286,
+  "stable_piece_count": 56,
+  "status": "PASS",
+  "tail_leaves": 1510,
+  "tightest_quadratic_leaf": {
+    "anchor": [
+      "6785/1024",
+      "102129/8192",
+      "53867/8192",
+      "51153/4096",
+      "6785/1024"
+    ],
+    "anchor_codes": [
+      16384,
+      0,
+      16384,
+      16384,
+      16384
+    ],
+    "box": [
+      [
+        "54221/8192",
+        "6785/1024"
+      ],
+      [
+        "102129/8192",
+        "25547/2048"
+      ],
+      [
+        "3363/512",
+        "53867/8192"
+      ],
+      [
+        "102247/8192",
+        "51153/4096"
+      ],
+      [
+        "54221/8192",
+        "6785/1024"
+      ]
+    ],
+    "depth": 65,
+    "lower": "1638400009229910132748823963026015686438941/128000000000000000000000000000000000000000000",
+    "margin": "9229910132748823963026015686438941/128000000000000000000000000000000000000000000",
+    "term_codes": [
+      78,
+      34269,
+      34373,
+      34396,
+      34614,
+      34186,
+      34095,
+      34266,
+      34396,
+      75,
+      34192,
+      34556,
+      86,
+      34402,
+      78
+    ]
+  },
+  "tightest_tail_leaf": {
+    "box": [
+      [
+        "177/16",
+        "413/32"
+      ],
+      [
+        "177/16",
+        "413/32"
+      ],
+      [
+        "177/32",
+        "59/8"
+      ],
+      [
+        "177/16",
+        "413/32"
+      ],
+      [
+        "649/32",
+        "177/8"
+      ]
+    ],
+    "depth": 25,
+    "margin": "603643/5000000000"
+  },
+  "token_count": 771969,
+  "trust_note": "Serialized streams and refined scalar certificates were replayed using exact Fraction arithmetic; floats appear only in decimal summaries.",
+  "verifier_sha256": "d4c31192a823853311494b72b900b84d34357b6f5dbbeb60a966855cf201bb83"
+}

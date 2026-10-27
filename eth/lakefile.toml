@@ -1,0 +1,202 @@
+name = "eth"
+version = "0.1.0"
+defaultTargets = [
+  "statements",
+  "machines",
+  "networks",
+  "threesat",
+  "consequences",
+  "sparsification",
+  "rates",
+  "variables",
+  "maintheorem",
+  "MainResults",
+  "Challenge",
+  "Solution",
+  "PaperIndex",
+]
+
+[leanOptions]
+autoImplicit = false
+relaxedAutoImplicit = false
+pp.unicode.fun = true
+exponentiation.threshold = 2048
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "0df444a360eaa60ab8c11dca51a86af692955474"
+
+# Trusted: the one file to read: the definitions and the two propositions. It imports Mathlib alone.
+[[lean_lib]]
+name = "MainResults"
+
+# Trusted: the two theorems, each with sorry in place of its proof, for the tool Comparator. It imports MainResults alone.
+[[lean_lib]]
+name = "Challenge"
+
+# Untrusted: the two theorems, proved from the libraries below.
+[[lean_lib]]
+name = "Solution"
+
+# Untrusted: one entry for each numbered statement of the paper, pointing to its Lean counterpart, followed by entries for the steps of its proof.
+[[lean_lib]]
+name = "PaperIndex"
+srcDir = "proof"
+
+# Untrusted: definitions and propositions only, with narrow imports.
+[[lean_lib]]
+name = "statements"
+srcDir = "proof/statements"
+globs = [
+  "NetworkStatements",
+  "StepMachineStatements",
+  "ThreeSatStatement",
+  "KSatStatement",
+  "CountKSatStatement",
+  "ThreeSatRateStatement",
+  "ClauseBoundStatement",
+  "FixedWidthVariableBoundStatement",
+  "UniformInKStatement",
+  "MainTheoremFormsStatement",
+  "PaperSentencesStatement",
+  "ThmEveryDeltaStatement",
+  "EightSquareStatement",
+  "ParityChecksStatement",
+  "LevelsStatement",
+  "PiecesStatement",
+  "PartitionStatement",
+  "AppRunningTimeStatement",
+  "AppHalfPiecesStatement",
+  "AppVariablesStatement",
+  "CircuitLowerBoundStatement",
+  "CircuitLowerBoundInfinitelyOftenStatement",
+  "GraphProblemsStatement",
+  "ClausesOccurStatement",
+  "CliqueLevelsStatement",
+  "KSatFreeCodeStatement",
+  "PiecesCountedStatement",
+  "PrintedStatement",
+  "GivenStatement",
+  "VariablesFixedWidthStatement",
+  "PiecesFromEightSquaresStatement",
+  "CountedInstanceStatement",
+]
+
+# Untrusted: the model of computation: machines cut into steps, Turing machines, machines with query access.
+[[lean_lib]]
+name = "machines"
+srcDir = "proof/machines"
+globs = [
+  "StepMachines.+",
+  "ToTuring.+",
+  "QueryMachines.+",
+  "Wrap.+",
+  "TwoMachines.+",
+  "Tower.+",
+]
+
+# Untrusted: Sections 3 to 5: networks, the eight-square identity, the value of a network.
+[[lean_lib]]
+name = "networks"
+srcDir = "proof/networks"
+globs = [
+  "Groundwork.+",
+  "Paper.+",
+  "SingleBitPieces.+",
+  "Eight.+",
+  "Value.+",
+  "Variance.+",
+  "Coding.+",
+]
+
+# Untrusted: Sections 6 and 8: the algorithm for 3-SAT.
+[[lean_lib]]
+name = "threesat"
+srcDir = "proof/threesat"
+globs = [
+  "Exits.+",
+  "Suffices.+",
+  "Enumerate.+",
+  "ThreeSatOnTree.+",
+  "ThreeSatPrinted.+",
+  "Printed.+",
+  "Given.+",
+]
+
+# Untrusted: Section 7: the consequences.
+[[lean_lib]]
+name = "consequences"
+srcDir = "proof/consequences"
+globs = [
+  "WidthK.+",
+  "CountKSat.+",
+  "CountKSatRate.+",
+  "GraphProblems.+",
+  "CircuitLowerBound.+",
+  "Occ.+",
+  "SplitCount.+",
+  "SplitSat.+",
+  "FreeCode.+",
+  "SizeCircuit.+",
+  "Complement.+",
+  "Sat3Graph.+",
+  "ThmCount.+",
+  "Consequences.+",
+  "FromPrinted.+",
+  "PrintedOrder.+",
+]
+
+# Untrusted: the sparsification lemma and Appendix C.
+[[lean_lib]]
+name = "sparsification"
+srcDir = "proof/sparsification"
+globs = [
+  "SparsifyWidthK.+",
+  "SparsificationLemma.+",
+  "UniformInK.+",
+  "StepSparsify.+",
+]
+
+# Untrusted: Appendices A and B: the bound in the number of clauses.
+[[lean_lib]]
+name = "rates"
+srcDir = "proof/rates"
+globs = [
+  "PaddedDescent.+",
+  "ClauseBound.+",
+  "GeneralPieces.+",
+  "OccurM.+",
+  "PiecesCounted.+",
+  "ExplicitCost.+",
+  "CountedToPadded.+",
+  "PiecesFromEightSquares.+",
+  "CountedRecursion.+",
+]
+
+# Untrusted: Appendix D: the bound in the number of variables.
+[[lean_lib]]
+name = "variables"
+srcDir = "proof/variables"
+globs = [
+  "VariableBound.+",
+  "SparsifyThenCount.+",
+  "RecursionWithPieces.+",
+  "RecursionToBound.+",
+  "PairsToBound.+",
+  "FixedWidthSteps.+",
+  "CountedInstance.+",
+  "ThmVariables.+",
+]
+
+# Untrusted: the Main Theorem.
+[[lean_lib]]
+name = "maintheorem"
+srcDir = "proof/maintheorem"
+globs = [
+  "MinOfBounds.+",
+  "MainRoute.+",
+  "WidthThree.+",
+  "NamesInOrder.+",
+  "CountedRoute.+",
+]

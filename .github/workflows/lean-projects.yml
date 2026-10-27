@@ -8,6 +8,10 @@ name: Lean projects
 # verification: such a run selects no project and `verify` is skipped. To re-verify everything, start the
 # workflow manually (workflow_dispatch) with projects = "all" (the default), or name the projects to run.
 # For each selected project the `verify` job
+#   0. checks the project's layout against the Palomar registry's structural requirements
+#      (.github/scripts/palomar-structure-check.sh: lakefile + manifest, release/rc toolchain pin, a small
+#      Mathlib-only Challenge module, a sorry-free Solution module, comparator.json naming the compared
+#      declarations, formalization.yaml metadata, root LICENSE) before anything is installed,
 #   1. installs elan (the toolchain comes from the project's own lean-toolchain),
 #   2. fetches the Mathlib cache when the project depends on Mathlib and, on pull requests only, restores
 #      the project's previous .lake/build so that only changed modules are rebuilt (pushes to main and
@@ -159,6 +163,13 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+
+      # Fast, toolchain-free check of the layout the Palomar registry requires of a project directory
+      # (lakefile + manifest, release toolchain pin, Challenge/Solution modules, comparator.json,
+      # formalization.yaml, root LICENSE); fails the job before anything is downloaded or built.
+      - name: Palomar structure check
+        working-directory: .
+        run: bash .github/scripts/palomar-structure-check.sh "${{ matrix.project }}"
 
       - name: Free disk space on the hosted runner
         working-directory: .

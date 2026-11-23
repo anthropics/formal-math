@@ -1,0 +1,31 @@
+name = "vp-vnp"
+defaultTargets = ["Statement", "Challenge", "Solution", "Paper"]
+
+[leanOptions]
+autoImplicit = false
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "0df444a360eaa60ab8c11dca51a86af692955474"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "NS1"
+
+[[lean_lib]]
+name = "Nc"
+
+[[lean_lib]]
+name = "Ov"
+
+[[lean_lib]]
+name = "Paper"
+
+[[lean_lib]]
+name = "Solution"
+
+[[lean_lib]]
+name = "Statement"

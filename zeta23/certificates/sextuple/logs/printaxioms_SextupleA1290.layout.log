@@ -1,0 +1,17 @@
+'Zeta23.ThmD.Sextuple.A1290.Certificate.sextuple_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1290.zetaSextupleLedgerInterface' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1290.sextupleLowerConstant_gt_6728005676' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.A1290.thmD₀_sextuple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1290.thmD₀_sextuple_cumulative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1290.thmD₀_sextuple_6728005676' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1290.thmD₀_sextuple_cumulative_6728005676' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'sextuple_a1290_simple_on_critical_line_decimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'sextuple_a1290_simple_on_critical_line_cumulative_decimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'sextuple_a1290_simple_on_critical_line_6728005676' depends on axioms: [propext, Classical.choice, Quot.sound]
+'sextuple_a1290_simple_on_critical_line_cumulative_6728005676' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

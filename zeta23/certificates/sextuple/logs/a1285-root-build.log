@@ -1,0 +1,955 @@
+⚠ [3164/3342] Replayed Zeta23.Statement
+warning: Zeta23/Statement.lean:148:30: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3585/3786] Replayed Zeta23.Statement.Seam
+warning: Zeta23/Statement/Seam.lean:59:13: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+⚠ [3614/3786] Replayed Zeta23.Assembly
+warning: Zeta23/Assembly.lean:885:47: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/Assembly.lean:958:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/Assembly.lean:962:90: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3617/3786] Replayed Zeta23.ZetaReflect
+warning: Zeta23/ZetaReflect.lean:91:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8724/10946] Replayed Zeta23.Tail
+warning: Zeta23/Tail.lean:290:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/Tail.lean:399:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8725/10946] Replayed Zeta23.ZeroSide
+warning: Zeta23/ZeroSide.lean:701:4: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ZeroSide.lean:706:66: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ZeroSide.lean:712:52: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ZeroSide.lean:755:53: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [8739/10946] Replayed Zeta23.GammaFacts.Mu
+info: Zeta23/GammaFacts/Mu.lean:137:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [8741/10946] Replayed Zeta23.GammaFacts.StirlingVert
+info: Zeta23/GammaFacts/StirlingVert.lean:452:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [8745/10946] Replayed Zeta23.FromPNTPlus.StrongPNTPrefix
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:61:71: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:202:9: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:343:10: `Set.notMem_setOf_iff` has been deprecated: Use `Set.notMem_ofPred_iff` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:368:48: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:390:10: `Set.notMem_setOf_iff` has been deprecated: Use `Set.notMem_ofPred_iff` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:432:48: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8753/10946] Replayed Zeta23.FromPNTPlus.ZetaBounds
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:859:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:952:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1092:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1099:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1105:56: `Set.preimage_setOf_eq` has been deprecated: Use `Set.preimage_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1115:56: `Set.preimage_setOf_eq` has been deprecated: Use `Set.preimage_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1119:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1135:54: `Set.preimage_setOf_eq` has been deprecated: Use `Set.preimage_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1157:22: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1169:15: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1169:59: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1185:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1835:19: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1837:45: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1840:28: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1844:28: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1900:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1906:20: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:2091:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:2884:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:2940:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8755/10946] Replayed Zeta23.RvM.Halving
+warning: Zeta23/RvM/Halving.lean:52:55: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/RvM/Halving.lean:62:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/RvM/Halving.lean:70:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8761/10946] Replayed Zeta23.RvM.ReZeroCount
+warning: Zeta23/RvM/ReZeroCount.lean:272:15: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+⚠ [8766/10946] Replayed Zeta23.RvM.NcountWindow
+warning: Zeta23/RvM/NcountWindow.lean:23:22: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8769/10946] Replayed Zeta23.WeilEF.ZeroSummability
+warning: Zeta23/WeilEF/ZeroSummability.lean:189:4: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8772/10946] Replayed Zeta23.WeilEF.Landau
+warning: Zeta23/WeilEF/Landau.lean:341:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/WeilEF/Landau.lean:437:64: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8774/10946] Replayed Zeta23.WeilEF.Contour
+warning: Zeta23/WeilEF/Contour.lean:69:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [8779/10946] Replayed Zeta23.WeilEF.Main
+info: Zeta23/WeilEF/Main.lean:38:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [8786/10946] Replayed Zeta23.ThmE.SeamL
+warning: Zeta23/ThmE/SeamL.lean:337:13: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+⚠ [8795/10946] Replayed Zeta23.ThmE.ReZeroCountChi
+warning: Zeta23/ThmE/ReZeroCountChi.lean:204:15: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+ℹ [8797/10946] Replayed Zeta23.ThmE.GammaFactsChiProof
+info: Zeta23/ThmE/GammaFactsChiProof.lean:208:47: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: Zeta23/ThmE/GammaFactsChiProof.lean:272:17: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [8803/10946] Replayed Zeta23.ThmE.ContourChi
+warning: Zeta23/ThmE/ContourChi.lean:74:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8810/10946] Replayed Zeta23.ZeroSide.RankTraceMult
+warning: Zeta23/ZeroSide/RankTraceMult.lean:49:32: Variable name `ht0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:49:60: Variable name `hx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:56:30: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:56:43: Variable name `hx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:81:32: Variable name `hp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:81:58: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:164:20: This simp argument is unused:
+  Matrix.mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:359:28: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8812/10946] Replayed Zeta23.Assembly.SeamMult
+warning: Zeta23/Assembly/SeamMult.lean:26:0: automatically included section variable(s) unused in theorem `Zeta23.Assembly.ctr_sub_frobSq_perturb`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8841/13236] Replayed Zeta23.PrimeSideA.EndsE1
+warning: Zeta23/PrimeSideA/EndsE1.lean:326:41: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [8846/13236] Replayed Zeta23.PrimeSideA
+info: Zeta23/PrimeSideA.lean:372:0: lem_ends : ∀ (cϱ lam : ℝ),
+  GammaFacts →
+    ChebyshevMertens →
+      0 < lam ∧ lam ≤ 1 →
+        ∃ C, EventuallyAtCore cϱ lam fun p F ↦ |trGt2A p F - MtotalA p F| ≤ C * (p.L * p.l * log p.l * (p.l ^ 2 + p.X))
+info: Zeta23/PrimeSideA.lean:398:0: prop_mumu : ∀ (cϱ lam : ℝ),
+  GammaFacts →
+    ChebyshevMertens →
+      0 < lam ∧ lam ≤ 1 →
+        ∃ C,
+          EventuallyAtCore cϱ lam fun p F ↦
+            |Mform F.Phi p.T mu mu - 2 * π * F.b * p.L * ∫ (τ : ℝ) in p.T..2 * p.T, mu τ ^ 2| ≤ C * (p.l ^ 2 * log p.L)
+info: Zeta23/PrimeSideA.lean:404:0: prop_cross_muP : ∀ (cϱ lam : ℝ),
+  GammaFacts →
+    ChebyshevMertens →
+      0 < lam ∧ lam ≤ 1 → ∃ C, EventuallyAtCore cϱ lam fun p F ↦ |Mform F.Phi p.T mu (PX p.X)| ≤ C * (p.l * √p.X)
+⚠ [8852/13236] Replayed Zeta23.MV.Spacing
+warning: Zeta23/MV/Spacing.lean:58:0: automatically included section variable(s) unused in theorem `Zeta23.MV.Adm.itv_disjoint`:
+  [Fintype ι]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Zeta23/MV/Spacing.lean:153:8: automatically included section variable(s) unused in theorem `_private.Zeta23.MV.Spacing.0.Zeta23.MV.Adm.mem_window`:
+  [Fintype ι]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8861/13236] Replayed Zeta23.ThmD.WindowCore
+warning: Zeta23/ThmD/WindowCore.lean:388:22: Variable name `u` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _u
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8864/13236] Replayed Zeta23.ThmD.Window
+warning: Zeta23/ThmD/Window.lean:132:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8868/13236] Replayed Zeta23.ThmD.PP
+warning: Zeta23/ThmD/PP.lean:270:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ThmD/PP.lean:276:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8879/13236] Replayed Zeta23.ThmE.Main
+warning: Zeta23/ThmE/Main.lean:190:0: automatically included section variable(s) unused in theorem `Zeta23.ThmE.eventually_GzGpChi`:
+  [NeZero q]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero q] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8880/13236] Replayed Zeta23.ThmE.EFLitChi
+warning: Zeta23/ThmE/EFLitChi.lean:130:24: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [8904/13236] Replayed Zeta23.ThmD.Sextuple.Macro.EnvelopeData
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:561:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroEnvelope_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:563:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroPiece0_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:564:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroPiece3_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean:565:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.macroPieces_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8905/13236] Replayed Zeta23.ThmD.Sextuple.Macro.StableCatalog
+info: Zeta23/ThmD/Sextuple/Macro/StableCatalog.lean:128:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.stableMacroTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8908/13236] Replayed Zeta23.ThmD.Sextuple.Macro.ScalarData
+info: Zeta23/ThmD/Sextuple/Macro/ScalarData.lean:14146:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.stableMacroTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/ScalarData.lean:14147:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.scalarCertTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [11897/24947] Replayed Zeta23.ThmD.Sextuple.A1275.RefinementData
+info: Zeta23/ThmD/Sextuple/A1275/RefinementData.lean:2177:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.refinementCatalog_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [11898/24947] Replayed Zeta23.ThmD.Sextuple.Macro.ParametricAdapter
+info: Zeta23/ThmD/Sextuple/Macro/ParametricAdapter.lean:157:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.fastLeafCheckAt_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/Macro/ParametricAdapter.lean:158:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.affineTree_global_at' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [11899/24947] Replayed Zeta23.ThmD.Sextuple.A1275.Catalog
+info: Zeta23/ThmD/Sextuple/A1275/Catalog.lean:460:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.refinementTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Catalog.lean:461:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.improvedCatalog_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [11900/24947] Replayed Zeta23.ThmD.Sextuple.A1275.ScalarData
+info: Zeta23/ThmD/Sextuple/A1275/ScalarData.lean:20980:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.improvedScalarTable_check' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [11901/24947] Replayed Zeta23.ThmD.Sextuple.A1275.TreeReader
+info: Zeta23/ThmD/Sextuple/A1275/TreeReader.lean:139:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.improvedConcreteLeafCheck_sound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [12038/24947] Replayed Zeta23.ThmD.Sextuple.A1275.Assembly
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:264:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedA : ℝ
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:265:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedB : ℝ
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:266:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedZetaSextupleLedgerError : ℝ → ℝ
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:267:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedZetaSextupleLedgerInterface_of_certificate
+  (hcertificate :
+    ∀ (g : Fin 5 → ℝ),
+      (∀ (i : Fin 5), 0 ≤ g i) →
+        63 / 5000 ≤
+          Zeta23.ThmD.Sextuple.sextupleEnergy g + 1094977 / 5000000000 * Zeta23.ThmD.Sextuple.sextupleSpan g) :
+  Zeta23.ThmD.Sextuple.ZetaSextupleLedgerInterface (63 / 5000) (1094977 / 5000000000)
+    Zeta23.ThmD.Sextuple.zetaSextuplePenalty Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedZetaSextupleLedgerError
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:268:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedZetaSextupleLedgerError_isLittleO :
+  Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedZetaSextupleLedgerError =o[atTop] fun T ↦ ↑(Zeta23.Ncount T (2 * T))
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:269:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleLowerConstant : ℝ
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:270:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleLowerConstant_exact :
+  Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleLowerConstant =
+    (3000000000 * Zeta23.ThmD.HD 1 - 1094977 * π) / 2993700000
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:271:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleLowerConstant_gt_6727668568 :
+  6727668568 / 10 ^ 10 < Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleLowerConstant
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:272:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleDyadic_of_interfaces {penalty baseError ledgerError : ℝ → ℝ}
+  (hbase : Zeta23.ThmD.Sextuple.ZetaBasePenaltyInterface penalty baseError)
+  (hledger : Zeta23.ThmD.Sextuple.ZetaSextupleLedgerInterface (63 / 5000) (1094977 / 5000000000) penalty ledgerError)
+  (ε : ℝ) :
+  ε > 0 →
+    ∃ T₀,
+      ∀ T ≥ T₀,
+        (Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleLowerConstant - ε) * ↑(Zeta23.Ncount T (2 * T)) ≤
+          ↑(Zeta23.N0simple T (2 * T))
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:273:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleCumulative_of_interfaces {penalty baseError ledgerError : ℝ → ℝ}
+  (hbase : Zeta23.ThmD.Sextuple.ZetaBasePenaltyInterface penalty baseError)
+  (hledger : Zeta23.ThmD.Sextuple.ZetaSextupleLedgerInterface (63 / 5000) (1094977 / 5000000000) penalty ledgerError)
+  (ε : ℝ) :
+  ε > 0 →
+    ∃ T₀,
+      ∀ T ≥ T₀,
+        (Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleLowerConstant - ε) * ↑(Zeta23.Ncount 0 T) ≤
+          ↑(Zeta23.N0simple 0 T)
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:274:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleDyadic_6727668568_of_interfaces
+  {penalty baseError ledgerError : ℝ → ℝ} (hbase : Zeta23.ThmD.Sextuple.ZetaBasePenaltyInterface penalty baseError)
+  (hledger : Zeta23.ThmD.Sextuple.ZetaSextupleLedgerInterface (63 / 5000) (1094977 / 5000000000) penalty ledgerError) :
+  ∃ T₀, ∀ T ≥ T₀, 6727668568 / 10 ^ 10 * ↑(Zeta23.Ncount T (2 * T)) ≤ ↑(Zeta23.N0simple T (2 * T))
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:275:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleCumulative_6727668568_of_interfaces
+  {penalty baseError ledgerError : ℝ → ℝ} (hbase : Zeta23.ThmD.Sextuple.ZetaBasePenaltyInterface penalty baseError)
+  (hledger : Zeta23.ThmD.Sextuple.ZetaSextupleLedgerInterface (63 / 5000) (1094977 / 5000000000) penalty ledgerError) :
+  ∃ T₀, ∀ T ≥ T₀, 6727668568 / 10 ^ 10 * ↑(Zeta23.Ncount 0 T) ≤ ↑(Zeta23.N0simple 0 T)
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:276:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.A : ℝ
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:277:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.B : ℝ
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:278:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.zetaSextupleLedgerError : ℝ → ℝ
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:279:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.zetaSextupleLedgerInterface_of_certificate
+  (hcertificate :
+    ∀ (g : Fin 5 → ℝ),
+      (∀ (i : Fin 5), 0 ≤ g i) →
+        51 / 4000 ≤
+          Zeta23.ThmD.Sextuple.sextupleEnergy g + Zeta23.ThmD.Sextuple.B6 * Zeta23.ThmD.Sextuple.sextupleSpan g) :
+  Zeta23.ThmD.Sextuple.ZetaSextupleLedgerInterface (51 / 4000) Zeta23.ThmD.Sextuple.B6
+    Zeta23.ThmD.Sextuple.zetaSextuplePenalty Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.zetaSextupleLedgerError
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:280:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.zetaSextupleLedgerError_isLittleO :
+  Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.zetaSextupleLedgerError =o[atTop] fun T ↦ ↑(Zeta23.Ncount T (2 * T))
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:281:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleLowerConstant : ℝ
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:282:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleLowerConstant_exact :
+  Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleLowerConstant =
+    (3000000000 * Zeta23.ThmD.HD 1 - 1094977 * π) / 2993625000
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:283:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleLowerConstant_gt_6727837118 :
+  6727837118 / 10 ^ 10 < Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleLowerConstant
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:284:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleDyadic_of_interfaces {penalty baseError ledgerError : ℝ → ℝ}
+  (hbase : Zeta23.ThmD.Sextuple.ZetaBasePenaltyInterface penalty baseError)
+  (hledger : Zeta23.ThmD.Sextuple.ZetaSextupleLedgerInterface (51 / 4000) Zeta23.ThmD.Sextuple.B6 penalty ledgerError)
+  (ε : ℝ) :
+  ε > 0 →
+    ∃ T₀,
+      ∀ T ≥ T₀,
+        (Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleLowerConstant - ε) * ↑(Zeta23.Ncount T (2 * T)) ≤
+          ↑(Zeta23.N0simple T (2 * T))
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:285:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleCumulative_of_interfaces {penalty baseError ledgerError : ℝ → ℝ}
+  (hbase : Zeta23.ThmD.Sextuple.ZetaBasePenaltyInterface penalty baseError)
+  (hledger : Zeta23.ThmD.Sextuple.ZetaSextupleLedgerInterface (51 / 4000) Zeta23.ThmD.Sextuple.B6 penalty ledgerError)
+  (ε : ℝ) :
+  ε > 0 →
+    ∃ T₀,
+      ∀ T ≥ T₀,
+        (Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleLowerConstant - ε) * ↑(Zeta23.Ncount 0 T) ≤
+          ↑(Zeta23.N0simple 0 T)
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:286:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleDyadic_6727837118_of_interfaces
+  {penalty baseError ledgerError : ℝ → ℝ} (hbase : Zeta23.ThmD.Sextuple.ZetaBasePenaltyInterface penalty baseError)
+  (hledger : Zeta23.ThmD.Sextuple.ZetaSextupleLedgerInterface (51 / 4000) Zeta23.ThmD.Sextuple.B6 penalty ledgerError) :
+  ∃ T₀, ∀ T ≥ T₀, 6727837118 / 10 ^ 10 * ↑(Zeta23.Ncount T (2 * T)) ≤ ↑(Zeta23.N0simple T (2 * T))
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:287:0: Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleCumulative_6727837118_of_interfaces
+  {penalty baseError ledgerError : ℝ → ℝ} (hbase : Zeta23.ThmD.Sextuple.ZetaBasePenaltyInterface penalty baseError)
+  (hledger : Zeta23.ThmD.Sextuple.ZetaSextupleLedgerInterface (51 / 4000) Zeta23.ThmD.Sextuple.B6 penalty ledgerError) :
+  ∃ T₀, ∀ T ≥ T₀, 6727837118 / 10 ^ 10 * ↑(Zeta23.Ncount 0 T) ≤ ↑(Zeta23.N0simple 0 T)
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:289:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedA' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:290:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedB' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:291:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedZetaSextupleLedgerError' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:292:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedZetaSextupleLedgerInterface_of_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:293:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedZetaSextupleLedgerError_isLittleO' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:294:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleLowerConstant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:295:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleLowerConstant_exact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:296:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleLowerConstant_gt_6727668568' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:297:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleDyadic_of_interfaces' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:298:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleCumulative_of_interfaces' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:299:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleDyadic_6727668568_of_interfaces' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:300:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.improvedSextupleCumulative_6727668568_of_interfaces' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:301:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.A' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:302:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.B' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:303:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.zetaSextupleLedgerError' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:304:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.zetaSextupleLedgerInterface_of_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:305:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.zetaSextupleLedgerError_isLittleO' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:306:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleLowerConstant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:307:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleLowerConstant_exact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:308:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleLowerConstant_gt_6727837118' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:309:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleDyadic_of_interfaces' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:310:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleCumulative_of_interfaces' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:311:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleDyadic_6727837118_of_interfaces' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Assembly.lean:312:0: 'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleCumulative_6727837118_of_interfaces' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [12039/24947] Replayed Zeta23.ThmD.Sextuple.A1285.ScalarData
+info: Zeta23/ThmD/Sextuple/A1285/ScalarData.lean:51368:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedScalarTable_check' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [12040/24947] Replayed Zeta23.ThmD.Sextuple.A1285.TreeReader
+info: Zeta23/ThmD/Sextuple/A1285/TreeReader.lean:126:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedConcreteLeafCheck_sound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [19383/51505] Replayed Zeta23.ThmD.Sextuple.A1285.Layout
+info: Zeta23/ThmD/Sextuple/A1285/Layout.lean:36:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedTopologyLayoutValid' depends on axioms: [propext, Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1285/Layout.lean:37:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedLeafLayoutValid' depends on axioms: [propext, Quot.sound]
+ℹ [25074/51748] Replayed Zeta23.ThmD.Sextuple.A1275.Layout
+info: Zeta23/ThmD/Sextuple/A1275/Layout.lean:42:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.improvedTopologyLayoutValid' depends on axioms: [propext, Quot.sound]
+info: Zeta23/ThmD/Sextuple/A1275/Layout.lean:43:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.improvedLeafLayoutValid' depends on axioms: [propext, Quot.sound]
+ℹ [51265/51748] Replayed Zeta23.ThmD.Sextuple.A1275.TreeAssembly
+info: Zeta23/ThmD/Sextuple/A1275/TreeAssembly.lean:17:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.improvedRootReplay' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [51448/51748] Replayed Zeta23.ZeroSide.TightMult
+warning: Zeta23/ZeroSide/TightMult.lean:45:24: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ha]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/ZeroSide/TightMult.lean:57:28: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Sum.inl_injective.eq_iff, Ne.symm hk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/ZeroSide/TightMult.lean:64:14: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Sum.inl_injective.eq_iff, Ne.symm this]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/ZeroSide/TightMult.lean:67:12: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/ZeroSide/TightMult.lean:93:22: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [51451/51748] Replayed Zeta23.XiPrime.Statement
+warning: Zeta23/XiPrime/Statement.lean:365:69: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [51454/51748] Replayed Zeta23.XiPrime.PrimeSide.Traces
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:359:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:361:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:364:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:367:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:369:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:372:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:395:15: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:418:11: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:435:75: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:437:80: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:464:13: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [51455/51748] Replayed Zeta23.XiPrime.PrimeSide.Density
+warning: Zeta23/XiPrime/PrimeSide/Density.lean:248:62: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [51456/51748] Replayed Zeta23.XiPrime.PrimeSide.Cross
+warning: Zeta23/XiPrime/PrimeSide/Cross.lean:51:10: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+warning: Zeta23/XiPrime/PrimeSide/Cross.lean:71:58: Variable name `hlam` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hlam
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/PrimeSide/Cross.lean:165:19: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [51457/51748] Replayed Zeta23.XiPrime.PrimeSide.Trace
+warning: Zeta23/XiPrime/PrimeSide/Trace.lean:58:10: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+⚠ [51458/51748] Replayed Zeta23.XiPrime.PrimeSide.Abel
+warning: Zeta23/XiPrime/PrimeSide/Abel.lean:69:59: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/XiPrime/PrimeSide/Abel.lean:149:63: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/XiPrime/PrimeSide/Abel.lean:69:59: This simp argument is unused:
+  Set.mem_setOf_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Set.mem_compl_iff, Set.mem_singleton_iff, ne_eq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/XiPrime/PrimeSide/Abel.lean:198:4: 'beta_reduce' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [51461/51748] Replayed Zeta23.XiPrime.Certificate.D1
+warning: Zeta23/XiPrime/Certificate/D1.lean:307:68: `intervalIntegral.integral_finset_sum` has been deprecated: Use `intervalIntegral.integral_finsetSum` instead
+warning: Zeta23/XiPrime/Certificate/D1.lean:316:11: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+⚠ [51462/51748] Replayed Zeta23.XiPrime.Certificate.Poly
+warning: Zeta23/XiPrime/Certificate/Poly.lean:42:6: `intervalIntegral.integral_finset_sum` has been deprecated: Use `intervalIntegral.integral_finsetSum` instead
+⚠ [51465/51748] Replayed Zeta23.XiPrime.QuarticWindow.ModWindow
+warning: Zeta23/XiPrime/QuarticWindow/ModWindow.lean:87:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [51474/51748] Replayed Zeta23.XiPrime.Transfer.Abstract
+warning: Zeta23/XiPrime/Transfer/Abstract.lean:100:11: `tendsto_finset_sum` has been deprecated: Use `tendsto_finsetSum` instead
+warning: Zeta23/XiPrime/Transfer/Abstract.lean:100:43: `tendsto_finset_sum` has been deprecated: Use `tendsto_finsetSum` instead
+⚠ [51475/51748] Replayed Zeta23.XiPrime.Transfer.Dependence
+warning: Zeta23/XiPrime/Transfer/Dependence.lean:171:10: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+⚠ [51476/51748] Replayed Zeta23.XiPrime.Transfer
+warning: Zeta23/XiPrime/Transfer.lean:718:31: This simp argument is unused:
+  Matrix.diag_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.trace, map_sum, RCLike.re_to_complex, Complex.ofReal_re]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/XiPrime/Transfer.lean:718:81: This simp argument is unused:
+  Complex.ofReal_re
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.trace, Matrix.diag_apply, map_sum, RCLike.re_to_complex]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [51477/51748] Replayed Zeta23.XiPrime.PrimeSide.PP
+warning: Zeta23/XiPrime/PrimeSide/PP.lean:152:8: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+warning: Zeta23/XiPrime/PrimeSide/PP.lean:152:42: `MeasureTheory.integrable_finset_sum` has been deprecated: Use `MeasureTheory.integrable_finsetSum` instead
+warning: Zeta23/XiPrime/PrimeSide/PP.lean:154:8: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+⚠ [51478/51748] Replayed Zeta23.XiPrime.PrimeSide.PPUpper
+warning: Zeta23/XiPrime/PrimeSide/PPUpper.lean:57:18: Variable name `hlam` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hlam
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [51487/51748] Replayed Zeta23.XiPrime.Coeff.ReexpansionGen
+info: Zeta23/XiPrime/Coeff/ReexpansionGen.lean:223:73: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [51492/51748] Replayed Zeta23.WeilEF.Effective
+warning: Zeta23/WeilEF/Effective.lean:624:30: This simp argument is unused:
+  Complex.div_re
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Complex.neg_re]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/WeilEF/Effective.lean:669:14: This simp argument is unused:
+  Complex.norm_ofNat
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/WeilEF/Effective.lean:717:23: 'first
+| assumption
+| positivity' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Zeta23/WeilEF/Effective.lean:759:23: 'first
+| assumption
+| positivity' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Zeta23/WeilEF/Effective.lean:717:23: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Zeta23/WeilEF/Effective.lean:759:23: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Zeta23/WeilEF/Effective.lean:912:17: 'linarith' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Zeta23/WeilEF/Effective.lean:912:17: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [51493/51748] Replayed Zeta23.XiPrime.Seam
+warning: Zeta23/XiPrime/Seam.lean:172:8: `ENat.coe_toNat` has been deprecated: Use `ENat.natCast_toNat` instead
+⚠ [51495/51748] Replayed Zeta23.XiPrime.ZeroCount.Basic
+warning: Zeta23/XiPrime/ZeroCount/Basic.lean:30:47: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/XiPrime/ZeroCount/Basic.lean:78:53: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [51497/51748] Replayed Zeta23.XiPrime.ZeroCount.Generic
+warning: Zeta23/XiPrime/ZeroCount/Generic.lean:234:8: `intervalIntegral.integral_finset_sum` has been deprecated: Use `intervalIntegral.integral_finsetSum` instead
+⚠ [51500/51748] Replayed Zeta23.XiPrime.ZeroCount.Contour
+warning: Zeta23/XiPrime/ZeroCount/Contour.lean:35:33: `Set.Infinite.diff` has been deprecated: Use `Set.Infinite.sdiff` instead
+⚠ [51505/51748] Replayed Zeta23.XiPrime.ExplicitFormula.Contour
+warning: Zeta23/XiPrime/ExplicitFormula/Contour.lean:94:31: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [51512/51748] Replayed Zeta23.XiPrime.ExplicitFormula.EntryError
+warning: Zeta23/XiPrime/ExplicitFormula/EntryError.lean:121:82: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [51513/51748] Replayed Zeta23.XiPrime.ExplicitFormula.JTerm
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:64:19: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:64:41: Variable name `hkc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hkc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:65:24: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:65:38: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:65:51: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:65:64: Variable name `hW` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hW
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:65:77: Variable name `hW'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hW'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:66:7: Variable name `hw1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:67:7: Variable name `hw2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:68:7: Variable name `hw1'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw1'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:69:7: Variable name `hw2'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw2'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:70:20: Variable name `hcs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hcs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:71:7: Variable name `hC1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:72:7: Variable name `hC1'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC1'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:242:19: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:242:41: Variable name `hkc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hkc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:243:24: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:243:38: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:243:51: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:243:64: Variable name `hW` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hW
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:243:77: Variable name `hW'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hW'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:244:7: Variable name `hw1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:245:7: Variable name `hw2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:246:7: Variable name `hw1'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw1'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:247:7: Variable name `hw2'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw2'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:248:20: Variable name `hcs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hcs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:249:7: Variable name `hC1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:250:7: Variable name `hC1'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC1'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [51514/51748] Replayed Zeta23.XiPrime.ExplicitFormula.PrimeTermJ
+warning: Zeta23/XiPrime/ExplicitFormula/PrimeTermJ.lean:136:8: `MeasureTheory.integrable_finset_sum` has been deprecated: Use `MeasureTheory.integrable_finsetSum` instead
+warning: Zeta23/XiPrime/ExplicitFormula/PrimeTermJ.lean:154:32: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+⚠ [51518/51748] Replayed Zeta23.XiPrime.ExplicitFormula.TestWeight
+warning: Zeta23/XiPrime/ExplicitFormula/TestWeight.lean:903:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/XiPrime/ExplicitFormula/TestWeight.lean:912:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/XiPrime/ExplicitFormula/TestWeight.lean:945:11: `HasSubset.Subset.eventuallyLE` has been deprecated: Use `LE.le.eventuallyLE` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.eventuallyLE` to `LE.le.eventuallyLE x`).
+warning: Zeta23/XiPrime/ExplicitFormula/TestWeight.lean:983:11: `HasSubset.Subset.eventuallyLE` has been deprecated: Use `LE.le.eventuallyLE` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.eventuallyLE` to `LE.le.eventuallyLE x`).
+⚠ [51533/51748] Replayed Zeta23.Taper.Gevrey
+warning: Zeta23/Taper/Gevrey.lean:342:80: Variable name `x` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _x
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [51535/51748] Replayed Zeta23.Taper.GevreyRamps
+warning: Zeta23/Taper/GevreyRamps.lean:73:88: `ENat.coe_lt_top` has been deprecated: Use `ENat.natCast_lt_top` instead
+warning: Zeta23/Taper/GevreyRamps.lean:211:83: This simp argument is unused:
+  Rp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/Taper/GevreyRamps.lean:213:83: This simp argument is unused:
+  Rm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [51538/51748] Replayed Zeta23.XiPrime.FamilyHypsV
+warning: Zeta23/XiPrime/FamilyHypsV.lean:223:11: `MeasureTheory.integrable_finset_sum` has been deprecated: Use `MeasureTheory.integrable_finsetSum` instead
+warning: Zeta23/XiPrime/FamilyHypsV.lean:276:16: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+⚠ [51542/51748] Replayed Zeta23.XiPrime.Hardy.Seam
+warning: Zeta23/XiPrime/Hardy/Seam.lean:56:22: `ENat.coe_toNat` has been deprecated: Use `ENat.natCast_toNat` instead
+⚠ [51544/51748] Replayed Zeta23.XiPrime.Hardy.Contour
+warning: Zeta23/XiPrime/Hardy/Contour.lean:39:33: `Set.Infinite.diff` has been deprecated: Use `Set.Infinite.sdiff` instead
+warning: Zeta23/XiPrime/Hardy/Contour.lean:113:25: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [51546/51748] Replayed Zeta23.XiPrime.Hardy.EFBasic
+warning: Zeta23/XiPrime/Hardy/EFBasic.lean:291:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/XiPrime/Hardy/EFBasic.lean:273:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/Hardy/EFBasic.lean:273:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [51549/51748] Replayed Zeta23.XiPrime.Hardy.EFJTermW
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:44:19: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:44:41: Variable name `hkc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hkc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:45:24: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:45:38: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:45:51: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:45:64: Variable name `hW` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hW
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:45:77: Variable name `hW'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hW'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:46:7: Variable name `hw1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:47:7: Variable name `hw2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:48:7: Variable name `hw1'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw1'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:49:7: Variable name `hw2'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw2'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:50:20: Variable name `hcs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hcs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:51:7: Variable name `hC1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:52:7: Variable name `hC1'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC1'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [51553/51748] Replayed Zeta23.XiPrime.Hardy.EFContour.Analytic
+warning: Zeta23/XiPrime/Hardy/EFContour/Analytic.lean:237:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [51555/51748] Replayed Zeta23.XiPrime.Hardy.EFContour.Rectangle
+warning: Zeta23/XiPrime/Hardy/EFContour/Rectangle.lean:201:8: `ENat.coe_toNat` has been deprecated: Use `ENat.natCast_toNat` instead
+warning: Zeta23/XiPrime/Hardy/EFContour/Rectangle.lean:287:31: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [51558/51748] Replayed Zeta23.XiPrime.Hardy.EFContour
+warning: Zeta23/XiPrime/Hardy/EFContour.lean:390:57: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [51560/51748] Replayed Zeta23.XiPrime.Hardy.ZFunction
+warning: Zeta23/XiPrime/Hardy/ZFunction.lean:60:37: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/Hardy/ZFunction.lean:322:63: `ENat.one_le_iff_ne_zero` has been deprecated: Use `Order.one_le_iff_ne_zero` instead
+
+Note: The updated constant has a different type:
+  ∀ {α : Type u_1} {x : α} [inst : PartialOrder α] [inst_1 : AddMonoidWithOne α] [NeZero 1] [SuccAddOrder α]
+    [IsBotZeroClass α], 1 ≤ x ↔ x ≠ 0
+instead of
+  ∀ {n : ℕ∞}, 1 ≤ n ↔ n ≠ 0
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.one_le_iff_ne_zero` to `Order.one_le_iff_ne_zero x`).
+⚠ [51563/51748] Replayed Zeta23.PairCeiling.Stability
+warning: Zeta23/PairCeiling/Stability.lean:49:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Zeta23/PairCeiling/Stability.lean:245:4: 'push_cast at this ⊢' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ℹ [51743/51748] Replayed Zeta23.ThmD.Sextuple.A1285.TreeAssembly
+info: Zeta23/ThmD/Sextuple/A1285/TreeAssembly.lean:17:0: 'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedRootReplay' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+✔ [51747/51748] Built Zeta23 (34s)
+Build completed successfully (51748 jobs).

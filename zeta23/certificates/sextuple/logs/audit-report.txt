@@ -1,0 +1,298 @@
+# audit 2026-08-30T14:44:40Z
+## git
+e25f2f93659062c9c072a9e3dd7b5044a18581cb
+## feat/a1275-sextuple-6727837118...fork/feat/a1275-sextuple-6727837118
+ M certificates/sextuple/logs/audit-report.txt
+?? certificates/sextuple/logs/formal-math-layout-rebuild.log
+## axioms (lake env lean AxiomAudit.lean)
+'Zeta23.ThmD.Sextuple.Certificate.sextuple_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.treeCheck' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.rootReplay' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.topologyLayout' depends on axioms: [propext]
+'Zeta23.ThmD.Sextuple.MacroPrototype.leafLayout' depends on axioms: [propext]
+'Zeta23.ThmD.Sextuple.MacroPrototype.concreteLeafCheck_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.fastLeafCheck_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.scalarCertTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.stableMacroTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.zetaSextupleLedgerInterface' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.zetaSextupleLedgerInterface_exactConstants' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.thmD₀_sextuple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.thmD₀_sextuple_cumulative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.sextupleLowerConstant_gt_672755620655' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.thmD₀_sextuple_6727556' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.thmD₀_sextuple_cumulative_6727556' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.thmD₀_sextuple_672755620655' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.thmD₀_sextuple_cumulative_672755620655' depends on axioms: [propext, Classical.choice, Quot.sound]
+axiom-audit exit=0
+## axioms A1275 (lake env lean A1275/AxiomAudit.lean)
+'Zeta23.ThmD.Sextuple.MacroPrototype.stableMacroTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.refinementTable_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.improvedCatalog_check' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.improvedScalarTable_check' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.improvedConcreteLeafCheck_sound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.improvedTopologyLayoutValid' depends on axioms: [propext, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.improvedLeafLayoutValid' depends on axioms: [propext, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.improvedTopologyStream_eq_packed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.improvedPayloadStream_eq_packed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.improvedChunk0000' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.improvedChunk4476' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.improvedChunk8952' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.improvedNode0000' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.improvedNode8951' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.improvedRootReplay' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.improvedTreeCheck' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.improvedRootBox_predicate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.A1275.Certificate.sextuple_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.zetaSextupleLedgerInterface_of_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleLowerConstant_exact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleLowerConstant_gt_6727837118' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleDyadic_6727837118_of_interfaces' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleCumulative_6727837118_of_interfaces' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.A1275.zetaSextupleLedgerInterface' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1275.zetaSextupleLedgerInterface_exactConstants' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.A1275.thmD₀_sextuple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1275.thmD₀_sextuple_cumulative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1275.thmD₀_sextuple_6727837118' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1275.thmD₀_sextuple_cumulative_6727837118' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+axiom-audit-a1275 exit=0
+## axioms A1285 (lake env lean A1285/AxiomAudit.lean)
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedScalarTable_check' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedConcreteLeafCheck_sound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedTopologyLayoutValid' depends on axioms: [propext, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedLeafLayoutValid' depends on axioms: [propext, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedTopologyStream_eq_packed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedPayloadStream_eq_packed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedChunk00000' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedChunk15076' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedChunk30152' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedNode0000' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedNode30151' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedRootReplay' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedTreeCheck' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1285.improvedRootBox_predicate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.A1285.Certificate.sextuple_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1285.zetaSextupleLedgerInterface_of_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1285.sextupleLowerConstant_exact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1285.sextupleLowerConstant_gt_6727949489' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.A1285.zetaSextupleLedgerInterface' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1285.zetaSextupleLedgerInterface_exactConstants' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.A1285.thmD₀_sextuple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1285.thmD₀_sextuple_cumulative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1285.thmD₀_sextuple_6727949489' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1285.thmD₀_sextuple_cumulative_6727949489' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+axiom-audit-a1285 exit=0
+## axioms A1290 (lake env lean A1290/AxiomAudit.lean)
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1290.improvedScalarTable_check' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1290.improvedConcreteLeafCheck_sound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1290.improvedTopologyLayoutValid' depends on axioms: [propext, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1290.improvedLeafLayoutValid' depends on axioms: [propext, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1290.improvedTopologyStream_eq_packed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1290.improvedPayloadStream_eq_packed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1290.improvedChunk00000' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1290.improvedChunk28462' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1290.improvedChunk56923' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1290.improvedNode0000' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1290.improvedNode56922' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1290.improvedRootReplay' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1290.improvedTreeCheck' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.MacroPrototype.A1290.improvedRootBox_predicate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.A1290.Certificate.sextuple_affine' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1290.zetaSextupleLedgerInterface_of_certificate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1290.sextupleLowerConstant_exact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.ImprovedAssembly.A1290.sextupleLowerConstant_gt_6728005676' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.A1290.zetaSextupleLedgerInterface' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1290.zetaSextupleLedgerInterface_exactConstants' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zeta23.ThmD.Sextuple.A1290.thmD₀_sextuple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1290.thmD₀_sextuple_cumulative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1290.thmD₀_sextuple_6728005676' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.Sextuple.A1290.thmD₀_sextuple_cumulative_6728005676' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+axiom-audit-a1290 exit=0
+## forbidden scan
+forbidden scan clean over 100498 files
+scan exit=0
+## hashes
+61c2adce61a763582895d124eac67f37eb204a5844a19cca62b08a12994cb217  Zeta23/ThmD/Sextuple/Macro/AffineAdapter.lean
+c0757a933f4c2ea2987da6e3d3dbe0d4f804c5c4a88174758e2e7c5ed8370ddf  Zeta23/ThmD/Sextuple/Macro/Analytic.lean
+b714f09932210bb1374e550f3ce747316e477afc19a7fcc476580cefe239aa35  Zeta23/ThmD/Sextuple/Macro/AssemblyStep.lean
+44a3295dbf1eb76b5ae99263d282ac2397bc6b0953c8456632768476f25ee052  Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean
+4146c8be0788f3b5adbade43f322ba34960af93f4775730e1d271cbf7f2efc7c  Zeta23/ThmD/Sextuple/Macro/Layout.lean
+4923c164a493b6a1f89fec68889fbd85bb7d402a5adfef3159c40897080ad4ad  Zeta23/ThmD/Sextuple/Macro/LeafCheck.lean
+71dbe0b3159b3785eb6c731eab6f994de515018e65a10de6d019c54d6249226f  Zeta23/ThmD/Sextuple/Macro/ParametricAdapter.lean
+1908a966957c61555f16a0ce0c400a9712f199b0a453d9c9ef230c50696f1301  Zeta23/ThmD/Sextuple/Macro/ScalarAdapter.lean
+aa43ed4fc1598611b6537076a8e53a7e36fed05c0aeb935d0f6ccbbe1f50153e  Zeta23/ThmD/Sextuple/Macro/ScalarData.lean
+a1a1c09382864916874d5445763793c24b0431e68ee918ad76f8cb8d2cbcc527  Zeta23/ThmD/Sextuple/Macro/StableCatalog.lean
+70c20df3fdb2da92a0f034ae51b77d09287003c4f318de6ff9e7d5c151aefb08  Zeta23/ThmD/Sextuple/Macro/TreeAssembly.lean
+6fccdd766b799e520969a71ee8194c3811f714f90f2e52b751f562968ff526cc  Zeta23/ThmD/Sextuple/Macro/TreeFormat.lean
+83a2d50fc8dce74c30dd74b22e5a7ec07805d7bc6f8aa774928113ccab6269e6  Zeta23/ThmD/Sextuple/Macro/TreeReader.lean
+8af2f1794f39dfbf36ec676da19c949979a3c93f24a038d0c8aa3c10fb508bd2  Zeta23/ThmD/Sextuple/Macro/TreeWords.lean
+740cae7354fd36d52921ea40136dd15e41992db96c9f947f3e729b3cc90089ed  Zeta23/ThmD/Sextuple/Certificate.lean
+258eb3d4b49ad41e5e9864d44a0b852ec6e55445ca73b150a3a7793cbda8bc7a  Zeta23/ThmD/Sextuple/Unconditional.lean
+da8a8eed4fab41eafb80f6dad6095e5b6fa9060edab11b9d7d79e8d841e2bf8d  Zeta23/ThmD/Sextuple/LineDecimal.lean
+b9846b022742ccf1ed0b8add1a48c0d3d9a9aa288e32b378aeef15d10f03a8aa  Zeta23/ThmD/Sextuple/AxiomAudit.lean
+chunks: 2969 files, concatenated sha256 20bd57f81e81f5edc8b5ab715456da7390097b2fba0be318a6f60e89ebcc1a32
+oleans: 2969
+## A1275 hashes
+322936ef431ae96201d11a4e1d63fb7f720745fdcf2c28ae8dd707837a286a5b  Zeta23/ThmD/Sextuple/A1275/Assembly.lean
+28e64605946c93a0cfce54f7c5dd348b93c604d97228786abdaff462faf641a3  Zeta23/ThmD/Sextuple/A1275/AxiomAudit.lean
+aebd5f60f8f2f137e6b8181d567cf371e375ce01a51ec3aeb7d58499f24920ee  Zeta23/ThmD/Sextuple/A1275/Catalog.lean
+e0fa71c100aca117e86837780896ad2f0006ddc1640d812582d9842ec5e812cd  Zeta23/ThmD/Sextuple/A1275/Certificate.lean
+cb6fbc57c3e7b3e29cc938b40db6140055bfff83a8c070f6ec95de43aef71442  Zeta23/ThmD/Sextuple/A1275/ChunkCalibration.lean
+936d947cff97652eafc31015a1fb53dc42b678dd7216fbd808880393c50fd4d9  Zeta23/ThmD/Sextuple/A1275/FlatEquivalence.lean
+8b0bd62048688a517672a67bf22743e83a7940057624621e7608ca088b130fae  Zeta23/ThmD/Sextuple/A1275/Layout.lean
+fbcef58113a25a48ce153a55455aaec966715b2f88e70e4d5bfcc18921e1b48f  Zeta23/ThmD/Sextuple/A1275/LineDecimal.lean
+67b78979fc1e7dcbd291f2da19cb53071142ef11104eeeea08af718269f16d43  Zeta23/ThmD/Sextuple/A1275/RefinementData.lean
+26c7d828f4347e5827efc822d49f61d24403a65590078d6d873fa03a9fa37b01  Zeta23/ThmD/Sextuple/A1275/ScalarData.lean
+c38bc84b2fa341a8fff5e01a16d56020365ca411844ff31fc03d6bca5368de50  Zeta23/ThmD/Sextuple/A1275/TreeAssembly.lean
+facdf94043574408a45c646db3f0a0b621afdaabc87902a6b1327f0592edd48b  Zeta23/ThmD/Sextuple/A1275/TreeReader.lean
+8ab4b6cc5f29be788ddc00fb8cd731107c666853bb9e2eaf1752e2d250502ddd  Zeta23/ThmD/Sextuple/A1275/TreeWords.lean
+2f12bdbe1f04f18f4384d7d524b981232731352ec9dc4cc1fb4eab1ab168ee84  Zeta23/ThmD/Sextuple/A1275/Unconditional.lean
+3c12d91c38832d81f218446051283fc5a6686d7a05d59897b135b7841a1f4c95  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks000.lean
+159ad3fb21d0aa9f24e2b8b41773bd1817cc084c832ceb547fe7a4ba2664b0b2  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks001.lean
+9b1bc8b07e1ba57367c8aa5e953573a0ac1ef9e2615637d3c227c2c1a305a6c2  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks002.lean
+60019ec95c3e8062d874849f5de925f9b933c401c459a28df5ebdd127c3d3197  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks003.lean
+55527476a9ea8960bc66fad75a21010bec218880faf3d99fbc5e29a649fc255a  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks004.lean
+7a9d4f23b95b3def56d2bb46414e404a7e3c343c1c82cf224f7b00f918df197f  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks005.lean
+72ffba625a9d0ed5aeeacdff92dd5bd81e1241125e08aa104c19cd9428bed927  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks006.lean
+727931c00eadf42435c353c41a344fb9b447c0bc8652b5d6bf202e476f98569e  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks007.lean
+1159d1a9c79b31246024c5da543174ec2e678b0930488b1aa14a711f9b2a98a6  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks008.lean
+97971182942c9ce74457c01b94dff28e4c79564e192e1d01f574e000c73fedca  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks009.lean
+ac45d6741972c9c4d4f507e39472547978f3c1b44fea7abb8f46273cb38fc0a5  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks010.lean
+2120830b2892789ca0836c61fb3a9b674522dd4ae373e4658966cbdaedd3769b  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks011.lean
+8ddae3f1c1746882736453c81fe5b49f90e4a260d83878a0750eb828e6ae8bc8  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks012.lean
+76c3ea60fb2cc133e87196ef6d82cfed3b1bc33c12eafc74ce1df340252b7579  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks013.lean
+92da5acaee216e456a825f1e182177f15a3b4726aa4ccb5fb2b272f318f7e40e  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks014.lean
+9fefc5b98357028baaf664c9e2e17482c944084311cf92bc4d82107caa51af6a  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks015.lean
+99aa980933444f78b39779c7af9188e4e9035925d2428489ec94bee97ee77cbc  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks016.lean
+5b2deceb70a44a10d5e416d0009b90ac87752724834d63363ee604d595dc3382  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks017.lean
+a96a4883f79296d36e575478665ca7d418c6a035cc08d067623faed52c41f20a  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks018.lean
+b5da4186754306c3ff5e4b173296a3cd2f28e04105bf93aea7457bf3fd2b6753  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks019.lean
+1688a80ea723d4e76864acb83b21199e82532ae41752288f6a629fa44afac111  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks020.lean
+5d57e09692b9d29f607c33abcf999fb294ccdf5cd73b6fecf32b2f93c2815cc7  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks021.lean
+b99a1e24c2adc562df30e875e14536da212480589d2e82b7b1b37855b652582f  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks022.lean
+47fbaf52ba032777f8f645b743abb93153ee06f1ba3fa2a0328459b0dc1f5df0  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks023.lean
+06b310dfa0802eef52a32a5d75e7dc6d7f25b4460127020f8ea2a41ec5704f34  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks024.lean
+99f871fc3b3d7ed54a749c6c715fa0944f5d7c75fca62d596a053c5434942f66  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks025.lean
+3dfec4045a52319f6c3fa2fc8676f80b2255ba59f19459567a1b4c8eca701551  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks026.lean
+10c507a6f4183ffa65318169a67784ac3903e3a2e71c716c8301a1bbc9ca8913  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks027.lean
+2fa3c945df50cfe97ea6c797bbc0b6d43458af1296423bef3ee267cf3421842f  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks028.lean
+04d84cb9e50f7f5dcea7492dfc62748f44a06ce9f8827978ae2e1165e4ee242e  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks029.lean
+c7a707d68d8b6893a064e4ab08ce3756be3e9cc93021b258919c9f3ddd2400df  Zeta23/ThmD/Sextuple/A1275/WordData/LeafBlocks030.lean
+A1275 chunks: 8953 files, concatenated sha256 5bcffd156ab392bbd04aaad4c28387408a84f002b3ad2440364c2ef5b23981e3
+A1275 parts: 90 files, concatenated sha256 8fc38124c1fcf65834c61ab1a75da6d510d2bb70c9b9470b2beaa46dc6628582
+A1275 chunk oleans: 8953
+## A1285 hashes
+8d489726e5f60e6ee8fac1de71af9cacdcdc46e0a85a2c3cd8fc3baa8545011b  Zeta23/ThmD/Sextuple/A1285/Assembly.lean
+2b280f1ae401bb2c57f8dcea012e7d2d9e2368379f7cb5b3608e2ce38615ae25  Zeta23/ThmD/Sextuple/A1285/AxiomAudit.lean
+456405050fbab2339b0b52fe1ec6dcc3fef8503ecf9d7cd750a3a48b77ad34d7  Zeta23/ThmD/Sextuple/A1285/Certificate.lean
+fb4afaad3b9e7c4096ccfe2606e0a8545bc276d6c72c9babf5db20b0a91a0d17  Zeta23/ThmD/Sextuple/A1285/FlatEquivalence.lean
+b925f3d2edae6922900cb42ae037a9a5a76673aa0a27259aef20971ab71bf556  Zeta23/ThmD/Sextuple/A1285/Layout.lean
+2d1ba0656fe9b15c8d1ff75245c9dd8ae17bdf8f6617dca36a9d6e68db8eb542  Zeta23/ThmD/Sextuple/A1285/LineDecimal.lean
+8257847b2b5a2e79f8c8ec4295e0ea8d2108359c8aa616c9380814138e4519bc  Zeta23/ThmD/Sextuple/A1285/ScalarData.lean
+928b9b67a12f54b75df77e251f1ab66dd80743a48b19bb314fb031d3b41cc45d  Zeta23/ThmD/Sextuple/A1285/TreeAssembly.lean
+a5081565ba380a00342017d560775f9292399d561c523bddbbec74cad2a9b4ee  Zeta23/ThmD/Sextuple/A1285/TreeReader.lean
+5228fc8ecb716744aa4ed021e9f3d2c1e880b88964ee660f011e2ac0845414c7  Zeta23/ThmD/Sextuple/A1285/TreeWords.lean
+e549c817fc694b5d039d4d1594c13006cbb500210a8eaf7b6a50ff9164b56a65  Zeta23/ThmD/Sextuple/A1285/Unconditional.lean
+A1285 word data: 139 files, concatenated sha256 616a0c1c5bd3f2e01736290816c5e6681085eb78c997b1460435f825c68e59d4
+A1285 chunks: 30153 files, concatenated sha256 52f47f5597dc1797c92a98b32446e731104f31adfc84288f5b098b53e95b0350
+A1285 parts: 302 files, concatenated sha256 0cd86e5b5b88edbd281e9c147f2d1a5783c01be331c353239ad0df113efe224d
+A1285 chunk oleans: 30153
+## A1290 hashes
+2a16875f72f8aba39af1e6ebf96b69866ecba38e58a663bd413b08b05af58f23  Zeta23/ThmD/Sextuple/A1290/Assembly.lean
+2473b9f81aadde755c8a264a08c3a003e38a8bb61539b70f787421d303bebbab  Zeta23/ThmD/Sextuple/A1290/AxiomAudit.lean
+a8895cc7bff165ca9c7d45587cf7025dea4cd99771bfa33a19195f8703a8e64c  Zeta23/ThmD/Sextuple/A1290/Catalog.lean
+a1b87a935e2165229180631cfd0b78753737659607002170f018efe094562c7a  Zeta23/ThmD/Sextuple/A1290/Certificate.lean
+edac16ec35de144cd5c3dc70e9ade88879749c6867cca7230cb57541becf6b45  Zeta23/ThmD/Sextuple/A1290/FlatEquivalence.lean
+a5623c3e3855cdc6dbbfcd75d7ad7bc532afc7a0513398d0402e423290ee7cdf  Zeta23/ThmD/Sextuple/A1290/Layout.lean
+7817436a95ce59af9c85f605a1b9b35285529258cf03b1b77f0e93f224918c0f  Zeta23/ThmD/Sextuple/A1290/LineDecimal.lean
+71a065f430af833700eda1ab911b31409d96cf3d0b9ae9946d8c536e94d993ad  Zeta23/ThmD/Sextuple/A1290/RefinementData2.lean
+a93b0e36ee1e29da3554e4a4f9e8c66b752365c39429ad35536d4c2c60008bb1  Zeta23/ThmD/Sextuple/A1290/ScalarData.lean
+7fb7fde6f3663c9621b9e02287d2c21b978745f2d7f163d9a7ea69cdbe178bdf  Zeta23/ThmD/Sextuple/A1290/TreeAssembly.lean
+676dc6b17e28446066577bdedc9b3d71fbf422f697fea0af80a5f4bc114750d9  Zeta23/ThmD/Sextuple/A1290/TreeReader.lean
+4cbdc2c24c195ac41696bb6bcc4762e235ac55393b05e44f274492dacde2f371  Zeta23/ThmD/Sextuple/A1290/TreeWords.lean
+e04b99fd8b68e5b959a8ca4a87e86d6bbfa4da2ff7beb071cc94fe50e95fcffc  Zeta23/ThmD/Sextuple/A1290/Unconditional.lean
+A1290 WordData: 278 files, concatenated sha256 970036f99759f5b46c0eb180f15a07b7a17830859873415381be6c553999536a
+A1290 Chunks: 56924 files, concatenated sha256 848d08d8d84336837c2ee06950ec1a47a7e3119d76386e0131bcc20a3547df54
+A1290 Assembly: 570 files, concatenated sha256 76ece1cdf8bb0c5a35ef6db87c36ea964ecba60bebe8dc41957e660f4a2e1275
+A1290 chunk oleans: 56924

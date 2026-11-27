@@ -1,0 +1,13 @@
+'Zeta23.ThmD.HD_one_decimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.HD_one_gt_672' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.HD_one_gt_6725' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.thmD₀_6725' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.thmD₀_cumulative_6725' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.thmD₀_simple_mult_6725' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zeta23.ThmD.thmD₀_simple_mult_cumulative_6725' depends on axioms: [propext, Classical.choice, Quot.sound]
+'montgomery_taylor_on_critical_line_decimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'montgomery_taylor_on_critical_line_cumulative_decimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'montgomery_taylor_simple_on_critical_line_decimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'montgomery_taylor_simple_on_critical_line_cumulative_decimal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

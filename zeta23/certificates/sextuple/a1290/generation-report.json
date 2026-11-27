@@ -1,0 +1,22 @@
+{
+ "A": "129/10000",
+ "B": "1094977/5000000000",
+ "assembly_nodes": 56923,
+ "chunks": 56924,
+ "cutoff": "64500000/1094977",
+ "exact_lower_bound": "201406213933795020896911983481/299355000000000000000000000000",
+ "files": 57787,
+ "fuel": 74,
+ "generator_sha256": "1a8cd2232354e3b4d8368494c00ddda3be00a50b18f4da92923450195949950a",
+ "leaves": 1775463,
+ "manifest_sha256": "17b1377bae69f4326ea039041bf9aa79c40246efbd3f0a303083ad90d63b248d",
+ "margin": "19897020896911983481/299355000000000000000000000000",
+ "max_depth": 73,
+ "ns": "A1290",
+ "parts": 570,
+ "public_decimal": "6728005676/10^10",
+ "quadratic_leaves": 1773735,
+ "scalar_certificates": 4299,
+ "token_count": 3550925,
+ "word_groups": 278
+}

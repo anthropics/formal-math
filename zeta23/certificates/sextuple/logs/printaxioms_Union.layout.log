@@ -1,0 +1,8 @@
+'montgomery_taylor_simple_or_on_critical_line_union' depends on axioms: [propext, Classical.choice, Quot.sound]
+'montgomery_taylor_simple_or_on_critical_line_union_cumulative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'montgomery_taylor_simple_or_on_critical_line_union_decimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'montgomery_taylor_simple_or_on_critical_line_union_cumulative_decimal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -57,8 +57,9 @@ surface is `Challenge.lean`, the proofs are connected to it by `Solution.lean`, 
 ## What is proved
 
 Write N(T₁,T₂) for the number of zeros ρ of ζ with 0 < Re ρ < 1 and T₁ < Im ρ ≤ T₂, counted with
-multiplicity; N₀*(T₁,T₂) for the number of *distinct* such zeros on the critical line Re ρ = 1/2;
-N₀ˢ for those that are on the line and *simple*; N_d for the number of distinct zeros; N(T) := N(0,T) etc.
+multiplicity; N₀(T₁,T₂) for the on-line zeros counted with multiplicity; N₀*(T₁,T₂) for the number of
+*distinct* on-line zeros; Nˢ for the simple zeros anywhere in the strip; N₀ˢ for those that are on the
+line and *simple*; N_d for the number of distinct zeros; N(T) := N(0,T) etc.
 All of these are defined directly from Mathlib's `riemannZeta` and `analyticOrderAt`
 ([`ChallengeDeps.lean`](ChallengeDeps.lean), 15 definitions, is the complete list
 of definitions the statements depend on — nothing else). "liminf_{T→∞} X(T)/N(T) ≥ c" is formalized in the ε-form
@@ -90,6 +91,84 @@ atoms with integer multiplicities m_j ≤ c on orthonormal vectors together with
 Also included, beyond Theorems A–E (each group has its own trusted statement file or, where noted, is checked with `#print axioms` only; neither is part of the Palomar submission):
 
 * **The zeros of ξ′** (`Zeta23/XiPrime/`, Comparator topic `XiPrime`: [`Challenge/XiPrime.lean`](Challenge/XiPrime.lean), six statements, configuration [`comparator-xiprime.json`](comparator-xiprime.json)): unconditionally, at least 0.85838 of the zeros of ξ′ (the derivative of the completed zeta function) with ordinates in (T, 2T] are simple and on the critical line and at least 0.92919 are distinct (flat window; 0.86864 / 0.93432 with the quartic window), all zeros of ξ′ lie in the open critical strip, and Re ξ′/ξ > 0 on Re s ≥ 1 — `Zeta23.XiPrime.xiDeriv_simple_on_line`(`_cumulative`, `_quartic_std`) in `Zeta23/XiPrime/Final.lean`. The argument is the one of Theorem B with ξ′ in place of ζ (the rank–trace device applied to the Farmer–Gonek(–Lee)/Montgomery argument for ξ′; Farmer–Gonek, arXiv:0803.0425 = Farmer–Gonek–Lee, J. London Math. Soc. (2) 90 (2014)). In the docstrings under `Zeta23/XiPrime/`, labels of the form `[XF′ Lemma 6.1]`, `[XF′ Thm 8.2]`, `[XF′ (Z3)]` refer to the authors' technical supplement on the explicit formula for ξ′/ξ and the two-trace transfer, which is not included in this repository; these labels record provenance only — what is relied upon is in each case the Lean statement that the docstring introduces. (The counting functions in `ChallengeDeps/XiPrime.lean` are finite sums / cardinalities over the set of zeros of ξ′ in a height window; that set is finite because every zero of ξ′ lies in the open critical strip — the first of the six statements — and the zeros of an entire function are isolated.)
+
+* **Certified critical-line decimal endpoint** (`Zeta23/ThmD/LineDecimal.lean`; comparator topic `LineDecimal`, four statements): a kernel-checked rational enclosure proves
+  `0.672500703679 < HD(1) < 0.6725007036796`. Consequently, in both dyadic and cumulative windows,
+  `liminf N₀*/N ≥ 0.672500703679` and, more strongly, the same lower bound holds for the simple-and-on-line count
+  `N₀ˢ/N`. The fixed-coefficient theorems `thmD₀_6725` and `thmD₀_simple_mult_6725` (and their cumulative forms)
+  state directly that at least 67.25% are represented by distinct, respectively simple, on-line zeros for all
+  sufficiently large heights. In particular this is strictly greater than 67.2%, with no RH or other hypothesis.
+
+* **Sextuple (six-translate) simple-critical-line improvement** (`Zeta23/ThmD/Sextuple/`; comparator topic `Sextuple`, four statements): an unconditional improvement of the Montgomery–Taylor simple-on-line proportion,
+  `liminf N₀ˢ(T,2T)/N(T,2T) ≥ (6·B_MT − 10π·B₆)/(6 − A₆) = 0.67275562065609…` with the exact rational constants `A₆ = 1/80`,
+  `B₆ = 1094977/5000000000`, in dyadic and cumulative windows (`Zeta23.ThmD.Sextuple.thmD₀_sextuple`, `_cumulative`), with fixed-coefficient
+  corollaries at `0.6727556` and `0.672755620655` (`thmD₀_sextuple_6727556`, `thmD₀_sextuple_672755620655`, cumulative forms). The analytic input
+  is a positive spectral penalty for six translates of the Montgomery–Taylor kernel; its only numerical ingredient is the five-dimensional
+  affine inequality `A₆ ≤ E₆(g) + B₆·(g₀+…+g₄)` for all nonnegative gaps (`Zeta23.ThmD.Sextuple.Certificate.sextuple_affine`), proved by
+  kernel replay (`decide +kernel`) of an exact rational branch-and-bound certificate: an audited 56-piece one-dimensional kernel envelope
+  (`Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean`), 871 exact scalar seam certificates, and a 99,507-node dyadic tree with 49,754 leaves split
+  over 2,969 subtree modules (`Macro/Chunks/`) and assembled through one generic split lemma. No floating point, `native_decide`, or external
+  oracle enters the proof; the checker soundness layer (`Zeta23/ThmD/Sextuple/AffineTree.lean`) is stated for arbitrary streams.
+  Generators, canonical certificate data, independent audits, and build logs are under [`certificates/sextuple/`](certificates/sextuple/).
+
+* **Refined sextuple certificate at `A = 51/4000`** (`Zeta23/ThmD/Sextuple/A1275/`; comparator topic `SextupleA1275`, four statements): the same sextuple
+  argument with the stronger affine coefficient `A = 51/4000 = 0.01275` (same `B₆`), giving
+  `liminf N₀ˢ(T,2T)/N(T,2T) ≥ (6·B_MT − 10π·B₆)/(6 − 51/4000) = 0.67278371…` in dyadic and cumulative windows
+  (`Zeta23.ThmD.Sextuple.A1275.thmD₀_sextuple`, `_cumulative`) with the fixed-coefficient corollaries `thmD₀_sextuple_6727837118`
+  and `thmD₀_sextuple_cumulative_6727837118` at `0.6727837118`. The certificate `Zeta23.ThmD.Sextuple.A1275.Certificate.sextuple_affine`
+  (`51/4000 ≤ E₆(g) + B₆·(g₀+…+g₄)`) is again a `decide +kernel` replay of an exact rational branch-and-bound tree: the unchanged 56-piece
+  envelope plus a separately Lean-checked 216-cell refinement catalog (`A1275/RefinementData.lean`, 272 selectable one-dimensional models),
+  1,383 exact scalar seam certificates, and a 385,967-node dyadic tree with 192,984 leaves split over 8,953 subtree modules (`A1275/Chunks/`),
+  assembled through the same generic split lemma in 90 modules (`A1275/Assembly/`). The analytic layers (`Base`, `Ledger`, `Final`, the generic
+  checker soundness in `AffineTree.lean` and `Macro/ParametricAdapter.lean`) are reused unchanged; the words are stored two levels deep for
+  cheap kernel lookups, and `A1275/FlatEquivalence.lean` proves the replayed streams equal the audited flat packed streams. Data, generators,
+  independent audits, and logs are under [`certificates/sextuple/a1275/`](certificates/sextuple/a1275/).
+
+* **Refined sextuple certificate at `A = 257/20000`** (`Zeta23/ThmD/Sextuple/A1285/`; comparator topic `SextupleA1285`, four statements): the same
+  argument at `A = 0.01285`, giving `liminf N₀ˢ(T,2T)/N(T,2T) ≥ (6·B_MT − 10π·B₆)/(6 − 257/20000) = 0.67279494…` in dyadic and cumulative windows
+  (`Zeta23.ThmD.Sextuple.A1285.thmD₀_sextuple`, `_cumulative`) with the fixed corollaries `thmD₀_sextuple_6727949489`, `thmD₀_sextuple_cumulative_6727949489`
+  at `0.6727949489`. Its certificate `A1285.Certificate.sextuple_affine` replays a 1,771,973-node exact tree (885,987 leaves, 3,365 scalar seam
+  certificates over the same 272-model catalog) as 30,153 subtree modules and 302 assembly modules; all Lean modules of the target are produced by one
+  generator (`certificates/sextuple/tools/gen_sextuple_target_lean.py`) from the canonical streams. Data, audits, and logs are under
+  [`certificates/sextuple/a1285/`](certificates/sextuple/a1285/). The neighbouring `A = 129/10000` does not close within a 6,000,000-node
+  branch-and-bound cap (no obstruction found); see `certificates/sextuple/a1285/frontier/`.
+
+* **Refined sextuple certificate at `A = 129/10000`** (`Zeta23/ThmD/Sextuple/A1290/`; comparator topic `SextupleA1290`, four statements): the same argument
+  at `A = 0.0129`, giving `liminf N₀ˢ(T,2T)/N(T,2T) ≥ (6·B_MT − 10π·B₆)/(6 − 129/10000) = 0.67280056…` in dyadic and cumulative windows
+  (`Zeta23.ThmD.Sextuple.A1290.thmD₀_sextuple`, `_cumulative`) with the fixed corollaries `thmD₀_sextuple_6728005676`, `thmD₀_sextuple_cumulative_6728005676`
+  at `0.6728005676`. This target needed a larger one-dimensional catalog: `A1290/RefinementData2.lean` adds 394 Lean-checked pieces (24 narrow wells on
+  stable piece 36; 370 constant-barrier cells of width 1/64 over the barrier piece at 44.79–49.56 and over `[59, 60]`, each with the lower bound that Lean's own
+  interval evaluator `kernelRange` certifies), giving the 666-model catalog `A1290/Catalog.lean`. The certificate replays a 3,550,925-node exact tree
+  (1,775,463 leaves, 4,299 scalar seam certificates) as 56,924 subtree modules and 570 assembly modules. Data, the catalog generators (with an exact
+  Python replica of the interval arithmetic), the frontier analysis (the method's true ceiling `A* ≤ 0.0129938`, i.e. `R ≤ 0.672811`; `A = 0.01293` closes
+  externally, `A ≥ 0.01295` does not within the node budget), audits and logs are under [`certificates/sextuple/a1290/`](certificates/sextuple/a1290/).
+
+* **Conditional simple-critical-line collision/energy seam** (`Zeta23/ThmD/LineConditional.lean`; `#print axioms` audit only): the exact combinatorial inequality
+  `N ≤ N₀ˢ + Σγ M(γ)(M(γ)-1)` yields `liminf N₀ˢ/N ≥ 1-κ` from an explicitly assumed factorial
+  ordinary-ordinate collision cap `Σγ M(γ)(M(γ)-1) ≤ (κ+o(1))N`. More generally, for a kernel
+  `K ≥ 0` with `K(0)=1`, an explicitly assumed ordinary-ordinate pair-energy cap `E_K ≤ (R+o(1))N`
+  yields `liminf N₀ˢ/N ≥ 2-R`. Both conclusions are proved in dyadic and cumulative form. Fixed 70%
+  wrappers require the strict hypotheses `κ < 3/10` or `R < 13/10`; equality gives only the limiting
+  threshold. These collision and energy caps are new conditional inputs and are not consequences of the
+  repository's unconditional analytic assumptions.
+
+* **The simple-or-on-line endpoint** (`Zeta23/ThmD/Union.lean`, `UnionDecimal.lean`; comparator topic `Union`, four statements): unconditionally, in dyadic windows (T, 2T] and cumulative windows (0, T],
+  `liminf (N₀ + Nˢ − N₀ˢ)/N ≥ 1 − ((c₁*)⁻¹ − 1)/(3/2 + √2)`
+  (`Zeta23.ThmD.thmD₀_union`, `_cumulative`). Here N and N₀ count with multiplicity, Nˢ and N₀ˢ count simple points, and the
+  natural-number expression `N₀ + Nˢ − N₀ˢ` is the inclusion-exclusion count of zeros that are simple or on the
+  critical line, counted with multiplicity. The exact coefficient is instantiated directly at bandwidth λ = 1.
+  A kernel-checked Taylor-remainder certificate proves it lies strictly between 0.887620008173 and 0.887620008174;
+  the corresponding exact-rational ε-form count bounds are `thmD₀_union_decimal` and `_cumulative_decimal`.
+  The denominator `Q = 3/2 + √2` is emitted by the sharp zero-side block bookkeeping, not by an accumulated analytic
+  error: at `C = 2 + √2`, a simple off-line pair and a reflected pair of double zeros simultaneously saturate
+  `C² = 2(2C-1)`, `C² = 4Q`, and `2C-1 = 2Q`. Thus `Q(3-Q)=1/4`; improving `Q` requires arithmetic information beyond
+  the present block/moment interface. `Zeta23/ThmD/UnionConditional.lean` isolates such a missing input: a factorial
+  ordinary-ordinate collision cap `Σ M(γ)(M(γ)-1) ≤ (((c₁*)⁻¹-1)+o(1))N`, or the corresponding nonnegative pair-energy
+  cap, would raise both endpoints to `1-((c₁*)⁻¹-1)/3 = 0.890833567893…`; neither cap is asserted unconditionally.
+  The proved inequality `3 Nbad ≤ Σ M(γ)(M(γ)-1)` is sharp at one reflected double pair; any additional zeros sharing
+  that ordinate only add slack, so collisions obstruct proving the cap rather than applying it.
+
+* **The zeros of ξ′** (`Zeta23/XiPrime/`, comparator topic `XiPrime`, six statements): unconditionally, at least 0.85838 of the zeros of ξ′ (the derivative of the completed zeta function) with ordinates in (T, 2T] are simple and on the critical line and at least 0.92919 are distinct (flat window; 0.86864 / 0.93432 with the quartic window), all zeros of ξ′ lie in the open critical strip, and Re ξ′/ξ > 0 on Re s ≥ 1 — `Zeta23.XiPrime.xiDeriv_simple_on_line`(`_cumulative`, `_quartic_std`) in `Zeta23/XiPrime/Final.lean`. The argument is the one of Theorem B with ξ′ in place of ζ (the rank–trace device applied to the Farmer–Gonek(–Lee)/Montgomery argument for ξ′; Farmer–Gonek, arXiv:0803.0425 = Farmer–Gonek–Lee, J. London Math. Soc. (2) 90 (2014)). In the docstrings under `Zeta23/XiPrime/`, labels of the form `[XF′ Lemma 6.1]`, `[XF′ Thm 8.2]`, `[XF′ (Z3)]` refer to the authors' technical supplement on the explicit formula for ξ′/ξ and the two-trace transfer, which is not included in this repository; these labels record provenance only — what is relied upon is in each case the Lean statement that the docstring introduces. (The counting functions in `ChallengeDeps/XiPrime.lean` are finite sums / cardinalities over the set of zeros of ξ′ in a height window; that set is finite because every zero of ξ′ lies in the open critical strip — the first of the six statements — and the zeros of an entire function are isolated.)
 
 * **The bandwidth-one ceiling** (`Zeta23/PairCeiling/`, no Comparator topic; `#print axioms` audit below): the stability inequality behind the paper's remark on the optimality of the method — for every certificate (c₀, r) of the type used in Theorem B (r ∈ C¹[0,1], r′ differentiable off a countable set with integrable derivative) that is valid against a configuration whose form-factor measure has grid masses s_j and simple-point fraction p, one has c₀ + ∫₀¹ r(x)·x dx ≤ p + |r(1)|·|D(1)| + |r′(1)|·|E(1)| + (sup|E|)·∫₀¹|r″| (`Zeta23.PairCeiling.ceiling_stability`, `Zeta23/PairCeiling/Stability.lean`, two integrations by parts) — and its instance at an explicit 256-periodic law (`Zeta23.PairCeiling.ceiling_law256`, `ceiling_law256_decimal`, `ceiling_nearCUE_signed`, `ceiling_law256_signed`; files `NearCUE.lean`, `RowCert.lean`, `LawN256.lean`, `CeilingLaw256.lean`, `Signed.lean`): every bandwidth-one certificate certifies a proportion of simple zeros at most 0.6818287 + 2.55·10⁻⁶·(|r′(1)| + ∫|r″|). The ONE displayed hypothesis of these theorems is `EnclOK`: that the law's form factor S(j), j = 1…256, lies in the 256 integer enclosures recorded in `LawN256.lean` (obtained outside Lean by interval arithmetic from an exact-rational certificate, sha256 `cc3de9917db4d14d844630a4e97dda8387fd6e257e52b6967f430b8914584eb8`, available from the authors); everything downstream of the enclosures — the 255 near-CUE row inequalities |256·S(j) − j| ≤ 3·10⁻⁴⁰ (0 < j < 256), the edge bound |D(1)| ≤ 0.82395317, the sign of the edge term — is checked in the kernel by `decide` (`LawN256_check`, `LawN256_edge`), and the analytic inequality is proved in Lean.
 
@@ -126,7 +205,7 @@ expansions in the docstrings are not part of the formal statements.
 ```
 Zeta23/Statement.lean  nontrivial zeros, multiplicity, the counting functions, against Mathlib's riemannZeta
 Zeta23/Unconditional.lean, Zeta23/Final.lean, Zeta23/FinalMult.lean      Theorems A, B, C (ζ)
-Zeta23/ThmD/           Theorem D (the optimal Montgomery–Taylor window; variational problem in ThmD/Functional.lean; ThmD/Mult.lean)
+Zeta23/ThmD/           Theorem D (the optimal Montgomery–Taylor window; variational problem in ThmD/Functional.lean; multiplicity in ThmD/Mult.lean; beyond-paper union endpoint in ThmD/Union*.lean; conditional simple-line seams in ThmD/LineConditional.lean)
 Zeta23/ThmE/           Theorem E (primitive Dirichlet L-functions); Zeta23/ThmDE/: Theorem D for L(s,χ)
 Zeta23/LinAlg/         §3 of the paper: Sylvester inertia, rank–trace inequality (via von Neumann), Cauchy–Schwarz count, Weyl
 Zeta23/WeilEF/, Zeta23/ExplicitFormula*   Weil's explicit formula (contour integration, Landau's lemma, zero-sum limits)
@@ -153,17 +232,20 @@ lake exe cache get        # fetch prebuilt Mathlib for the pinned commit (a few 
                           # for your platform / offline), just proceed: the next step builds Mathlib from
                           # source, which takes several hours of CPU time but needs nothing else.
 lake build                # default targets: library Zeta23 (the headline modules), Challenge and Solution
-lake build Solution.XiPrime
+lake build Solution.XiPrime Solution.Union Solution.LineDecimal Solution.Sextuple Solution.SextupleA1275 Solution.SextupleA1285 Solution.SextupleA1290
 lake env lean scripts/PrintAxioms.lean; lake env lean scripts/PrintAxioms/XiPrime.lean   # axiom audit of the 17 + 6 theorems
+for t in Union LineDecimal Sextuple SextupleA1275 SextupleA1285 SextupleA1290; do lake env lean scripts/PrintAxioms/$t.lean; done   # + 6 × 4 topic theorems
+lake env lean scripts/PrintAxioms/UnionConditional.lean; lake env lean scripts/PrintAxioms/LineConditional.lean   # conditional endpoints (no trusted statement file; see AUDIT.md)
 lake env lean scripts/PrintAxioms/PairCeiling.lean   # axiom audit of the ceiling theorems (no trusted statement file; see AUDIT.md)
 ruby scripts/validate-formalization.rb               # formalization.yaml parses, declares Apache-2.0, has no TEMPLATE values
 (cd docbuild && lake build Zeta23:docs)              # optional: doc-gen4 API documentation (docbuild/.lake/build/doc; slow — it documents Mathlib too)
 ```
 
 Expected: no errors; `declaration uses 'sorry'` warnings **only** from the trusted challenge files
-(`Challenge.lean`: 17, `Challenge/XiPrime.lean`: 6), which state each theorem with a placeholder proof by design, and
-none from `Zeta23/` or any `Solution` module; and 23 lines of the
-form `'two_thirds_on_critical_line' depends on axioms: [propext, Classical.choice, Quot.sound]`.
+(`Challenge.lean`: 17, `Challenge/XiPrime.lean`: 6, and 4 in each of the six further topic files), which state each theorem with a
+placeholder proof by design, and none from `Zeta23/` or any `Solution` module; and 23 + 24 lines of the
+form `'two_thirds_on_critical_line' depends on axioms: [propext, Classical.choice, Quot.sound]` (plus the conditional audits, whose
+displayed hypotheses are described in AUDIT.md).
 For the strongest independent check — statement equality against the trusted challenge plus kernel replay —
 run Comparator as described next.
 
@@ -182,7 +264,13 @@ axioms `propext`, `Classical.choice`, `Quot.sound`, and replays the solution thr
 | `Solution.lean` | the same seventeen statements, proved by delegating to the `Zeta23` library | no (checked by Comparator) |
 | `comparator.json` | Comparator configuration (theorem names, permitted axioms) — the submitted configuration | yes |
 | `ChallengeDeps/XiPrime.lean`, `Challenge/XiPrime.lean`, `Solution/XiPrime.lean`, `comparator-xiprime.json` | the second topic: the counting functions for the zeros of ξ′ (defined from Mathlib alone) and six statements about them (all zeros in the open strip; Re ξ′/ξ > 0 on Re s ≥ 1; ≥ 0.85838 simple and on the line, ≥ 0.92919 distinct, and the quartic-window constants), proofs `sorry`; its solution and configuration | the challenge files, yes; the solution, no |
-| `scripts/PrintAxioms.lean`, `scripts/PrintAxioms/XiPrime.lean`, `scripts/PrintAxioms/PairCeiling.lean` | `#print axioms` for the statements — the quick check without Comparator (`PairCeiling` has no trusted statement file: its theorems carry the displayed hypothesis `EnclOK`, see above) | — |
+| `ChallengeDeps/Union.lean`, `Challenge/Union.lean`, `Solution/Union.lean`, `comparator-union.json` | topic `Union`: the two further counting functions N₀ (on-line, with multiplicity) and Nˢ (simple, anywhere) and four beyond-paper statements — exact and certified-decimal simple-or-on-line endpoints in dyadic and cumulative windows, with multiplicity-aware denominators and inclusion-exclusion union counts | yes — read the challenge and deps files |
+| `Challenge/LineDecimal.lean`, `Solution/LineDecimal.lean`, `comparator-line-decimal.json` | topic `LineDecimal`: four certified-decimal Montgomery–Taylor critical-line statements (`0.672500703679`): distinct and simple on-line zeros, dyadic and cumulative | yes — read the challenge file |
+| `Challenge/Sextuple.lean`, `Solution/Sextuple.lean`, `comparator-sextuple.json` | topic `Sextuple`: four sextuple-improvement statements, simple on-line zeros at `0.672755620655` (ε-form) and fixed `0.6727556`, dyadic and cumulative | yes — read the challenge file |
+| `Challenge/SextupleA1275.lean`, `Solution/SextupleA1275.lean`, `comparator-sextuple-a1275.json` | topic `SextupleA1275`: the refined certificate at `A = 51/4000`, simple on-line zeros at `0.6727837118`, ε-form and fixed, dyadic and cumulative | yes — read the challenge file |
+| `Challenge/SextupleA1285.lean`, `Solution/SextupleA1285.lean`, `comparator-sextuple-a1285.json` | topic `SextupleA1285`: `A = 257/20000`, `0.6727949489` | yes — read the challenge file |
+| `Challenge/SextupleA1290.lean`, `Solution/SextupleA1290.lean`, `comparator-sextuple-a1290.json` | topic `SextupleA1290`: `A = 129/10000` over the 666-model catalog, `0.6728005676` | yes — read the challenge file |
+| `scripts/PrintAxioms.lean`, `scripts/PrintAxioms/XiPrime.lean`, `scripts/PrintAxioms/PairCeiling.lean`, `scripts/PrintAxioms/{Union,LineDecimal,Sextuple,SextupleA1275,SextupleA1285,SextupleA1290,UnionConditional,LineConditional}.lean` | `#print axioms` for the statements — the quick check without Comparator (`PairCeiling` has no trusted statement file: its theorems carry the displayed hypothesis `EnclOK`, see above) | — |
 
 ### Quick check (no extra tooling)
 
@@ -237,8 +325,20 @@ as definitions (`HD`, `GD`, `cStar`, window constants, …) written out in close
 bridged by a lemma on the solution side; statements in the ε-form over the counting functions of `ChallengeDeps`,
 with every hypothesis of the Zeta23 theorem (e.g. `1 < q`, `χ.IsPrimitive`) as an explicit binder; a statement enters a
 challenge file only when the Zeta23 theorem it delegates to is sorry-free with `#print axioms` = the standard three; a
-deps module contains exactly the definitions in the dependency closure of its challenge statements. The topic in the
-tree is `XiPrime` (above).
+deps module contains exactly the definitions in the dependency closure of its challenge statements. Topics in the tree (each `comparator-<topic>.json` runs independently; the trusted files to read for a topic are
+`ChallengeDeps.lean`, any `ChallengeDeps/<Topic>.lean` whose content its challenge inlines, and `Challenge/<Topic>.lean`):
+
+| topic | what | trusted deps beyond ChallengeDeps.lean |
+|---|---|---|
+| XiPrime | zeros of ξ′: all in the open critical strip; Re ξ′/ξ > 0 on Re s ≥ 1; ≥ 0.85838 simple and on the line, ≥ 0.92919 distinct (flat window), 0.86864 / 0.93432 (quartic window) (6) | ChallengeDeps/XiPrime.lean |
+| Union | ζ: exact and certified-decimal simple-or-on-line inclusion-exclusion proportions, dyadic and cumulative (4) | ChallengeDeps/Union.lean |
+| LineDecimal | ζ: certified `0.672500703679` distinct-on-line and simple-on-line proportions, dyadic and cumulative (4) | — |
+| Sextuple | ζ: sextuple-kernel improvement of the simple-on-line proportion, `0.672755620655` ε-form and fixed `0.6727556`, dyadic and cumulative (4); the numerical certificate is replayed in the kernel (`decide +kernel`) | — |
+| SextupleA1275 | ζ: the refined sextuple certificate at `A = 51/4000`, simple-on-line proportion `0.6727837118`, ε-form and fixed, dyadic and cumulative (4); kernel replay of an 8,953-chunk exact certificate | — |
+| SextupleA1285 | ζ: the refined sextuple certificate at `A = 257/20000`, simple-on-line proportion `0.6727949489`, ε-form and fixed, dyadic and cumulative (4); kernel replay of a 30,153-chunk exact certificate | — |
+| SextupleA1290 | ζ: the refined sextuple certificate at `A = 129/10000` over the 666-model catalog, simple-on-line proportion `0.6728005676`, ε-form and fixed, dyadic and cumulative (4); kernel replay of a 56,924-chunk exact certificate | — |
+
+Only `comparator.json` is submitted to Palomar; the topic configurations are checked in the same way (`scripts/verify-comparator.sh comparator-<topic>.json`).
 
 ## Submitting to Palomar
 

@@ -1,6 +1,6 @@
 # Audit record
 
-This file records the checks that were run on exactly the sources in this repository and how to reproduce them. Nothing here is part of the trusted base: a reader can re-run everything below, and can run the [comparator](https://github.com/leanprover/comparator) tool against the trusted statement files `Challenge.lean` and `Challenge/XiPrime.lean` (see README.md, "Verifying the statements with Comparator"). Paths and configuration names in the revision notes below are those of the revision they describe; since the Palomar-layout revision (last section) the challenge, solution and configuration files live at the top level of this directory (`comparator/config.json` → `comparator.json`, `comparator/config-xiprime.json` → `comparator-xiprime.json`, `comparator/PrintAxioms*.lean` → `scripts/PrintAxioms*.lean`).
+This file records the checks that were run on exactly the sources in this repository and how to reproduce them. Nothing here is part of the trusted base: a reader can re-run everything below, and can run the [comparator](https://github.com/leanprover/comparator) tool against the trusted statement files `Challenge.lean` and `Challenge/XiPrime.lean` (see README.md, "Verifying the statements with Comparator"). Paths and configuration names in the revision notes below are those of the revision they describe; since the Palomar-layout revision (last section) the challenge, solution and configuration files live at the top level of this directory (`comparator.json` → `comparator.json`, `comparator-xiprime.json` → `comparator-xiprime.json`, `comparator/PrintAxioms*.lean` → `scripts/PrintAxioms*.lean`).
 
 Toolchain: Lean `leanprover/lean4:v4.33.0-rc2`; Mathlib commit `51e6992efd06126df61a496bebf8f49482a4e129` (the commit Mathlib's tag `v4.33.0-rc2` points to, read from the tag archive; pinned in `lake-manifest.json`). Library name: `Zeta23`. Repository: <https://github.com/anthropics/formal-math/tree/main/zeta23>.
 
@@ -13,6 +13,10 @@ lake build Solution && lake env lean scripts/PrintAxioms.lean
 lake build Solution.XiPrime && lake env lean scripts/PrintAxioms/XiPrime.lean
 lake env lean scripts/PrintAxioms/PairCeiling.lean
 lake build Challenge          # the trusted statement files; expect only the deliberate sorry placeholders
+for t in Union LineDecimal Sextuple SextupleA1275 SextupleA1285 SextupleA1290; do
+  lake build Challenge.$t Solution.$t && lake env lean scripts/PrintAxioms/$t.lean; done   # the six further topics
+lake env lean scripts/PrintAxioms/UnionConditional.lean
+lake env lean scripts/PrintAxioms/LineConditional.lean
 ```
 
 ## Recorded results at this commit
@@ -93,7 +97,7 @@ Each `Solution` theorem is a short delegation to the corresponding `Zeta23` theo
 
 ## Comparator
 
-The trusted statement files and configurations for the comparator tool are in `comparator/`: `config-multiplicity.json` (12 statements), `config.json` (15 statements), `config-xiprime.json` (6 statements). `comparator/README.md` explains what is trusted (`ChallengeDeps*.lean`, `Challenge*.lean`: Mathlib-only definitions and the statements) and what is not (`Solution*.lean` and the whole library), and how to run the tool, which independently re-checks that every `Solution` theorem has exactly the statement of its `Challenge` namesake and re-verifies the proofs in an external kernel.
+The trusted statement files and configurations for the comparator tool are in `comparator/`: `config-multiplicity.json` (12 statements), `config.json` (15 statements), `config-xiprime.json` (6 statements), `config-union.json` (4 statements), and `config-line-decimal.json` (4 statements). `comparator/README.md` explains what is trusted (`ChallengeDeps*.lean`, `Challenge*.lean`: Mathlib-only definitions and the statements) and what is not (`Solution*.lean` and the whole library), and how to run the tool, which independently re-checks that every `Solution` theorem has exactly the statement of its `Challenge` namesake and re-verifies the proofs in an external kernel.
 
 ## Amendment: the zeros of ξ′ and the bandwidth-one ceiling
 
@@ -253,9 +257,9 @@ stripped are byte-identical before and after this revision; the only edits insid
 comment headers, and — in the seven `Zeta23/LinAlg/*.lean` headers — the authorship sentence, reworded to say
 that these files, like all Lean code here, were written by Claude under the paper authors' direction). Following the layout of
 [PalomarRegistry/PalomarTemplate](https://github.com/PalomarRegistry/PalomarTemplate), the former `comparator/`
-directory is dissolved: `comparator/Challenge.lean`, `comparator/Solution.lean`, `comparator/ChallengeDeps.lean` and
+directory is dissolved: `Challenge.lean`, `Solution.lean`, `ChallengeDeps.lean` and
 their `XiPrime` submodules move to the top level of this directory (`Challenge.lean`, `Challenge/XiPrime.lean`, …),
-`comparator/config.json` becomes `comparator.json` and `comparator/config-xiprime.json` becomes
+`comparator.json` becomes `comparator.json` and `comparator-xiprime.json` becomes
 `comparator-xiprime.json` (each gains the explicit `"definition_names": []` of the template; the theorem lists and
 permitted axioms are unchanged), `comparator/PrintAxioms*.lean` move to `scripts/`, and `comparator/README.md` is
 merged into `README.md`. `lakefile.toml` replaces the three `srcDir = "comparator"` stanzas by root-level libraries
@@ -275,3 +279,364 @@ name is rejected with the path Lake looked for), and that the comment-stripped L
 the previous revision's. No full build or Comparator run was performed for this revision (the Mathlib build cache for
 the pinned commit was not reachable from the machine that prepared it); the CI workflow's manually dispatched
 `build` and `comparator` jobs perform them on demand.
+
+## Revision note: merged into the `formal-math` multi-project layout
+
+This fork's additions (the `Union`, `LineDecimal`, `Sextuple`, `SextupleA1275`, `SextupleA1285` and `SextupleA1290`
+topics, the `Zeta23/ThmD/Sextuple/` development with its `A1275`, `A1285`, `A1290` certificate targets, and
+`certificates/sextuple/`) were merged onto the upstream Palomar-template revision above: the project moved into
+`zeta23/`, the former `comparator/` files took their template positions (`Challenge/<Topic>.lean`,
+`Solution/<Topic>.lean`, `comparator-<topic>.json` with the explicit `"definition_names": []`,
+`scripts/PrintAxioms/<Topic>.lean`), and the topic rows of the former `comparator/README.md` were folded into
+`README.md`. No statement, definition or proof bytes of this fork's modules change in the merge; the amendments below
+were written before the layout change and their path mentions have been rewritten to the template positions. The seven
+`Zeta23/LinAlg/*.lean` authorship-header edits of the upstream revision change those files' source hashes, so every
+module downstream of them is reported out of date by `lake build --no-build`; the actual rebuild after the merge is recorded
+in the note that follows the amendments.
+
+## Amendment: the simple-or-on-line endpoint
+
+This revision adds direct-bandwidth-one dyadic and cumulative endpoints (`Zeta23.ThmD.thmD₀_union`, `_cumulative`) and certified decimal corollaries (`thmD₀_union_decimal`, `_cumulative_decimal`). Comparator topic `Union` contains all four statements. The trusted statements spell the union count as the natural-number inclusion-exclusion expression `N0 + Nsimple - N0simple`: `Ncount` and `N0` count with multiplicity, while the simple counts count points. The exact constant is `1 - (cMT⁻¹ - 1)/(3/2 + Real.sqrt 2)`. A kernel-checked Taylor-remainder argument proves that it lies strictly between 0.887620008173 and 0.887620008174. The definitions in `ChallengeDeps.lean` remain unchanged; only the `N0` and `Nsimple` docstrings were updated to record their use by the Union topic.
+
+* `lake build` (default target): completed successfully (9,019 jobs); no errors and no `sorry` warnings from `Zeta23/`.
+* `lake build Challenge.Union Solution.Union`: completed successfully; the only new warnings are the four deliberate `sorry`s in `Challenge/Union.lean`.
+* Occurrences of the `sorry` token outside comments are now **37**, all in the four trusted challenge files; none under `Zeta23/` and none in any `Solution` file. No `axiom` declaration was added.
+* `lake env lean scripts/PrintAxioms/Union.lean` prints the same permitted basis for all four statements:
+
+```
+'montgomery_taylor_simple_or_on_critical_line_union' depends on axioms: [propext, Classical.choice, Quot.sound]
+'montgomery_taylor_simple_or_on_critical_line_union_cumulative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'montgomery_taylor_simple_or_on_critical_line_union_decimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'montgomery_taylor_simple_or_on_critical_line_union_cumulative_decimal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+```
+
+* A local Comparator integration run of `comparator-union.json` completed with `Your solution is okay!`: statement comparison succeeded and both nanoda 0.4.13 and Lean's default kernel accepted the solution. The run used Comparator commit `75c730e` and lean4export commit `9fb131bb100eb32ccf6836f14e4f8328d13b6792`, matching Lean `v4.33.0-rc2`, with Comparator's official `scripts/fake-landrun.sh` because the host is macOS. It therefore exercises the previously missing statement-equality and independent-kernel pipeline, but is explicitly **not** a sandbox-trust result.
+* `Zeta23.ThmD.UnionConditional` separately proves dyadic and cumulative coefficient
+  `1 - ((cStar 1)⁻¹ - 1)/3 = 0.890833567893…` conclusions from either the explicit factorial
+  ordinary-ordinate collision cap or a nonnegative pair-energy cap. A second Taylor certificate proves this
+  coefficient lies strictly between 0.890833567893 and 0.8908335678932. The arithmetic caps are hypotheses,
+  not consequences of `PaperInputs`; `scripts/PrintAxioms/UnionConditional.lean` reports only
+  `[propext, Classical.choice, Quot.sound]` for the certified numerical enclosure and all four
+  conditional declarations.
+
+## Amendment: certified critical-line decimal endpoint
+
+`Zeta23.ThmD.LineDecimal` reuses the exact Taylor-remainder certificate to prove
+
+```
+0.672500703679 < HD(1) < 0.6725007036796.
+```
+
+It exports canonical epsilon-form dyadic and cumulative bounds with the certified lower coefficient for both
+`N0star` and the stronger `N0simple` count. It also exports fixed-coefficient theorems at `0.6725`, giving a direct
+formal witness that the asymptotic critical-line proportion is strictly greater than `0.672`. All denominators are
+`Ncount`, counted with multiplicity; `N0star` counts distinct on-line points and `N0simple` counts simple on-line
+points.
+
+* `lake build` completed successfully (9,020 jobs); the new `Zeta23.ThmD.LineDecimal` module introduces no warning.
+* `lake build Zeta23.ThmD.LineDecimal Challenge.LineDecimal Solution.LineDecimal`: completed successfully; the only
+  new warnings are the four deliberate challenge `sorry`s.
+* Occurrences of the `sorry` token outside comments are now **41**, all in the five trusted challenge files; none under
+  `Zeta23/` and none in any `Solution` file. No `axiom` declaration was added.
+* `scripts/PrintAxioms/LineDecimal.lean` reports only `[propext, Classical.choice, Quot.sound]` for the numerical
+  enclosure, both strict constant lemmas, all four fixed-coefficient theorems, and all four comparator statements.
+* A local run of `comparator-line-decimal.json` with the same version-matched Comparator, lean4export, nanoda,
+  and official `fake-landrun.sh` setup recorded above completed with `Your solution is okay!`: statement equality
+  succeeded and both nanoda and Lean's default kernel accepted. As above, this is a complete non-sandboxed integration
+  replay, not a sandbox-trust result.
+
+## Amendment: unconditional sextuple simple-critical-line improvement
+
+`Zeta23.ThmD.Sextuple` (modules `Base`, `Interior`, `SpanAsymptotic`, `BlockPenalty`, `Transfer`, `Packing`, `Ledger`,
+`AffineTree`, `Macro/*`, `Certificate`, `Unconditional`, `LineDecimal`) proves, with the six-translate Montgomery--Taylor
+spectral penalty retained with positive sign and the exact rational constants `A₆ = 1/80`, `B₆ = 1094977/5000000000`,
+
+```
+liminf N₀ˢ(T,2T)/N(T,2T) ≥ (6·B_MT − 10π·B₆)/(6 − A₆) = 0.67275562065609…
+```
+
+(`Zeta23.ThmD.Sextuple.thmD₀_sextuple`, cumulative form `thmD₀_sextuple_cumulative`), together with the certified
+strict enclosure `672755620655/10^12 < sextupleLowerConstant` and fixed-coefficient theorems at `0.6727556` and
+`0.672755620655` in dyadic and cumulative windows. The only numerical ingredient is the five-dimensional affine
+inequality `Certificate.sextuple_affine : ∀ g ≥ 0, A₆ ≤ E₆(g) + B₆·Σg`, proved by kernel replay (`decide +kernel`) of
+an exact rational certificate: an audited 56-piece one-dimensional kernel envelope (`Macro/EnvelopeData.lean`, analytic
+soundness in `Macro/Analytic.lean`), 871 exact scalar seam certificates (`Macro/ScalarData.lean`), and a dyadic-16384
+branch-and-bound tree with 99,507 nodes / 49,754 leaves (packed data `Macro/TreeWords.lean`, 2,969 subtree modules
+`Macro/Chunks/`, assembled by the once-proved generic lemma `replayAffineTree_split_step`). The soundness layer
+`AffineTree.lean` is stated for arbitrary cursor streams, so no decoder is load-bearing; out-of-range codes make the
+replay fail. No floating point, `native_decide`, `ofReduceBool`, or external result enters the proof.
+
+* Clean from-scratch `lake build Zeta23.ThmD.Sextuple.LineDecimal` (Lake throttled to ten concurrent builders via
+  `LEAN_NUM_THREADS=10`; Lake 5.0 has no `-j`): completed with exit 0 in 4,397 s wall, 27,935 s CPU, 16.5 GB peak
+  RSS of the Lake process tree; every chunk module type-checks in 4–30 s with 1–3 GB of kernel working memory.
+  The scalar-data module alone takes 108 s and 12.9 GB.
+* `lake build` (default target, which now imports `Zeta23.ThmD.Sextuple.LineDecimal`): 12,057 jobs, success.
+* `lake build Challenge.Sextuple Solution.Sextuple`: success; the only warnings are the four deliberate challenge
+  `sorry`s. `scripts/PrintAxioms/Sextuple.lean` reports only `[propext, Classical.choice, Quot.sound]` for
+  `Certificate.sextuple_affine`, the ledger instantiation, both strict constant lemmas, all six unconditional
+  sextuple theorems, and all four comparator statements.
+* Occurrences of the `sorry` token outside comments are now **45**, all in the six trusted challenge files; none under `Zeta23/` and none
+  in any `Solution` file. No `axiom` declaration was added; a forbidden-construct scan
+  (`sorry|admit|axiom|unsafe|native_decide|ofReduceBool|implemented_by|partial|opaque|extern`) over the 3,013
+  new files is empty.
+* Independent audits (read-only, separate agents): the generic affine-tree layer
+  (`certificates/sextuple/audits/lean24c-affine-tree-audit.md`), the one-dimensional envelope
+  (`lean24c-macro-analytic-audit.md`), the concrete tree/certificate modules
+  (`lean25-concrete-certificate-static-audit.md`, PASS-WITH-NOTES, all notes discharged), and the scalar adapter with an
+  exact-rational re-verification of all 871 certificates (`lean25-scalar-adapter-audit.md`, PASS-WITH-NOTES), all under
+  `certificates/sextuple/audits/`. The Lean data modules regenerate byte-for-byte from their JSON sources, and the packed
+  tree literals decode back to the serialized streams with matching SHA-256 digests (generators, canonical streams, and
+  logs under `certificates/sextuple/`).
+* No Comparator run has been performed for this topic yet; as for the other topics, a run with the version-matched
+  tools is the next independent check.
+
+## Amendment: conditional simple-critical-line collision and energy endpoints
+
+`Zeta23.ThmD.LineConditional` isolates the exact new arithmetic input required to improve the unconditional
+simple-critical-line result. The combinatorial theorem `ZeroConfig.N_le_N0s_add_collision` proves, with multiplicity
+and on half-open windows,
+
+```
+N(T₁,T₂) ≤ N0simple(T₁,T₂) + Σγ M(γ)(M(γ)-1).
+```
+
+Consequently an explicitly assumed collision cap with coefficient `κ` gives dyadic and cumulative coefficient
+`1-κ`; an explicitly assumed nonnegative ordinary-ordinate pair-energy cap with `K(0)=1` and coefficient `R` gives
+coefficient `2-R`. Fixed 70% wrappers require the strict hypotheses `κ < 3/10` or `R < 13/10`. No collision or
+energy cap is asserted by `PaperInputs`, so these theorems are conditional and intentionally have no trusted
+Comparator challenge topic.
+
+* `lake build` completed successfully (9,021 jobs); the changed and new Lean modules introduced no warning.
+* The combined `Challenge`/`Solution` topic build completed successfully (9,018 jobs); its only `sorry` warnings are
+  the 41 deliberate placeholders in the five trusted challenge files.
+* A source scan with comments and strings stripped found no `axiom` declaration, no `sorryAx`, and exactly **41**
+  `sorry` tokens, all in those five challenge files; there is no `sorry` under `Zeta23/` or `Solution`.
+* `scripts/PrintAxioms/LineConditional.lean` audits the pointwise counting theorem, both abstract certificates,
+  the four generic dyadic/cumulative endpoints, and the four fixed-70% endpoints. All eleven report only
+  `[propext, Classical.choice, Quot.sound]`.
+
+## Revision note: fork branch merged with upstream `main` (comparator restructuring)
+
+This revision merges upstream's "Mathlib-only challenge modules; one statement set at the paper's constants"
+and "ChallengeDeps minimized" revisions into the fork branch carrying the `Union`, `LineDecimal`, and `Sextuple`
+topics. Nothing under `Zeta23/` changed in the merge. The three fork topics were brought to the upstream
+convention: each of `Challenge/Union.lean`, `Challenge/LineDecimal.lean`, `Challenge/Sextuple.lean` now has
+`import Mathlib` as its only import, with the complete definition layer of `ChallengeDeps.lean` inlined
+character-for-character (the same block, in the same anonymous section, as in `Challenge.lean`). The two counting
+functions the Union statements need and upstream removed from `ChallengeDeps.lean` (`N0`, `Nsimple`) now live in
+`ChallengeDeps/Union.lean` (verbatim from `Zeta23/Statement.lean` §1), imported by `Solution/Union.lean`
+and inlined as a second block in `Challenge/Union.lean`. No statement was reworded or renamed.
+`formalization.yaml` lists the twelve fork statements under `main_results`.
+
+* `lake build Zeta23 ChallengeDeps ChallengeDeps.XiPrime ChallengeDeps.Union Challenge Solution Challenge.XiPrime
+  Solution.XiPrime Challenge.Union Solution.Union Challenge.LineDecimal Solution.LineDecimal Challenge.Sextuple
+  Solution.Sextuple`: completed successfully (12,073 jobs); `declaration uses 'sorry'` warnings **only** in the five
+  trusted challenge files (`Challenge.lean`: 17, `Challenge/XiPrime.lean`: 6, `Challenge/Union.lean`: 4,
+  `Challenge/LineDecimal.lean`: 4, `Challenge/Sextuple.lean`: 4) — 35 in total.
+* Occurrences of the `sorry` token outside comments: **35**, all in those five files; none under `Zeta23/` and none in
+  any `Solution` file. No `axiom` declaration was added by the fork; the only `axiom` lines in the tree are the two
+  pre-existing ones in the ported tactic test section of `Zeta23/FromPNTPlus/Tactic/AdditiveCombination.lean`
+  (identical to upstream), which no theorem depends on.
+* `#print axioms` over all eight audit files (`PrintAxioms.lean`, `XiPrime`, `Union`, `LineDecimal`, `Sextuple`,
+  `UnionConditional`, `LineConditional`, `PairCeiling`): 79 declarations, 77 exactly `[propext, Classical.choice,
+  Quot.sound]`, and the two deliberate PairCeiling exceptions recorded above (`LawN256_check`: `[propext]`;
+  `LawN256_edge`: no axioms).
+* Comparator runs for the fork topics under the new Mathlib-only challenge modules have not been performed yet.
+
+## Amendment: refined sextuple certificate at `A = 51/4000` (`0.6727837118`)
+
+`Zeta23.ThmD.Sextuple.A1275` (modules `RefinementData`, `Catalog`, `ScalarData`, `TreeReader`, `TreeWords`,
+`WordData/LeafBlocks000..030`, `Layout`, `FlatEquivalence`, `ChunkCalibration`, `Chunks/Chunk0000..8952`,
+`Assembly/Part000..089`, `TreeAssembly`, `Certificate`, `Assembly`, `Unconditional`, `LineDecimal`, `AxiomAudit`;
+shared new/refactored layers `Macro/StableCatalog`, `Macro/TreeFormat`, `Macro/ParametricAdapter`, and the
+import-only/declaration-move changes to `Macro/ScalarData`, `Macro/TreeReader`, `Macro/Layout`) proves the same
+sextuple improvement with the stronger affine coefficient `A = 51/4000 = 0.01275` and the unchanged
+`B₆ = 1094977/5000000000`: `liminf N₀ˢ/N ≥ (6·B_MT − 10π·B₆)/(6 − 51/4000) = 0.67278371…` in dyadic and cumulative
+windows (`Zeta23.ThmD.Sextuple.A1275.thmD₀_sextuple`, `thmD₀_sextuple_cumulative`), the certified strict enclosure
+`6727837118/10^10 < sextupleLowerConstant` (`ImprovedAssembly.A1275.sextupleLowerConstant_gt_6727837118`, from
+`HD_one_decimal.1` and `Real.pi_lt_d20` only; exact margin `10067520896911983481/299362500000000000000000000000`),
+and the fixed-coefficient theorems `thmD₀_sextuple_6727837118`, `thmD₀_sextuple_cumulative_6727837118`. The only
+numerical ingredient is `A1275.Certificate.sextuple_affine : ∀ g ≥ 0, 51/4000 ≤ E₆(g) + B₆·Σg`, proved by kernel
+replay (`decide +kernel`) of an exact rational branch-and-bound certificate: the unchanged audited 56-piece
+envelope plus a Lean-checked 216-cell refinement catalog (272 one-dimensional models), 1,383 exact scalar seam
+certificates (2,979 segments, proof-bearing `Fin` constructors only), and a 385,967-node dyadic tree with 192,984
+leaves (191,474 quadratic, 1,510 affine tails, depth ≤ 89) replayed as 8,953 subtree chunks of ≤ 100 topology
+tokens and assembled by 8,952 applications of the generic split lemma `replayAffineTree_split_step` in 90 modules.
+The words are stored two levels deep (`Array (Array Nat)`: 140 topology words per block; the 31 `WordData`
+groups of 25 leaf-block words) so that every kernel array lookup is short; `A1275/Layout.lean` proves the audited
+flat layout predicates for the concatenations and `A1275/FlatEquivalence.lean` proves the replayed streams are
+extensionally the audited flat packed streams. No floating point, `native_decide`, or external oracle enters the
+proof; the checker soundness layer is unchanged and stated for arbitrary streams.
+
+Checks run at this commit (logs under `certificates/sextuple/logs/`):
+
+* Foundation build (`lake build +…A1275.ChunkCalibration` and dependencies): success; `A1275.ScalarData` 227 s,
+  `A1275.RefinementData` 182 s, `Macro.ScalarData` 152 s, the 99-token calibration chunk 13 s (logs
+  `a1275-foundation-1.log`, `a1275-foundation-2-blocked.log`).
+* The 8,953 chunk modules, built by `certificates/sextuple/a1275/tools/build_a1275_chunks.py` (45 Lake batches of
+  200, ten concurrent builders): 8,953/8,953 built, zero failures, **10,552 s wall (2.93 h), 98,753 s CPU, longest
+  single chunk 50 s** (`a1275-chunks-driver.log`, `a1275-chunks-state.json`).
+* Assembly (`lake build +…A1275.LineDecimal +…A1275.FlatEquivalence`): the 90 part modules in ≈ 662 s total
+  (≤ 9.6 s each), `TreeAssembly` (`improvedRootReplay`) 3.3 s, `Certificate` 3.3 s, `Unconditional` 3.5 s,
+  `LineDecimal` 3.3 s; 17,962 jobs, success (`a1275-assembly-build.log`).
+* Baseline sextuple chain rebuilt on the refactored foundation (`lake build Zeta23.ThmD.Sextuple.LineDecimal`,
+  three builders): 2,969 chunks, 30 parts, root replay, certificate, endpoints; 11,881 jobs, success
+  (`a1275-baseline-rebuild.log`).
+* Default `lake build` (root `Zeta23`, now importing `Zeta23.ThmD.Sextuple.A1275.LineDecimal`): 21,145 jobs,
+  success (`a1275-root-build.log`).
+* `lake build Challenge.SextupleA1275 Solution.SextupleA1275`: success; the only warnings are the four deliberate
+  challenge `sorry`s (`lake_comparator_sextuple_a1275.log`). `scripts/PrintAxioms/SextupleA1275.lean`: all
+  eleven printed declarations depend on exactly `[propext, Classical.choice, Quot.sound]`
+  (`printaxioms_sextuple_a1275.log`).
+* `Zeta23/ThmD/Sextuple/A1275/AxiomAudit.lean` (29 declarations: analytic tables and adapters, layout, the
+  two-level/flat reader bridge, representative chunks and nodes, `improvedRootReplay`, `improvedTreeCheck`,
+  `improvedRootBox_predicate`, `Certificate.sextuple_affine`, the conditional ledger/comparator layer, the
+  unconditional ledger and both public endpoints): every line is `[propext, Classical.choice, Quot.sound]` except
+  the two physical-layout lemmas, which use only `[propext, Quot.sound]` (`a1275-axiom-audit.log`,
+  `audit-report.txt`).
+* Forbidden-construct scan (`certificates/sextuple/tools/forbidden_scan.sh`, now covering `A1275/` and both
+  comparator solution files): clean over 12,106 files. `sorry` census: 0 under `Zeta23/`, 0 in any `Solution`
+  file, 39 deliberate challenge placeholders; `axiom` declarations: 0.
+* External consistency: `certificates/sextuple/a1275/tools/verify_a1275_packed_words.py` decodes the Lean word
+  literals back to the four canonical byte streams and reproduces the SHA-256 values of
+  `certificates/sextuple/a1275/macro-scalar-tree/manifest.json` (`tree-artifacts/packed-words-verification.json`);
+  the generated `TreeWords.lean` is byte-identical to the output of `tools/gen_a1275_blocked_words.py` on those
+  streams and its flat word list equals the frozen single-level literal; the import closure of the A1275 chain
+  contains none of the baseline data modules `Macro.ScalarData`, `Macro.TreeReader`, `Macro.TreeWords`.
+* Provenance: the exact-rational generators and independent verifiers of the refinement catalog, the 5D tree,
+  the scalar data, the word data and the chunk/assembly sources, the frozen-source manifests, and the independent
+  audits of the data/plan, foundation, source freeze, resolved closure, scalar layer and conditional assembly are
+  under `certificates/sextuple/a1275/` (see its `README.md`). Two deviations from the frozen generated sources
+  are recorded there: the 90 assembly part modules were regenerated with explicit node statements (the frozen
+  files had `theorem improvedNodeNNNN :=` with no statement and had never been compiled), and `TreeWords.lean`,
+  `TreeReader.lean`, `Layout.lean` use the two-level word layout; the 8,953 chunk sources and the 31 `WordData`
+  modules are byte-identical to the frozen publication.
+
+## Amendment: refined sextuple certificate at `A = 257/20000` (`0.6727949489`)
+
+`Zeta23.ThmD.Sextuple.A1285` (the same module layout as `A1275`: `ScalarData`, `TreeReader`, `TreeWords`,
+`WordData/LeafBlocks000..138`, `Layout`, `FlatEquivalence`, `Chunks/Chunk00000..30152`, `Assembly/Part000..301`,
+`TreeAssembly`, `Certificate`, `Assembly`, `Unconditional`, `LineDecimal`, `AxiomAudit`; the catalog and refinement
+data are shared with `A1275`) proves the sextuple improvement at `A = 257/20000 = 0.01285`, `B₆` unchanged:
+`liminf N₀ˢ/N ≥ (6·B_MT − 10π·B₆)/(6 − 257/20000) = 0.67279494…` in dyadic and cumulative windows
+(`Zeta23.ThmD.Sextuple.A1285.thmD₀_sextuple`, `_cumulative`), the certified strict enclosure
+`6727949489/10^10 < sextupleLowerConstant` (`ImprovedAssembly.A1285.sextupleLowerConstant_gt_6727949489`, from
+`HD_one_decimal.1` and `Real.pi_lt_d20` only; exact margin `18463270896911983481/299357500000000000000000000000`),
+and the fixed-coefficient theorems `thmD₀_sextuple_6727949489`, `thmD₀_sextuple_cumulative_6727949489`. The only
+numerical ingredient is `A1285.Certificate.sextuple_affine : ∀ g ≥ 0, 257/20000 ≤ E₆(g) + B₆·Σg`, a `decide +kernel`
+replay of an exact rational branch-and-bound certificate over the same 272-model catalog: 3,365 exact scalar seam
+certificates (17,697 segments, proof-bearing `Fin` constructors only, each check lemma `decide +kernel`) and a
+1,771,973-node dyadic tree with 885,987 leaves (884,314 quadratic, 1,673 affine tails, depth ≤ 73), replayed as
+30,153 subtree chunks of ≤ 100 topology tokens and assembled by 30,152 applications of the generic split lemma in
+302 modules. Every Lean module of the target is emitted by `certificates/sextuple/tools/gen_sextuple_target_lean.py`
+from the canonical streams (the generator was validated by regenerating every committed `A1275` artifact); the words
+are two-level literals, `improvedScalarTable` is a two-level `match`, and `A1285/FlatEquivalence.lean` proves the
+replayed streams are extensionally the audited flat packed streams.
+
+Checks run at this commit (logs under `certificates/sextuple/logs/`):
+
+* Exact external replay of the serialized tree by the independent verifier
+  (`certificates/sextuple/a1275/generators/verify_exact_refined_scalar_tree.py`): status PASS, full topology / kind /
+  quadratic exhaustion, smallest quadratic margin `3.41×10⁻¹¹`, smallest tail margin `7.07×10⁻⁵`
+  (`certificates/sextuple/a1285/macro-scalar-tree/exact-replay-report.json`).
+* Foundation build: success; `A1285.ScalarData` 455 s (1,701 s with a flat scalar table), `TreeWords` 40 s,
+  `Layout` 19 s, `FlatEquivalence` 12 s, `Assembly` 5.9 s (`a1285-foundation*.log`).
+* The 30,153 chunk modules (`certificates/sextuple/a1275/tools/build_a1275_chunks.py --ns A1285`, 61 Lake batches of
+  500, nine concurrent builders): 30,153/30,153 built, zero failures, **48,654 s wall (13.5 h), 420,042 s CPU,
+  longest single chunk 27 s** (`a1285-chunks-driver.log`, `a1285-chunks-state.json`).
+* Assembly (`lake build +…A1285.LineDecimal`): the 302 part modules in ≈ 3,334 s total (≤ 25 s each), `TreeAssembly`
+  (`improvedRootReplay`) 4.5 s, `Certificate` 30 s, `Unconditional` 30 s, `LineDecimal` 4.5 s; 39,481 jobs, success
+  (`a1285-assembly-build.pass1.log`, `a1285-assembly-build.log`; the first pass stopped at `Certificate` on a missing
+  `open`, fixed in the generator and the module, no other change).
+* Default `lake build` (root `Zeta23`, now importing `Zeta23.ThmD.Sextuple.A1285.LineDecimal`): 51,748 jobs, success
+  (`a1285-root-build.log`).
+* `lake build Challenge.SextupleA1285 Solution.SextupleA1285`: success; the only warnings are the four deliberate
+  challenge `sorry`s (`lake_comparator_sextuple_a1285.log`). `scripts/PrintAxioms/SextupleA1285.lean`: all eleven
+  printed declarations depend on exactly `[propext, Classical.choice, Quot.sound]` (`printaxioms_sextuple_a1285.log`).
+* `Zeta23/ThmD/Sextuple/A1285/AxiomAudit.lean` (24 declarations): every line is `[propext, Classical.choice, Quot.sound]`
+  except the two physical-layout lemmas on `[propext, Quot.sound]` (`a1285-axiom-audit.log`, `audit-report.txt`).
+* Forbidden-construct scan (now covering `A1285/` and `Solution/SextupleA1285.lean`): clean over 42,712
+  files; `sorry` census unchanged (0 under `Zeta23/`, 0 in any `Solution` file); `axiom` declarations: 0.
+* External consistency: `certificates/sextuple/a1275/tools/verify_a1275_packed_words.py --ns A1285` decodes the Lean
+  word literals back to the four canonical byte streams and reproduces the SHA-256 values of
+  `certificates/sextuple/a1285/macro-scalar-tree/manifest.json` (`certificates/sextuple/a1285/packed-words-verification.json`).
+* Frontier evidence (`certificates/sextuple/a1285/frontier/`): `A = 8/625 = 0.0128` also closes (771,969 tokens, verifier
+  PASS; not integrated, superseded by `A1285`); `A = 129/10000 = 0.0129` does not close within a 6,000,000-node
+  branch-and-bound cap (32 boxes pending, no obstruction) — a resource result, not a mathematical no-go.
+
+## Amendment: refined sextuple certificate at `A = 129/10000` over the 666-model catalog (`0.6728005676`)
+
+`Zeta23.ThmD.Sextuple.A1290` (same module layout as `A1285`, generated by `certificates/sextuple/tools/gen_sextuple_target_lean.py`
+with `--limit 59 --catalog-module Zeta23.ThmD.Sextuple.A1290.Catalog --catalog-size 666 --catalog-name improvedCatalog2`) proves
+the sextuple improvement at `A = 129/10000 = 0.0129`, `B₆` unchanged: `liminf N₀ˢ/N ≥ (6·B_MT − 10π·B₆)/(6 − 129/10000) = 0.67280056…`
+in dyadic and cumulative windows (`Zeta23.ThmD.Sextuple.A1290.thmD₀_sextuple`, `_cumulative`), the certified strict enclosure
+`6728005676/10^10 < sextupleLowerConstant` (`ImprovedAssembly.A1290.sextupleLowerConstant_gt_6728005676`, from `HD_one_decimal.1` and
+`Real.pi_lt_d20` only; exact margin `19897020896911983481/299355000000000000000000000000`), and the fixed-coefficient theorems
+`thmD₀_sextuple_6728005676`, `thmD₀_sextuple_cumulative_6728005676`.
+
+This `A` is not certifiable over the 272-model catalog of `A1275`/`A1285` (branch-and-bound never closes: the surrogate is
+`0.000131` too weak at the seam `d ≈ 44.787` between refined well piece 42 and the flat barrier piece 43). Two new Lean-checked
+modules extend the one-dimensional lower envelope without touching the stable 56-piece table or the v1 216-well catalog:
+
+* `A1290/RefinementData2.lean`: 394 pieces — 24 narrow wells on stable piece 36 (as in v1) and 370 constant-barrier pieces
+  (`LowerPiece`, one `KernelCell` each) of width 1/64 over barrier piece 43 (44.787..49.564) and over `[59, 60]`, each with
+  `a = (floor to 10⁻¹⁵ of the lower bound `2·absLower(kernelRange cell turn)²` that Lean's own interval evaluator certifies) − 10⁻¹⁵`.
+  The bounds are computed by `certificates/sextuple/a1290/catalog/kernel_interval.py`, an exact `Fraction` replica of `RatInterval`,
+  `TrigInterval` and `KernelInterval`; the replica reproduces the committed stable barrier 43's constant bit-for-bit. Lean's
+  `refinement2Table_check` (all 394 pieces) builds in 88–115 s; `#print axioms` gives only the three standard axioms.
+* `A1290/Catalog.lean`: `improvedCatalog2 : Fin 666 → MacroPiece` (stable / v1 / v2 by index) with `improvedCatalog2_check`.
+
+The certificate `A1290.Certificate.sextuple_affine : ∀ g ≥ 0, 129/10000 ≤ E₆(g) + B₆·Σg` replays, by `decide +kernel`, an exact rational
+branch-and-bound tree over this catalog: 4,299 scalar seam certificates (31,664 segments), a 3,550,925-node dyadic tree with 1,775,463
+leaves (1,773,735 quadratic, 1,728 affine tails, depth ≤ 73), 56,924 subtree chunks of ≤ 100 topology tokens and 56,923 split-step
+nodes in 570 modules. The tree was generated with root-box limit 59 (the tail condition `A ≤ 59·B₆ = 0.0129207` of
+`affineTree_global_at`); its term codes (< 602) denote the same pieces in the 666-entry catalog.
+
+Checks run at this commit (logs under `certificates/sextuple/logs/`):
+
+* Exact external replay of the serialized tree by the independent verifier (`certificates/sextuple/a1290/catalog/verify_exact_refined_scalar_tree_v2.py`,
+  a wrapper of the audited verifier that loads the v2 catalog): status PASS, full topology / kind / quadratic exhaustion, smallest
+  quadratic margin `8.3×10⁻¹¹` (`certificates/sextuple/a1290/macro-scalar-tree/exact-replay-report.json`; the v2 catalog SHA-256 is recorded).
+* Foundation build: success; `RefinementData2` 88 s, `Catalog` 3.1 s, `A1290.ScalarData` 946 s (4,299 `decide +kernel` checks against the
+  666-piece catalog), `TreeWords` 80 s, `Layout` 38 s, `FlatEquivalence` 22 s (`a1290-refinement2-build.log`, `a1290-catalog-build.log`,
+  `a1290-foundation.log`).
+* The 56,924 chunk modules (`build_a1275_chunks.py --ns A1290`, 114 Lake batches of 500, nine builders): 56,924/56,924, zero failures,
+  **114,916 s wall (31.9 h), 996,422 s CPU, longest chunk 57 s** (`a1290-chunks-driver.log`, `a1290-chunks-state.json`).
+* Assembly (`lake build +…A1290.LineDecimal`): 570 parts in ≈ 10,843 s (≤ 47 s each), `TreeAssembly` (`improvedRootReplay`) 11 s,
+  `Certificate` 10 s, `Unconditional` 10 s, `LineDecimal` 10 s; 66,661 jobs, success (`a1290-assembly-build.log`).
+* Default `lake build` (root `Zeta23`, now importing `Zeta23.ThmD.Sextuple.A1290.LineDecimal`): 109,531 jobs, success (`a1290-root-build.log`).
+* `lake build Challenge.SextupleA1290 Solution.SextupleA1290`: success; the only warnings are the four deliberate challenge `sorry`s.
+  `scripts/PrintAxioms/SextupleA1290.lean`: all eleven declarations on exactly `[propext, Classical.choice, Quot.sound]`.
+* `Zeta23/ThmD/Sextuple/A1290/AxiomAudit.lean` (24 declarations): every line `[propext, Classical.choice, Quot.sound]` except the two
+  physical-layout lemmas on `[propext, Quot.sound]` (`a1290-axiom-audit.log`, `audit-report.txt`).
+* Forbidden-construct scan (now covering `A1290/` and `Solution/SextupleA1290.lean`): clean over 100,498 files; `sorry` census
+  unchanged (0 under `Zeta23/`, 0 in any `Solution` file); `axiom` declarations: 0.
+* External consistency: `verify_a1275_packed_words.py --ns A1290` reproduces the four canonical stream SHA-256 values from the Lean word literals
+  (`certificates/sextuple/a1290/packed-words-verification.json`).
+* Frontier analysis (`certificates/sextuple/a1290/catalog/`, `frontier/`): the affine-certificate method with the Montgomery–Taylor sextuple
+  kernel has the catalog-independent ceiling `A* ≤ 0.0129938` at `B₆` (a found point of `Σ 2K(d)² + B·S`), i.e. `R ≤ 0.6728111`; varying `B`
+  cannot help (`dA*/dB = S(p*) ≈ 44.8 < 46.7`). The v3 catalog's ceiling is `A* ≤ 0.0129616`. Externally, `A = 1293/100000` (limit 60)
+  closes with an independently replayed 10,003,455-token tree (5,302 scalar certificates; report kept, streams not committed);
+  `A = 0.01295` reaches a 12,000,000-node cap with 37 boxes pending; `A = 0.01298` exceeds the depth limit.
+
+## Revision note: checks after the merge into the `formal-math` layout
+
+Run from `zeta23/` on the merged sources (logs under `certificates/sextuple/logs/`):
+
+* `lake build` (default targets `Zeta23`, `Challenge`, `Solution`; nine builders): 109,536 jobs, success in about a minute
+  (`formal-math-layout-rebuild.log`). Exactly seven modules were recompiled — the seven `Zeta23/LinAlg/*.lean` whose
+  comment headers changed upstream (1.8–10 s each) — and everything else, including the 2,969 + 8,953 + 30,153 + 56,924 chunk
+  modules of the four certificate chains, was replayed from the existing build: Lake keys a module's trace on the hashes of
+  the oleans it imports, and comment-only edits produce identical oleans. The only `declaration uses 'sorry'` warnings are the
+  deliberate ones of the trusted `Challenge*` files.
+* `certificates/sextuple/tools/run_audits.sh` (`audit-report.txt`): the baseline, `A1275`, `A1285` and `A1290` axiom audits all exit 0
+  with no `sorryAx`; forbidden-construct scan clean over 100,498 files.
+* `lake env lean scripts/PrintAxioms.lean` and `scripts/PrintAxioms/{XiPrime,Union,LineDecimal,Sextuple,SextupleA1275,SextupleA1285,SextupleA1290}.lean`
+  (`printaxioms_*.layout.log`): 17 + 6 + 4 + 11 + 14 + 11 + 11 + 11 = 85 declarations, every one on exactly
+  `[propext, Classical.choice, Quot.sound]`.
+* `ruby scripts/validate-formalization.rb`: `formalization.yaml` parses and contains no template values.
+* Not run: the CI workflows and `scripts/verify-comparator.sh` (the pinned Comparator/NanoDa tools are not installed on this machine).

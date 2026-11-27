@@ -1,0 +1,174 @@
+{
+  "artifact_axiom_probe": {
+    "accepted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "command": "80fd011b34b8e2e96cc20f4fff0eb05236ab9e68fb90f9f65cc9ec3afd271120",
+    "olean": "9e84f58a8e66b94aaf99eac4e9b53545c5b868af72f156cd0983fcd88cc8b63a",
+    "source": "fd619ec7dd295ace6bf159ce8a42b3152025d5fcfe0532807f1ad324be7a2421",
+    "stderr": "da41950b0aefaef30a2f503555b665acc599113cf4b19bbd4de1998f28c2f478",
+    "stdout": "12cacbb81184395328b562f32dc8df93d2629e305e1132f072d6a7a7e520979c",
+    "theorems": [
+      "refinementTable_check",
+      "improvedCatalog_check",
+      "improvedScalarTable_check",
+      "improvedConcreteLeafCheck_sound"
+    ]
+  },
+  "audit_local_direct_build": {
+    "byte_identical_to_owner": true,
+    "command": "e172d4957cbf2799f92a1c5281c6e83a331c4a92546f090c536c93700b0333f6",
+    "exit_code": 0,
+    "maximum_resident_set_size_bytes": 20059930624,
+    "olean": "0d563050370f994bc59370878a6e75201a4cf26398f630781a08bc812472b14d",
+    "olean_bytes": 102718416,
+    "real_seconds": "236.05",
+    "source": "1ae4e940ffa5860768c7756ac4b60a0bde643db3140ad14c070f94e3a8a94adc",
+    "stderr": "7b1c89d32bd74fad5857875ea50b1b3e14c041b4548aef837ce1fc5df9631947",
+    "stdout": "8ddb5ccd56c938282343b547293f71b35ebff8ba730e4f4b64c6d05fe51d98ba"
+  },
+  "catalog": {
+    "build_log_sha256": "eda9786d66a2ac1d54d063f62e9973987b409bc842d61781ab4760693c72d873",
+    "combined_count": 272,
+    "full_catalog_check": true,
+    "import_only_refinement_delta": true,
+    "olean_sha256": "692085b7b6120f48491986b53cce1df009302c525a51aeece7c3e6056d39341e",
+    "refinement_build_log_sha256": "999d460a58c33adf963a31a2085fb1a6be89ac2cdc2e466f4564f431c664138b",
+    "refinement_count": 216,
+    "refinement_olean_sha256": "7e44098e3d97ff448705785c7c0a8eaaa43a14cbcd8bb7a70a6dfbfdf8489ee1",
+    "refinement_source_sha256": "67b78979fc1e7dcbd291f2da19cb53071142ef11104eeeea08af718269f16d43",
+    "source_sha256": "04f0f5215abfa69fd00e83e25d7db6ce53aabdfa2c44c5b87019d60fd4d86652",
+    "stable_count": 56,
+    "two_level_dispatch_equivalent": true
+  },
+  "completed_utc": "2026-08-24T04:31:19Z",
+  "downstream_5d_authority": "NOT CLAIMED. The scalar PASS supplies a checked dependency; it does not certify a concrete 5D tree/root/global theorem.",
+  "environment": {
+    "lean": "Lean (version 4.33.0-rc2, arm64-apple-darwin24.6.0, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+    "resource_gate_sha256": "09d52aa6aae5f34e80e172449c22fb1c82b5f2ce9cf20356b72ee56c8b90ec00",
+    "stable_repo_clean": true,
+    "stable_repo_head": "5e9617d84ece3aeecdf983a8e7e9bfa50f413e5a"
+  },
+  "exact_audits": {
+    "aggregate_branch_count": 1383,
+    "all_seams_containment_exact_minima": true,
+    "canonical_rationals": 14501,
+    "catalog_code_count": 272,
+    "catalog_code_max": 271,
+    "catalog_code_min": 0,
+    "certificate_count": 1383,
+    "original_rational_report": {
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/audits/lean25-a1275-scalar-audit/exact-rational-audit.json",
+      "sha256": "4edf8959e4651da2213f4740304186cb4f28c9a0cb734aafb0c10c2d66d3c762",
+      "status": "PASS"
+    },
+    "patched_audit_script_sha256": "17f3aecbd7261206ac03ea36ddde5c96afedf942eef4f1e63943356843f21709",
+    "patched_report": {
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/audits/lean25-a1275-scalar-audit/patched-exact-audit.json",
+      "sha256": "ae63e636df5ad6371ddc0c4932e96da651e17acf609be1a33eb955120311e0d0",
+      "status": "PASS"
+    },
+    "scalar_table_mapping_count": 1383,
+    "segment_count": 2979,
+    "segment_piece_index_max": 55,
+    "segment_piece_index_min": 0,
+    "two_model_min_formulas_agree": true
+  },
+  "fail_closed": {
+    "audit_local_hostile": {
+      "command": "9a5933d5dff01f49d57e836828f086c9f182f0f6a3cbca23ae168c16a4a539e8",
+      "exit_code": 1,
+      "olean_created": false,
+      "source": "d1fe7052c4800cff0c6d7cf8e8cb7bcdc49efa910c8f824baa3c258cab42b304",
+      "stderr": "014a5801d1cd62c999f4ed35490fe2dbf9691daf991eb11b841d114bcee204fa",
+      "stdout": "b73dbc489efeeb0dc2e56dbdfe7e65f9fd66abb5bb825e3eb4a58f2807fee949"
+    },
+    "bare_piece_index_count": 0,
+    "decoder_audit": {
+      "decoder_sha256": "238a9b6c782654196dc08308ecf8da93770e8368d7d72110f5cd7d0a815191c4",
+      "owner_hostile_log_sha256": "07ef28dc63aca03d7fe0f579a6bd8462d0d516b283ccd37b4c37b3644018c200",
+      "owner_hostile_rejections": [
+        "272 < 272",
+        "272 < 272",
+        "1383 < 1383"
+      ],
+      "serialized_invalid_term_count": 0,
+      "serialized_term_count": 2872110,
+      "source_explicit_fin_constructors": true,
+      "term_counts": {
+        "piece": 1848534,
+        "refinement_piece": 193824,
+        "scalar": 556044,
+        "zero": 467532
+      },
+      "uint16_decode_partition": {
+        "none": 63880,
+        "piece": 272,
+        "scalar": 1383,
+        "zero": 1
+      }
+    },
+    "decoder_source_sha256": "238a9b6c782654196dc08308ecf8da93770e8368d7d72110f5cd7d0a815191c4",
+    "explicit_constructor_count": 2979,
+    "owner_fin_audit_sha256": "76713e782afa08b64adc665b928e8d55318affbae36ab59e2ed8962f32c2192f",
+    "owner_hostile_log_sha256": "07ef28dc63aca03d7fe0f579a6bd8462d0d516b283ccd37b4c37b3644018c200",
+    "owner_hostile_source_sha256": "d1fe7052c4800cff0c6d7cf8e8cb7bcdc49efa910c8f824baa3c258cab42b304",
+    "rejected_goals": [
+      "272 < 272",
+      "272 < 272",
+      "1383 < 1383"
+    ]
+  },
+  "forbidden_scan": {
+    "closure_file_count": 18,
+    "closure_line_count": 42006,
+    "hits": [],
+    "report_sha256": "ae63e636df5ad6371ddc0c4932e96da651e17acf609be1a33eb955120311e0d0"
+  },
+  "owner_build": {
+    "accepted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "log_bytes": 884,
+    "log_sha256": "c88bca0a506eb1140e5fcb0a9309c79a4a5f3912d47b7615f204a7805f03aad3",
+    "maximum_resident_set_size_bytes": 20147191808,
+    "olean_bytes": 102718416,
+    "olean_sha256": "0d563050370f994bc59370878a6e75201a4cf26398f630781a08bc812472b14d",
+    "real_seconds": "240.08",
+    "source_bytes": 1222852,
+    "source_sha256": "1ae4e940ffa5860768c7756ac4b60a0bde643db3140ad14c070f94e3a8a94adc"
+  },
+  "provenance": {
+    "audit_local_generated_source_sha256": "1ae4e940ffa5860768c7756ac4b60a0bde643db3140ad14c070f94e3a8a94adc",
+    "audit_local_generation_report_sha256": "54ae911c3ff5dd59863b3126fbd2b6ed26cca30f68c40e807ae83adbfa22b3dd",
+    "audit_local_generator_sha256": "6ad0eedbd054b11f7fd387dbebf5878f5f9d201114fff948aaf75987fce29f08",
+    "byte_identical_reproduction": true,
+    "generation_report_sha256": "54ae911c3ff5dd59863b3126fbd2b6ed26cca30f68c40e807ae83adbfa22b3dd",
+    "generator_sha256": "6ad0eedbd054b11f7fd387dbebf5878f5f9d201114fff948aaf75987fce29f08",
+    "serialized_exact_replay_report_sha256": "2585829b0afe59a33f1345dd17dad7a5fbca7f41abfc230bc2461c65abcdf308",
+    "serialized_exact_replay_status": "PASS",
+    "serialized_replay_role": "provenance/mapping diagnostic only",
+    "source_json_sha256": "66264d3d9bc6cd0cde88f4d1bdb946ad3c8a64053d73d45a29176cdb8611dfe7"
+  },
+  "requested_pins": {
+    "combined_catalog_source_sha256": "04f0f5215abfa69fd00e83e25d7db6ce53aabdfa2c44c5b87019d60fd4d86652",
+    "original_scalar_source_sha256": "6791d1ff415bdabeb7feea0d534f04e293ca41d565d2935a2515ea2efd8ab7d0",
+    "source_json_sha256": "66264d3d9bc6cd0cde88f4d1bdb946ad3c8a64053d73d45a29176cdb8611dfe7"
+  },
+  "schema": 1,
+  "status": "PASS",
+  "supersession": {
+    "delta": "Exactly 2,979 pieceIndex lines replace bare numerals with explicit \u27e8index, by decide\u27e9 constructors; normalization restores the original bytes.",
+    "finding": "Bare Fin numerals elaborate modulo their bound and were not fail-closed.",
+    "original_log_sha256": "6b92db544b25af83d8410a5d7c953ef55168a47482e4520b95edfdfb89d14f33",
+    "original_olean_sha256": "7211f520241c4fafc108e13a41f59fa24e6c30e96540c10cd20dd49672c1b727",
+    "original_source_sha256": "6791d1ff415bdabeb7feea0d534f04e293ca41d565d2935a2515ea2efd8ab7d0",
+    "patched_generator_sha256": "6ad0eedbd054b11f7fd387dbebf5878f5f9d201114fff948aaf75987fce29f08",
+    "patched_source_sha256": "1ae4e940ffa5860768c7756ac4b60a0bde643db3140ad14c070f94e3a8a94adc"
+  },
+  "verdict_scope": "patched explicit-Fin combined-catalog/scalar layer; excludes downstream 5D Lean authority"
+}

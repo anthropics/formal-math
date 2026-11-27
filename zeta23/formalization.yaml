@@ -80,9 +80,18 @@ status:
     stated in the paper, including the Montgomery–Taylor-window forms and the Dirichlet analogues,
     with their on-the-line companion statements. Also in the repository, each checked but not part of
     the submission: comparator-xiprime.json (Challenge/XiPrime.lean, 6 statements on the zeros of ξ′,
-    Remark 7.1 of the paper) and the bandwidth-one ceiling (Zeta23/PairCeiling/, no Comparator
+    Remark 7.1 of the paper), the bandwidth-one ceiling (Zeta23/PairCeiling/, no Comparator
     configuration, `#print axioms` only), whose theorems carry one displayed hypothesis, `EnclOK`
-    (README.md).
+    (README.md), and six further Mathlib-only topics added in this fork, each with its own
+    configuration: comparator-union.json (Challenge/Union.lean, 4 simple-or-on-line inclusion-exclusion
+    endpoints), comparator-line-decimal.json (Challenge/LineDecimal.lean, 4 certified-decimal
+    0.672500703679 endpoints), comparator-sextuple.json (Challenge/Sextuple.lean, 4 statements of the
+    unconditional six-translate improvement 0.672755620655 / 0.6727556 of the simple critical-line
+    proportion, whose five-dimensional numerical certificate is replayed in the kernel), and
+    comparator-sextuple-a1275.json, comparator-sextuple-a1285.json, comparator-sextuple-a1290.json
+    (Challenge/SextupleA1275.lean, Challenge/SextupleA1285.lean, Challenge/SextupleA1290.lean: the same
+    at 0.6727837118, 0.6727949489 and 0.6728005676, with certificates of 8,953, 30,153 and 56,924
+    kernel-replayed subtree modules).
   # Counts for the proof development; the deliberate `sorry`s of the two Challenge files (17 + 6),
   # which state each theorem with a placeholder proof by design, are excluded.
   sorry_count: 0
@@ -244,6 +253,54 @@ alignment:
         own Mathlib-only definition layer (ChallengeDeps/XiPrime.lean, inlined into
         Challenge/XiPrime.lean). Solution/XiPrime.lean delegates to
         Zeta23.XiPrime.xiDeriv_simple_on_line (+_cumulative, _quartic_std) in Zeta23/XiPrime/Final.lean.
+
+    - source: >-
+        Beyond the paper (fork): exact and certified-decimal simple-or-on-line inclusion-exclusion
+        endpoints in dyadic and cumulative windows (the union count N₀ + Nˢ − N₀ˢ over N)
+      lean: >-
+        montgomery_taylor_simple_or_on_critical_line_union (+_cumulative);
+        montgomery_taylor_simple_or_on_critical_line_union_decimal (+_cumulative_decimal)
+      module: Challenge.Union
+      status: proved
+      note: >-
+        Not submitted: configuration comparator-union.json with its own Mathlib-only definition layer
+        (ChallengeDeps/Union.lean, inlined into Challenge/Union.lean). Solution/Union.lean delegates
+        to Zeta23.ThmD.thmD₀_union (+_cumulative) and the certified enclosure of Zeta23/ThmD/UnionDecimal.lean.
+    - source: >-
+        Beyond the paper (fork): the Montgomery–Taylor critical-line constant 2 − 1/c₁* enclosed by a
+        kernel-checked rational: 0.672500703679 < HD(1) < 0.6725007036796, hence fixed-decimal
+        distinct-on-line and simple-on-line proportions
+      lean: >-
+        montgomery_taylor_on_critical_line_decimal (+_cumulative);
+        montgomery_taylor_simple_on_critical_line_decimal (+_cumulative)
+      module: Challenge.LineDecimal
+      status: proved
+      note: >-
+        Not submitted: configuration comparator-line-decimal.json. Solution/LineDecimal.lean delegates to
+        Zeta23.ThmD.thmD₀_6725 and thmD₀_simple_mult_6725 (Zeta23/ThmD/LineDecimal.lean).
+    - source: >-
+        Beyond the paper (fork): an unconditional improvement of the simple critical-line proportion
+        to (6·B_MT − 10π·B₆)/(6 − A) with a positive spectral penalty for six translates of the
+        Montgomery–Taylor kernel; A₆ = 1/80 gives 0.672755620655 (fixed 0.6727556), and the refined
+        certificates A = 51/4000, 257/20000, 129/10000 give 0.6727837118, 0.6727949489, 0.6728005676
+      lean: >-
+        sextuple_simple_on_critical_line_decimal (+_cumulative_decimal),
+        sextuple_simple_on_critical_line_6727556 (+_cumulative_6727556);
+        sextuple_a1275_simple_on_critical_line_decimal (+_cumulative_decimal),
+        sextuple_a1275_simple_on_critical_line_6727837118 (+_cumulative_6727837118);
+        sextuple_a1285_…_6727949489; sextuple_a1290_…_6728005676 (the same four shapes each)
+      module: Challenge.Sextuple, Challenge.SextupleA1275, Challenge.SextupleA1285, Challenge.SextupleA1290
+      status: proved
+      note: >-
+        Not submitted: configurations comparator-sextuple.json, comparator-sextuple-a1275.json,
+        comparator-sextuple-a1285.json, comparator-sextuple-a1290.json. The only numerical ingredient
+        of each is a five-dimensional affine inequality A ≤ E₆(g) + B₆·Σg for all nonnegative gap
+        vectors, proved by kernel replay (`decide +kernel`) of an exact rational branch-and-bound
+        certificate over a Lean-checked one-dimensional lower envelope of 2·K(d)² (56 stable pieces,
+        plus 216 and 394 refinement pieces for the refined targets); the analytic transfer is
+        Zeta23/ThmD/Sextuple/{Base,Ledger,Final}.lean. Solution/Sextuple*.lean delegate to
+        Zeta23.ThmD.Sextuple.thmD₀_sextuple_… and Zeta23.ThmD.Sextuple.A12xx.thmD₀_sextuple_….
+        Generators, canonical data, independent exact replays and build logs: certificates/sextuple/.
 
 acknowledgements: >-
   The mathematics formalized is due to the paper's authors, Levent Alpöge and Ralph Furman, who also

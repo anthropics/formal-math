@@ -1,0 +1,37 @@
+{
+  "A": "51/4000",
+  "B": "1094977/5000000000",
+  "checks": {
+    "6_minus_A_positive": true,
+    "HD_coefficient_positive_so_lower_bound_is_directed_lower": true,
+    "margin_positive": true,
+    "matches_improved_assembly_provenance": true,
+    "pi_coefficient_negative_so_upper_bound_is_directed_lower": true
+  },
+  "cleared_exact_form": "(3000000000 * HD(1) - 1094977 * pi) / 2993625000",
+  "cross_multiplied_margin_numerator": "50337604484559917405000000000",
+  "denominator_positive": "23949/4000",
+  "directed_feedback_lower": "201406213933795020896911983481/299362500000000000000000000000",
+  "directed_inputs": {
+    "HD_lower": "672500703679/1000000000000",
+    "HD_source": "Zeta23/ThmD/LineDecimal.lean: HD_one_decimal.1",
+    "HD_source_sha256": "78e0b1a9c460a2459c07011e71dd401615b8a7a05236cba9a2f2bba70887438e",
+    "pi_source": "Mathlib/Analysis/Real/Pi/Bounds.lean: Real.pi_lt_d20",
+    "pi_source_sha256": "bb8dc6144292b803b2df8c31ca32d67a7ab47b50f8005b5b688d95aff1489444",
+    "pi_upper": "314159265358979323847/100000000000000000000"
+  },
+  "expected_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "feedback_definition": "(6 * HD(1) - 10 * pi * B) / (6 - A)",
+  "lean_build_exit_code": 0,
+  "lean_source_sha256": "322936ef431ae96201d11a4e1d63fb7f720745fdcf2c28ae8dd707837a286a5b",
+  "lean_theorem": "Zeta23.ThmD.Sextuple.ImprovedAssembly.A1275.sextupleLowerConstant_gt_6727837118",
+  "positive_margin": "10067520896911983481/299362500000000000000000000000",
+  "schema": 1,
+  "scope": "Exact directed rational audit of ImprovedAssembly.A1275.sextupleLowerConstant_gt_6727837118",
+  "status": "PASS",
+  "target": "6727837118/10000000000"
+}

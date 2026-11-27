@@ -1,0 +1,16 @@
+import Zeta23.ThmD.Sextuple.A1285.TreeWords
+
+set_option maxHeartbeats 0
+set_option maxRecDepth 100000
+
+namespace Zeta23.ThmD.Sextuple.MacroPrototype.A1285
+open Zeta23.ThmD.Sextuple
+
+/-- Subtree at topology cursor 572210, payload cursor 286087, depth 64, 15 tokens. -/
+theorem improvedChunk09516 :
+    replayAffineTree improvedConcreteLeafCheck improvedTopologyStream improvedPayloadStream
+      10 572210 286087 (improvedPathBox improvedRootBox [(false, ⟨0, by decide⟩), (false, ⟨3, by decide⟩), (false, ⟨1, by decide⟩), (true, ⟨2, by decide⟩), (false, ⟨4, by decide⟩), (false, ⟨0, by decide⟩), (false, ⟨3, by decide⟩), (true, ⟨1, by decide⟩), (true, ⟨2, by decide⟩), (true, ⟨4, by decide⟩), (true, ⟨0, by decide⟩), (false, ⟨3, by decide⟩), (true, ⟨1, by decide⟩), (true, ⟨2, by decide⟩), (false, ⟨4, by decide⟩), (false, ⟨0, by decide⟩), (true, ⟨3, by decide⟩), (false, ⟨1, by decide⟩), (true, ⟨2, by decide⟩), (true, ⟨4, by decide⟩), (true, ⟨0, by decide⟩), (false, ⟨3, by decide⟩), (false, ⟨1, by decide⟩), (false, ⟨2, by decide⟩), (false, ⟨4, by decide⟩), (false, ⟨0, by decide⟩), (false, ⟨3, by decide⟩), (false, ⟨1, by decide⟩), (false, ⟨2, by decide⟩), (false, ⟨4, by decide⟩), (false, ⟨0, by decide⟩), (true, ⟨3, by decide⟩), (true, ⟨1, by decide⟩), (false, ⟨2, by decide⟩), (true, ⟨4, by decide⟩), (true, ⟨0, by decide⟩), (true, ⟨3, by decide⟩), (true, ⟨1, by decide⟩), (true, ⟨2, by decide⟩), (true, ⟨4, by decide⟩), (true, ⟨0, by decide⟩), (false, ⟨3, by decide⟩), (false, ⟨1, by decide⟩), (true, ⟨2, by decide⟩), (true, ⟨4, by decide⟩), (true, ⟨0, by decide⟩), (true, ⟨3, by decide⟩), (true, ⟨1, by decide⟩), (true, ⟨2, by decide⟩), (false, ⟨4, by decide⟩), (false, ⟨0, by decide⟩), (true, ⟨3, by decide⟩), (true, ⟨1, by decide⟩), (false, ⟨2, by decide⟩), (false, ⟨4, by decide⟩), (false, ⟨0, by decide⟩), (false, ⟨3, by decide⟩), (false, ⟨1, by decide⟩), (false, ⟨2, by decide⟩), (false, ⟨4, by decide⟩), (false, ⟨0, by decide⟩), (false, ⟨3, by decide⟩), (false, ⟨1, by decide⟩), (false, ⟨2, by decide⟩)]) =
+      some (572225, 286095) := by
+  decide +kernel
+
+end Zeta23.ThmD.Sextuple.MacroPrototype.A1285

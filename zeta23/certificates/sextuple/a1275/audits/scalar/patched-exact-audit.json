@@ -1,0 +1,225 @@
+{
+  "catalog": {
+    "codes_checked": [
+      0,
+      271
+    ],
+    "combined": 272,
+    "import_only_refinement_delta": true,
+    "refinements": 216,
+    "stable": 56,
+    "two_level_dispatch_unchanged_sha256": "04f0f5215abfa69fd00e83e25d7db6ce53aabdfa2c44c5b87019d60fd4d86652"
+  },
+  "deterministic_generation": {
+    "audit_local_reproduction_byte_identical": true,
+    "bare_piece_index_count": 0,
+    "explicit_constructor_count": 2979,
+    "generation_report_sha256": "54ae911c3ff5dd59863b3126fbd2b6ed26cca30f68c40e807ae83adbfa22b3dd",
+    "generator_sha256": "6ad0eedbd054b11f7fd387dbebf5878f5f9d201114fff948aaf75987fce29f08",
+    "input_sha256": "66264d3d9bc6cd0cde88f4d1bdb946ad3c8a64053d73d45a29176cdb8611dfe7",
+    "output_sha256": "1ae4e940ffa5860768c7756ac4b60a0bde643db3140ad14c070f94e3a8a94adc"
+  },
+  "downstream_authority": "NOT CLAIMED: term-stream admission/provenance is not a kernel-built concrete 5D tree certificate.",
+  "fail_closed": {
+    "decoder_sha256": "238a9b6c782654196dc08308ecf8da93770e8368d7d72110f5cd7d0a815191c4",
+    "owner_hostile_log_sha256": "07ef28dc63aca03d7fe0f579a6bd8462d0d516b283ccd37b4c37b3644018c200",
+    "owner_hostile_rejections": [
+      "272 < 272",
+      "272 < 272",
+      "1383 < 1383"
+    ],
+    "serialized_invalid_term_count": 0,
+    "serialized_term_count": 2872110,
+    "source_explicit_fin_constructors": true,
+    "term_counts": {
+      "piece": 1848534,
+      "refinement_piece": 193824,
+      "scalar": 556044,
+      "zero": 467532
+    },
+    "uint16_decode_partition": {
+      "none": 63880,
+      "piece": 272,
+      "scalar": 1383,
+      "zero": 1
+    }
+  },
+  "forbidden_scan": {
+    "closure_file_count": 18,
+    "closure_line_count": 42006,
+    "files": [
+      {
+        "lines": 90,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedTreeReader.lean",
+        "sha256": "238a9b6c782654196dc08308ecf8da93770e8368d7d72110f5cd7d0a815191c4"
+      },
+      {
+        "lines": 20982,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedScalarData.lean",
+        "sha256": "1ae4e940ffa5860768c7756ac4b60a0bde643db3140ad14c070f94e3a8a94adc"
+      },
+      {
+        "lines": 160,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/MacroParametricAdapter.lean",
+        "sha256": "71dbe0b3159b3785eb6c731eab6f994de515018e65a10de6d019c54d6249226f"
+      },
+      {
+        "lines": 463,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedCatalog.lean",
+        "sha256": "04f0f5215abfa69fd00e83e25d7db6ce53aabdfa2c44c5b87019d60fd4d86652"
+      },
+      {
+        "lines": 102,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/Zeta23/ThmD/Sextuple/Macro/LeafCheck.lean",
+        "sha256": "4923c164a493b6a1f89fec68889fbd85bb7d402a5adfef3159c40897080ad4ad"
+      },
+      {
+        "lines": 2179,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedRefinementData.lean",
+        "sha256": "67b78979fc1e7dcbd291f2da19cb53071142ef11104eeeea08af718269f16d43"
+      },
+      {
+        "lines": 14269,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/Zeta23/ThmD/Sextuple/Macro/ScalarData.lean",
+        "sha256": "0b8d55345d942a11af83ca6ff6698c3c562eea360307f6091bd7433bced8bb7f"
+      },
+      {
+        "lines": 286,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/Zeta23/ThmD/Sextuple/Macro/ScalarAdapter.lean",
+        "sha256": "1908a966957c61555f16a0ce0c400a9712f199b0a453d9c9ef230c50696f1301"
+      },
+      {
+        "lines": 567,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/Zeta23/ThmD/Sextuple/Macro/EnvelopeData.lean",
+        "sha256": "44a3295dbf1eb76b5ae99263d282ac2397bc6b0953c8456632768476f25ee052"
+      },
+      {
+        "lines": 287,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/Zeta23/ThmD/Sextuple/Macro/AffineAdapter.lean",
+        "sha256": "61c2adce61a763582895d124eac67f37eb204a5844a19cca62b08a12994cb217"
+      },
+      {
+        "lines": 700,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/Zeta23/ThmD/Sextuple/Macro/Analytic.lean",
+        "sha256": "c0757a933f4c2ea2987da6e3d3dbe0d4f804c5c4a88174758e2e7c5ed8370ddf"
+      },
+      {
+        "lines": 1064,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/Zeta23/ThmD/Sextuple/AffineTree.lean",
+        "sha256": "64a198e5042931f3785c440a78722e9b3f8e62cdd4843854b0acc3f470722eb3"
+      },
+      {
+        "lines": 191,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/Zeta23/ThmD/Sextuple/PieceCert.lean",
+        "sha256": "b8e505a651d8b9b1a45da52080f6b1e86a92ea3fefbfe323a282432aef614f2f"
+      },
+      {
+        "lines": 38,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/Zeta23/ThmD/Sextuple/Energy.lean",
+        "sha256": "77f8f59cf6ca531586307952457e75f500d8ac37dc40c643460a01b0334924d3"
+      },
+      {
+        "lines": 95,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/Zeta23/ThmD/Sextuple/KernelInterval.lean",
+        "sha256": "d09b9efe4a36394fa08bcc7a0e904a7eae409f0f198d8103d1522f8bbeba37fe"
+      },
+      {
+        "lines": 128,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/Zeta23/ThmD/Sextuple/Kernel.lean",
+        "sha256": "e50b67ee4e267a5a50a7b4bcfcf15568f83fe4aaa45d312cb6570370988d7a7b"
+      },
+      {
+        "lines": 238,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/Zeta23/ThmD/Sextuple/TrigInterval.lean",
+        "sha256": "63792e1a3f8488f8c675185601049d80c901473f5274b8e88961fc1fc707caf5"
+      },
+      {
+        "lines": 167,
+        "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/_exp_rh89_zeta23_lean/Zeta23/ThmD/Sextuple/Interval.lean",
+        "sha256": "0bbb8991defb97ece3ff76ef81b3cab86bd430ada6cb933804e419774e92f866"
+      }
+    ],
+    "hits": [],
+    "patterns": [
+      "Lean.ofReduceBool",
+      "admit",
+      "axiom_declaration",
+      "implemented_by",
+      "native_decide",
+      "opaque_declaration",
+      "partial",
+      "sorry",
+      "sorryAx",
+      "unqualified_ofReduceBool",
+      "unsafe"
+    ],
+    "unresolved_external_imports": [
+      "Mathlib",
+      "Mathlib.Analysis.Calculus.Deriv.MeanValue",
+      "Mathlib.Analysis.Real.Pi.Bounds",
+      "Mathlib.Analysis.SpecialFunctions.Trigonometric.Sinc",
+      "Mathlib.Data.Matrix.Basic"
+    ]
+  },
+  "pins": {
+    "catalog": {
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedCatalog.lean",
+      "sha256": "04f0f5215abfa69fd00e83e25d7db6ce53aabdfa2c44c5b87019d60fd4d86652"
+    },
+    "fin_admission_audit": {
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/fin-admission-audit.json",
+      "sha256": "76713e782afa08b64adc665b928e8d55318affbae36ab59e2ed8962f32c2192f"
+    },
+    "generator": {
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/generate_improved_scalar_lean.py",
+      "sha256": "6ad0eedbd054b11f7fd387dbebf5878f5f9d201114fff948aaf75987fce29f08"
+    },
+    "hostile_log": {
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/HostileOutOfRangeFinProbe.expected-failure.log",
+      "sha256": "07ef28dc63aca03d7fe0f579a6bd8462d0d516b283ccd37b4c37b3644018c200"
+    },
+    "patched_scalar": {
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedScalarData.lean",
+      "sha256": "1ae4e940ffa5860768c7756ac4b60a0bde643db3140ad14c070f94e3a8a94adc"
+    },
+    "source_json": {
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/sextuple-improvement/refined-A-0p01275/scalar-certificates.json",
+      "sha256": "66264d3d9bc6cd0cde88f4d1bdb946ad3c8a64053d73d45a29176cdb8611dfe7"
+    },
+    "superseded_log": {
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/superseded-scalar-bare-fin/ImprovedScalarData.bare-fin.build.log",
+      "sha256": "6b92db544b25af83d8410a5d7c953ef55168a47482e4520b95edfdfb89d14f33"
+    },
+    "superseded_olean": {
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/superseded-scalar-bare-fin/ImprovedScalarData.bare-fin.olean",
+      "sha256": "7211f520241c4fafc108e13a41f59fa24e6c30e96540c10cd20dd49672c1b727"
+    },
+    "superseded_source": {
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/superseded-scalar-bare-fin/ImprovedScalarData.bare-fin.lean",
+      "sha256": "6791d1ff415bdabeb7feea0d534f04e293ca41d565d2935a2515ea2efd8ab7d0"
+    },
+    "tree_reader": {
+      "path": "/Users/mdumitrean/Desktop/dev/aigent/math/prime/post-anthropic-rh-artifacts/checkers/lean-sextuple-certificate-prototype/improved-A-51-over-4000/ImprovedTreeReader.lean",
+      "sha256": "238a9b6c782654196dc08308ecf8da93770e8368d7d72110f5cd7d0a815191c4"
+    }
+  },
+  "scalars": {
+    "all_mapping_order_seams_containment_model_minima": true,
+    "canonical_rational_literals_checked": 14501,
+    "certificates": 1383,
+    "exact_minimum_segments": 1383,
+    "full_aggregate_branch_count": 1383,
+    "piece_index_max": 55,
+    "piece_index_min": 0,
+    "refinement_piece_indices_used": 0,
+    "segments": 2979,
+    "unique_intervals": 1383
+  },
+  "scope": "patched explicit-Fin 272-piece catalog / 1383-scalar layer; physical stream decoding audited for admission only, not downstream 5D Lean authority",
+  "status": "PASS",
+  "supersession": {
+    "patched_source_sha256": "1ae4e940ffa5860768c7756ac4b60a0bde643db3140ad14c070f94e3a8a94adc",
+    "reason": "bare Fin numerals wrap modulo; patched output uses explicit proof-bearing constructors",
+    "requested_bare_fin_source_sha256": "6791d1ff415bdabeb7feea0d534f04e293ca41d565d2935a2515ea2efd8ab7d0"
+  }
+}

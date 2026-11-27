@@ -110,7 +110,8 @@ jobs:
 
           selected=()
           if [ -n "$range" ]; then
-            if changed="$(git diff --name-only "$range" --)"; then
+            # Treat a rename as a deletion plus an addition so both projects are selected.
+            if changed="$(git diff --no-renames --name-only "$range" --)"; then
               tops="$(printf '%s\n' "$changed" | cut -d/ -f1 | sort -u)"
               echo "changed top-level entries in $range: $(tr '\n' ' ' <<<"$tops")"
               for p in "${projects[@]}"; do

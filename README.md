@@ -1,6 +1,8 @@
 # formal-math
 
-Machine-checked Lean 4 formalizations published by Anthropic. Each subdirectory is a self-contained Lake project with its own toolchain pin, README and build instructions; build from inside the subdirectory. Projects follow the layout of the [Palomar](https://palomar-registry.org/) submission template (`Challenge.lean` / `Solution.lean` / `comparator.json` / `formalization.yaml` at the project root) and are submitted to Palomar with the subdirectory as the selected project; the licence file Palomar reads is this repository's root `LICENSE`.
+Machine-checked Lean 4 formalizations published by Anthropic. Each subdirectory is a self-contained Lake project with its own toolchain pin, README and build instructions. Run the build from inside that subdirectory.
+
+The projects follow [Palomar](https://palomar-registry.org/)'s Challenge and Solution conventions. Each project's Comparator configurations name its modules and the declarations to compare. The [Zeta23 submission notes](zeta23/README.md#submitting-to-palomar) document the selected project, Comparator configuration, `formalization.yaml` and repository-root licence for that submission.
 
 | Project | Statement | Lean / Mathlib |
 |---|---|---|
